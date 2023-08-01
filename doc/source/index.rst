@@ -1,3 +1,8 @@
-======================================================
-Welcome to the documentation of object-storage-service
-======================================================
+Object Storage Service
+======================
+
+.. directive_wrapper::
+   :class: container-sbv
+
+   .. service_card::
+      :service_type: obs
