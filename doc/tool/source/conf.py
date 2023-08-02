@@ -82,7 +82,7 @@ html_theme_options = {
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
 
-html_title = "Object Storage Service - API Reference"
+html_title = "Object Storage Service - Tool Guide (OBS Browser)"
 
 
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -96,7 +96,7 @@ html_copy_source = False
 # -- Options for PDF output --------------------------------------------------
 latex_documents = [
     ('index',
-     'obs-api-ref.tex',
-     u'Object Storage Service - API Reference',
+     'obs-tool-guide.tex',
+     u'Object Storage Service - Tool Guide (OBS Browser)',
      u'OpenTelekomCloud', 'manual'),
 ]
