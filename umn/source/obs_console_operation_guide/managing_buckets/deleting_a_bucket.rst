@@ -1,0 +1,30 @@
+:original_name: obs_03_0314.html
+
+.. _obs_03_0314:
+
+Deleting a Bucket
+=================
+
+You can delete unwanted buckets on OBS Console to free up the quota of buckets.
+
+Prerequisites
+-------------
+
+-  Before deleting a bucket, empty the bucket first.
+
+   .. important::
+
+      Objects in the lists of **Objects**, **Deleted Objects**, and **Fragments** must be all deleted.
+
+-  A bucket can only be deleted by the bucket owner.
+
+Procedure
+---------
+
+#. In the bucket list on OBS Console, select the bucket you want to delete, and then click **Delete** on the right.
+
+   .. note::
+
+      The name of a deleted bucket can be reused for another bucket at least 30 minutes after the deletion.
+
+#. Click **Yes** to confirm the deletion.
