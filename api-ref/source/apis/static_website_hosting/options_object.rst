@@ -38,7 +38,7 @@ Request Syntax
 Request Parameters
 ------------------
 
-This request contains no parameter.
+This request contains no message parameters.
 
 Request Headers
 ---------------
@@ -60,7 +60,7 @@ Request Headers
    |                                |                                                                                                              |                       |
    |                                | Type: string                                                                                                 |                       |
    |                                |                                                                                                              |                       |
-   |                                | Valid values: **GET**, **PUT**, **HEAD**, **POST**, and **DELETE**.                                          |                       |
+   |                                | Value options: **GET**, **PUT**, **HEAD**, **POST**, **DELETE**                                              |                       |
    +--------------------------------+--------------------------------------------------------------------------------------------------------------+-----------------------+
    | Access-Control-Request-Headers | Indicates the HTTP headers of a request. The request can use multiple HTTP headers.                          | No                    |
    |                                |                                                                                                              |                       |
@@ -115,7 +115,7 @@ The request uses the headers described in :ref:`Table 2 <obs_04_0078__table14690
    |                                   |                                                                                                                                                |
    |                                   | Type: string                                                                                                                                   |
    |                                   |                                                                                                                                                |
-   |                                   | Possible values are GET, PUT, HEAD, POST, and DELETE.                                                                                          |
+   |                                   | Value options: **GET**, **PUT**, **HEAD**, **POST**, **DELETE**                                                                                |
    +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
    | Access-Control-Expose-Headers     | Indicates ExposeHeader in the CORS configuration of a server.                                                                                  |
    |                                   |                                                                                                                                                |
@@ -125,7 +125,7 @@ The request uses the headers described in :ref:`Table 2 <obs_04_0078__table14690
 Response Elements
 -----------------
 
-This response involves no elements.
+This response contains no elements.
 
 Error Responses
 ---------------

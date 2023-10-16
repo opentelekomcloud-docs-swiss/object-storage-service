@@ -20,3 +20,7 @@ Status Codes
    +-------------+--------------------------------------------------------------------------------------------------------------------------+
    | 5xx         | Indicates that an error occurs on the server, and the user does not know whether the request has been successfully sent. |
    +-------------+--------------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+   Send API requests using the HTTP/HTTPS format that complies with **https://www.ietf.org/rfc/rfc2616.txt**.

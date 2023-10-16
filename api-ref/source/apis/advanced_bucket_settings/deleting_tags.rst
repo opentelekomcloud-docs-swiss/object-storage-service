@@ -10,7 +10,7 @@ Functions
 
 This operation deletes the tags of a bucket.
 
-To perform this operation, you must have the **PutBucketTagging** permission. By default, only the bucket owner can delete the tags of a bucket. The bucket owner can allow other users to perform this operation by setting a bucket policy or granting them the permission.
+To perform this operation, you must have the **DeleteBucketTagging** permission. By default, only the bucket owner can delete the tags of a bucket. The bucket owner can allow other users to perform this operation by setting a bucket policy or granting them the permission.
 
 Request Syntax
 --------------
@@ -25,7 +25,7 @@ Request Syntax
 Request Parameters
 ------------------
 
-This request contains no parameter.
+This request contains no message parameters.
 
 Request Headers
 ---------------
@@ -56,7 +56,7 @@ The response to the request uses common headers. For details, see :ref:`Table 1 
 Response Elements
 -----------------
 
-This response involves no elements.
+This response contains no elements.
 
 Error Responses
 ---------------

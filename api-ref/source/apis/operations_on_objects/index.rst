@@ -14,6 +14,7 @@ Operations on Objects
 -  :ref:`Deleting Objects <obs_04_0086>`
 -  :ref:`Configuring an Object ACL <obs_04_0089>`
 -  :ref:`Obtaining Object ACL Configuration <obs_04_0090>`
+-  :ref:`Configuring WORM Retention for an Object <obs_04_0166>`
 
 .. toctree::
    :maxdepth: 1
@@ -28,3 +29,4 @@ Operations on Objects
    deleting_objects
    configuring_an_object_acl
    obtaining_object_acl_configuration
+   configuring_worm_retention_for_an_object

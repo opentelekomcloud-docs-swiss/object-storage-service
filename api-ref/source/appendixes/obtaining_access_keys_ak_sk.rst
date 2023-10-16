@@ -5,21 +5,21 @@
 Obtaining Access Keys (AK/SK)
 =============================
 
-When calling an API, you need to use the AK/SK to verify the signature. To obtain the AK/SK, perform the following steps:
+When you call APIs, you need to use the AK and SK for authentication. To obtain the AK and SK, perform the following steps:
 
 #. Log in to the console.
-#. Hover the cursor on the username in the upper right corner and select **My Credentials** from the drop-down list.
-#. On the **My Credentials** page, click **Manage Access Keys**.
-#. Click **Add Access Key**. The **Add Access Key** dialog box is displayed.
-#. Enter the password for login.
-#. Enter the authentication code received in your email or mobile phone.
+#. Click on the login username in the upper right corner and choose **My Credentials** from the drop-down list.
+#. Choose **Access Keys**.
+#. Click **Create Access Key**.
+#. Enter an access key description (optional) and click **OK**.
+#. Enter the verification code your mobile phone, virtual MFA device, or email received, and click **OK**.
 
    .. note::
 
-      For users created through IAM, if no email address or mobile number is specified during user creation, only the login password needs to be authenticated.
+      This step is required only when you have enabled operation protection.
 
-#. Click **OK** to download the access key file.
+#. Click **Download** to obtain the access key file.
 
    .. note::
 
-      Keep the AK/SK file properly to prevent information leakage.
+      Keep AKs and SKs properly to prevent information leakage.

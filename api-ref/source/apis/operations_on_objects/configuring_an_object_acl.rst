@@ -98,15 +98,19 @@ The request message carries the ACL information of the object by using message e
    |                       |                                                                                                                 |                       |
    |                       | Value range: Everyone                                                                                           |                       |
    |                       |                                                                                                                 |                       |
-   |                       | Type: enumeration                                                                                               |                       |
+   |                       | Type: string                                                                                                    |                       |
    +-----------------------+-----------------------------------------------------------------------------------------------------------------+-----------------------+
    | Delivered             | Indicates whether an object ACL inherits the ACL of a bucket.                                                   | No                    |
    |                       |                                                                                                                 |                       |
-   |                       | Type: boolean Default value: true                                                                               |                       |
+   |                       | Type: boolean                                                                                                   |                       |
+   |                       |                                                                                                                 |                       |
+   |                       | Default value: **true**                                                                                         |                       |
    +-----------------------+-----------------------------------------------------------------------------------------------------------------+-----------------------+
    | Permission            | Authorized permission.                                                                                          | No                    |
    |                       |                                                                                                                 |                       |
-   |                       | Type: enumeration                                                                                               |                       |
+   |                       | Value options: **READ**, **READ_ACP**, **WRITE_ACP**, **FULL_CONTROL**                                          |                       |
+   |                       |                                                                                                                 |                       |
+   |                       | Type: string                                                                                                    |                       |
    +-----------------------+-----------------------------------------------------------------------------------------------------------------+-----------------------+
    | AccessControlList     | Indicates an ACL, which consists of three elements: **Grant**, **Grantee**, and **Permission**.                 | Yes                   |
    |                       |                                                                                                                 |                       |
@@ -127,11 +131,11 @@ Response Headers
 
 The response to the request uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
 
-In addition to the common response headers, the following message headers may also be used. For details, see :ref:`Table 3 <obs_04_0089__table21765641102739>`.
+In addition to the common response headers, the message headers listed in :ref:`Table 3 <obs_04_0089__table21765641102739>` may be used.
 
 .. _obs_04_0089__table21765641102739:
 
-.. table:: **Table 3** Additional response header parameters
+.. table:: **Table 3** Additional response headers
 
    +-----------------------------------+-----------------------------------------------------------+
    | Header                            | Description                                               |
@@ -144,7 +148,7 @@ In addition to the common response headers, the following message headers may al
 Response Elements
 -----------------
 
-This response involves no elements.
+This response contains no elements.
 
 Error Responses
 ---------------

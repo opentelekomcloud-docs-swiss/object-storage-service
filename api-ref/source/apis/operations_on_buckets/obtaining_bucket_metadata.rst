@@ -23,7 +23,7 @@ Request Syntax
 Request Parameters
 ------------------
 
-This request contains no parameter.
+This request contains no parameters.
 
 Request Headers
 ---------------
@@ -67,11 +67,11 @@ Response Headers
 
 The response to the request uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
 
-:ref:`Table 2 <obs_04_0023__table13151171313444>` lists additional response header parameters that are used except for the common response header parameters.
+In addition to the common response headers, the message headers listed in :ref:`Table 2 <obs_04_0023__table13151171313444>` may be used.
 
 .. _obs_04_0023__table13151171313444:
 
-.. table:: **Table 2** Additional response header parameters
+.. table:: **Table 2** Additional response headers
 
    +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Header                            | Description                                                                                                                                                                                        |
@@ -100,7 +100,7 @@ The response to the request uses common headers. For details, see :ref:`Table 1 
    |                                   |                                                                                                                                                                                                    |
    |                                   | Type: string                                                                                                                                                                                       |
    |                                   |                                                                                                                                                                                                    |
-   |                                   | Valid values: **GET**, **PUT**, **HEAD**, **POST**, and **DELETE**.                                                                                                                                |
+   |                                   | Value options: **GET**, **PUT**, **HEAD**, **POST**, **DELETE**                                                                                                                                    |
    +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Access-Control-Expose-Headers     | Value of **ExposeHeader** in the CORS configuration of a server when CORS is configured for buckets.                                                                                               |
    |                                   |                                                                                                                                                                                                    |
@@ -110,17 +110,15 @@ The response to the request uses common headers. For details, see :ref:`Table 1 
 Response Elements
 -----------------
 
-This response involves no elements.
+This response contains no elements.
 
 Error Responses
 ---------------
 
-No special error responses are involved. For details about error responses, see :ref:`Table 2 <obs_04_0115__d0e843>`.
+No special error responses are returned. For details about error responses, see :ref:`Table 2 <obs_04_0115__d0e843>`.
 
-Sample Request 1
-----------------
-
-**No header field for obtaining CORS configuration is carried**.
+Sample Request: Getting CORS Configuration (with No Headers Specified)
+----------------------------------------------------------------------
 
 ::
 
@@ -129,10 +127,10 @@ Sample Request 1
    Host: examplebucket.obs.region.example.com
    Accept: */*
    Date: WED, 01 Jul 2015 02:30:25 GMT
-   Authorization: OBS H4IPJX0TQTHTHEBQQCEC:niCQCuGIZpETKIyx1dttxHZyYlk=
+   Authorization: OBS H4IPJX0TQTHTHEBQQCEC:niCQCuGIZpETKIyx1datxHZyYlk=
 
-Sample Response 1
------------------
+Sample Response: Getting CORS Configuration (with No Headers Specified)
+-----------------------------------------------------------------------
 
 ::
 
@@ -146,10 +144,8 @@ Sample Response 1
    x-obs-version: 3.0
    Content-Length: 0
 
-Sample Request 2
-----------------
-
-**Obtain bucket metadata and CORS configuration information after CORS is configured for the bucket**.
+Sample Request: Getting Bucket Metadata and CORS Configuration
+--------------------------------------------------------------
 
 ::
 
@@ -158,12 +154,12 @@ Sample Request 2
    Host: examplebucket.obs.region.example.com
    Accept: */*
    Date: WED, 01 Jul 2015 02:30:25 GMT
-   Authorization: OBS H4IPJX0TQTHTHEBQQCEC:niCQCuGIZpETKIyx1dttxHZyYlk=
+   Authorization: OBS H4IPJX0TQTHTHEBQQCEC:niCQCuGIZpETKIyx1datxHZyYlk=
    Origin:www.example.com
    Access-Control-Request-Headers:AllowedHeader_1
 
-Sample Response 2
------------------
+Sample Response: Getting Bucket Metadata and CORS Configuration
+---------------------------------------------------------------
 
 ::
 

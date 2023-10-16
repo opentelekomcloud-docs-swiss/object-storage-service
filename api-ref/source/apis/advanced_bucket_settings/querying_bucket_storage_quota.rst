@@ -8,7 +8,7 @@ Querying Bucket Storage Quota
 Functions
 ---------
 
-Only the bucket owner can query information about the bucket storage quota. However, an inactive owner is not allowed to get the bucket quota. The bucket storage quota is measured by byte. **0** indicates that no upper limit is set.
+A bucket owner can query the bucket storage quota, but a bucket owner who is frozen due to arrears cannot. The bucket storage quota is measured by byte. **0** indicates that no upper limit is set.
 
 Request Syntax
 --------------
@@ -23,7 +23,7 @@ Request Syntax
 Request Parameters
 ------------------
 
-This request contains no parameter.
+This request contains no message parameters.
 
 Request Headers
 ---------------
@@ -33,7 +33,7 @@ This request uses common headers. For details, see :ref:`Table 3 <obs_04_0007__t
 Request Elements
 ----------------
 
-This request contains no element.
+This request contains no elements.
 
 Response Syntax
 ---------------

@@ -55,7 +55,7 @@ This request uses elements to specify the list of objects to be deleted in a bat
 
 .. _obs_04_0086__table42836777:
 
-.. table:: **Table 1** Request Elements
+.. table:: **Table 1** Request elements
 
    +-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
    | Element               | Description                                                                                                                                                                                   | Mandatory             |
@@ -81,7 +81,7 @@ This request uses elements to specify the list of objects to be deleted in a bat
    |                       | Type: string                                                                                                                                                                                  |                       |
    +-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
 
-A maximum of 1000 objects can be deleted at a time. If you send a request for deleting more than 1000 objects, OBS returns an error message.
+A maximum of 1,000 objects can be deleted at a time. If you send a request for deleting more than 1,000 objects, OBS returns an error message.
 
 After concurrent tasks are assigned, OBS may encounter an internal error during cyclic deletion of multiple objects. In that case, the metadata still exists when the object index data is deleted, which means data inconsistency.
 
@@ -103,7 +103,7 @@ Response Syntax
    <Error>
        <Key>Key</Key>
        <Code>ErrorCode</Code>
-       <Message>messagee</Message>
+       <Message>Message</Message>
    </Error>
    </DeleteResult>
 
@@ -175,7 +175,7 @@ Error Responses
 
 3. If the request header does not contain Content-MD5, OBS returns **400 Bad Request**.
 
-For other errors, see :ref:`Table 2 <obs_04_0115__d0e843>`.
+Other errors are included in :ref:`Table 2 <obs_04_0115__d0e843>`.
 
 Sample Request
 --------------

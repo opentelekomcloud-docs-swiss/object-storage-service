@@ -25,7 +25,7 @@ Request Syntax
 Request Parameters
 ------------------
 
-This request contains no parameter.
+This request contains no message parameters.
 
 Request Headers
 ---------------
@@ -77,19 +77,19 @@ This response contains elements to detail bucket tag configuration. :ref:`Table 
    +===================================+===================================+
    | Tagging                           | Element of the tag set and tag.   |
    |                                   |                                   |
-   |                                   | Type: element                     |
+   |                                   | Type: container                   |
    |                                   |                                   |
    |                                   | Ancestor: none                    |
    +-----------------------------------+-----------------------------------+
    | TagSet                            | Element of the tag set.           |
    |                                   |                                   |
-   |                                   | Type: element                     |
+   |                                   | Type: container                   |
    |                                   |                                   |
    |                                   | Ancestor: Tagging                 |
    +-----------------------------------+-----------------------------------+
    | Tag                               | Element of the tag information.   |
    |                                   |                                   |
-   |                                   | Type: element                     |
+   |                                   | Type: container                   |
    |                                   |                                   |
    |                                   | Ancestor: TagSet                  |
    +-----------------------------------+-----------------------------------+

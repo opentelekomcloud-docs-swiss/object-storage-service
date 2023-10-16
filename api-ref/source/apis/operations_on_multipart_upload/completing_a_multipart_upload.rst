@@ -2,8 +2,8 @@
 
 .. _obs_04_0102:
 
-Merging Parts into a Complete Object
-====================================
+Completing a Multipart Upload
+=============================
 
 Functions
 ---------
@@ -16,9 +16,14 @@ You can send a request for downloading all or some data of the generated multipa
 
 You can send a request for deleting all parts uploaded in a multipart upload. Deleted data cannot be restored.
 
-The Etag of an object with merged parts is not the real MD5 value of the object. The object ETag is calculated as follows: *MD5(M\ 1\ M\ 2...M\ N)-N*, where *M\ n* is the MD5 value of part *n* (N is the total number of parts). As described in the example below, there are three parts and each part has an MD5. The MD5 values of the three parts are combined and recalculated to obtain a new MD5 value. Then -*N*, as ETag of the combined part, is added to the right of the MD5 value. (*N* indicates the number of parts and is 3 in the example.)
+The merged parts do not use the MD5 value of entire object as the ETag. Their ETag is calculated as follows: *MD5(M\ 1\ M\ 2...M\ N)-N*, where *M\ n* is the MD5 value of part *n* (*N* is the total number of parts). As described in the :ref:`Sample Request <obs_04_0102__section74706439232>`, there are three parts and each part has an MD5 value. The MD5 values of the three parts are recalculated to obtain a new MD5 value. Then *-N* is added to the right of the MD5 value to get the ETag of the combined parts. In this example, *-N* is **-3**.
 
 If the response to an object merge request times out and error 500 or 503 is returned, you can first obtain the object metadata of the multipart upload task. Then, check whether the value of header **x-obs-uploadId** in the response is the same as the ID of this multipart upload task. If they are the same, object parts have been successfully merged on the server and you do not need to try again. For details, see :ref:`Consistency of Concurrent Operations <obs_04_0118>`.
+
+WORM
+----
+
+If a bucket has WORM enabled, the WORM protection will be automatically applied to the object generated after a multipart upload is complete. If you specify WORM headers and a retention expiration date when you initiate a multipart upload, the protection for the assembled object ends on the specified date. If you do not specify WORM headers during the initiation, but have configured the default bucket-level retention policy, this default policy is automatically applied and the protection starts when the multipart upload is complete. After a multipart upload is complete, you can still configure object-level WORM retention policies for the assembled object.
 
 Versioning
 ----------
@@ -121,11 +126,11 @@ Response Headers
 
 The response to the request uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
 
-In addition to the common response headers, the following message headers may also be used. For details, see :ref:`Table 3 <obs_04_0102__table31698209142128>`.
+In addition to the common response headers, the message headers listed in :ref:`Table 3 <obs_04_0102__table31698209142128>` may be used.
 
 .. _obs_04_0102__table31698209142128:
 
-.. table:: **Table 3** Additional response header parameters
+.. table:: **Table 3** Additional response headers
 
    +-----------------------------------+-------------------------------------------------+
    | Header                            | Description                                     |
@@ -147,11 +152,11 @@ This response uses elements to return the result of merging parts. :ref:`Table 4
    +-----------------------------------+------------------------------------------------------------------------------------------------------+
    | Element                           | Description                                                                                          |
    +===================================+======================================================================================================+
-   | Location                          | URL of the object after parts being merged.                                                          |
+   | Location                          | Path of the object after parts have been merged.                                                     |
    |                                   |                                                                                                      |
    |                                   | Type: string                                                                                         |
    +-----------------------------------+------------------------------------------------------------------------------------------------------+
-   | Bucket                            | Bucket in which parts are combined                                                                   |
+   | Bucket                            | Bucket in which parts are merged.                                                                    |
    |                                   |                                                                                                      |
    |                                   | Type: string                                                                                         |
    +-----------------------------------+------------------------------------------------------------------------------------------------------+
@@ -171,7 +176,7 @@ Error Responses
 #. If the message body format is incorrect, OBS returns **400 Bad Request**.
 #. If the part information in the message body is not sorted by part sequence number, OBS returns **400 Bad Request** and the error code is **InvalidPartOrder**.
 #. If the AK or signature is invalid, OBS returns **403 Forbidden** and the error code is **AccessDenied**.
-#. If the requested bucket does not exist, OBS returns **404 Not Found** and the error code is **NoSuchBucket**.
+#. If the requested bucket is not found, OBS returns **404 Not Found** and the error code is **NoSuchBucket**.
 #. If the requested multipart upload does not exist, OBS returns **404 Not Found** and error code **NoSuchUpload**.
 #. If the user is not the initiator of the task, OBS returns **403 Forbidden** and the error code is **AccessDenied**.
 #. If the request part list contains a part that does not exist, OBS returns **400 Bad Request** and the error code is **InvalidPart**.
@@ -180,6 +185,8 @@ Error Responses
 #. If the size of the object is greater than 48.8 TB after parts being merged, OBS returns status code **400 Bad Request**.
 
 Other errors are included in :ref:`Table 2 <obs_04_0115__d0e843>`.
+
+.. _obs_04_0102__section74706439232:
 
 Sample Request
 --------------

@@ -34,17 +34,13 @@ The request parameter specifies the object ACL to be obtained. For details about
 
 .. table:: **Table 1** Request parameters
 
-   +-----------------------+---------------------------------------------------------+-----------------------+
-   | Parameter             | Description                                             | Mandatory             |
-   +=======================+=========================================================+=======================+
-   | acl                   | Indicates that the request is to obtain the object ACL. | Yes                   |
-   |                       |                                                         |                       |
-   |                       | Type: string                                            |                       |
-   +-----------------------+---------------------------------------------------------+-----------------------+
-   | versionId             | Version number of an object.                            | No                    |
-   |                       |                                                         |                       |
-   |                       | Type: string                                            |                       |
-   +-----------------------+---------------------------------------------------------+-----------------------+
+   +-----------------------+------------------------------+-----------------------+
+   | Parameter             | Description                  | Mandatory             |
+   +=======================+==============================+=======================+
+   | versionId             | Version number of an object. | No                    |
+   |                       |                              |                       |
+   |                       | Type: string                 |                       |
+   +-----------------------+------------------------------+-----------------------+
 
 Request Headers
 ---------------
@@ -87,7 +83,7 @@ Response Headers
 
 The response to the request uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
 
-In addition to the common response headers, the following message headers may also be used. For details, see :ref:`Table 2 <obs_04_0090__table995015721520>`.
+In addition to the common response headers, the message headers listed in :ref:`Table 2 <obs_04_0090__table995015721520>` may be used.
 
 .. _obs_04_0090__table995015721520:
 
@@ -100,7 +96,7 @@ In addition to the common response headers, the following message headers may al
    |                                   |                                   |
    |                                   | Valid value: string               |
    |                                   |                                   |
-   |                                   | There is no default value.        |
+   |                                   | Default value: none               |
    +-----------------------------------+-----------------------------------+
 
 Response Elements

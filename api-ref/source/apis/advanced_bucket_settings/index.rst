@@ -24,11 +24,13 @@ Advanced Bucket Settings
 -  :ref:`Deleting Tags <obs_04_0051>`
 -  :ref:`Configuring Bucket Storage Quota <obs_04_0052>`
 -  :ref:`Querying Bucket Storage Quota <obs_04_0053>`
--  :ref:`Querying Information About Used Space in a Bucket <obs_04_0054>`
+-  :ref:`Obtaining Storage Information of a Bucket <obs_04_0054>`
 -  :ref:`Configuring Bucket Inventories <obs_04_0055>`
 -  :ref:`Obtaining Bucket Inventories <obs_04_0056>`
 -  :ref:`Listing Bucket Inventories <obs_04_0057>`
 -  :ref:`Deleting Bucket Inventories <obs_04_0058>`
+-  :ref:`Configuring a Default WORM Policy for a Bucket <obs_04_0167>`
+-  :ref:`Obtaining the Default WORM Policy of a Bucket <obs_04_0168>`
 
 .. toctree::
    :maxdepth: 1
@@ -53,8 +55,10 @@ Advanced Bucket Settings
    deleting_tags
    configuring_bucket_storage_quota
    querying_bucket_storage_quota
-   querying_information_about_used_space_in_a_bucket
+   obtaining_storage_information_of_a_bucket
    configuring_bucket_inventories
    obtaining_bucket_inventories
    listing_bucket_inventories
    deleting_bucket_inventories
+   configuring_a_default_worm_policy_for_a_bucket
+   obtaining_the_default_worm_policy_of_a_bucket

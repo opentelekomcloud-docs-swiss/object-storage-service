@@ -73,7 +73,7 @@ This response contains elements of information about a bucket's region. :ref:`Ta
 Error Responses
 ---------------
 
-No special error responses are involved. For details about error responses, see :ref:`Table 2 <obs_04_0115__d0e843>`.
+No special error responses are returned. For details about error responses, see :ref:`Table 2 <obs_04_0115__d0e843>`.
 
 Sample Request
 --------------

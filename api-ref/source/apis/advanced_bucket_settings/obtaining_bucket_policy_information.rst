@@ -30,7 +30,7 @@ Request Syntax
 Request Parameters
 ------------------
 
-This request contains no parameter.
+This request contains no message parameters.
 
 Request Headers
 ---------------
@@ -60,7 +60,7 @@ The response to the request uses common headers. For details, see :ref:`Table 1 
 Response Elements
 -----------------
 
-The response body is a JSON string containing bucket policy information.
+The response body is a JSON string that contains the bucket policy information.
 
 Error Responses
 ---------------

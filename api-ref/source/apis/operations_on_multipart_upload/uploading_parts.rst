@@ -2,8 +2,8 @@
 
 .. _obs_04_0099:
 
-Multipart Upload
-================
+Uploading Parts
+===============
 
 Functions
 ---------
@@ -78,7 +78,7 @@ The response to the request uses common headers. For details, see :ref:`Table 1 
 Response Elements
 -----------------
 
-This response involves no elements.
+This response contains no elements.
 
 Error Responses
 ---------------
@@ -86,7 +86,7 @@ Error Responses
 #. If a part number is not within the range from 1 to 10000, OBS returns **400 Bad Request**.
 #. If a part size has exceeded 5 GB, the error code **400 Bad Request** is returned.
 #. If the AK or signature is invalid, OBS returns **403 Forbidden** and the error code is **AccessDenied**.
-#. Check whether the bucket exists. If the bucket does not exist, OBS returns **404 Not Found** and the error code is **NoSuchBucket**.
+#. Check whether the bucket exists. If the bucket is not found, OBS returns **404 Not Found** and the error code is **NoSuchBucket**.
 #. View the bucket ACL to check whether the user has the read permission for the requested bucket. If the user does not have the read permission, OBS returns **403 AccessDenied**.
 #. Check whether the multipart upload task exists. If the task does not exist, OBS returns **404 Not Found** and the error code is **NoSuchUpload**.
 #. Check whether the request user is the initiator of the multipart upload task. If not, OBS returns **403 Forbidden** and the error code is **AccessDenied**.

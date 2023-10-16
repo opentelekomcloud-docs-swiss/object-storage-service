@@ -44,53 +44,53 @@ In a **GET** request, you can override values for a set of message headers using
 
 .. table:: **Table 1** Request parameters
 
-   +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-----------------------+
-   | Parameter                    | Description                                                                                                                       | Mandatory             |
-   +==============================+===================================================================================================================================+=======================+
-   | response-content-type        | Rewrites the **Content-Type** header in the response.                                                                             | No                    |
-   |                              |                                                                                                                                   |                       |
-   |                              | Type: string                                                                                                                      |                       |
-   +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-----------------------+
-   | response-content-language    | Rewrites the **Content-Language** header in the response.                                                                         | No                    |
-   |                              |                                                                                                                                   |                       |
-   |                              | Type: string                                                                                                                      |                       |
-   +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-----------------------+
-   | response-expires             | Rewrites the **Expires** header in the response.                                                                                  | No                    |
-   |                              |                                                                                                                                   |                       |
-   |                              | Type: string                                                                                                                      |                       |
-   +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-----------------------+
-   | response-cache-control       | Rewrites the **Cache-Control** header in the response.                                                                            | No                    |
-   |                              |                                                                                                                                   |                       |
-   |                              | Type: string                                                                                                                      |                       |
-   +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-----------------------+
-   | response-content-disposition | Rewrites the **Content-Disposition** header in the response.                                                                      | No                    |
-   |                              |                                                                                                                                   |                       |
-   |                              | Type: string                                                                                                                      |                       |
-   |                              |                                                                                                                                   |                       |
-   |                              | Example:                                                                                                                          |                       |
-   |                              |                                                                                                                                   |                       |
-   |                              | response-content-disposition=attachment; filename*=utf-8''name1                                                                   |                       |
-   |                              |                                                                                                                                   |                       |
-   |                              | In this example, the downloaded object is renamed **name1**. If the new name contains Chinese characters, it must be URL-encoded. |                       |
-   +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-----------------------+
-   | response-content-encoding    | Rewrites the **Content-Encoding** header in the response.                                                                         | No                    |
-   |                              |                                                                                                                                   |                       |
-   |                              | Type: string                                                                                                                      |                       |
-   +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-----------------------+
-   | versionId                    | Indicates the version ID of the object whose content is obtained.                                                                 | No                    |
-   |                              |                                                                                                                                   |                       |
-   |                              | Type: string                                                                                                                      |                       |
-   +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-----------------------+
-   | attname                      | Rewrites the **Content-Disposition** header in the response.                                                                      | No                    |
-   |                              |                                                                                                                                   |                       |
-   |                              | Type: string                                                                                                                      |                       |
-   |                              |                                                                                                                                   |                       |
-   |                              | Example:                                                                                                                          |                       |
-   |                              |                                                                                                                                   |                       |
-   |                              | attname=name1                                                                                                                     |                       |
-   |                              |                                                                                                                                   |                       |
-   |                              | Rename the downloaded object as **name1**.                                                                                        |                       |
-   +------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+   +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | Parameter                    | Description                                                                                                                          | Mandatory             |
+   +==============================+======================================================================================================================================+=======================+
+   | response-content-type        | Rewrites the **Content-Type** header in the response.                                                                                | No                    |
+   |                              |                                                                                                                                      |                       |
+   |                              | Type: string                                                                                                                         |                       |
+   +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | response-content-language    | Rewrites the **Content-Language** header in the response.                                                                            | No                    |
+   |                              |                                                                                                                                      |                       |
+   |                              | Type: string                                                                                                                         |                       |
+   +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | response-expires             | Rewrites the **Expires** header in the response.                                                                                     | No                    |
+   |                              |                                                                                                                                      |                       |
+   |                              | Type: string                                                                                                                         |                       |
+   +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | response-cache-control       | Rewrites the **Cache-Control** header in the response.                                                                               | No                    |
+   |                              |                                                                                                                                      |                       |
+   |                              | Type: string                                                                                                                         |                       |
+   +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | response-content-disposition | Rewrites the **Content-Disposition** header in the response.                                                                         | No                    |
+   |                              |                                                                                                                                      |                       |
+   |                              | Type: string                                                                                                                         |                       |
+   |                              |                                                                                                                                      |                       |
+   |                              | Example:                                                                                                                             |                       |
+   |                              |                                                                                                                                      |                       |
+   |                              | response-content-disposition=attachment; filename*=utf-8''name1                                                                      |                       |
+   |                              |                                                                                                                                      |                       |
+   |                              | In this example, the downloaded object is renamed **name1**. If the new name contains full-width characters, it must be URL-encoded. |                       |
+   +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | response-content-encoding    | Rewrites the **Content-Encoding** header in the response.                                                                            | No                    |
+   |                              |                                                                                                                                      |                       |
+   |                              | Type: string                                                                                                                         |                       |
+   +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | versionId                    | Indicates the version ID of the object whose content is obtained.                                                                    | No                    |
+   |                              |                                                                                                                                      |                       |
+   |                              | Type: string                                                                                                                         |                       |
+   +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | attname                      | Rewrites the **Content-Disposition** header in the response.                                                                         | No                    |
+   |                              |                                                                                                                                      |                       |
+   |                              | Type: string                                                                                                                         |                       |
+   |                              |                                                                                                                                      |                       |
+   |                              | Example:                                                                                                                             |                       |
+   |                              |                                                                                                                                      |                       |
+   |                              | attname=name1                                                                                                                        |                       |
+   |                              |                                                                                                                                      |                       |
+   |                              | Rename the downloaded object as **name1**.                                                                                           |                       |
+   +------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
 
 Request Headers
 ---------------
@@ -132,13 +132,13 @@ This request uses common headers. In addition, you can add additional headers to
    |                       |                                                                                                                                                                                                                                                              |                       |
    |                       | Type: string                                                                                                                                                                                                                                                 |                       |
    |                       |                                                                                                                                                                                                                                                              |                       |
-   |                       | (Example: 0f64741bf7cb1089e988e4585d0d3434)                                                                                                                                                                                                                  |                       |
+   |                       | ETag example: **0f64741bf7cb1089e988e4585d0d3434**                                                                                                                                                                                                           |                       |
    +-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
    | If-None-Match         | Returns the object only if its ETag is different from the one specified by this header. Otherwise, **304 Not Modified** is returned.                                                                                                                         | No                    |
    |                       |                                                                                                                                                                                                                                                              |                       |
    |                       | Type: string                                                                                                                                                                                                                                                 |                       |
    |                       |                                                                                                                                                                                                                                                              |                       |
-   |                       | (Example: 0f64741bf7cb1089e988e4585d0d3434)                                                                                                                                                                                                                  |                       |
+   |                       | ETag example: **0f64741bf7cb1089e988e4585d0d3434**                                                                                                                                                                                                           |                       |
    +-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
 
 Request Elements
@@ -165,11 +165,11 @@ Response Headers
 
 The response to the request uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
 
-In addition to the common response headers, the following message headers may also be used. For details, see :ref:`Table 3 <obs_04_0083__table40465940>`.
+In addition to the common response headers, the message headers listed in :ref:`Table 3 <obs_04_0083__table40465940>` may be used.
 
 .. _obs_04_0083__table40465940:
 
-.. table:: **Table 3** Additional response header parameters
+.. table:: **Table 3** Additional response headers
 
    +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Header                            | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
@@ -186,7 +186,7 @@ In addition to the common response headers, the following message headers may al
    |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
    |                                   | Type: boolean                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
    |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-   |                                   | Valid values: **true** or **false**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+   |                                   | Value options: **true**, **false**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
    |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
    |                                   | The default value is **false**.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
    +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -194,7 +194,7 @@ In addition to the common response headers, the following message headers may al
    |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
    |                                   | Valid value: character string                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
    |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-   |                                   | There is no default value.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+   |                                   | Default value: none                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
    +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | x-obs-object-type                 | If the object is not a normal one, this header field is returned. The value can be **Appendable**.                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
    |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
@@ -215,10 +215,8 @@ Error Responses
 
 No special error responses are returned. For details about error responses, see :ref:`Table 2 <obs_04_0115__d0e843>`.
 
-Sample Request 1
-----------------
-
-**Download the entire object.**
+Sample Request: Downloading an Object
+-------------------------------------
 
 .. code-block:: text
 
@@ -229,8 +227,8 @@ Sample Request 1
    Date: WED, 01 Jul 2015 04:24:33 GMT
    Authorization: OBS H4IPJX0TQTHTHEBQQCEC:NxtSMS0jaVxlLnxlO9awaMTn47s=
 
-Sample Response 1
------------------
+Sample Response: Downloading an Object
+--------------------------------------
 
 ::
 
@@ -247,8 +245,8 @@ Sample Response 1
 
    [4572 Bytes object content]
 
-Sample Request 2
-----------------
+Sample Request: Downloading a Specified Range of an Object
+----------------------------------------------------------
 
 **Download the specified range of an object (download a range of an object)**.
 
@@ -274,8 +272,8 @@ Sample Request 2
    Range:bytes=20-30,40-50
    Authorization: OBS H4IPJX0TQTHTHEBQQCEC:ZwM7Vk2d7sD9o8zRsRKehgKQDkk=
 
-Sample Response 2
------------------
+Sample Response: Downloading a Specified Range of an Object
+-----------------------------------------------------------
 
 **Download the specified range of an object (download a range of an object)**.
 
@@ -289,7 +287,7 @@ Sample Response 2
    Last-Modified: Mon, 14 Sep 2020 01:16:20 GMT
    Content-Range: bytes 20-30/4583
    Content-Type: binary/octet-stream
-   x-obs-id-2: 32AAAQAAEAABAAAQAAEAABAAAQAAEAABCSn2JHu4okx9NBRNZAvBGaws3lt3g31g
+   x-obs-id-2: 32AAAQAAEAABAAAQAAEAABAAAQAAEAABCSn2JHu4okx9NBRNZAvBGawa3lt3g31g
    Date: Mon, 14 Sep 2020 09:59:04 GMT
    Content-Length: 11
 
@@ -320,8 +318,8 @@ Sample Response 2
    [ 11 Bytes object content]
    --35bcf444-e65f-4c76-9430-7e4a68dd3d26
 
-Sample Request 4
-----------------
+Sample Request: Checking the ETag Value of an Object
+----------------------------------------------------
 
 **Download an object if its Etag value matches**.
 
@@ -335,8 +333,8 @@ Sample Request 4
    If-Match: 682e760adb130c60c120da3e333a8b09
    Authorization: OBS H4IPJX0TQTHTHEBQQCEC:NxtSMS0jaVxlLnxlO9awaMTn47s=
 
-Sample Response 4-1 (Non-Matched Etag)
---------------------------------------
+Sample Response: Checking the ETag Value of an Object (ETag Mismatch)
+---------------------------------------------------------------------
 
 If the Etag value of the stored object is not **682e760adb130c60c120da3e333a8b09**, the system displays a message indicating that the download fails.
 
@@ -353,13 +351,13 @@ If the Etag value of the stored object is not **682e760adb130c60c120da3e333a8b09
    <Error>
      <Code>PreconditionFailed</Code>
      <Message>At least one of the pre-conditions you specified did not hold</Message>
-     <RequestId>5DEB00000164A214CEC54C30A3A769E3</RequestId>
-     <HostId>Hw0ZGaSKVm+uLOrCXXtx4Qn1aLzvoeblctVXRAqA7pty10mzUUW/yOzFue04lBqu</HostId>
+     <RequestId>8DF400000163D3F2A89604C49ABEE55E</RequestId>
+     <HostId>ha0ZGaSKVm+uLOrCXXtx4Qn1aLzvoeblctVXRAqA7pty10mzUUW/yOzFue04lBqu</HostId>
      <Condition>If-Match</Condition>
    </Error>
 
-Sample Response 4-2 (Successful Download)
------------------------------------------
+Sample Response: Checking the ETag Value of an Object (ETag Matched)
+--------------------------------------------------------------------
 
 If the Etag value of the stored object is **682e760adb130c60c120da3e333a8b09**, the download is successful.
 
@@ -378,21 +376,19 @@ If the Etag value of the stored object is **682e760adb130c60c120da3e333a8b09**, 
 
    [ 8 Bytes object content]
 
-Sample Request 5
-----------------
-
-**Carry the signature in the URL when downloading an object**.
+Sample Request: Downloading an Object Using a Signed URL
+--------------------------------------------------------
 
 .. code-block:: text
 
-   GET /object02?AccessKeyId=H4IPJX0TQTHTHEBQQCEC&Expires=1532688887&Signature=EQmDuOhWLUrzrzRNZxwS72CXeXM%3D HTTP/1.1
+   GET /object02?AccessKeyId=H4IPJX0TQTHTHEBQQCEC&Expires=1532688887&Signature=EQmDuOhaLUrzrzRNZxwS72CXeXM%3D HTTP/1.1
    User-Agent: curl/7.29.0
    Host: examplebucket.obs.region.example.com
    Accept: */*
    Date: Fri, 27 Jul 2018 10:52:31 GMT
 
-Sample Response 5
------------------
+Sample Response: Downloading an Object Using a Signed URL
+---------------------------------------------------------
 
 ::
 
@@ -408,8 +404,8 @@ Sample Response 5
 
    [ 8 Bytes object content]
 
-Sample Request 6
-----------------
+Sample Request: Downloading an Object and Renaming It (with **response-content-disposition** Used)
+--------------------------------------------------------------------------------------------------
 
 **Use the** **response-content-disposition** **parameter to download and rename an object.**
 
@@ -422,8 +418,8 @@ Sample Request 6
    Date: WED, 01 Jul 2015 04:24:33 GMT
    Authorization: OBS H4IPJX0TQTHTHEBQQCEC:NxtSMS0jaVxlLnxlO9awaMTn47s=
 
-Sample Response 6
------------------
+Sample Response: Downloading an Object and Renaming It (with **response-content-disposition** Used)
+---------------------------------------------------------------------------------------------------
 
 ::
 
@@ -440,8 +436,8 @@ Sample Response 6
 
    [ 8 Bytes object content]
 
-Sample Request 7
-----------------
+Sample Request: Downloading an Object and Renaming It (with **attname** Used)
+-----------------------------------------------------------------------------
 
 **Use the** **attname** **parameter to download and rename an object.**
 
@@ -454,8 +450,8 @@ Sample Request 7
    Date: WED, 01 Jul 2015 04:24:33 GMT
    Authorization: OBS H4IPJX0TQTHTHEBQQCEC:NxtSMS0jaVxlLnxlO9awaMTn47s=
 
-Sample Response 7
------------------
+Sample Response: Downloading an Object and Renaming It (with **attname** Used)
+------------------------------------------------------------------------------
 
 ::
 

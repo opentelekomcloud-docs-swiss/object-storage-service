@@ -63,13 +63,13 @@ The response to the request uses common headers. For details, see :ref:`Table 1 
 Response Elements
 -----------------
 
-This response involves no elements.
+This response contains no elements.
 
 Error Responses
 ---------------
 
 #. If the AK or signature is invalid, OBS returns **403 Forbidden** and the error code is **AccessDenied**.
-#. If the requested bucket does not exist, OBS returns **404 Not Found** and the error code is **NoSuchBucket**.
+#. If the requested bucket is not found, OBS returns **404 Not Found** and the error code is **NoSuchBucket**.
 #. If you are neither the initiator of a multipart upload nor the bucket owner, OBS returns **403 Forbidden**.
 #. If the operation is successful, OBS returns **204 No Content** to the user.
 

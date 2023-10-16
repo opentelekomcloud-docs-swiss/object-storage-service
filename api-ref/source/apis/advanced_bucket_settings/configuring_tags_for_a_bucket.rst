@@ -42,7 +42,7 @@ Request Syntax
 Request Parameters
 ------------------
 
-This request contains no parameter.
+This request contains no message parameters.
 
 Request Headers
 ---------------
@@ -60,7 +60,7 @@ Request Headers
    |                       |                                                                         |                       |
    |                       | Type: string                                                            |                       |
    |                       |                                                                         |                       |
-   |                       | Example: n58IG6hfM7vqI4K0vnWpog==                                       |                       |
+   |                       | Example: **n58IG6hfM7vqI4K0vnWpog==**                                   |                       |
    +-----------------------+-------------------------------------------------------------------------+-----------------------+
 
 Request Elements
@@ -72,39 +72,39 @@ In this request, you must configure bucket tags in the request body. The tag con
 
 .. table:: **Table 2** Bucket tag configuration elements
 
-   +-----------------------+--------------------------------+-----------------------+
-   | Header                | Description                    | Mandatory             |
-   +=======================+================================+=======================+
-   | Tagging               | Element of the tag set and tag | Yes                   |
-   |                       |                                |                       |
-   |                       | Type: element                  |                       |
-   |                       |                                |                       |
-   |                       | Ancestor: none                 |                       |
-   +-----------------------+--------------------------------+-----------------------+
-   | TagSet                | Element of the tag set         | Yes                   |
-   |                       |                                |                       |
-   |                       | Type: element                  |                       |
-   |                       |                                |                       |
-   |                       | Ancestor: Tagging              |                       |
-   +-----------------------+--------------------------------+-----------------------+
-   | Tag                   | Element of the tag information | Yes                   |
-   |                       |                                |                       |
-   |                       | Type: element                  |                       |
-   |                       |                                |                       |
-   |                       | Ancestor: TagSet               |                       |
-   +-----------------------+--------------------------------+-----------------------+
-   | Key                   | Tag name                       | Yes                   |
-   |                       |                                |                       |
-   |                       | Type: string                   |                       |
-   |                       |                                |                       |
-   |                       | Ancestor: Tag                  |                       |
-   +-----------------------+--------------------------------+-----------------------+
-   | Value                 | Tag value                      | Yes                   |
-   |                       |                                |                       |
-   |                       | Type: string                   |                       |
-   |                       |                                |                       |
-   |                       | Ancestor: Tag                  |                       |
-   +-----------------------+--------------------------------+-----------------------+
+   +-----------------------+---------------------------------+-----------------------+
+   | Header                | Description                     | Mandatory             |
+   +=======================+=================================+=======================+
+   | Tagging               | Root element for TagSet and Tag | Yes                   |
+   |                       |                                 |                       |
+   |                       | Type: container                 |                       |
+   |                       |                                 |                       |
+   |                       | Ancestor: none                  |                       |
+   +-----------------------+---------------------------------+-----------------------+
+   | TagSet                | Element of the tag set          | Yes                   |
+   |                       |                                 |                       |
+   |                       | Type: container                 |                       |
+   |                       |                                 |                       |
+   |                       | Ancestor: Tagging               |                       |
+   +-----------------------+---------------------------------+-----------------------+
+   | Tag                   | Information element of Tag      | Yes                   |
+   |                       |                                 |                       |
+   |                       | Type: container                 |                       |
+   |                       |                                 |                       |
+   |                       | Ancestor: TagSet                |                       |
+   +-----------------------+---------------------------------+-----------------------+
+   | Key                   | Tag name                        | Yes                   |
+   |                       |                                 |                       |
+   |                       | Type: string                    |                       |
+   |                       |                                 |                       |
+   |                       | Ancestor: Tag                   |                       |
+   +-----------------------+---------------------------------+-----------------------+
+   | Value                 | Tag value                       | Yes                   |
+   |                       |                                 |                       |
+   |                       | Type: string                    |                       |
+   |                       |                                 |                       |
+   |                       | Ancestor: Tag                   |                       |
+   +-----------------------+---------------------------------+-----------------------+
 
 Response Syntax
 ---------------
@@ -125,12 +125,12 @@ The response to the request uses common headers. For details, see :ref:`Table 1 
 Response Elements
 -----------------
 
-This response involves no elements.
+This response contains no elements.
 
 Error Responses
 ---------------
 
-In addition common error codes, this API also returns other error codes. The following table lists common errors and possible causes. For details, see :ref:`Table 3 <obs_04_0049__table12876123320500>`.
+In addition to common error codes, this API also returns other error codes. The following table lists common errors and possible causes. For details, see :ref:`Table 3 <obs_04_0049__table12876123320500>`.
 
 .. _obs_04_0049__table12876123320500:
 

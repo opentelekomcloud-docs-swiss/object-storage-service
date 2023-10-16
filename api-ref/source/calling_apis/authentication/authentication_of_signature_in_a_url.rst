@@ -72,44 +72,44 @@ The StringToSign is constructed according to the following rules. :ref:`Table 2 
 
 .. table:: **Table 2** Parameters required for constructing a StringToSign
 
-   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Parameter                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-   +===================================+====================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+
-   | HTTP-Verb                         | Indicates an HTTP request method supported by the OBS REST API. The value can be an HTTP verb such as **PUT**, **GET**, or **DELETE**.                                                                                                                                                                                                                                                                                                                                                                                             |
-   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Content-MD5                       | Base64-encoded 128-bit MD5 digest of the message according to RFC 1864. This parameter can be empty.                                                                                                                                                                                                                                                                                                                                                                                                                               |
-   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Content-Type                      | Specifies the message type, for example, **text/plain**.                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-   |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-   |                                   | If a request does not contain this header field, this parameter is deemed as an empty string.                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Expires                           | Expiration time of the temporary authorization, that is, the value of parameter **Expires** in the request message: **ExpiresValue**.                                                                                                                                                                                                                                                                                                                                                                                              |
-   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | CanonicalizedHeaders              | OBS request header field in an HTTP request header, referring to header fields started with **x-obs-**, for example, **x-obs-date**, **x-obs-acl**, and **x-obs-meta-\***.                                                                                                                                                                                                                                                                                                                                                         |
-   |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-   |                                   | #. All characters of keywords in the header field must be converted to lower-case letters. If a request contains multiple header fields, these fields should be organized by keywords in the alphabetical order from a to z.                                                                                                                                                                                                                                                                                                       |
-   |                                   | #. If multiple header fields in a request have the same prefix, combine the header fields into one. For example, **x-obs-meta-name:name1** and **x-obs-meta-name:name2** should be reorganized into **x-obs-meta-name:name1,name2**. Use comma to separate the values.                                                                                                                                                                                                                                                             |
-   |                                   | #. Keywords in the request header field cannot contain non-ASCII or unrecognizable characters, which are also not advisable for values in the request header field. If the two types of characters are necessary, they should be encoded and decoded on the client side. Either URL encoding or Base64 encoding is acceptable, but the server does not perform decoding.                                                                                                                                                           |
-   |                                   | #. Delete meaningless spaces and tabs in a header field. For example, **x-obs-meta-name: name** (with a meaningless space in the front of **name**) must be changed to **x-obs-meta-name:name**.                                                                                                                                                                                                                                                                                                                                   |
-   |                                   | #. Each header field occupies a separate line.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | CanonicalizedResource             | Indicates the OBS resource specified by an HTTP request. This parameter is constructed as follows:                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-   |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-   |                                   | <Bucket name + Object name> + [Subresource 1] + [Subresource 2] + ...                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-   |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-   |                                   | #. Bucket name and object name, for example, **/bucket/object**. If no object name is specified, for example, **/bucket/**, the entire bucket is listed. If no bucket name is specified either, the value of this field is **/**.                                                                                                                                                                                                                                                                                                  |
-   |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-   |                                   | #. If a subresource (such as **?acl** and **?logging**) exists, the subresource must be added.                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-   |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-   |                                   |    OBS supports a variety of sub-resources, including acl, attname, cors, delete, deletebucket, inventory, length, lifecycle, location, logging, metadata, modify, name, notification, partNumber, policy, position, quota, replication, response-cache-control, response-content-disposition, response-content-encoding, response-content-language, response-content-type, response-expires, storagePolicy, storageinfo, tagging, torrent, uploadId, uploads, versionId, versioning, versions, website, and x-obs-security-token. |
-   |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-   |                                   | #. If there are multiple subresources, sort them in the alphabetical order from a to z, and use **&** to combine the subresources.                                                                                                                                                                                                                                                                                                                                                                                                 |
-   |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-   |                                   | .. note::                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-   |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-   |                                   |    -  A subresource is unique. Do not add subresources with the same keyword (for example, **key=value1&key=value2**) in the same request URL. In this case, signature is computed only based on the first subresource, and only the value of the first subresource takes effect on the actual service.                                                                                                                                                                                                                            |
-   |                                   |    -  Using the **GetObject** API as an example, assume there is a bucket named **bucket-test** and an object named **object-test** in the bucket, and the object version is **xxx**. When obtaining the object, you need to rewrite Content-Type to **text/plain**. Then, the **CanonicalizedResource** calculated by the signature is **/bucket-test/object-test?response-content-type=text/plain&versionId=xxx**.                                                                                                               |
-   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Parameter                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+   +===================================+============================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+
+   | HTTP-Verb                         | Indicates an HTTP request method supported by the OBS REST API. The value can be an HTTP verb such as **PUT**, **GET**, or **DELETE**.                                                                                                                                                                                                                                                                                                                                                                                                                     |
+   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Content-MD5                       | Base64-encoded 128-bit MD5 digest of the message according to RFC 1864. This parameter can be empty.                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Content-Type                      | Specifies the message type, for example, **text/plain**.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+   |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+   |                                   | If a request does not contain this header field, this parameter is deemed as an empty string.                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Expires                           | Expiration time of the temporary authorization, that is, the value of parameter **Expires** in the request message: **ExpiresValue**.                                                                                                                                                                                                                                                                                                                                                                                                                      |
+   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | CanonicalizedHeaders              | OBS request header field in an HTTP request header, referring to header fields started with **x-obs-**, for example, **x-obs-date**, **x-obs-acl**, and **x-obs-meta-\***.                                                                                                                                                                                                                                                                                                                                                                                 |
+   |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+   |                                   | #. All characters of keywords in the header field must be converted to lower-case letters. If a request contains multiple header fields, these fields should be organized by keywords in the alphabetical order from a to z.                                                                                                                                                                                                                                                                                                                               |
+   |                                   | #. If multiple header fields in a request have the same prefix, combine the header fields into one. For example, **x-obs-meta-name:name1** and **x-obs-meta-name:name2** should be reorganized into **x-obs-meta-name:name1,name2**. Use comma to separate the values.                                                                                                                                                                                                                                                                                     |
+   |                                   | #. Keywords in the request header field cannot contain non-ASCII or unrecognizable characters, which are also not advisable for values in the request header field. If the two types of characters are necessary, they should be encoded and decoded on the client side. Either URL encoding or Base64 encoding is acceptable, but the server does not perform decoding.                                                                                                                                                                                   |
+   |                                   | #. Delete meaningless spaces and tabs in a header field. For example, **x-obs-meta-name: name** (with a meaningless space in the front of **name**) must be changed to **x-obs-meta-name:name**.                                                                                                                                                                                                                                                                                                                                                           |
+   |                                   | #. Each header field occupies a separate line.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | CanonicalizedResource             | Indicates the OBS resource specified by an HTTP request. This parameter is constructed as follows:                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+   |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+   |                                   | <Bucket name + Object name> + [Subresource 1] + [Subresource 2] + ...                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+   |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+   |                                   | #. Bucket name and object name, for example, **/bucket/object**. If no object name is specified, for example, **/bucket/**, the entire bucket is listed. If no bucket name is specified either, the value of this field is **/**.                                                                                                                                                                                                                                                                                                                          |
+   |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+   |                                   | #. If a subresource (such as **?acl** and **?logging**) exists, the subresource must be added.                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+   |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+   |                                   |    OBS supports a variety of sub-resources, including acl, attname, cors, delete, deletebucket, inventory, length, lifecycle, location, logging, metadata, modify, name, notification, partNumber, policy, position, quota, replication, response-cache-control, response-content-disposition, response-content-encoding, response-content-language, response-content-type, response-expires, storagePolicy, storageinfo, tagging, torrent, uploadId, uploads, versionId, versioning, versions, website, object-lock, retention, and x-obs-security-token. |
+   |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+   |                                   | #. If there are multiple subresources, sort them in the alphabetical order from a to z, and use **&** to combine the subresources.                                                                                                                                                                                                                                                                                                                                                                                                                         |
+   |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+   |                                   | .. note::                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+   |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+   |                                   |    -  A subresource is unique. Do not add subresources with the same keyword (for example, **key=value1&key=value2**) in the same request URL. In this case, signature is computed only based on the first subresource, and only the value of the first subresource takes effect on the actual service.                                                                                                                                                                                                                                                    |
+   |                                   |    -  Using the **GetObject** API as an example, assume there is a bucket named **bucket-test** and an object named **object-test** in the bucket, and the object version is **xxx**. When obtaining the object, you need to rewrite Content-Type to **text/plain**. Then, the **CanonicalizedResource** calculated by the signature is **/bucket-test/object-test?response-content-type=text/plain&versionId=xxx**.                                                                                                                                       |
+   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 The signature is generated as follows based on the StringToSign and SK. The hash-based message authentication code algorithm (HMAC algorithm) is used to generate the signature.
 
@@ -194,12 +194,10 @@ Signature Algorithm in Java
    import java.util.Locale;
    import java.util.Map;
    import java.util.TreeMap;
+   import java.util.regex.Pattern;
 
    import javax.crypto.Mac;
    import javax.crypto.spec.SecretKeySpec;
-
-   import org.omg.CosNaming.IstringHelper;
-
 
    public class SignDemo {
 
@@ -210,35 +208,68 @@ Signature Algorithm in Java
        private static final String DEFAULT_ENCODING = "UTF-8";
 
        private static final List<String> SUB_RESOURCES = Collections.unmodifiableList(Arrays.asList(
-               "acl", "attname", "cors",  "delete",
+               "CDNNotifyConfiguration", "acl", "attname",  "cors", "delete",
                "deletebucket", "inventory", "length", "lifecycle", "location", "logging",
-               "metadata", "modify", "name", "notification", "partNumber", "policy", "position", "quota",
-               "replication", "response-cache-control", "response-content-disposition",
-               "response-content-encoding", "response-content-language", "response-content-type", "response-expires",
-               "storagePolicy", "storageinfo", "tagging", "torrent",
+               "metadata", "mirrorBackToSource", "modify", "name", "notification", "obscompresspolicy",
+               "partNumber", "policy", "position", "quota","replication", "response-cache-control",
+               "response-content-disposition","response-content-encoding", "response-content-language", "response-content-type",
+               "response-expires","storagePolicy", "storageinfo", "tagging", "torrent", "truncate",
                "uploadId", "uploads", "versionId", "versioning", "versions", "website",
-                "x-obs-security-token"));
+               "x-obs-security-token", "object-lock", "retention"));
 
        private String ak;
 
        private String sk;
 
-        public String urlEncode(String input) throws UnsupportedEncodingException
-       {
-           return URLEncoder.encode(input, DEFAULT_ENCODING)
-           .replaceAll("%7E", "~") //for browser
-           .replaceAll("%2F", "/");
+       private boolean isBucketNameValid(String bucketName) {
+           if (bucketName == null || bucketName.length() > 63 || bucketName.length() < 3) {
+               return false;
+           }
+
+           if (!Pattern.matches("^[a-z0-9][a-z0-9.-]+$", bucketName)) {
+               return false;
+           }
+
+           if (Pattern.matches("(\\d{1,3}\\.){3}\\d{1,3}", bucketName)) {
+               return false;
+           }
+
+           String[] fragments = bucketName.split("\\.");
+           for (int i = 0; i < fragments.length; i++) {
+               if (Pattern.matches("^-.*", fragments[i]) || Pattern.matches(".*-$", fragments[i])
+                       || Pattern.matches("^$", fragments[i])) {
+                   return false;
+               }
+           }
+
+           return true;
        }
 
-       private String join(List<?> items, String delimiter)
-       {
+       public String encodeUrlString(String path) throws UnsupportedEncodingException {
+           return URLEncoder.encode(path, DEFAULT_ENCODING)
+                   .replaceAll("\\+", "%20")
+                   .replaceAll("\\*", "%2A")
+                   .replaceAll("%7E", "~");
+       }
+
+       public String encodeObjectName(String objectName) throws UnsupportedEncodingException {
+           StringBuilder result = new StringBuilder();
+           String[] tokens = objectName.split("/");
+           for (int i = 0; i < tokens.length; i++) {
+               result.append(this.encodeUrlString(tokens[i]));
+               if (i < tokens.length - 1) {
+                   result.append("/");
+               }
+           }
+           return result.toString();
+       }
+
+       private String join(List<?> items, String delimiter) {
            StringBuilder sb = new StringBuilder();
-           for (int i = 0; i < items.size(); i++)
-           {
-       String item = items.get(i).toString();
+           for (int i = 0; i < items.size(); i++) {
+               String item = items.get(i).toString();
                sb.append(item);
-               if (i < items.size() - 1)
-               {
+               if (i < items.size() - 1) {
                    sb.append(delimiter);
                }
            }
@@ -249,7 +280,7 @@ Signature Algorithm in Java
            return input != null && !input.equals("");
        }
 
-       public String hamcSha1(String input) throws NoSuchAlgorithmException, InvalidKeyException, UnsupportedEncodingException {
+       public String hmacSha1(String input) throws NoSuchAlgorithmException, InvalidKeyException, UnsupportedEncodingException {
            SecretKeySpec signingKey = new SecretKeySpec(this.sk.getBytes(DEFAULT_ENCODING), "HmacSHA1");
            Mac mac = Mac.getInstance("HmacSHA1");
            mac.init(signingKey);
@@ -257,7 +288,7 @@ Signature Algorithm in Java
        }
 
        private String stringToSign(String httpMethod, Map<String, String[]> headers, Map<String, String> queries,
-               String bucketName, String objectName) throws Exception{
+                                   String bucketName, String objectName) throws Exception {
            String contentMd5 = "";
            String contentType = "";
            String date = "";
@@ -266,41 +297,42 @@ Signature Algorithm in Java
 
            String key;
            List<String> temp = new ArrayList<String>();
-           for(Map.Entry<String, String[]> entry : headers.entrySet()) {
+           for (Map.Entry<String, String[]> entry : headers.entrySet()) {
                key = entry.getKey();
-               if(key == null || entry.getValue() == null || entry.getValue().length == 0) {
+               if (key == null || entry.getValue() == null || entry.getValue().length == 0) {
                    continue;
                }
 
                key = key.trim().toLowerCase(Locale.ENGLISH);
-               if(key.equals("content-md5")) {
+               if (key.equals("content-md5")) {
                    contentMd5 = entry.getValue()[0];
                    continue;
                }
 
-               if(key.equals("content-type")) {
+               if (key.equals("content-type")) {
                    contentType = entry.getValue()[0];
                    continue;
                }
 
-               if(key.equals("date")) {
+               if (key.equals("date")) {
                    date = entry.getValue()[0];
                    continue;
                }
 
-               if(key.startsWith(OBS_PREFIX)) {
+               if (key.startsWith(OBS_PREFIX)) {
 
-                   for(String value : entry.getValue()) {
-                       if(value != null) {
+                   for (String value : entry.getValue()) {
+                       if (value != null) {
                            temp.add(value.trim());
                        }
                    }
+
                    canonicalizedHeaders.put(key, this.join(temp, ","));
                    temp.clear();
                }
            }
 
-           if(canonicalizedHeaders.containsKey("x-obs-date")) {
+           if (canonicalizedHeaders.containsKey("x-obs-date")) {
                date = "";
            }
 
@@ -308,122 +340,115 @@ Signature Algorithm in Java
            // handle method/content-md5/content-type/date
            StringBuilder stringToSign = new StringBuilder();
            stringToSign.append(httpMethod).append(SIGN_SEP)
-               .append(contentMd5).append(SIGN_SEP)
-               .append(contentType).append(SIGN_SEP)
-               .append(date).append(SIGN_SEP);
+                   .append(contentMd5).append(SIGN_SEP)
+                   .append(contentType).append(SIGN_SEP)
+                   .append(date).append(SIGN_SEP);
+
 
            // handle canonicalizedHeaders
-           for(Map.Entry<String, String> entry : canonicalizedHeaders.entrySet()) {
+           for (Map.Entry<String, String> entry : canonicalizedHeaders.entrySet()) {
                stringToSign.append(entry.getKey()).append(":").append(entry.getValue()).append(SIGN_SEP);
            }
 
+
            // handle CanonicalizedResource
            stringToSign.append("/");
-           if(this.isValid(bucketName)) {
+           if (this.isValid(bucketName)) {
                stringToSign.append(bucketName).append("/");
-               if(this.isValid(objectName)) {
-                   stringToSign.append(this.urlEncode(objectName));
+               if (this.isValid(objectName)) {
+                   stringToSign.append(this.encodeObjectName(objectName));
                }
            }
 
            TreeMap<String, String> canonicalizedResource = new TreeMap<String, String>();
-           for(Map.Entry<String, String> entry : queries.entrySet()) {
+           for (Map.Entry<String, String> entry : queries.entrySet()) {
                key = entry.getKey();
-               if(key == null) {
+               if (key == null) {
                    continue;
                }
 
-               if(SUB_RESOURCES.contains(key)) {
+               if (SUB_RESOURCES.contains(key)) {
                    canonicalizedResource.put(key, entry.getValue());
                }
            }
 
-           if(canonicalizedResource.size() > 0) {
+           if (canonicalizedResource.size() > 0) {
                stringToSign.append("?");
-               for(Map.Entry<String, String> entry : canonicalizedResource.entrySet()) {
+               for (Map.Entry<String, String> entry : canonicalizedResource.entrySet()) {
                    stringToSign.append(entry.getKey());
-                   if(this.isValid(entry.getValue())) {
+                   if (this.isValid(entry.getValue())) {
                        stringToSign.append("=").append(entry.getValue());
                    }
-                                   stringToSign.append("&");
+                   stringToSign.append("&");
                }
-                           stringToSign.deleteCharAt(stringToSign.length()-1);
+               stringToSign.deleteCharAt(stringToSign.length() - 1);
            }
-
-   //     System.out.println(String.format("StringToSign:%s%s", SIGN_SEP, stringToSign.toString()));
+           //      System.out.println(String.format("StringToSign:%s%s", SIGN_SEP, stringToSign.toString()));
 
            return stringToSign.toString();
        }
 
-       public String headerSignature(String httpMethod, Map<String, String[]> headers, Map<String, String> queries,
-               String bucketName, String objectName) throws Exception {
-
-           //1. stringToSign
-           String stringToSign = this.stringToSign(httpMethod, headers, queries, bucketName, objectName);
-
-           //2. signature
-           return String.format("OBS %s:%s", this.ak, this.hamcSha1(stringToSign));
-       }
-
        public String querySignature(String httpMethod, Map<String, String[]> headers, Map<String, String> queries,
-               String bucketName, String objectName, long expires) throws Exception {
-           if(headers.containsKey("x-obs-date")) {
-               headers.put("x-obs-date", new String[] {String.valueOf(expires)});
-           }else {
-               headers.put("date", new String[] {String.valueOf(expires)});
+                                    String bucketName, String objectName, long expires) throws Exception {
+           if (!isBucketNameValid(bucketName)) {
+               throw new IllegalArgumentException("the bucketName is illegal");
+           }
+           if (headers.containsKey("x-obs-date")) {
+               headers.put("x-obs-date", new String[]{String.valueOf(expires)});
+           } else {
+               headers.put("date", new String[]{String.valueOf(expires)});
            }
            //1. stringToSign
            String stringToSign = this.stringToSign(httpMethod, headers, queries, bucketName, objectName);
 
            //2. signature
-           return this.urlEncode(this.hamcSha1(stringToSign));
+           return this.encodeUrlString(this.hmacSha1(stringToSign));
        }
 
-           public String getURL(String endpoint, Map<String, String> queries,
-                   String bucketName, String objectName, String signature, long expires) {
-                   StringBuilder URL = new StringBuilder();
-                   URL.append("https://").append(bucketName).append(".").append(endpoint).append("/").
-                       append(objectName).append("?");
-                   String key;
-                   for (Map.Entry<String, String> entry : queries.entrySet()) {
-                       key = entry.getKey();
-                       if (key == null) {
-                           continue;
-                       }
-                       if (SUB_RESOURCES.contains(key)) {
-                           String value = entry.getValue();
-                           URL.append(key);
-                           if (value != null) {
-                               URL.append("=").append(value).append("&");
-                           } else {
-                               URL.append("&");
-                           }
-                       }
+       public String getURL(String endpoint, Map<String, String> queries,
+                            String bucketName, String objectName, String signature, long expires) throws UnsupportedEncodingException {
+           StringBuilder URL = new StringBuilder();
+           URL.append("https://").append(bucketName).append(".").append(endpoint).append("/").
+                   append(this.encodeObjectName(objectName)).append("?");
+           String key;
+           for (Map.Entry<String, String> entry : queries.entrySet()) {
+               key = entry.getKey();
+               if (key == null) {
+                   continue;
+               }
+               if (SUB_RESOURCES.contains(key)) {
+                   String value = entry.getValue();
+                   URL.append(key);
+                   if (value != null) {
+                       URL.append("=").append(value).append("&");
+                   } else {
+                       URL.append("&");
                    }
-                   URL.append("AccessKeyId=").append(this.ak).append("&Expires=").append(expires).
-                       append("&Signature=").append(signature);
-                   return URL.toString();
+               }
            }
+           URL.append("AccessKeyId=").append(this.ak).append("&Expires=").append(expires).
+                   append("&Signature=").append(signature);
+           return URL.toString();
+       }
 
        public static void main(String[] args) throws Exception {
-
            SignDemo demo = new SignDemo();
            demo.ak = "<your-access-key-id>";
            demo.sk = "<your-secret-key-id>";
-                   String endpoint = "<your-endpoint>";
+           String endpoint = "<your-endpoint>";
 
            String bucketName = "bucket-test";
            String objectName = "hello.jpg";
-   // A header cannot be carried if you want to use a URL to access OBS through a browser. If a header is added to headers, the signature does not match. To use the headers, it must be processed by the client.
+
+                   // A header cannot be carried if you want to use a URL to access OBS with a browser. If a header is added to headers, the signature does not match. To use headers, it must be processed by the client.
            Map<String, String[]> headers = new HashMap<String, String[]>();
            Map<String, String> queries = new HashMap<String, String>();
 
-                   //  Expiration time of the request message. Set it to expire in 24 hours.
-                   long expires = (System.currentTimeMillis() + 86400000L) / 1000;
-                   String signature = demo.querySignature("GET", headers, queries, bucketName, objectName, expires);
-                   System.out.println(signature);
-                   String URL = demo.getURL(endpoint, queries, bucketName, objectName, signature, expires);
-                   System.out.println(URL);
+                   // Expiration time. Set it to expire in 24 hours.
+           long expires = (System.currentTimeMillis() + 86400000L) / 1000;
+           String signature = demo.querySignature("GET", headers, queries, bucketName, objectName, expires);
+           System.out.println(signature);
+           String URL = demo.getURL(endpoint, queries, bucketName, objectName, signature, expires);
+           System.out.println(URL);
        }
-
    }
