@@ -12,6 +12,8 @@ This operation restores an object that is mistakenly overwritten or deleted. You
 
 By default, versioning is disabled for a bucket.
 
+Once WORM is enabled for a bucket, OBS automatically enables versioning for the bucket and the versioning cannot be suspended for that bucket.
+
 You can perform this operation to enable or suspend versioning for a bucket.
 
 After versioning is enabled for a bucket:
@@ -48,7 +50,7 @@ Request Syntax
 Request Parameters
 ------------------
 
-This request contains no parameter.
+This request contains no message parameters.
 
 Request Headers
 ---------------
@@ -64,21 +66,21 @@ This request contains elements to configure the bucket versioning in XML format.
 
 .. table:: **Table 1** Elements for configuring bucket versioning
 
-   +-------------------------+----------------------------------------+-----------------------+
-   | Element                 | Description                            | Mandatory             |
-   +=========================+========================================+=======================+
-   | VersioningConfiguration | Root node for configuring versioning   | Yes                   |
-   |                         |                                        |                       |
-   |                         | Ancestor node: none                    |                       |
-   +-------------------------+----------------------------------------+-----------------------+
-   | Status                  | Versioning status of the bucket        | Yes                   |
-   |                         |                                        |                       |
-   |                         | Type: enumeration                      |                       |
-   |                         |                                        |                       |
-   |                         | Ancestor node: VersioningConfiguration |                       |
-   |                         |                                        |                       |
-   |                         | Value options: Enabled, Suspended      |                       |
-   +-------------------------+----------------------------------------+-----------------------+
+   +-------------------------+-------------------------------------------+-----------------------+
+   | Element                 | Description                               | Mandatory             |
+   +=========================+===========================================+=======================+
+   | VersioningConfiguration | Root node for configuring versioning      | Yes                   |
+   |                         |                                           |                       |
+   |                         | Ancestor node: none                       |                       |
+   +-------------------------+-------------------------------------------+-----------------------+
+   | Status                  | Versioning status of the bucket           | Yes                   |
+   |                         |                                           |                       |
+   |                         | Type: string                              |                       |
+   |                         |                                           |                       |
+   |                         | Ancestor node: VersioningConfiguration    |                       |
+   |                         |                                           |                       |
+   |                         | Value options: **Enabled**, **Suspended** |                       |
+   +-------------------------+-------------------------------------------+-----------------------+
 
 Response Syntax
 ---------------
@@ -98,12 +100,12 @@ The response to the request uses common headers. For details, see :ref:`Table 1 
 Response Elements
 -----------------
 
-This response involves no elements.
+This response contains no elements.
 
 Error Responses
 ---------------
 
-No special error responses are involved. For details about error responses, see :ref:`Table 2 <obs_04_0115__d0e843>`.
+No special error responses are returned. For details about error responses, see :ref:`Table 2 <obs_04_0115__d0e843>`.
 
 Sample Request
 --------------

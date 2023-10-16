@@ -17,6 +17,11 @@ When versioning is enabled for a bucket, a deletion marker with a unique version
 
 To delete an object of a specified version, the **versionId** parameter can be used to specify the desired version.
 
+WORM
+----
+
+OBS automatically enables versioning when you enable WORM for a bucket. If you delete an object without specifying a version ID, OBS does not really delete this object thanks to versioning, but inserts a delete marker with a unique version ID, which turns into the current version. If you specify a version ID when deleting an object protected by WORM, OBS prevents you from deleting this object and returns a 403 error. Delete markers are not protected by WORM.
+
 Request Syntax
 --------------
 
@@ -71,11 +76,11 @@ Response Headers
 
 The response to the request uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
 
-In addition to the common response headers, the following message headers may also be used. For details, see :ref:`Table 2 <obs_04_0085__table862048515455>`.
+If versioning is enabled for the bucket, the headers listed in :ref:`Table 2 <obs_04_0085__table862048515455>` may also be used.
 
 .. _obs_04_0085__table862048515455:
 
-.. table:: **Table 2** Additional response header parameters
+.. table:: **Table 2** Additional response headers
 
    +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
    | Header                            | Description                                                                                                                |
@@ -84,7 +89,7 @@ In addition to the common response headers, the following message headers may al
    |                                   |                                                                                                                            |
    |                                   | Type: boolean                                                                                                              |
    |                                   |                                                                                                                            |
-   |                                   | Valid values: **true** or **false**                                                                                        |
+   |                                   | Value options: **true**, **false**                                                                                         |
    |                                   |                                                                                                                            |
    |                                   | The default value is **false**.                                                                                            |
    +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
@@ -92,13 +97,13 @@ In addition to the common response headers, the following message headers may al
    |                                   |                                                                                                                            |
    |                                   | Valid value: character string                                                                                              |
    |                                   |                                                                                                                            |
-   |                                   | There is no default value.                                                                                                 |
+   |                                   | Default value: none                                                                                                        |
    +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
 Response Elements
 -----------------
 
-This response involves no elements.
+This response contains no elements.
 
 Error Responses
 ---------------

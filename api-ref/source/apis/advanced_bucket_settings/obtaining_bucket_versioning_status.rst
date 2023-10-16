@@ -25,7 +25,7 @@ Request Syntax
 Request Parameters
 ------------------
 
-This request contains no parameter.
+This request contains no message parameters.
 
 Request Headers
 ---------------
@@ -70,19 +70,19 @@ This response contains elements to specify the bucket versioning status. :ref:`T
    +===================================+===========================================+
    | VersioningConfiguration           | Element of versioning status information. |
    |                                   |                                           |
-   |                                   | Type: element                             |
+   |                                   | Type: container                           |
    +-----------------------------------+-------------------------------------------+
    | Status                            | Versioning status of the bucket.          |
    |                                   |                                           |
-   |                                   | Type: enumeration                         |
+   |                                   | Type: string                              |
    |                                   |                                           |
-   |                                   | Value options: Enabled, Suspended         |
+   |                                   | Value options: **Enabled**, **Suspended** |
    +-----------------------------------+-------------------------------------------+
 
 Error Responses
 ---------------
 
-No special error responses are involved. For details about error responses, see :ref:`Table 2 <obs_04_0115__d0e843>`.
+No special error responses are returned. For details about error responses, see :ref:`Table 2 <obs_04_0115__d0e843>`.
 
 Sample Request
 --------------

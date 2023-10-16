@@ -18,7 +18,7 @@ Prerequisites
 -  You have obtained the AK and SK. For details, see :ref:`Obtaining Access Keys (AK/SK) <obs_04_0116>`.
 -  At least one bucket is available.
 -  The file to be uploaded has been prepared and you know the complete local path of the file.
--  You need to know the region of the bucket which you want to upload the file to and determine the endpoint for calling an API based on the region. For details, see `Regions and Endpoints <https://docs.sc.otc.t-systems.com/en-us/endpoint/index.html>`__.
+-  You have obtained the region of the bucket which you want to upload files to and determined the endpoint required for API calls. For details, see `Regions and Endpoints <https://docs.sc.otc.t-systems.com/en-us/endpoint/index.html>`__.
 
 Uploading the Object **objecttest1** to Bucket **bucket001** in the a1 Region
 -----------------------------------------------------------------------------
@@ -66,8 +66,6 @@ In this example, an Apache HttpClient is used.
            CloseableHttpClient httpClient = HttpClients.createDefault();
            CloseableHttpResponse httpResponse = null;
            String requestTime = DateUtils.formatDate(System.currentTimeMillis());
-
-
            HttpPut httpPut = new HttpPut("http://bucket001.obs.a1.example.com/objecttest1");
            httpPut.addHeader("Date", requestTime);
 

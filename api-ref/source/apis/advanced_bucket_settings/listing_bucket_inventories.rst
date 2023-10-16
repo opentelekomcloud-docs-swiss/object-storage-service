@@ -97,11 +97,11 @@ Response Elements
    +===================================+=====================================================================================================================================+
    | ListInventoryConfiguration        | List of bucket inventories.                                                                                                         |
    |                                   |                                                                                                                                     |
-   |                                   | Type: Container                                                                                                                     |
+   |                                   | Type: container                                                                                                                     |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
    | InventoryConfiguration            | Bucket inventory configuration. For details about the configuration elements, see :ref:`Table 2 <obs_04_0056__table1181123018399>`. |
    |                                   |                                                                                                                                     |
-   |                                   | Type: Container                                                                                                                     |
+   |                                   | Type: container                                                                                                                     |
    |                                   |                                                                                                                                     |
    |                                   | Ancestor: ListInventoryConfiguration                                                                                                |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+

@@ -10,6 +10,7 @@ Object Storage Service - API Reference
    calling_apis/index
    getting_started/index
    apis/index
+   error_codes
    iam_policies_and_supported_actions/index
    appendixes/index
    change_history

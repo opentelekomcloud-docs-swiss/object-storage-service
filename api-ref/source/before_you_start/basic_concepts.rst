@@ -14,7 +14,7 @@ Basic Concepts Related to OBS APIs
 
 -  User
 
-   You can create users under a domain on Identity and Access Management (IAM), and authorize the users with permissions required for accessing cloud services. Each IAM user has its own identity credentials (password and access keys).
+   A user is created using a domain on Identity and Access Management (IAM) to use cloud services. Each IAM user has its own identity credentials (password and access keys).
 
    On the **My Credentials** page on the console, you can view the domain ID and user ID, you can also manage the access keys of the domain and IAM users.
 

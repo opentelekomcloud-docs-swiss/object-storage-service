@@ -16,7 +16,7 @@ Prerequisites
 -------------
 
 -  You have obtained the AK and SK. For details about how to obtain the AK and SK, see :ref:`Obtaining Access Keys (AK/SK) <obs_04_0116>`.
--  You need to specify the region where the buckets to be listed reside and determine the endpoint for calling an API based on the region. For details, see `Regions and Endpoints <https://docs.sc.otc.t-systems.com/en-us/endpoint/index.html>`__.
+-  You have specified the region where you want to list buckets and obtained the endpoint required for API calls. For details, see `Regions and Endpoints <https://docs.sc.otc.t-systems.com/en-us/endpoint/index.html>`__.
 
 Obtaining the Bucket List in the a1 Region
 ------------------------------------------
@@ -61,8 +61,6 @@ In this example, an Apache HttpClient is used.
        private static void listAllMyBuckets() {
            CloseableHttpClient httpClient = HttpClients.createDefault();
            String requesttime = DateUtils.formatDate(System.currentTimeMillis());
-
-
            HttpGet httpGet = new HttpGet("http://obs.a1.example.com");
            httpGet.addHeader("Date", requesttime);
 

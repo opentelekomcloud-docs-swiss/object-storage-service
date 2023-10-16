@@ -13,8 +13,8 @@ The bucket storage quota must be a positive integer in the unit of byte. The max
 .. note::
 
    #. For a bucket that has a specified storage quota, you can change the quota to **0** to cancel the quota limitation.
-   #. The bucket storage quota verification depends on how much space is used in the bucket. However, the used storage space is measured at the background. Therefore, bucket storage quotas may not take effect immediately, and delay is expected. It may occur that the used storage space in a bucket has exceeded the bucket storage quota, or the used storage space remains unchanged after data is deleted from the bucket.
-   #. For details about the API for querying used storage space, see :ref:`Querying Information About Used Space in a Bucket <obs_04_0054>`.
+   #. The bucket storage quota verification depends on how much space is used in the bucket. However, the used storage space is measured at the background. Therefore, bucket storage quotas may not take effect immediately, and delay is expected. The used storage space in a bucket may exceed the bucket storage quota, or the used storage space may remain unchanged after data is deleted from the bucket.
+   #. For details about the API for querying used storage space, see :ref:`Obtaining Storage Information of a Bucket <obs_04_0054>`.
    #. If the used storage space in a bucket reaches the upper limit of the bucket storage quota, object upload will fail and the HTTP status code 403 Forbidden will be returned, indicating **InsufficientStorageSpace**. In this case, you can increase the quota, cancel the quota limitation (by changing the quota to **0**), or delete unwanted objects from the bucket.
 
 Request Syntax
@@ -36,7 +36,7 @@ Request Syntax
 Request Parameters
 ------------------
 
-This request contains no parameter.
+This request contains no parameters.
 
 Request Headers
 ---------------
@@ -77,7 +77,7 @@ The response to the request uses common headers. For details, see :ref:`Table 1 
 Response Elements
 -----------------
 
-This response involves no elements.
+This response contains no elements.
 
 Error Responses
 ---------------

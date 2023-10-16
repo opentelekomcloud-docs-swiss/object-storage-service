@@ -23,7 +23,7 @@ Request Syntax
 Request Parameters
 ------------------
 
-This request contains no parameter.
+This request contains no message parameters.
 
 Request Headers
 ---------------
@@ -100,7 +100,7 @@ This response returns information (in the form of elements) about the bucket ACL
    +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------+
    | Canned                            | Grants permissions to all users.                                                                                             |
    |                                   |                                                                                                                              |
-   |                                   | Type: Enumeration The value must be **Everyone**.                                                                            |
+   |                                   | Type: string. The value can only be **Everyone**.                                                                            |
    +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------+
    | Delivered                         | Indicates whether the bucket ACL is applied to objects in the bucket.                                                        |
    |                                   |                                                                                                                              |
@@ -114,7 +114,7 @@ This response returns information (in the form of elements) about the bucket ACL
 Error Responses
 ---------------
 
-No special error responses are involved. For details about error responses, see :ref:`Table 2 <obs_04_0115__d0e843>`.
+No special error responses are returned. For details about error responses, see :ref:`Table 2 <obs_04_0115__d0e843>`.
 
 Sample Request
 --------------

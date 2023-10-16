@@ -25,7 +25,7 @@ Request Syntax
 Request Parameters
 ------------------
 
-This request contains no parameter.
+This request contains no message parameters.
 
 Request Headers
 ---------------
@@ -100,7 +100,7 @@ Sample Response
    HTTP/1.1 200 OK
    Server: OBS
    x-obs-request-id: BF2600000164363442EC03A8CA3DD7F5
-   x-obs-id-2: 32AAAQAAEAABAAAQAAEAABAAAQAAEAABCSFbGOmlN0BVp1kbwN3HWr8jbVvtKEKN
+   x-obs-id-2: 32AAAQAAEAABAAAQAAEAABAAAQAAEAABCSFbGOmlN0BVp1kbwN3har8jbVvtKEKN
    Content-Type: application/xml
    Date: WED, 01 Jul 2015 03:41:54 GMT
    Content-Length: 250

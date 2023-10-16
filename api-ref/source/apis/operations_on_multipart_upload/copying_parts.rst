@@ -2,8 +2,8 @@
 
 .. _obs_04_0100:
 
-Uploading a Part of an Object - Copy
-====================================
+Copying Parts
+=============
 
 Functions
 ---------
@@ -125,7 +125,7 @@ Error Responses
 #. If the specified task does not exist, OBS returns **404 Not Found** and the error code is **NoSuchUpload**.
 #. If the user is not the initiator of the multipart upload task, OBS returns **403 Forbidden** and the error code is **AccessDenied**.
 #. When the size of a copied part has exceeded 5 GB, OBS returns **400 Bad Request**.
-#. If the part sequence number is not within the range from 1 to 10000, OBS returns error code **400 Bad Request**.
+#. If a part number is not within the range from 1 to 10000, OBS returns error code **400 Bad Request**.
 
 Other errors are included in :ref:`Table 2 <obs_04_0115__d0e843>`.
 

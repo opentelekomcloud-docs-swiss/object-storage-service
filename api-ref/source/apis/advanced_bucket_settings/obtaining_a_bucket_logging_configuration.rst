@@ -25,7 +25,7 @@ Request Syntax
 Request Parameters
 ------------------
 
-This request contains no parameter.
+This request contains no message parameters.
 
 Request Headers
 ---------------
@@ -109,7 +109,7 @@ This response contains elements to specify the bucket logging status. :ref:`Tabl
    |                                   |                                                                                                                                                                                                                                                                                                                             |
    |                                   | Type: string                                                                                                                                                                                                                                                                                                                |
    |                                   |                                                                                                                                                                                                                                                                                                                             |
-   |                                   | Value options: **FULL_CONTROL** \| **READ** \| **WRITE**                                                                                                                                                                                                                                                                    |
+   |                                   | Value options: **FULL_CONTROL**, **READ**, **WRITE**                                                                                                                                                                                                                                                                        |
    +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | TargetBucket                      | When enabling the logging function, the owner of the bucket being logged can specify a target bucket to store the generated log files. Log files generated for multiple buckets can be stored in the same target bucket. If you do so, you need to specify different TargetPrefixes to classify logs for different buckets. |
    |                                   |                                                                                                                                                                                                                                                                                                                             |
@@ -127,7 +127,7 @@ This response contains elements to specify the bucket logging status. :ref:`Tabl
 Error Responses
 ---------------
 
-No special error responses are involved. For details about error responses, see :ref:`Table 2 <obs_04_0115__d0e843>`.
+No special error responses are returned. For details about error responses, see :ref:`Table 2 <obs_04_0115__d0e843>`.
 
 Sample Request
 --------------

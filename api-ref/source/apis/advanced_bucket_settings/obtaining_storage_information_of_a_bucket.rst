@@ -2,8 +2,8 @@
 
 .. _obs_04_0054:
 
-Querying Information About Used Space in a Bucket
-=================================================
+Obtaining Storage Information of a Bucket
+=========================================
 
 Functions
 ---------
@@ -12,7 +12,7 @@ This operation queries the number of bucket objects and the space occupied by th
 
 .. note::
 
-   The OBS bucket storage statistics is measured in the background, and the storage data is not updated in real time. Therefore, you are not advised to perform real-time verification on the storage information.
+   Because OBS bucket storage statistics are measured in the background, the storage information is not updated in real time. For this reason, you are advised not to perform real-time verification on the storage information.
 
 Request Syntax
 --------------
@@ -77,7 +77,7 @@ This response contains elements of information about the used storage capacity o
    +-----------------------------------+----------------------------------------------------------------------------------------------------------------+
    | Size                              | Size of stored data                                                                                            |
    |                                   |                                                                                                                |
-   |                                   | Type: integer                                                                                                  |
+   |                                   | Type: long                                                                                                     |
    +-----------------------------------+----------------------------------------------------------------------------------------------------------------+
    | ObjectNumber                      | Number of objects returned                                                                                     |
    |                                   |                                                                                                                |
