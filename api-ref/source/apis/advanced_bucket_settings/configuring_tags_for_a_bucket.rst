@@ -16,9 +16,9 @@ To perform this operation, you must have the **PutBucketTagging** permission. By
 
 .. note::
 
-   -  A bucket can have a maximum of 10 tags.
+   -  A bucket can have up to 10 tags.
    -  A tag key and key value can contain a maximum of 36 and 43 characters, respectively.
-   -  Tag keys and key values cannot contain commas (,), asterisks (*), vertical bars (|), slashes (/), less-than signs (<), greater-than signs (>), equal signs (=), backslashes (\\), or ASCII codes (0x00 to 0x1F).
+   -  Tag keys and values cannot contain commas (,), asterisks (*), vertical bars (|), slashes (/), less-than signs (<), greater-than signs (>), equal signs (=), backslashes (\\), or ASCII control character code (0x00 to 0x1F). These tag keys and values must be URL encoded before being sent to a server.
 
 Request Syntax
 --------------
@@ -147,6 +147,8 @@ In addition to common error codes, this API also returns other error codes. The 
 Sample Request
 --------------
 
+This example adds a tag whose key is **TagKey(Name1)** and value is **TagValue(Value1)** to bucket **examplebucket**.
+
 .. code-block:: text
 
    PUT /?tagging HTTP/1.1
@@ -161,8 +163,8 @@ Sample Request
    <Tagging xmlns="http://obs.example.com/doc/2015-06-30/">
      <TagSet>
        <Tag>
-         <Key>TagName1</Key>
-         <Value>TageSetVaule1</Value>
+         <Key>TagKey%28Name1%29</Key>
+         <Value>TagValue%28Value1%29</Value>
        </Tag>
      </TagSet>
    </Tagging>

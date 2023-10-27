@@ -12,7 +12,7 @@ After creating a multipart upload job, you can specify its upload ID and upload 
 
 .. important::
 
-   You cannot determine whether a request is executed successfully only using **status_code** in the returned HTTP header. If 200 in **status_code** is returned, the server has received the request and starts to process the request. The body in the response shows whether the request is executed successfully. The request is executed successfully only when the body contains Etag; otherwise, the request fails to be executed.
+   You cannot determine whether a request is successful only based on the **status_code** in the returned HTTP header. If **200** is returned for **status_code**, the server has received the request and started to process the request. The copy is successful only when the body in the response contains ETag.
 
 Copy the source object and save it as **part1**. If a **part1** already exists before the copying, the original **part1** will be overwritten by the newly copied **part1**. After the copy is successful, only the latest **part1** is displayed. The old **part1** data will be deleted. Therefore, ensure that the target part does not exist or has no value when using the part copy operation. Otherwise, data may be deleted by mistake. The source object in the copy process does not change.
 

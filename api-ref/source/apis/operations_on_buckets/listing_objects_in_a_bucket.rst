@@ -93,14 +93,26 @@ This request contains no elements.
 Response Syntax
 ---------------
 
-::
+.. code-block::
 
-   HTTP/1.1 status_code
-   Date: date
-   x-obs-bucket-location: region
-   Content-Type: application/xml
-   Content-Length: length
-   <Response Body>
+   <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+   <ListBucketResult xmlns="http://obs.eu-ch2.sc.otc.t-systems.com/doc/2021-08-20/">
+       <Name>bucket_name</Name>
+       <Prefix></Prefix>
+       <Marker></Marker>
+       <MaxKeys>1000</MaxKeys>
+       <IsTruncated>false</IsTruncated>
+       <Contents>
+           <Key>object_name</Key>
+           <LastModified>2022-11-11T11:11:11.111Z</LastModified>
+           <ETag>"37f80ab36f7c19abe8250e5e00123456"</ETag>
+           <Size>55555</Size>
+           <Owner>
+               <ID>e8df38eb4e4f4f148e06d8db50123456</ID>
+           </Owner>
+           <StorageClass>STANDARD</StorageClass>
+       </Contents>
+   </ListBucketResult>
 
 Response Headers
 ----------------

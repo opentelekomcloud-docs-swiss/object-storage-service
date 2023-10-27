@@ -321,7 +321,7 @@ Sample Response: Downloading a Specified Range of an Object
 Sample Request: Checking the ETag Value of an Object
 ----------------------------------------------------
 
-**Download an object if its Etag value matches**.
+**Download an object if its ETag value is matched**.
 
 .. code-block:: text
 
@@ -336,7 +336,7 @@ Sample Request: Checking the ETag Value of an Object
 Sample Response: Checking the ETag Value of an Object (ETag Mismatch)
 ---------------------------------------------------------------------
 
-If the Etag value of the stored object is not **682e760adb130c60c120da3e333a8b09**, the system displays a message indicating that the download fails.
+If the object's ETag value is not **682e760adb130c60c120da3e333a8b09**, the system displays a download failure message.
 
 ::
 
@@ -359,7 +359,7 @@ If the Etag value of the stored object is not **682e760adb130c60c120da3e333a8b09
 Sample Response: Checking the ETag Value of an Object (ETag Matched)
 --------------------------------------------------------------------
 
-If the Etag value of the stored object is **682e760adb130c60c120da3e333a8b09**, the download is successful.
+If the object's ETag value is **682e760adb130c60c120da3e333a8b09**, the download is successful.
 
 ::
 
