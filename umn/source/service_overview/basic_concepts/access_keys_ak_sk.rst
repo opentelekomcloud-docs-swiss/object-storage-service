@@ -5,9 +5,9 @@
 Access Keys (AK/SK)
 ===================
 
-OBS supports AK/SK authentication. The AK/SK encryption method is used to authenticate a request sender. When you use OBS APIs for secondary development and use the AK and SK for authentication, the signature must be computed based on the algorithm defined by OBS and added to the request.
+OBS uses an access key ID (AK) and secret access key (SK) to authenticate the identity of a requester.
 
-OBS supports authentication using a permanent AK/SK pair, or using a temporary AK/SK pair and a security token.
+The authentication can be based on a permanent AK and SK pair, or based on a temporary AK/SK pair and security token.
 
 **Permanent AK/SK Pair**
 
@@ -18,7 +18,7 @@ You can create a pair of permanent AK and SK on the **My Credentials** page.
 
 **Temporary AK/SK Pair**
 
-A temporary AK/SK pair and the security token are temporary access tokens granted by the system to users. The validity period of the tokens ranges from 15 minutes to 24 hours. After the tokens expire, you need to obtain the tokens again. A temporary AK/SK pair and the security token comply with the least privilege principle and can only be used to temporarily access OBS. A 403 error will be returned if the security token is not available.
+A temporary AK/SK pair and security token assigned by OBS comply with the principle of least privilege and are for temporarily accessing OBS. They are valid from 15 minutes to 24 hours, and need to be obtained again once they expire. If the security token is missing from your request, a 403 error will be returned.
 
 -  Temporary AK: indicates the ID of a temporary access key. It is the unique ID associated with the SK. The AK and SK are used together to obtain an encrypted signature for a request.
 -  Temporary SK: indicates the temporary private key used together with its associated temporary AK. The AK and SK are used together to identify a request sender to prevent the request from being modified.
@@ -33,7 +33,7 @@ When using the following tools to access OBS resources, you need to use the AK/S
    +==============+=================================================================+
    | OBS Browser+ | Configure the AK and SK during account configuration.           |
    +--------------+-----------------------------------------------------------------+
-   | API          | Add the AK/SK pair to the request when computing the signature. |
+   | APIs         | Add the AK/SK pair to the request when computing the signature. |
    +--------------+-----------------------------------------------------------------+
 
 References

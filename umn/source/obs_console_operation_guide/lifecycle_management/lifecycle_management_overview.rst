@@ -7,9 +7,9 @@ Lifecycle Management Overview
 
 Lifecycle management means periodically deleting objects in a bucket by configuring rules.
 
-Lifecycle management applies to the following scenarios:
+You may configure lifecycle rules to:
 
--  Some periodically uploaded files need only to be retained for one week or one month, and can be deleted once they have expired.
+-  Periodically delete logs that are only meant to be retained for a specific period of time (a week or a month).
 
 You can define lifecycle rules for identifying objects and manage lifecycles of the objects based on the rules.
 

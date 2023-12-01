@@ -6,7 +6,7 @@ Bucket Policy Parameters
 ========================
 
 -  :ref:`Effect <obs_03_0115>`
--  :ref:`Principal <obs_03_0049>`
+-  :ref:`Principals <obs_03_0049>`
 -  :ref:`Resources <obs_03_0118>`
 -  :ref:`Actions <obs_03_0051>`
 -  :ref:`Conditions <obs_03_0120>`
@@ -16,7 +16,7 @@ Bucket Policy Parameters
    :hidden: 
 
    effect
-   principal
+   principals
    resources
    actions
    conditions

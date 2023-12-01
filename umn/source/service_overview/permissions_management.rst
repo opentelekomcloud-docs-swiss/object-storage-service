@@ -5,18 +5,18 @@
 Permissions Management
 ======================
 
-If you have OBS resources and you need to grant different access permissions to different user roles, you can leverage the Identity and Access Management (IAM) service for fine-grained permission control. IAM provides identity authentication, permissions management, and access control, helping you provide secure access to your cloud resources.
+You can use Identity and Access Management (IAM) to manage OBS permissions and control access to your resources. IAM provides identity authentication, permissions management, and access control.
 
-With IAM, you can use your account to create IAM users, and assign permissions to the users to control their access to specific resources. For example, if you have software developers and you want to grant them the permission to only access OBS but not delete OBS resources, you can create an IAM policy that only grants the developers the permission to access OBS.
+You can create IAM users for your employees, and assign permissions to these users on a principle of least privilege (PoLP) basis to control their access to specific resource types. For example, you can create IAM users for software developers and assign specific permissions to allow them to use OBS resources but prevent them from being able to delete resources or perform any high-risk operations.
 
-If your service account does not have individual IAM users, please skip this section.
+If your account does not require individual IAM users for permissions management, skip this section.
 
 OBS Permissions
 ---------------
 
-By default, new IAM users do not have any permissions assigned. You need to add a user to one or more user groups, and assign permission policies to the user groups. The user then inherits permissions from the user groups. This process is known as authorization. After authorization, the user can perform specific operations on cloud services based on permission policies. IAM provides preset system policies that define common permissions for different services.
+By default, new IAM users do not have any permissions assigned. You can assign permissions to these users by adding them to one or more groups and attaching policies to the groups. IAM provides preset system policies that define common permissions for different services, such as full control access and read-only. You can directly use these preset policies.
 
-OBS is a global service because it is available for all physical regions. OBS permissions are assigned to users in the Global project, and users do not need to switch the region when accessing OBS.
+OBS is a global service deployed and accessed without specifying any physical region. OBS permissions are assigned to users in the global project, and users do not need to switch regions when accessing OBS.
 
 Policy Types
 
@@ -25,7 +25,7 @@ Policy Types
 
 .. note::
 
-   Due to data caching, an RBAC policy and fine-grained policy involving OBS actions will take effect 10 to 15 minutes after it is attached to a user and user group.
+   Due to data caching, an RBAC policy and fine-grained policy involving OBS actions will take effect 10 to 15 minutes after it is attached to a user and a user group.
 
 :ref:`Table 1 <obs_03_0045__table358116162418>` lists all system policies of OBS.
 
@@ -33,21 +33,21 @@ Policy Types
 
 .. table:: **Table 1** OBS system policies
 
-   +-----------------------+-----------------------------------------------------------------------------------------------------------------------+-----------------------+
-   | Policy                | Description                                                                                                           | Policy Type           |
-   +=======================+=======================================================================================================================+=======================+
-   | Tenant Administrator  | Operation permissions: any operation on all cloud resources owned by the account                                      | RBAC policy           |
-   |                       |                                                                                                                       |                       |
-   |                       | OBS policies are configured under **Global service** > **OBS**.                                                       |                       |
-   +-----------------------+-----------------------------------------------------------------------------------------------------------------------+-----------------------+
-   | Tenant Guest          | Operation permissions: read-only access permission to all cloud resources owned by the account                        | RBAC policy           |
-   |                       |                                                                                                                       |                       |
-   |                       | OBS policies are configured under **Global service** > **OBS**.                                                       |                       |
-   +-----------------------+-----------------------------------------------------------------------------------------------------------------------+-----------------------+
-   | OBS Buckets Viewer    | Operation permissions: listing buckets, obtaining basic bucket information, and obtaining bucket metadata information | RBAC policy           |
-   |                       |                                                                                                                       |                       |
-   |                       | OBS policies are configured under **Global service** > **OBS**.                                                       |                       |
-   +-----------------------+-----------------------------------------------------------------------------------------------------------------------+-----------------------+
+   +-----------------------+--------------------------------------------------------------------------------------+-----------------------+
+   | Policy                | Description                                                                          | Policy Type           |
+   +=======================+======================================================================================+=======================+
+   | Tenant Administrator  | Allows you to perform any operation on all cloud resources under the account.        | RBAC policy           |
+   |                       |                                                                                      |                       |
+   |                       | OBS policies are configured under **Global service** > **OBS**.                      |                       |
+   +-----------------------+--------------------------------------------------------------------------------------+-----------------------+
+   | Tenant Guest          | Allows you to perform read-only operations on all cloud resources under the account. | RBAC policy           |
+   |                       |                                                                                      |                       |
+   |                       | OBS policies are configured under **Global service** > **OBS**.                      |                       |
+   +-----------------------+--------------------------------------------------------------------------------------+-----------------------+
+   | OBS Buckets Viewer    | Allows you to list buckets, and obtain basic bucket information and bucket metadata. | RBAC policy           |
+   |                       |                                                                                      |                       |
+   |                       | OBS policies are configured under **Global service** > **OBS**.                      |                       |
+   +-----------------------+--------------------------------------------------------------------------------------+-----------------------+
 
 The following table lists operations that can be performed under each set of OBS permission.
 
@@ -132,7 +132,7 @@ The following table lists operations that can be performed under each set of OBS
    +-------------------------------------------------------------+---------------------------------+-------------------------+-----------------------------------------------------------------------------------+
    | Listing uploaded parts                                      | Yes                             | Yes                     | No                                                                                |
    +-------------------------------------------------------------+---------------------------------+-------------------------+-----------------------------------------------------------------------------------+
-   | Canceling multipart upload tasks                            | Yes                             | No                      | No                                                                                |
+   | Canceling multipart uploads                                 | Yes                             | No                      | No                                                                                |
    +-------------------------------------------------------------+---------------------------------+-------------------------+-----------------------------------------------------------------------------------+
 
 Managing OBS Resource Permissions

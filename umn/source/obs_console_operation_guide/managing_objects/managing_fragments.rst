@@ -8,7 +8,7 @@ Managing Fragments
 Background Information
 ----------------------
 
-Fragments are generated when multipart upload tasks fail. Such failures generally occur in the following scenarios:
+Data can be uploaded to OBS using multipart uploads. There will be fragments generated, if a multipart upload fails because of the following causes (included but not limited to):
 
 -  The network is in poor conditions, and the connection to the OBS server is interrupted frequently.
 -  The upload task is manually suspended.
@@ -19,17 +19,17 @@ On OBS Console, storage used by fragments is charged. Clear fragments when they 
 
 .. important::
 
-   Fragments on OBS consume storage spaces that are charged according to price rates of storage space.
+   Generated fragments take up storage space that is billable.
 
 Procedure
 ---------
 
-#. In the bucket list, click the bucket to be operated. The **Overview** page of the bucket is displayed.
+#. In the bucket list, click the bucket you want to operate. The **Overview** page is displayed.
 
-#. In the navigation pane, click **Objects**.
+#. In the navigation pane, choose **Objects**.
 
-#. Click **Fragments**, select the fragment that you want to delete, and then click **Delete** on the right of the fragment.
+#. Click **Fragments**, select the fragment that you want to delete, and click **Delete** on the right.
 
-   You can also select multiple fragments and click **Delete** on the top of fragment list to batch delete them.
+   You can also select multiple fragments and click **Delete** above the fragment list to batch delete them.
 
 #. Click **Yes** to confirm the deletion.

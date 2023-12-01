@@ -5,7 +5,7 @@
 Configuring Fine-Grained Policies
 =================================
 
-Custom policies can be created as a supplement to the system policies of OBS.
+Custom policies can be created to supplement the system-defined policies of OBS.
 
 Procedure
 ---------
@@ -36,4 +36,4 @@ Procedure
       A custom policy can contain multiple authorization items. In addition to the authorization items related to OBS, it can also contain authorization items related other services. But the other services must be at the same project level as OBS.
 
 #. Click **OK** to complete the configuration.
-#. Authorize a user group with fine-grained permissions, and add a user to the user group so that the user can have the authorized permissions. For details, see :ref:`Creating a User and Granting OBS Permissions <obs_03_0122>`.
+#. Grant fine-grained permissions to a user group and add a user to the user group, so that the user can have the granted permissions. For details, see :ref:`Creating an IAM User and Granting OBS Permissions <obs_03_0122>`.

@@ -5,21 +5,21 @@
 Configuring Redirection
 =======================
 
-You can configure static website hosting by redirecting all requests for a bucket to another bucket or URL.
+You can redirect all requests for a bucket to another bucket or URL by configuring redirection rules.
 
 Prerequisites
 -------------
 
-Web page files of the static website have been uploaded to a bucket.
+Web page files required for static website hosting have been uploaded to the specified bucket.
 
 The static website files hosted in the bucket are accessible to anonymous users.
 
 Procedure
 ---------
 
-#. In the bucket list, click the bucket to be operated. The **Overview** page of the bucket is displayed.
+#. In the bucket list, click the bucket you want to operate. The **Overview** page is displayed.
 
-#. In the **Basic Configurations** area, click the **Static Website Hosting** label. The **Static Website Hosting** page is displayed.
+#. In the **Basic Configurations** area, click **Static Website Hosting**. The **Static Website Hosting** page is displayed.
 
    Alternatively, you can choose **Basic Configurations** > **Static Website Hosting** from the navigation pane on the left.
 
@@ -39,9 +39,9 @@ Procedure
 
 #. In the bucket list, click the bucket to which requests for the static website are redirected.
 
-#. (**Optional**) If the static website files in the bucket are not accessible to anonymous users, perform this step to configure them to be accessible to anonymous users. If the static website files are already accessible to anonymous users, skip this step.
+#. (**Optional**) If the static website files in the bucket are not accessible to anonymous users, perform this step. If they are already accessible to everyone, skip this step.
 
-   Authorize anonymous users the permission to read files on the static website. For details, see :ref:`Authorizing Access Permissions to Anonymous Users <obs_03_0132>`.
+   Grant the read permission for static website files to anonymous users. For details, see :ref:`Granting Anonymous Users Permission to Access Objects <obs_03_0132>`.
 
    If the bucket contains only static website files, configure the **Public Read** policy for the bucket so that all files in it can be accessed publicly.
 

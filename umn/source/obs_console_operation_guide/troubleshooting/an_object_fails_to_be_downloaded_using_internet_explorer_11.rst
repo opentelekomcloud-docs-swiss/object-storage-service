@@ -5,8 +5,8 @@
 An Object Fails to Be Downloaded Using Internet Explorer 11
 ===========================================================
 
-Question
---------
+Symptom
+-------
 
 A user logs in to OBS Console using Internet Explorer 11 and uploads an object. When the user attempts to download the object to the original path to replace the original object without closing the browser, a message is displayed indicating a download failure. Why does this happen?
 

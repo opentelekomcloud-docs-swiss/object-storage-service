@@ -5,7 +5,7 @@
 Restrictions
 ============
 
-:ref:`Table 1 <obs_03_0301__table189551726201816>` lists the web browser versions supported by OBS Console.
+:ref:`Table 1 <obs_03_0301__table189551726201816>` lists the web browser versions compatible with OBS Console.
 
 .. _obs_03_0301__table189551726201816:
 

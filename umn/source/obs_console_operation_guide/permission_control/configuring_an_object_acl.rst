@@ -15,22 +15,22 @@ An object owner is the account that uploads the object, but may not be the owner
 Procedure
 ---------
 
-#. In the bucket list, click the bucket to be operated. The **Overview** page of the bucket is displayed.
+#. In the bucket list, click the bucket you want to operate. The **Overview** page is displayed.
 
-#. In the navigation pane, click **Objects**.
+#. In the navigation pane, choose **Objects**.
 
 #. Click the object to be operated.
 
-#. On the **Object ACL** tab, click **Edit** to set ACL permissions of the **Owner** and **Anonymous User** for the target object.
+#. On the **Object ACL** tab page, click **Edit** to grant the owner and anonymous user ACL permissions for the object.
 
-#. Click **Add** to set the ACL permissions of a specific account.
+#. Click **Add** to apply specific ACL permissions to an account.
 
-   Enter an account ID or account name and set ACL permissions for the account. You can obtain the account ID or account name on the **My Credentials** page. The account ID and account name correspond to the **Domain ID** and **Domain Name** respectively on the **My Credentials** page.
+   Enter an account ID or account name and specify ACL permissions for the account. You can obtain the account ID or account name from the **My Credentials** page. The account ID and account name correspond to the **Domain ID** and **Domain Name** respectively on the **My Credentials** page.
 
 
    .. figure:: /_static/images/en-us_image_0000001180662112.png
-      :alt: **Figure 1** Adding ACL permissions for objects
+      :alt: **Figure 1** Adding ACL permissions for an object
 
-      **Figure 1** Adding ACL permissions for objects
+      **Figure 1** Adding ACL permissions for an object
 
 #. Click **Save**.
