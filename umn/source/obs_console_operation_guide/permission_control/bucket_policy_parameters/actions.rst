@@ -5,12 +5,12 @@
 Actions
 =======
 
-Actions are related to resources. When the resource is the current bucket, actions configured in the bucket policy must be bucket related actions. When objects are specified as resources, actions configured in the bucket policy must be object related actions.
+Actions are related to resources. When the resource is the current bucket, bucket-related actions should be configured in a bucket policy. When objects are specified as resources, object-related actions should be configured in a bucket policy.
 
 Actions can be specified in either of the following ways:
 
--  **Include**: Specifies the actions on which the bucket policy takes effect.
--  **Exclude**: Specifies that on all except the specified actions the bucket policy takes effect.
+-  **Include**: The bucket policy applies to specified actions.
+-  **Exclude**: The bucket policy applies to actions except the specified ones.
 
 Actions Related to Buckets
 --------------------------
@@ -28,41 +28,41 @@ Actions Related to Buckets
    +---------+----------------------------+------------------------------------------------------------------------------------------------------+
    |         | List\*                     | The value supports a wildcard character (``*``) that indicates all LIST operations can be performed. |
    +---------+----------------------------+------------------------------------------------------------------------------------------------------+
-   | Bucket  | DeleteBucket               | Deletes the bucket.                                                                                  |
+   | Bucket  | DeleteBucket               | Deletes a bucket.                                                                                    |
    +---------+----------------------------+------------------------------------------------------------------------------------------------------+
-   |         | ListBucket                 | Lists objects in the bucket, and gets the bucket metadata.                                           |
+   |         | ListBucket                 | Lists objects in a bucket, and obtains the bucket metadata.                                          |
    +---------+----------------------------+------------------------------------------------------------------------------------------------------+
-   |         | ListBucketVersions         | Lists object versions in the bucket.                                                                 |
+   |         | ListBucketVersions         | Lists versioned objects in a bucket.                                                                 |
    +---------+----------------------------+------------------------------------------------------------------------------------------------------+
-   |         | ListBucketMultipartUploads | Lists multipart upload tasks.                                                                        |
+   |         | ListBucketMultipartUploads | Lists multipart uploads.                                                                             |
    +---------+----------------------------+------------------------------------------------------------------------------------------------------+
-   |         | GetBucketAcl               | Obtains the ACL information of the bucket.                                                           |
+   |         | GetBucketAcl               | Obtains the bucket ACL information.                                                                  |
    +---------+----------------------------+------------------------------------------------------------------------------------------------------+
-   |         | PutBucketAcl               | Configures the ACL for the bucket.                                                                   |
+   |         | PutBucketAcl               | Configures a bucket ACL.                                                                             |
    +---------+----------------------------+------------------------------------------------------------------------------------------------------+
    |         | GetBucketCORS              | Obtains the CORS configuration of the bucket.                                                        |
    +---------+----------------------------+------------------------------------------------------------------------------------------------------+
-   |         | PutBucketCORS              | Configures CORS for the bucket.                                                                      |
+   |         | PutBucketCORS              | Configures CORS for a bucket.                                                                        |
    +---------+----------------------------+------------------------------------------------------------------------------------------------------+
-   |         | GetBucketVersioning        | Obtains the versioning information of the bucket.                                                    |
+   |         | GetBucketVersioning        | Obtains the bucket versioning information.                                                           |
    +---------+----------------------------+------------------------------------------------------------------------------------------------------+
-   |         | PutBucketVersioning        | Configures versioning for the bucket.                                                                |
+   |         | PutBucketVersioning        | Configures versioning for a bucket.                                                                  |
    +---------+----------------------------+------------------------------------------------------------------------------------------------------+
    |         | GetBucketLocation          | Obtains the bucket location.                                                                         |
    +---------+----------------------------+------------------------------------------------------------------------------------------------------+
    |         | GetBucketLogging           | Obtains the bucket logging information.                                                              |
    +---------+----------------------------+------------------------------------------------------------------------------------------------------+
-   |         | PutBucketLogging           | Configures logging for the bucket.                                                                   |
+   |         | PutBucketLogging           | Configures logging for a bucket.                                                                     |
    +---------+----------------------------+------------------------------------------------------------------------------------------------------+
-   |         | GetBucketWebsite           | Obtains the static website configuration information about the bucket.                               |
+   |         | GetBucketWebsite           | Obtains the static website configuration of the bucket.                                              |
    +---------+----------------------------+------------------------------------------------------------------------------------------------------+
    |         | PutBucketWebsite           | Configures the static website hosting for the bucket.                                                |
    +---------+----------------------------+------------------------------------------------------------------------------------------------------+
-   |         | DeleteBucketWebsite        | Cancels the static website hosting configuration of the bucket.                                      |
+   |         | DeleteBucketWebsite        | Deletes the static website hosting configuration of the bucket.                                      |
    +---------+----------------------------+------------------------------------------------------------------------------------------------------+
    |         | GetLifecycleConfiguration  | Obtains the lifecycle rules of the bucket.                                                           |
    +---------+----------------------------+------------------------------------------------------------------------------------------------------+
-   |         | PutLifecycleConfiguration  | Configures a lifecycle rule for the bucket.                                                          |
+   |         | PutLifecycleConfiguration  | Configures a lifecycle rule for a bucket.                                                            |
    +---------+----------------------------+------------------------------------------------------------------------------------------------------+
 
 .. _obs_03_0051__section387654045518:
@@ -83,7 +83,7 @@ Actions Related to Objects
    +---------+--------------------------+-------------------------------------------------------------------------------------------------------------+
    |         | List\*                   | The value supports a wildcard character (``*``) that indicates all LIST operations can be performed.        |
    +---------+--------------------------+-------------------------------------------------------------------------------------------------------------+
-   | Object  | GetObject                | Obtains the object and its metadata.                                                                        |
+   | Object  | GetObject                | Obtains an object and its metadata.                                                                         |
    +---------+--------------------------+-------------------------------------------------------------------------------------------------------------+
    |         | GetObjectVersion         | Obtains the object of a specified version and its metadata.                                                 |
    +---------+--------------------------+-------------------------------------------------------------------------------------------------------------+
@@ -93,7 +93,7 @@ Actions Related to Objects
    +---------+--------------------------+-------------------------------------------------------------------------------------------------------------+
    |         | GetObjectVersionAcl      | Obtains the ACL information of a specified object version.                                                  |
    +---------+--------------------------+-------------------------------------------------------------------------------------------------------------+
-   |         | PutObjectAcl             | Configures the ACL for an object.                                                                           |
+   |         | PutObjectAcl             | Configures an object ACL.                                                                                   |
    +---------+--------------------------+-------------------------------------------------------------------------------------------------------------+
    |         | PutObjectVersionAcl      | Configures the ACL for a specified object version.                                                          |
    +---------+--------------------------+-------------------------------------------------------------------------------------------------------------+

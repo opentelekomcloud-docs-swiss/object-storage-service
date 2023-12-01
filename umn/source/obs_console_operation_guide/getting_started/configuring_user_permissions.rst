@@ -7,37 +7,37 @@ Configuring User Permissions
 
 If your cloud service account does not need individual IAM users, then you may skip this section. Your permissions to use OBS functions are not affected.
 
-If IAM users are required, you need to grant OBS access permissions to the users, because OBS is separately deployed from other cloud resources.
+If IAM users are required, you need to grant them access permissions for OBS, because OBS is separately deployed from other cloud resources.
 
 Process
 -------
 
 
 .. figure:: /_static/images/en-us_image_0170301902.png
-   :alt: **Figure 1** Granting an IAM user the access permissions to OBS
+   :alt: **Figure 1** Process of granting an IAM user the OBS permissions
 
-   **Figure 1** Granting an IAM user the access permissions to OBS
+   **Figure 1** Process of granting an IAM user the OBS permissions
 
 Procedure
 ---------
 
-#. Log in to the management console using a cloud service account.
+#. Log in to the management console with your account.
 
-#. On the top navigation menu, choose **Service List** > **Management & Deployment** > **Identity and Access Management**. The IAM console page is displayed.
+#. On the top menu bar, choose **Service List** > **Management & Deployment** > **Identity and Access Management**. The IAM console is displayed.
 
-#. Create a user group and grant the OBS permissions to the user group.
+#. Create a user group and assign OBS permissions to it.
 
-   User groups facilitate centralized user management and streamlined permissions management. Users in the same user group have the same permissions. Users created in IAM inherit permissions from the groups to which they belong.
+   A user group is a collection of users. By assigning permissions to a user group, you assign permissions to the users in this group. After you create an IAM user, add it to one or more user groups, so that it can inherit the permissions from the groups.
 
-   a. In the navigation pane on the left, click **User Groups**. The **User Groups** page is displayed.
+   a. In the navigation pane, choose **User Groups**. The **User Groups** page is displayed.
 
    b. Click **Create User Group**.
 
-   c. On the **Create User Group** page, enter a name for the user group and click **OK**.
+   c. Enter a user group name and click **OK**.
 
-      The user group is displayed in the user group list once the creation completes.
+      The user group is displayed in the user group list once the creation is complete.
 
-   d. Click **Modify** in the **Operation** column of the row where the created user group resides.
+   d. Locate the user group you created and click **Modify** in the **Operation** column of the row.
 
    e. In the **Group Permissions** area, locate the row that displays **Global service** > **OBS**, click **Attach Policy** in the **Operation** column, select the policy name, and click **OK**.
 
@@ -45,11 +45,11 @@ Procedure
 
          In the **Policy Information** area, you can view the details about the policy.
 
-         Due to data caching, an RBAC policy and fine-grained policy involving OBS actions will take effect 10 to 15 minutes after it is attached to a user and user group.
+         Due to data caching, an RBAC policy or a fine-grained policy involving OBS actions will take effect 10 to 15 minutes after it is attached to a user or a user group.
 
 #. Create a user.
 
-   a. In the navigation pane on the left, click **Users**. The **Users** page is displayed.
+   a. In the navigation pane, choose **Users**. The **Users** page is displayed.
    b. Click **Create User**.
    c. Set user information and click **Next**.
 

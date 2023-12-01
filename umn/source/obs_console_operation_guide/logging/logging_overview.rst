@@ -9,11 +9,13 @@ You can enable logging to facilitate analysis or audit as required. Access logs 
 
 The logging function itself is offered for free, only the space occupied by log files is charged.
 
+After logging is enabled, the log delivery user group will be automatically granted the permission to read the bucket ACL and write the bucket where logs are saved. If you manually disable such permissions, bucket logging fails.
+
 OBS can record bucket access requests in logs for request analysis and log audit.
 
-Logs occupy some OBS storage space rented by users, causing extra fees. For this reason, OBS does not collect bucket access logs by default.
+Logs occupy the OBS storage that incurs costs, so OBS does not collect bucket access logs by default.
 
-The log files are generated and uploaded by OBS to the bucket where the logs are stored. Therefore, OBS requires the authorization to upload the generated log files. Therefore, before configuring logging for a bucket, you need to create an IAM agency for OBS and add this agency when configuring logging for the bucket. By default, when configuring permissions for an agency, you only need to grant the agency the permission to upload log files (PutObject) to the bucket where log files are stored. In the following example, **mybucketlogs** is the name of the bucket for storing log files. If the default encryption function is enabled for the log storing bucket, the IAM agency also requires the KMS Administrator permissions in the region where the log storing bucket resides.
+OBS creates log files and uploads them to a specified bucket. To perform these operations, OBS must be granted required permissions. Therefore, before configuring logging for a bucket, you need to create an IAM agency for OBS and add this agency when configuring logging for the bucket. By default, when configuring permissions for an agency, you only need to grant the agency the permission to upload log files (PutObject) to the bucket for storing log files. In the following example, **mybucketlogs** is the bucket. If the default encryption function is enabled for the log storing bucket, the IAM agency also requires the KMS Administrator permissions in the region where the log storing bucket resides.
 
 .. code-block::
 
@@ -32,7 +34,7 @@ The log files are generated and uploaded by OBS to the bucket where the logs are
        ]
    }
 
-Approximately fifteen minutes after log management is successfully configured, you can view the operation logs in the target bucket that stores the logs.
+After logging is configured, you can view operation logs in the bucket that stores the logs in approximately fifteen minutes.
 
 The following shows an example access log of the target bucket:
 

@@ -5,23 +5,23 @@
 Accessing an Object Using Its URL
 =================================
 
-If you set the permission for an object to allow anonymous users to read it, anonymous users can access the object through the URL that you shared.
+You can grant anonymous users the read permission for an object so they can access the object using the shared object URL.
 
 Prerequisites
 -------------
 
-A read permission has been set for anonymous users. For details about how to enable the permission, see :ref:`Authorizing Access Permissions to Anonymous Users <obs_03_0132>`.
+Anonymous users have the read permission for the object. For details about permission granting, see :ref:`Granting Anonymous Users Permission to Access Objects <obs_03_0132>`.
 
 Procedure
 ---------
 
-#. In the bucket list, click the bucket to be operated. The **Overview** page of the bucket is displayed.
+#. In the bucket list, click the bucket you want to operate. The **Overview** page is displayed.
 
-#. In the navigation pane, click **Objects**.
+#. In the navigation pane, choose **Objects**.
 
-#. Click the object to be shared. The object information is displayed on the top part of the page. The **Link** displays the shared link of the object. For details, see :ref:`Figure 1 <obs_03_0319__fig36534596192426>`.
+#. Click the object to be shared. The object information is displayed on the top part of the page. You can find the link for accessing the object in the **Link** area, as shown in :ref:`Figure 1 <obs_03_0319__fig36534596192426>`.
 
-   Anonymous users can access the object by clicking the URL. The object URL is in the format of **https://**\ *bucket name*.\ *domain name*/*directory level*/*object name*. If the object resides in the root directory of the bucket, its URL does not contain the directory level.
+   Anonymous users can access the object by clicking this link. An object link (URL) is in the format of **https://**\ *Bucket name*.\ *Domain name*/*Directory level*/*Object name*. If the object is stored in the root directory of the bucket, its URL does not contain any directory level.
 
    .. _obs_03_0319__fig36534596192426:
 
@@ -29,7 +29,3 @@ Procedure
       :alt: **Figure 1** Object link
 
       **Figure 1** Object link
-
-   .. note::
-
-      -  The method of using a browser to access objects varies depending on the object type. You can directly open **.txt** and **.html** files using a browser. However, when you open **.exe** and **.dat** files using a browser, the files are automatically downloaded to your local computer.

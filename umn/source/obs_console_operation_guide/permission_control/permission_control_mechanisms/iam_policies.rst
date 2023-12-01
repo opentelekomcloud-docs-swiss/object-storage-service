@@ -13,7 +13,7 @@ IAM policies with OBS permissions take effect on all OBS buckets and objects. To
 
 For details about OBS permissions controlled by IAM policies, see :ref:`Permissions Management <obs_03_0045>`.
 
-IAM Policies Application Scenarios
+IAM policies Application Scenarios
 ----------------------------------
 
 IAM policies are used to authorize IAM users under an account.
@@ -74,7 +74,7 @@ A policy consists of a version and statements. Each policy can have multiple sta
    |                                   |    For details about actions, see the topics of "Bucket-Related Actions" and "Object-Related Actions" in the "IAM Permissions Policies and Supported Actions" section of the *OBS API Reference*.                                                                                                                                                    |
    +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Authentication of IAM Policies
+Authentication of IAM policies
 ------------------------------
 
 The authentication of IAM policies starts from the Deny statements. The following figure shows the authentication logic for resource access.
@@ -87,7 +87,7 @@ The authentication of IAM policies starts from the Deny statements. The followin
 
 .. note::
 
-   The actions in each policy bear the OR relationship.
+   The actions in each policy are in the OR relationship.
 
 #. A user accesses the system and makes an operation request.
 #. The system evaluates all the permission policies assigned to the user.

@@ -5,10 +5,10 @@
 Effect
 ======
 
-A bucket policy can either allow or deny the access requests that match the configuration.
+A bucket policy can either allow or deny requests.
 
--  **Allow**: Indicates that access requests are allowed, if they match the configurations of the bucket policy.
--  **Deny**: Indicates that access requests are denied, if they match the configurations of the bucket policy.
+-  **Allow**: The policy allows the matched requests.
+-  **Deny**: The policy denies the matched requests.
 
 When a bucket policy contains both the allow and deny effects, the deny effect prevails. The following figure shows the judgment process.
 
@@ -19,7 +19,7 @@ When a bucket policy contains both the allow and deny effects, the deny effect p
    **Figure 1** Determining a bucket policy when the allow and deny statements conflict
 
 #. A user initiates an access request.
-#. OBS preferentially searches for deny (explicit deny) effects from bucket policies. If a deny statement is found, OBS directly rejects the access. The access request ends.
+#. OBS preferentially searches for bucket policies that have the deny (explicit deny) effect. If a deny statement is found, OBS directly rejects the access. The access request ends.
 #. If there is no deny statement, OBS searches for allow statements.
 
    -  If an allow statement is found, OBS allows the access.

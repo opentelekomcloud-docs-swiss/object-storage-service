@@ -15,15 +15,13 @@ Static website hosting has been enabled.
 Procedure
 ---------
 
-#. In the bucket list, click the bucket to be operated. The **Overview** page of the bucket is displayed.
+#. In the bucket list, click the bucket you want to operate. The **Overview** page is displayed.
 
-#. In the **Basic Configurations** area, click the **URL Validation** label. The **URL Validation** page is displayed.
-
-   Alternatively, you can choose **Basic Configurations** > **URL Validation** in the navigation pane.
+#. In the **Basic Configurations** area, click **URL Validation**. The **URL Validation** page is displayed.
 
 #. Click |image1| next to the text box of **Whitelisted Referers** or **Blacklisted Referers**, and enter the referers.
 
-   The following describes the principles for setting **Referers**:
+   Principles for setting **Referers**:
 
    -  The length of a whitelist or blacklist cannot exceed 1024 characters.
    -  Referer format:
@@ -32,15 +30,15 @@ Procedure
       -  The referer parameter supports asterisks (*) and question marks (?). An asterisk works as a wildcard that can replace zero or multiple characters, and a question mark (?) can replace a single character.
       -  If the referer header field contains **http** or **https** during download, the referer must contain **http** or **https**.
 
-   -  When **Whitelisted Referers** is empty but **Blacklisted Referers** is not, all websites except specified ones in the blacklist are allowed to access data in the target bucket.
-   -  When **Whitelisted Referers** is not empty and **Blacklisted Referers** is empty or not empty, only specified websites in the whitelist are allowed to access data in the target bucket.
+   -  If **Whitelisted Referers** is left blank but **Blacklisted Referers** is not, all websites except those specified in the blacklist are allowed to access data in the target bucket.
+   -  If **Whitelisted Referers** is not left blank, only the websites specified in the whitelist are allowed to access the target bucket no matter whether **Blacklisted Referers** is left blank or not.
 
    .. note::
 
-      When **Whitelisted Referers** is the same as **Blacklisted Referers**, the blacklist takes effect. For example, if the fields of both **Whitelisted Referers** and **Blacklisted Referers** are set to **https://www.example.com**, access requests from this address are blocked.
+      If **Whitelisted Referers** is configured the same as **Blacklisted Referers**, the blacklist takes effect. For example, if both **Whitelisted Referers** and **Blacklisted Referers** are set to **https://www.example.com**, access requests from this address will be blocked.
 
-   -  When **Whitelisted Referers** and **Blacklisted Referers** are empty, all websites are allowed to access data in the target bucket by default.
-   -  Before determining whether a user has the four types of permissions (**Read**, **Write**, **ACL View**, and **ACL Edit**) for a bucket or objects in the bucket, check whether the user complies with the URL validation principles of the **Referers** field.
+   -  If **Whitelisted Referers** and **Blacklisted Referers** are both left blank, all websites are allowed to access data in the target bucket by default.
+   -  Before determining whether a user has the four types of permissions (read, write, ACL read, and ACL write) for a bucket or objects in the bucket, check whether this user complies with the URL validation principles of the **Referer** field.
 
 #. Click |image2| to save the settings.
 

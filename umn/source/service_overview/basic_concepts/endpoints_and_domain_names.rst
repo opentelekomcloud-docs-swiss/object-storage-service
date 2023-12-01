@@ -5,13 +5,13 @@
 Endpoints and Domain Names
 ==========================
 
-**Endpoint:** OBS provides an endpoint for each region. An endpoint is a domain name to access OBS in a region and is used to process access requests of that region. For details about regions and endpoints, see `Regions and Endpoints <https://docs.sc.otc.t-systems.com/en-us/endpoint/index.html>`__.
+**Endpoint:** OBS provides an endpoint for each region. An endpoint is considered a domain name to access OBS in a region and is used to process requests of that region. For details about regions and endpoints, see `Regions and Endpoints <https://docs.sc.otc.t-systems.com/en-us/endpoint/index.html>`__.
 
-**Bucket domain name**: Each bucket in OBS has a domain name. A domain name is the Internet address of a bucket and can be used to access the bucket over the Internet. It is applicable to cloud application development and data sharing scenarios.
+**Bucket domain name**: Each bucket in OBS has a domain name. A domain name is the address of a bucket and can be used to access the bucket over the Internet. It is applicable to cloud application development and data sharing.
 
 An OBS bucket domain name is in the format of *BucketName.Endpoint*, where *BucketName* indicates the name of the bucket, and *Endpoint* indicates the domain name of the region where the bucket is located.
 
-:ref:`Table 1 <obs_03_0152__table94332031121816>` lists the bucket domain name and other domain names in OBS, including their formats and protocols.
+:ref:`Table 1 <obs_03_0152__table94332031121816>` lists the bucket domain name and other domain names in OBS, including their structure and protocols.
 
 .. _obs_03_0152__table94332031121816:
 

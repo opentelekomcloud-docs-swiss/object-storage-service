@@ -5,13 +5,13 @@
 Creating an IAM Agency
 ======================
 
-To use some OBS features, such as logging, you need to use IAM agencies to grant required permissions to OBS for processing your data.
+To use some OBS features, you need to use IAM agencies to grant required permissions to OBS for processing your data.
 
 Creating an Agency for Uploading Logs
 -------------------------------------
 
 #. In the **Logging** dialog box, click **Create Agency** to jump to the **Agencies** page on the **Identity and Access Management** console.
-#. Click **Create Agency** to create an agency.
+#. Click **Create**.
 #. Enter an agency name.
 #. Select **Cloud service** for the **Agency Type**.
 #. Select **Object Storage Service (OBS)** as the cloud service.

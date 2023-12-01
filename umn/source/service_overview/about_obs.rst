@@ -5,8 +5,8 @@
 About OBS
 =========
 
-Object Storage Service (OBS) is a cloud storage service optimized for storing massive amounts of data. It provides unlimited, secure, and highly reliable storage capabilities. On OBS, you can easily perform storage management operations, such as bucket creation, modification, and deletion, as well as object upload, download, and deletion.
+Object Storage Service (OBS) is a scalable service that provides secure, reliable cloud storage for massive amounts of data. On OBS, you can easily manage your OBS resources, such as creating, modifying, and deleting buckets, or uploading, downloading, and deleting objects.
 
-OBS provides users with unlimited storage capacity, stores files in any format, and caters to the needs of common users, websites, enterprises, and developers. Neither the entire OBS system nor any single bucket has limitations on storage capacity or the number of objects/files that can be stored. As a web service, OBS supports APIs over Hypertext Transfer Protocol (HTTP) and Hypertext Transfer Protocol Secure (HTTPS). You can use OBS Console or OBS clients to access and manage data stored in OBS anytime, anywhere. With OBS-provided APIs, you can easily manage data stored in OBS and develop upper-layer service applications.
+OBS provides unlimited storage capacity for objects of any format, catering to the needs of common users, websites, enterprises, and developers. There is no limitation on the storage capacity of the entire OBS system or of a single bucket, and any number of objects can be stored. As a web service, OBS supports APIs over Hypertext Transfer Protocol (HTTP) and Hypertext Transfer Protocol Secure (HTTPS). You can use OBS Console or OBS Browser+ to access and manage data stored in OBS anytime, anywhere. With OBS APIs, you can easily manage data stored in OBS and develop upper-layer applications.
 
-Cloud service infrastructures can be deployed in multiple regions, delivering flexible expansion and enhanced reliability. You can deploy OBS in specific regions for faster access.
+Cloud service infrastructures can be deployed in multiple regions, delivering high scalability and reliability. You can deploy OBS in specific regions for faster access.

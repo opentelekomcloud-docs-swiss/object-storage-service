@@ -5,16 +5,16 @@
 Configuring Tags for a Bucket
 =============================
 
-You can add tags to a bucket when creating the bucket. For details, see :ref:`Creating a Bucket <obs_03_0306>`. Also you can add tags to a bucket after it has been created. This topic describes how to add tags to a bucket after it has been created.
+When creating a bucket, you can add tags to it. For details, see :ref:`Creating a Bucket <obs_03_0306>`. You can also add tags to a bucket after it has been created. This topic describes how to add tags to an existing bucket.
 
 Procedure
 ---------
 
-#. In the bucket list, click the bucket to be operated. The **Overview** page of the bucket is displayed.
+#. In the bucket list, click the bucket you want to operate. The **Overview** page is displayed.
 
-#. In the **Basic Configurations** area, click the **Tags** label. The **Tags** page is displayed.
+#. In the **Basic Configurations** area, click **Tags**.
 
-   Alternatively, you can choose **Basic Configurations** > **Tags** in the navigation pane on the left.
+   Alternatively, you can choose **Basic Configurations** > **Tags** in the navigation pane.
 
 #. Click **Add Tag**. The **Add Tag** dialog box is displayed.
 
@@ -30,23 +30,23 @@ Procedure
 
    .. table:: **Table 1** Parameter description
 
-      +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-      | Parameter                         | Description                                                                                                                         |
-      +===================================+=====================================================================================================================================+
-      | Key                               | Specifies the key of the tag. Each tag of a bucket has a unique key. The value of the key can be self-defined or predefined by TMS. |
-      |                                   |                                                                                                                                     |
-      |                                   | A tag key must comply with the following naming rules:                                                                              |
-      |                                   |                                                                                                                                     |
-      |                                   | -  Must contain 1 to 36 characters.                                                                                                 |
-      |                                   | -  The value cannot start or end with a space or contain the following characters: **=*<>\\,|/**                                    |
-      +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-      | Value                             | Specifies the value of the tag. Tags of a bucket can have repetitive or blank values.                                               |
-      |                                   |                                                                                                                                     |
-      |                                   | The tag value must comply with the following naming rules:                                                                          |
-      |                                   |                                                                                                                                     |
-      |                                   | -  It ranges from 0 to 43 characters.                                                                                               |
-      |                                   | -  Cannot contain the following characters: ``=*<>\,|/``                                                                            |
-      +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+      +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+      | Parameter                         | Description                                                                                                             |
+      +===================================+=========================================================================================================================+
+      | Tag key                           | Key of a tag. Tag keys for the same bucket must be unique. You can customize tags or select the ones predefined on TMS. |
+      |                                   |                                                                                                                         |
+      |                                   | A tag key:                                                                                                              |
+      |                                   |                                                                                                                         |
+      |                                   | -  Must contain 1 to 36 characters and be case sensitive.                                                               |
+      |                                   | -  Cannot start or end with a space or contain the following characters: ``=*<>\,|/``                                   |
+      +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+      | Tag value                         | Value of a tag. A tag value can be repetitive or left blank.                                                            |
+      |                                   |                                                                                                                         |
+      |                                   | A tag value:                                                                                                            |
+      |                                   |                                                                                                                         |
+      |                                   | -  Can contain 0 to 43 characters and must be case sensitive.                                                           |
+      |                                   | -  Cannot contain the following characters: ``=*<>\,|/``                                                                |
+      +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------+
 
 #. Click **OK**.
 
@@ -55,4 +55,4 @@ Procedure
 Related Operations
 ------------------
 
-To modify the tag configuration, edit **Value** of the tag. You can also click **Delete** next to a tag to delete the tag.
+In the tag list, click **Edit** to change the tag value or click **Delete** to remove the tag.

@@ -5,6 +5,8 @@
 Process Description
 ===================
 
+OBS basic operations include bucket creation, object upload and object download.
+
 The follow-up sections describe how to complete the tasks illustrated in :ref:`Figure 1 <obs_03_0303__fig22289233142328>`.
 
 .. _obs_03_0303__fig22289233142328:

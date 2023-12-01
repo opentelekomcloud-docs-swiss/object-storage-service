@@ -5,16 +5,18 @@
 Configuring a Lifecycle Rule
 ============================
 
-You can configure the lifecycle rule for a bucket or an object. You can also specify an expiration time of objects, so the objects are automatically deleted after they expire.
+You can configure a lifecycle rule for a bucket or a set of objects to:
+
+-  Expire objects and then delete them.
 
 Procedure
 ---------
 
-#. In the bucket list, click the bucket to be operated. The **Overview** page of the bucket is displayed.
+#. In the bucket list, click the bucket you want to operate. The **Overview** page is displayed.
 
-#. In the **Basic Configurations** area, click the **Lifecycle Rules** label. The **Lifecycle Rules** page is displayed.
+#. In the **Basic Configurations** area, click **Lifecycle Rules**. The **Lifecycle Rules** page is displayed.
 
-   Alternatively, you can choose **Basic Configurations** > **Lifecycle Rules** in the navigation pane on the left.
+   Alternatively, you can choose **Basic Configurations** > **Lifecycle Rules** in the navigation pane.
 
 #. Click **Create**.
 
@@ -34,50 +36,50 @@ Procedure
 
    -  **Rule Name**:
 
-      Identify lifecycle rules. The **Rule Name** contains a maximum of 255 characters.
+      It identifies a lifecycle rule. A rule name can contain a maximum of 255 characters.
 
    -  **Applies To**: Can be set to **Object name prefix** or **Bucket**.
 
-      -  **Object name prefix**: Objects that have the specified prefix will be managed by the lifecycle rule. The prefix cannot start with a slash (/), cannot have consecutive slashes (/), and cannot contain the following special characters: **\\:*?"<>\|**
+      -  **Object name prefix**: Objects with this specified prefix will be managed by the lifecycle rule. The prefix cannot start with a slash (/) or contain two consecutive slashes (//), and cannot contain the following special characters: ``\:*?"<>|``
       -  **Bucket**: All objects in the bucket will be managed by the lifecycle rule.
 
    .. note::
 
-      -  When **Object name prefix** is selected and the specified prefix and the prefix of an existing lifecycle rule overlap, OBS regards the two rules as one and disables the one to be configured. For example, if a rule with prefix **abc** exists in the system, another rule whose prefix starts with **abc** cannot be configured.
-      -  If a lifecycle rule whose **Applies To** is set to **Object name prefix** has been configured, you cannot configure a lifecycle rule whose **Applies To** is set to **Bucket**.
+      -  If the specified prefix is overlapping with the prefix set in an existing lifecycle rule, OBS regards these two rules as one and forbids you to configure the one you are configuring. For example, if there is already a rule with prefix **abc** in OBS, you cannot configure another rule whose prefix starts with **abc**.
+      -  If there is already a lifecycle rule based on an object prefix, you are not allowed to configure another rule that is applied to the entire bucket.
       -  If a lifecycle rule has been configured for the entire bucket, no more rules that apply to object name prefix can be added.
 
    **Current Version** or **Historical Version**:
 
    .. note::
 
-      -  **Current Version** and **Historical Version** are two concepts for **Versioning**. If **Versioning** is enabled, uploading objects with the same name to the same path generates different versions. The object uploaded lastly is called **Current Version**, and the object uploaded earlier is called **Historical Version**.
+      -  **Current Version** and **Historical Version** are two concepts for versioning. If versioning is enabled for a bucket, uploading objects with the same name to the bucket creates different object versions. The last uploaded object is called the current version, while those previously uploaded are called historical versions.
       -  You can configure either the **Current Version** or **Historical Version**, or both of them.
 
-   -  Object deletion upon expiration: You can specify the number of days after which objects that have been last updated and meet the specified conditions are automatically deleted.
+   -  **Delete Objects After (Days)**: After this number of days since the last update, objects meeting certain conditions will be expired and then deleted.
 
-   For example, the following files are stored in OBS on January 7, 2015:
+   For example, on January 7, 2015, you saved the following files in OBS:
 
    -  log/test1.log
    -  log/test2.log
    -  doc/example.doc
    -  doc/good.txt
 
-   The following files are stored in OBS on January 10, 2015:
+   On January 10, 2015, you saved another four files:
 
    -  log/clientlog.log
    -  log/serverlog.log
    -  doc/work.doc
    -  doc/travel.txt
 
-   On January 10, 2015, you set the expiration time of objects prefixed with **log** to one day later, you may encounter the following situations:
+   On January 10, 2015, you set the objects prefixed with **log** to expire one day later. You might encounter the following situations:
 
-   -  Objects **log/test1.log** and **log/test2.log** uploaded on January 7, 2015 may be deleted after the last system scan. The deletion may happen on January 10, 2015 or January 11, 2015, depending on the time of the last system scan.
-   -  Objects **log/clientlog.log** and **log/serverlog.log** uploaded on January 10, 2015 are usually deleted on January 11, 2015 or January 12, 2015, depending on the time of the last system scan. If the objects have been stored for more than one day at the time of the last system scan, the objects are deleted upon the scan. Or, they are deleted at the next system scan or later whenever their storage duration meets the specified expiration time requirement.
+   -  Objects **log/test1.log** and **log/test2.log** uploaded on January 7, 2015 might be deleted after the last system scan. The deletion could happen on January 10, 2015 or January 11, 2015, depending on the time of the last system scan.
+   -  Objects **log/clientlog.log** and **log/serverlog.log** uploaded on January 10, 2015 might be deleted on January 11, 2015 or January 12, 2015, depending on whether they have been stored for over one day (since their last update) when the system scan happened.
 
    .. note::
 
-      The deletion of an object may be delayed after the time condition is met. Generally, the delay does not exceed 48 hours. If you change the configurations of an existing lifecycle rule, the effective time of the lifecycle rule will change according to the new configurations.
+      In theory, it takes 24 hours at most to execute a lifecycle rule. Because OBS calculates the lifecycle of an object from the next 00:00 (UTC time) after the object is uploaded, there may be a delay in deleting expired objects. Generally, the delay does not exceed 48 hours. If you make changes to an existing lifecycle rule, the rule will take effect again.
 
 #. Click **OK** to complete the lifecycle rule configuration.
 
