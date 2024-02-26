@@ -34,6 +34,11 @@ If a bucket has versioning enabled, a unique version ID is generated for an obje
 
    If 10 parts are uploaded but only 9 parts are selected for combination, the part that is not combined will be automatically deleted. After the part is deleted, it cannot be restored. Before combining the parts, adopt the interface used to list the parts that have been uploaded to check all parts to ensure that no part is missed.
 
+WORM
+----
+
+If a bucket has WORM enabled, the WORM protection will be automatically applied to the object generated after a multipart upload is complete. If you specify WORM headers and a retention expiration date when you initiate a multipart upload, the protection for the assembled object ends on the specified date. If you do not specify WORM headers during the initiation, but have configured the default bucket-level retention policy, this default policy is automatically applied and the protection starts when the multipart upload is complete. After a multipart upload is complete, you can still configure object-level WORM retention policies for the assembled object, see section :ref:`Configuring WORM Retention for an Object <en-us_topic_0000001806154009>`.
+
 Request Syntax
 --------------
 

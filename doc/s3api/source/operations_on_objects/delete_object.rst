@@ -16,6 +16,11 @@ If a bucket has versioning suspended, a deletion mark with version ID **null** i
 
 You can specify **versionId** to delete an object of the specified version.
 
+WORM
+----
+
+OBS automatically enables versioning when you enable WORM for a bucket. If you delete an object without specifying a version ID, OBS does not really delete this object thanks to versioning, but inserts a delete marker with a unique version ID, which turns into the current version. If you specify a version ID when deleting an object protected by WORM, OBS prevents you from deleting this object and returns a 403 error. Delete markers are not protected by WORM.
+
 Request Syntax
 --------------
 

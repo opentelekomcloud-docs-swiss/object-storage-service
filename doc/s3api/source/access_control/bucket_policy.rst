@@ -136,6 +136,8 @@ In OBS, **Action** can be the following operations on buckets:
 -  s3:GetBucketStorage
 -  s3:PutBucketTagging
 -  s3:GetBucketTagging
+-  s3:PutBucketObjectLockConfiguration
+-  s3:GetBucketObjectLockConfiguration
 
 In OBS, **Action** can be the following operations on objects:
 
@@ -151,6 +153,7 @@ In OBS, **Action** can be the following operations on objects:
 -  s3:ListMultipartUploadParts
 -  s3:AbortMultipartUpload
 -  s3:RestoreObject
+-  s3:PutObjectRetention
 
 OBS supports S3 resources in the ARN format:
 
