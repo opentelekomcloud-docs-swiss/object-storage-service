@@ -9,7 +9,8 @@ You can send the **PUT Bucket** request to create a bucket with the specified na
 
 .. note::
 
-   You can create a maximum of 100 buckets.
+   -  You can create a maximum of 100 buckets.
+   -  You can enable WORM when you create a bucket, but you cannot enable WORM for an existing bucket. In a bucket with WORM enabled, you can further configure retention policies for objects you upload to this bucket. For more information, see :ref:`Configuring a Default WORM Policy for a Bucket <en-us_topic_0000001806313033>`. Once enabled, WORM cannot be disabled for a bucket. When you create a bucket with WORM enabled, OBS automatically enables versioning for the bucket and the versioning cannot be suspended for that bucket. When you create a parallel file system, you cannot enable WORM for it.
 
 The name of a bucket must be unique in OBS. If a user repeatedly creates namesake buckets in the same region, status code **200** is returned. If namesake buckets are repeatedly created in other cases, status code **409** is returned. You can set the ACL of a bucket by adding optional header **x-amz-acl** to a request.
 
@@ -53,17 +54,23 @@ You can add optional headers to this request. :ref:`Table 1 <en-us_topic_0125560
 
 .. table:: **Table 1** Optional request headers
 
-   +-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | Header                | Description                                                                                                                                                                                                                                                        | Remarks                                                                          |
-   +=======================+====================================================================================================================================================================================================================================================================+==================================================================================+
-   | x-amz-acl             | Indicates the ACL of a bucket. Possible values are **private**, **public-read**, **public-read-write**, **authenticated-read**, **bucket-owner-read**, and **bucket-owner-full-control**. For details, see :ref:`Table 4 <en-us_topic_0125560406__table40200743>`. | Optional                                                                         |
-   |                       |                                                                                                                                                                                                                                                                    |                                                                                  |
-   |                       | Type: String                                                                                                                                                                                                                                                       |                                                                                  |
-   +-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-   | x-amz-security-token  | Header field used to identify the request of a federated user. When the federal authentication function is enabled, users sending such requests are identified as federated users.                                                                                 | Optional. This parameter must be carried in the request sent by federated users. |
-   |                       |                                                                                                                                                                                                                                                                    |                                                                                  |
-   |                       | Type: string                                                                                                                                                                                                                                                       |                                                                                  |
-   +-----------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+   +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+   | Header                           | Description                                                                                                                                                                                                                                                        | Remarks                                                                          |
+   +==================================+====================================================================================================================================================================================================================================================================+==================================================================================+
+   | x-amz-acl                        | Indicates the ACL of a bucket. Possible values are **private**, **public-read**, **public-read-write**, **authenticated-read**, **bucket-owner-read**, and **bucket-owner-full-control**. For details, see :ref:`Table 4 <en-us_topic_0125560406__table40200743>`. | Optional                                                                         |
+   |                                  |                                                                                                                                                                                                                                                                    |                                                                                  |
+   |                                  | Type: String                                                                                                                                                                                                                                                       |                                                                                  |
+   +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+   | x-amz-security-token             | Header field used to identify the request of a federated user. When the federal authentication function is enabled, users sending such requests are identified as federated users.                                                                                 | Optional. This parameter must be carried in the request sent by federated users. |
+   |                                  |                                                                                                                                                                                                                                                                    |                                                                                  |
+   |                                  | Type: string                                                                                                                                                                                                                                                       |                                                                                  |
+   +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+   | x-amz-bucket-object-lock-enabled | When creating a bucket, you can use this header to enable WORM for the bucket.                                                                                                                                                                                     | No                                                                               |
+   |                                  |                                                                                                                                                                                                                                                                    |                                                                                  |
+   |                                  | Type: string                                                                                                                                                                                                                                                       |                                                                                  |
+   |                                  |                                                                                                                                                                                                                                                                    |                                                                                  |
+   |                                  | Example: **x-amz-bucket-object-lock-enabled:true**                                                                                                                                                                                                                 |                                                                                  |
+   +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 Request Elements
 ----------------
@@ -192,6 +199,34 @@ Sample Response (Example of Creating a parallel file system)
    HTTP/1.1 200 OK
    Server: OBS
    x-amz-request-id: BF260000016435CE298386946AE4C482
+   Location: /examplebucket
+   x-amz-id-2: 32AAAQAAEAABSAAgAAEAABAAAQAAEAABCT9W2tcvLmMJ+plfdopaD62S0npbaRUz
+   Date: WED, 01 Jul 2015 02:25:06 GMT
+   Content-Length: 0
+
+Sample Request for Creating a Bucket with WORM Enabled
+------------------------------------------------------
+
+.. code-block:: text
+
+   PUT / HTTP/1.1
+   User-Agent: curl/7.29.0
+   Host: examplebucket.obs.region.example.com
+   Accept: */*
+   Date: WED, 01 Jul 2015 02:25:05 GMT
+   Authorization: authorization
+   x-amz-bucket-object-lock-enabled:true
+   Content-Length: 0
+
+Sample Response for Creating a Bucket with WORM Enabled
+-------------------------------------------------------
+
+.. code-block::
+
+   HTTP/1.1 200 OK
+   Server: OBS
+   x-amz-request-id: 00000184C11AC7A6809F881341842C02
+   x-reserved-indicator: Unauthorized
    Location: /examplebucket
    x-amz-id-2: 32AAAQAAEAABSAAgAAEAABAAAQAAEAABCT9W2tcvLmMJ+plfdopaD62S0npbaRUz
    Date: WED, 01 Jul 2015 02:25:06 GMT

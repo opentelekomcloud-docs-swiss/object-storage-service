@@ -11,6 +11,8 @@ Versioning can be used to restore an object that is incorrectly overwritten or d
 
 By default, versioning is disabled for a bucket.
 
+Once WORM is enabled for a bucket, OBS automatically enables versioning for the bucket and the versioning cannot be suspended for that bucket.
+
 After the versioning state is set to **Enabled**:
 
 -  OBS creates a unique version ID for each uploaded object. Namesake objects are not overwritten and are distinguished by their own version IDs.
