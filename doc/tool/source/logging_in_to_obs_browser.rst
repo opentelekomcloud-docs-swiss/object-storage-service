@@ -5,14 +5,15 @@
 Logging In to OBS Browser+
 ==========================
 
-OBS Browser+ supports AK-based login.
+OBS Browser+ supports login using a permanent AK.
 
 .. note::
 
-   If a proxy is required for access, choose **More** > **Settings** > **Network** on the login page to configure the proxy before login.
+   #. If a proxy is required for access, choose **More** > **Settings** > **Network** on the login page to configure the proxy before login.
+   #. OBS Browser+ does not support login using a temporary AK/SK pair and a security token.
 
-AK Login
---------
+Permanent AK Login
+------------------
 
 In AK-based login mode, access keys (AK and SK) are used for login authentication. You need to enter the AK and SK for login.
 
