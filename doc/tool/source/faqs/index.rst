@@ -15,7 +15,7 @@ FAQs
 -  :ref:`How Can I Permanently Share Files or Folders with Other Users? <obs_03_1035>`
 -  :ref:`How Can I Access a Specific Bucket or Directory? <obs_03_1036>`
 -  :ref:`Can I Cancel the Directory Sharing After a Directory Has Been Shared with Others? <obs_03_1037>`
--  :ref:`Can I Query the Number and Size of Files in a Folder? <obs_03_1038>`
+-  :ref:`Can OBS Browser+ List Objects with Special Characters in Their Names? <obs_03_1082>`
 
 .. toctree::
    :maxdepth: 1
@@ -31,4 +31,4 @@ FAQs
    how_can_i_permanently_share_files_or_folders_with_other_users
    how_can_i_access_a_specific_bucket_or_directory
    can_i_cancel_the_directory_sharing_after_a_directory_has_been_shared_with_others
-   can_i_query_the_number_and_size_of_files_in_a_folder
+   can_obs_browser_list_objects_with_special_characters_in_their_names
