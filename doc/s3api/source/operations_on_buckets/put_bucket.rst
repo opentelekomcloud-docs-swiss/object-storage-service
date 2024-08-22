@@ -175,35 +175,6 @@ Sample Response (Example of Setting the Region of a Bucket)
     Date: Sat, 03 Dec 2011 06:31:58 GMT
     Content-Length: 0
 
-Sample Request (Example of Creating a parallel file system)
------------------------------------------------------------
-
-.. code-block:: text
-
-   PUT / HTTP/1.1
-   User-Agent: curl/7.29.0
-   Host: examplebucket.obs.region.example.com
-   Accept: */*
-   Date: WED, 01 Jul 2015 02:25:05 GMT
-   Authorization: AWS H4IPJX0TQTHTHEBQQCEC:75/Y4Ng1izvzc1nTGxpMXTE6ynw=
-   Content-Length: 157
-   <CreateBucketConfiguration xmlns="http://obs.region.example.com/doc/2015-06-30/">
-   <Location>region</Location>
-   </CreateBucketConfiguration>
-
-Sample Response (Example of Creating a parallel file system)
-------------------------------------------------------------
-
-::
-
-   HTTP/1.1 200 OK
-   Server: OBS
-   x-amz-request-id: BF260000016435CE298386946AE4C482
-   Location: /examplebucket
-   x-amz-id-2: 32AAAQAAEAABSAAgAAEAABAAAQAAEAABCT9W2tcvLmMJ+plfdopaD62S0npbaRUz
-   Date: WED, 01 Jul 2015 02:25:06 GMT
-   Content-Length: 0
-
 Sample Request for Creating a Bucket with WORM Enabled
 ------------------------------------------------------
 
