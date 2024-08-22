@@ -27,7 +27,7 @@ Request Syntax
 Request Parameters
 ------------------
 
-This request contains no message parameters.
+This request contains no parameters.
 
 Request Headers
 ---------------

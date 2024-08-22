@@ -79,31 +79,31 @@ This response contains elements to detail bucket tag configuration. :ref:`Table 
    |                                   |                                   |
    |                                   | Type: container                   |
    |                                   |                                   |
-   |                                   | Ancestor: none                    |
+   |                                   | Parent: none                      |
    +-----------------------------------+-----------------------------------+
    | TagSet                            | Element of the tag set.           |
    |                                   |                                   |
    |                                   | Type: container                   |
    |                                   |                                   |
-   |                                   | Ancestor: Tagging                 |
+   |                                   | Parent: Tagging                   |
    +-----------------------------------+-----------------------------------+
    | Tag                               | Element of the tag information.   |
    |                                   |                                   |
    |                                   | Type: container                   |
    |                                   |                                   |
-   |                                   | Ancestor: TagSet                  |
+   |                                   | Parent: TagSet                    |
    +-----------------------------------+-----------------------------------+
    | Key                               | Tag name.                         |
    |                                   |                                   |
    |                                   | Type: string                      |
    |                                   |                                   |
-   |                                   | Ancestor: Tag                     |
+   |                                   | Parent: Tag                       |
    +-----------------------------------+-----------------------------------+
    | Value                             | Tag value.                        |
    |                                   |                                   |
    |                                   | Type: string                      |
    |                                   |                                   |
-   |                                   | Ancestor: Tag                     |
+   |                                   | Parent: Tag                       |
    +-----------------------------------+-----------------------------------+
 
 Error Responses

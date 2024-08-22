@@ -68,31 +68,35 @@ This request uses common headers. For details, see :ref:`Table 3 <obs_04_0007__t
 Request Elements
 ----------------
 
-+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
-| Element               | Description                                                                                                                                                      | Mandatory             |
-+=======================+==================================================================================================================================================================+=======================+
-| Retention             | Container for configuring an object-level WORM retention policy.                                                                                                 | Yes                   |
-|                       |                                                                                                                                                                  |                       |
-|                       | Type: container                                                                                                                                                  |                       |
-+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
-| Mode                  | Protection mode for the object. It can only be set to **COMPLIANCE** now.                                                                                        | Yes                   |
-|                       |                                                                                                                                                                  |                       |
-|                       | Type: string                                                                                                                                                     |                       |
-|                       |                                                                                                                                                                  |                       |
-|                       | Example: **COMPLIANCE**                                                                                                                                          |                       |
-+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
-| RetainUntilDate       | Protection period for the object. Its value is a timestamp accurate to milliseconds, for example, **1435728035000** (corresponding to 13:20:35 on July 1, 2015). | Yes                   |
-|                       |                                                                                                                                                                  |                       |
-|                       | .. note::                                                                                                                                                        |                       |
-|                       |                                                                                                                                                                  |                       |
-|                       |    The value of this field must be later than the current time and can be extended but not shortened.                                                            |                       |
-|                       |                                                                                                                                                                  |                       |
-|                       | Type: long                                                                                                                                                       |                       |
-|                       |                                                                                                                                                                  |                       |
-|                       | Example: **1435728035000**                                                                                                                                       |                       |
-|                       |                                                                                                                                                                  |                       |
-|                       | Remarks: Its value is a timestamp accurate to milliseconds in Unix time.                                                                                         |                       |
-+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
++-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+| Element               | Description                                                                                                                                    | Mandatory             |
++=======================+================================================================================================================================================+=======================+
+| Retention             | Container for configuring an object-level WORM retention policy.                                                                               | Yes                   |
+|                       |                                                                                                                                                |                       |
+|                       | Type: container                                                                                                                                |                       |
++-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+| Mode                  | Protection mode for the object. It can only be set to **COMPLIANCE** now.                                                                      | Yes                   |
+|                       |                                                                                                                                                |                       |
+|                       | Type: string                                                                                                                                   |                       |
+|                       |                                                                                                                                                |                       |
+|                       | Example: **COMPLIANCE**                                                                                                                        |                       |
++-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+| RetainUntilDate       | Protection period for the object. The value can be a timestamp or in the ISO format.                                                           | Yes                   |
+|                       |                                                                                                                                                |                       |
+|                       | A timestamp must be accurate to milliseconds. For example, the timestamp for 13:20:35 on July 1, 2015 should be **1435728035000**.             |                       |
+|                       |                                                                                                                                                |                       |
+|                       | A time zone is required in the ISO time format. For example, the ISO UTC time for 13:20:35 on July 1, 2015 should be **2015-07-01T13:20:35Z**. |                       |
+|                       |                                                                                                                                                |                       |
+|                       | .. note::                                                                                                                                      |                       |
+|                       |                                                                                                                                                |                       |
+|                       |    The value of this field must be later than the current time and can be extended but not shortened.                                          |                       |
+|                       |                                                                                                                                                |                       |
+|                       | Type: string                                                                                                                                   |                       |
+|                       |                                                                                                                                                |                       |
+|                       | Example: **1435728035000** (a timestamp) or **2015-07-01T13:20:35Z** (in the ISO format)                                                       |                       |
+|                       |                                                                                                                                                |                       |
+|                       | Remarks: timestamp value is accurate to milliseconds in Unix time.                                                                             |                       |
++-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
 
 Response Syntax
 ---------------
@@ -122,20 +126,20 @@ Error Responses
 
 .. table:: **Table 2**
 
-   +--------------------------+------------------------------------------------------------------------------------------------------+------------------+
-   | Error Code               | Description                                                                                          | HTTP Status Code |
-   +==========================+======================================================================================================+==================+
-   | InvalidRequest           | The object retention period cannot be configured, because object lock is not enabled for the bucket. | 400              |
-   +--------------------------+------------------------------------------------------------------------------------------------------+------------------+
-   | InvalidRequest           | The retention period date must be later than the current or the configured date.                     | 400              |
-   +--------------------------+------------------------------------------------------------------------------------------------------+------------------+
-   | MalformedObjectLockError | Invalid format of the Object Lock configuration.                                                     | 400              |
-   +--------------------------+------------------------------------------------------------------------------------------------------+------------------+
+   +--------------------------+----------------------------------------------------------------------------------+------------------+
+   | Error Code               | Description                                                                      | HTTP Status Code |
+   +==========================+==================================================================================+==================+
+   | InvalidRequest           | The object lock is disabled for the bucket.                                      | 400              |
+   +--------------------------+----------------------------------------------------------------------------------+------------------+
+   | InvalidRequest           | The retention period date must be later than the current or the configured date. | 400              |
+   +--------------------------+----------------------------------------------------------------------------------+------------------+
+   | MalformedObjectLockError | Invalid format of the Object Lock configuration.                                 | 400              |
+   +--------------------------+----------------------------------------------------------------------------------+------------------+
 
 For other errors, see :ref:`Table 2 <obs_04_0115__d0e843>`.
 
-Sample Request
---------------
+Sample Request 1
+----------------
 
 .. code-block:: text
 
@@ -150,8 +154,8 @@ Sample Request
        <RetainUntilDate>1435728035000</RetainUntilDate>
    </Retention>
 
-Sample Response
----------------
+Sample Response 1
+-----------------
 
 .. code-block::
 
@@ -159,5 +163,35 @@ Sample Response
    Server: OBS
    x-obs-request-id: BF260000016435CE298386946AE4C482
    x-obs-id-2: 32AAAQAAEAABSAAgAAEAABAAAQAAEAABCT9W2tcvLmMJ+plfdopaD62S0npbaRUz
+   Date: WED, 01 Jul 2015 02:25:06 GMT
+   Content-Length: 0
+
+Sample Request 2
+----------------
+
+Configure the WORM protection (with the protection period specified in the ISO format) for an object.
+
+.. code-block:: text
+
+   PUT /objectname?retention HTTP/1.1
+   Host: bucketname.obs.region.example.com
+   WED, 01 Jul 2015 02:25:06 GMT
+   Authorization: OBS UDSIAMSTUBTEST043961:qWxD1d0LIT6fGT4Lp7KNUTZ+ikU=
+   Content-Type: application/xml
+   Content-Length: 193
+   <Retention>
+       <Mode>COMPLIANCE</Mode>
+       <RetainUntilDate>2015-07-01T13:20:35Z</RetainUntilDate>
+   </Retention>
+
+Sample Response 2
+-----------------
+
+.. code-block::
+
+   HTTP/1.1 200 OK
+   Server: OBS
+   x-obs-request-id: 0000018E3CC039E75306D1560F6A5B61
+   x-obs-id-2: 32AAAUgAIAABAAAQAAEAABAAAQAAEAABCS14XamzycaPY1tivqczu/2SI2sbVBNZ
    Date: WED, 01 Jul 2015 02:25:06 GMT
    Content-Length: 0

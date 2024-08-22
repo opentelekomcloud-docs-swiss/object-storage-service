@@ -53,13 +53,13 @@ Request Parameters
 
 .. table:: **Table 1** Request parameters
 
-   +-----------------------+------------------------------------------------------------------------+-----------------------+
-   | Parameter             | Description                                                            | Mandatory             |
-   +=======================+========================================================================+=======================+
-   | versionId             | Object version ID. Object ACL of a specified version is to be changed. | No                    |
-   |                       |                                                                        |                       |
-   |                       | Type: string                                                           |                       |
-   +-----------------------+------------------------------------------------------------------------+-----------------------+
+   +-----------------------+------------------------------------------------------------------------------+-----------------------+
+   | Parameter             | Description                                                                  | Mandatory             |
+   +=======================+==============================================================================+=======================+
+   | versionId             | Object version ID. The ACL of the specified object version is to be changed. | No                    |
+   |                       |                                                                              |                       |
+   |                       | Type: string                                                                 |                       |
+   +-----------------------+------------------------------------------------------------------------------+-----------------------+
 
 Request Headers
 ---------------
@@ -131,7 +131,7 @@ Response Headers
 
 The response to the request uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
 
-In addition to the common response headers, the message headers listed in :ref:`Table 3 <obs_04_0089__table21765641102739>` may be used.
+In addition to the common response headers, the headers listed in :ref:`Table 3 <obs_04_0089__table21765641102739>` may be used.
 
 .. _obs_04_0089__table21765641102739:
 

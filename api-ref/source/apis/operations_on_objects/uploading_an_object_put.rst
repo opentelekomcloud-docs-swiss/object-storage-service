@@ -2,8 +2,8 @@
 
 .. _obs_04_0080:
 
-Uploading Objects - PUT
-=======================
+Uploading an Object - PUT
+=========================
 
 Functions
 ---------
@@ -27,7 +27,7 @@ Differences Between PUT and POST Methods
 
 Parameters are passed through the request header if the PUT method is used to upload objects; if the POST method is used to upload objects, parameters are passed through the form field in the message body.
 
-With the PUT method, you need to specify the object name in the URL, but object name is not required with the POST method, which uses the bucket domain name as the URL. The request lines of the two methods are as follows:
+With the PUT method, you need to specify the object name in the URL, but object name is not required with the POST method, which uses the bucket domain name as the URL. Request lines of these two methods are given as follows:
 
 .. code-block:: text
 
@@ -37,7 +37,11 @@ With the PUT method, you need to specify the object name in the URL, but object 
 
    POST / HTTP/1.1
 
-For details about POST upload, see :ref:`Uploading Objects - POST <obs_04_0081>`.
+.. note::
+
+   In a PUT request, if you write the message body in POST format, the object uploaded to OBS will be displayed in a form.
+
+For details about POST upload, see :ref:`Uploading an Object - POST <obs_04_0081>`.
 
 Versioning
 ----------
@@ -197,7 +201,7 @@ Response Headers
 
 The response to the request uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
 
-In addition to the common response headers, the message headers listed in :ref:`Table 2 <obs_04_0080__table24122936102344>` may be used.
+In addition to the common response headers, the headers listed in :ref:`Table 2 <obs_04_0080__table24122936102344>` may be used.
 
 .. _obs_04_0080__table24122936102344:
 

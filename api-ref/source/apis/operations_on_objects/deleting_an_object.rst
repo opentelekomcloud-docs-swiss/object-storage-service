@@ -13,7 +13,7 @@ You can perform this operation to delete an object. If you try to delete an obje
 Versioning
 ----------
 
-When versioning is enabled for a bucket, a deletion marker with a unique version number is generated when an object is deleted without specifying the version. However, the object is not actually deleted. If versioning is suspended for a bucket and no version is specified when you delete an object, the object whose version number is **null** is deleted, and a deletion marker with version number **null** is generated.
+When versioning is enabled for a bucket, a delete request that does not specify a version ID cannot permanently delete the object. Instead, OBS creates a delete marker with a unique version ID. When versioning is suspended for a bucket, a delete request that does not specify a version ID deletes the object whose version ID is **null** and creates a delete marker with a version ID of **null**.
 
 To delete an object of a specified version, the **versionId** parameter can be used to specify the desired version.
 
@@ -95,7 +95,7 @@ If versioning is enabled for the bucket, the headers listed in :ref:`Table 2 <ob
    +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
    | x-obs-version-id                  | Object version ID. If the object has no version number specified, the response does not contain this header.               |
    |                                   |                                                                                                                            |
-   |                                   | Valid value: character string                                                                                              |
+   |                                   | Valid value: string                                                                                                        |
    |                                   |                                                                                                                            |
    |                                   | Default value: none                                                                                                        |
    +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------+

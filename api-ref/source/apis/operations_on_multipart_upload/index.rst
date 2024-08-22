@@ -9,7 +9,7 @@ Operations on Multipart Upload
 -  :ref:`Initiating a Multipart Upload <obs_04_0098>`
 -  :ref:`Uploading Parts <obs_04_0099>`
 -  :ref:`Copying Parts <obs_04_0100>`
--  :ref:`Listing Uploaded Parts <obs_04_0101>`
+-  :ref:`Listing Uploaded Parts that Have Not Been Assembled <obs_04_0101>`
 -  :ref:`Completing a Multipart Upload <obs_04_0102>`
 -  :ref:`Canceling a Multipart Upload Task <obs_04_0103>`
 
@@ -21,6 +21,6 @@ Operations on Multipart Upload
    initiating_a_multipart_upload
    uploading_parts
    copying_parts
-   listing_uploaded_parts
+   listing_uploaded_parts_that_have_not_been_assembled
    completing_a_multipart_upload
    canceling_a_multipart_upload_task

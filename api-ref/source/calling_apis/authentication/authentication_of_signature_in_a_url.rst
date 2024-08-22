@@ -7,14 +7,14 @@ Authentication of Signature in a URL
 
 OBS allows users to construct a URL for a specific operation. The URL contains information such as the user's AK, signature, validity period, and resources. Any user who obtains the URL can perform the operation. After receiving the request, the OBS deems that the operation is performed by the user who issues the URL. For example, if the URL of an object download request carries signature information is constructed, the user who obtains the URL can download the object, but the URL is valid only within the expiration time specified by the parameter of **Expires**. The URL that carries the signature is used to allow others to use the pre-issued URL for identity authentication when the SK is not provided, and perform the predefined operation.
 
-The format of the message containing the signature request in the URL is as follows:
+The format of the message where a signature is contained in the URL:
 
 .. code-block:: text
 
    GET /ObjectKey?AccessKeyId=AccessKeyID&Expires=ExpiresValue&Signature=signature HTTP/1.1
    Host: bucketname.obs.region.example.com
 
-The format of the message containing the temporary AK/SK and security token in the URL for downloading objects is as follows:
+The format of the message where a temporary AK/SK pair and a security token are used in the URL for downloading objects:
 
 .. code-block:: text
 
@@ -45,17 +45,25 @@ The format of the message containing the temporary AK/SK and security token in t
    | x-obs-security-token  | During temporary authentication, the temporary AK/SK and security token must be used at the same time and the **x-obs-security-token** field must be added to the request header. | No                    |
    +-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
 
-The signature computing process is as follows:
+The process of calculating a signature is as follows:
 
-1. Construct the StringToSign.
+#. .. _obs_04_0011__li587641544619:
 
-2. Perform UTF-8 encoding on the result obtained from the preceding step.
+   Construct the StringToSign.
 
-3. Use the SK to perform the HMAC-SHA1 signature calculation on the result obtained from step 2.
+#. .. _obs_04_0011__li4876101544611:
 
-4. Perform Base64 encoding on the result obtained from step 3.
+   Encode the result of :ref:`1 <obs_04_0011__li587641544619>` in UTF-8.
 
-5. Perform URL encoding on the result of step 4 to obtain the signature.
+#. .. _obs_04_0011__li187621516463:
+
+   Use the SK to calculate the HMAC-SHA1 signature on the result of :ref:`2 <obs_04_0011__li4876101544611>`.
+
+#. .. _obs_04_0011__li208761159468:
+
+   Encode the result of :ref:`3 <obs_04_0011__li187621516463>` in Base64.
+
+#. Encode the result of :ref:`4 <obs_04_0011__li208761159468>` in URL to obtain the signature.
 
 The StringToSign is constructed according to the following rules. :ref:`Table 2 <obs_04_0011__table34479832212511>` describes the parameters.
 
@@ -85,12 +93,12 @@ The StringToSign is constructed according to the following rules. :ref:`Table 2 
    +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Expires                           | Expiration time of the temporary authorization, that is, the value of parameter **Expires** in the request message: **ExpiresValue**.                                                                                                                                                                                                                                                                                                                                                                                                                      |
    +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | CanonicalizedHeaders              | OBS request header field in an HTTP request header, referring to header fields started with **x-obs-**, for example, **x-obs-date**, **x-obs-acl**, and **x-obs-meta-\***.                                                                                                                                                                                                                                                                                                                                                                                 |
+   | CanonicalizedHeaders              | OBS request header field in an HTTP request header, referring to header fields starting with **x-obs-**, such as, **x-obs-date**, **x-obs-acl**, and **x-obs-meta-\***.                                                                                                                                                                                                                                                                                                                                                                                    |
    |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
    |                                   | #. All characters of keywords in the header field must be converted to lower-case letters. If a request contains multiple header fields, these fields should be organized by keywords in the alphabetical order from a to z.                                                                                                                                                                                                                                                                                                                               |
    |                                   | #. If multiple header fields in a request have the same prefix, combine the header fields into one. For example, **x-obs-meta-name:name1** and **x-obs-meta-name:name2** should be reorganized into **x-obs-meta-name:name1,name2**. Use comma to separate the values.                                                                                                                                                                                                                                                                                     |
    |                                   | #. Keywords in the request header field cannot contain non-ASCII or unrecognizable characters, which are also not advisable for values in the request header field. If the two types of characters are necessary, they should be encoded and decoded on the client side. Either URL encoding or Base64 encoding is acceptable, but the server does not perform decoding.                                                                                                                                                                                   |
-   |                                   | #. Delete meaningless spaces and tabs in a header field. For example, **x-obs-meta-name: name** (with a meaningless space in the front of **name**) must be changed to **x-obs-meta-name:name**.                                                                                                                                                                                                                                                                                                                                                           |
+   |                                   | #. Delete meaningless spaces or tabs in a header field. For example, **x-obs-meta-name: name** (with a meaningless space before **name**) must be changed to **x-obs-meta-name:name**.                                                                                                                                                                                                                                                                                                                                                                     |
    |                                   | #. Each header field occupies a separate line.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
    +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | CanonicalizedResource             | Indicates the OBS resource specified by an HTTP request. This parameter is constructed as follows:                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
@@ -120,14 +128,14 @@ The signature is generated as follows based on the StringToSign and SK. The hash
 The method for calculating the signature carried in the URL is different from that for calculating the authorization signature carried in a header.
 
 -  The signature in the URL must be encoded using the URL after Base64 encoding.
--  **Expires** in **StringToSign** corresponds to **Date** in authorization information.
+-  **Expires** in **StringToSign** corresponds to **Date** in the **Authorization** header.
 
 Generate a predefined URL instance for the browser by carrying the signature in the URL.
 
 .. table:: **Table 3** Request that has the signature carried in the URL and the StringToSign
 
    +------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+
-   | Request Headers                                                                                                                          | StringToSign                      |
+   | Request Header                                                                                                                           | StringToSign                      |
    +==========================================================================================================================================+===================================+
    | GET /objectkey?AccessKeyId=MFyfvK41ba2giqM7Uio6PznpdUKGpownRZlmVmHc&Expires=1532779451&Signature=0Akylf43Bm3mD1bh2rM3dmVp1Bo%3D HTTP/1.1 | GET \\n                           |
    |                                                                                                                                          |                                   |
@@ -176,8 +184,8 @@ curl http(s)://examplebucket.obs.\ *region*.example.com/objectkey?AccessKeyId=Ac
 
    If you want to use the pre-defined URL generated by the signature carried in the URL in the browser, do not use Content-MD5, Content-Type, or CanonicalizedHeaders that can only be carried in the header to calculate the signature. Otherwise, the browser cannot carry these parameters. After the request is sent to the server, a message is displayed indicating that the signature is incorrect.
 
-Signature Algorithm in Java
----------------------------
+Signature Calculation in Java
+-----------------------------
 
 ::
 
@@ -288,13 +296,10 @@ Signature Algorithm in Java
        }
 
        private String stringToSign(String httpMethod, Map<String, String[]> headers, Map<String, String> queries,
-                                   String bucketName, String objectName) throws Exception {
+                                   String bucketName, String objectName, long expires) throws Exception {
            String contentMd5 = "";
            String contentType = "";
-           String date = "";
-
            TreeMap<String, String> canonicalizedHeaders = new TreeMap<String, String>();
-
            String key;
            List<String> temp = new ArrayList<String>();
            for (Map.Entry<String, String[]> entry : headers.entrySet()) {
@@ -302,47 +307,31 @@ Signature Algorithm in Java
                if (key == null || entry.getValue() == null || entry.getValue().length == 0) {
                    continue;
                }
-
                key = key.trim().toLowerCase(Locale.ENGLISH);
                if (key.equals("content-md5")) {
                    contentMd5 = entry.getValue()[0];
                    continue;
                }
-
                if (key.equals("content-type")) {
                    contentType = entry.getValue()[0];
                    continue;
                }
-
-               if (key.equals("date")) {
-                   date = entry.getValue()[0];
-                   continue;
-               }
-
                if (key.startsWith(OBS_PREFIX)) {
-
                    for (String value : entry.getValue()) {
                        if (value != null) {
                            temp.add(value.trim());
                        }
                    }
-
                    canonicalizedHeaders.put(key, this.join(temp, ","));
                    temp.clear();
                }
            }
-
-           if (canonicalizedHeaders.containsKey("x-obs-date")) {
-               date = "";
-           }
-
-
-           // handle method/content-md5/content-type/date
+           // handle method/content-md5/content-type
            StringBuilder stringToSign = new StringBuilder();
            stringToSign.append(httpMethod).append(SIGN_SEP)
                    .append(contentMd5).append(SIGN_SEP)
                    .append(contentType).append(SIGN_SEP)
-                   .append(date).append(SIGN_SEP);
+                   .append(expires).append(SIGN_SEP);
 
 
            // handle canonicalizedHeaders
@@ -389,21 +378,16 @@ Signature Algorithm in Java
        }
 
        public String querySignature(String httpMethod, Map<String, String[]> headers, Map<String, String> queries,
-                                    String bucketName, String objectName, long expires) throws Exception {
-           if (!isBucketNameValid(bucketName)) {
-               throw new IllegalArgumentException("the bucketName is illegal");
-           }
-           if (headers.containsKey("x-obs-date")) {
-               headers.put("x-obs-date", new String[]{String.valueOf(expires)});
-           } else {
-               headers.put("date", new String[]{String.valueOf(expires)});
-           }
-           //1. stringToSign
-           String stringToSign = this.stringToSign(httpMethod, headers, queries, bucketName, objectName);
+                                     String bucketName, String objectName, long expires) throws Exception {
+            if (!isBucketNameValid(bucketName)) {
+                throw new IllegalArgumentException("the bucketName is illegal");
+            }
+            //1. stringToSign
+            String stringToSign = this.stringToSign(httpMethod, headers, queries, bucketName, objectName, expires);
 
-           //2. signature
-           return this.encodeUrlString(this.hmacSha1(stringToSign));
-       }
+            //2. signature
+            return this.encodeUrlString(this.hmacSha1(stringToSign));
+        }
 
        public String getURL(String endpoint, Map<String, String> queries,
                             String bucketName, String objectName, String signature, long expires) throws UnsupportedEncodingException {
@@ -433,18 +417,21 @@ Signature Algorithm in Java
 
        public static void main(String[] args) throws Exception {
            SignDemo demo = new SignDemo();
-           demo.ak = "<your-access-key-id>";
-           demo.sk = "<your-secret-key-id>";
+
+           /* Hard-coded or plaintext AK and SK are risky. For security purposes, encrypt your AK and SK and store them in the configuration file or environment variables.
+           In this example, the AK and SK are stored in environment variables for identity authentication. Before running the code in this example, configure environment variables YOUR_AK and YOUR_SK. */
+       demo.ak = System.getenv("YOUR_AK");
+       demo.sk = System.getenv("YOUR_SK");
            String endpoint = "<your-endpoint>";
 
            String bucketName = "bucket-test";
            String objectName = "hello.jpg";
 
-                   // A header cannot be carried if you want to use a URL to access OBS with a browser. If a header is added to headers, the signature does not match. To use headers, it must be processed by the client.
+           // A header cannot be included if you want to use a URL to access OBS with a browser. If a header is added to headers, the signature does not match. To use headers, it must be processed by the client.
            Map<String, String[]> headers = new HashMap<String, String[]>();
            Map<String, String> queries = new HashMap<String, String>();
 
-                   // Expiration time. Set it to expire in 24 hours.
+           // Expiration time. Set it to expire in 24 hours.
            long expires = (System.currentTimeMillis() + 86400000L) / 1000;
            String signature = demo.querySignature("GET", headers, queries, bucketName, objectName, expires);
            System.out.println(signature);
