@@ -5,14 +5,23 @@
 Authentication of Signature Carried in the Table Uploaded Through a Browser
 ===========================================================================
 
-OBS supports browser-based object upload using the POST method. Signatures of such requests are uploaded in tables. First, create a security policy and specify the requirements in the request, for example, Bucket name and object name prefix. Then, create a signature based on this policy. The request form to be signed must contain valid signature and policy. Finally, create a table to upload the object to the bucket.
+OBS supports browser-based object upload using the POST method. Signatures of such requests are uploaded in tables. First, create a security policy and specify the requirements in the request, for example, bucket name and object name prefix. Then, create a signature based on this policy. The request form to be signed must contain valid signature and policy. Finally, create a table to upload the object to the bucket.
 
-The signature calculation process is as follows:
+The process of calculating a signature is as follows:
 
-#. The policy content is encoded in UTF-8 format.
-#. Perform Base64 encoding on the result obtained from the preceding step.
-#. Use the SK to perform the HMAC-SHA1 signature calculation on the result obtained from step 2.
-#. Perform Base64 encoding on the result of step 3 to obtain the signature.
+#. .. _obs_04_0012__li13246145519488:
+
+   Encode the policy content in UTF-8.
+
+#. .. _obs_04_0012__li1160858144812:
+
+   Encode the result of :ref:`1 <obs_04_0012__li13246145519488>` in Base64.
+
+#. .. _obs_04_0012__li207269014915:
+
+   Use the SK to calculate the HMAC-SHA1 signature on the result of :ref:`2 <obs_04_0012__li1160858144812>`.
+
+#. Encode the result of :ref:`3 <obs_04_0012__li207269014915>` in Base64 to obtain the signature.
 
 .. code-block::
 
@@ -71,11 +80,11 @@ A mechanism used to verify the validity of a request. Conditions are used to def
    |                                                                             |                                                                                                                                                                                                                                                                                               |
    |                                                                             | Supports exact match.                                                                                                                                                                                                                                                                         |
    +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | success_action_redirect                                                     | Redirection address after the upload is successful. For details, see :ref:`Uploading Objects - POST <obs_04_0081>`.                                                                                                                                                                           |
+   | success_action_redirect                                                     | Redirection address after the upload is successful. For details, see :ref:`Uploading an Object - POST <obs_04_0081>`.                                                                                                                                                                         |
    |                                                                             |                                                                                                                                                                                                                                                                                               |
    |                                                                             | Supports exact match and conditional match such as **starts-with**.                                                                                                                                                                                                                           |
    +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | success_action_status                                                       | If **success_action_redirect** is not specified, the status code is returned to the client when the upload is successful. For details, see :ref:`Uploading Objects - POST <obs_04_0081>`.                                                                                                     |
+   | success_action_status                                                       | If **success_action_redirect** is not specified, the status code is returned to the client when the upload is successful. For details, see :ref:`Uploading an Object - POST <obs_04_0081>`.                                                                                                   |
    |                                                                             |                                                                                                                                                                                                                                                                                               |
    |                                                                             | Supports exact match.                                                                                                                                                                                                                                                                         |
    +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -133,7 +142,7 @@ The table below lists the characters that must be escaped in a policy.
    ``\$``                 Dollar symbol ($)
    ``\b``                 Backspace
    ``\f``                 Page up and down
-   ``\n``                 Line breaks
+   ``\n``                 Newline characters
    ``\r``                 Enter
    ``\t``                 Horizontal table
    ``\v``                 Vertical table
@@ -148,7 +157,7 @@ The following tables provide examples of requests and policies.
 **Example 1**: Upload the **testfile.txt** object to bucket **examplebucket** and set the object ACL to **public-read**.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
-| Request                                                                                                                                                                                                                                                                                                                                          | policy                                    |
+| Request                                                                                                                                                                                                                                                                                                                                          | Policy                                    |
 +==================================================================================================================================================================================================================================================================================================================================================+===========================================+
 | POST / HTTP/1.1                                                                                                                                                                                                                                                                                                                                  | {                                         |
 |                                                                                                                                                                                                                                                                                                                                                  |                                           |
@@ -214,7 +223,7 @@ The following tables provide examples of requests and policies.
 **Example 2**: Upload the **file/obj1** object to bucket **examplebucket** and configure the four custom metadata items of the object.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------+
-| Request                                                                                                                                                                                                                                                                                                                                                                                                                              | policy                                       |
+| Request                                                                                                                                                                                                                                                                                                                                                                                                                              | Policy                                       |
 +======================================================================================================================================================================================================================================================================================================================================================================================================================================+==============================================+
 | POST / HTTP/1.1                                                                                                                                                                                                                                                                                                                                                                                                                      | {                                            |
 |                                                                                                                                                                                                                                                                                                                                                                                                                                      |                                              |

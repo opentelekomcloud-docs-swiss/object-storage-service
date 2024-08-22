@@ -2,8 +2,8 @@
 
 .. _obs_04_0057:
 
-Listing Bucket Inventories
-==========================
+Listing All Inventories of a Bucket
+===================================
 
 Functions
 ---------
@@ -103,7 +103,7 @@ Response Elements
    |                                   |                                                                                                                                     |
    |                                   | Type: container                                                                                                                     |
    |                                   |                                                                                                                                     |
-   |                                   | Ancestor: ListInventoryConfiguration                                                                                                |
+   |                                   | Parent: ListInventoryConfiguration                                                                                                  |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 
 Error Responses

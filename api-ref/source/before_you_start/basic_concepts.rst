@@ -10,13 +10,13 @@ Basic Concepts Related to OBS APIs
 
 -  Account
 
-   Your cloud service account. The account has full access permissions for all the resources and cloud services that are subscribed under the account. The account can also reset user passwords and grant permissions to users.
+   Your cloud service account. The account has full access permissions for all of its cloud services and resources. The account can also reset user passwords and grant permissions to users.
 
 -  User
 
    A user is created using a domain on Identity and Access Management (IAM) to use cloud services. Each IAM user has its own identity credentials (password and access keys).
 
-   On the **My Credentials** page on the console, you can view the domain ID and user ID, you can also manage the access keys of the domain and IAM users.
+   On the **My Credentials** page on the console, you can view the domain ID and user ID, and manage the access keys of the domain or IAM users.
 
    Access keys of the domain and its IAM users are required for authentication when calling APIs.
 

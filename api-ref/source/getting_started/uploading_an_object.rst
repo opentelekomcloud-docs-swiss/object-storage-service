@@ -50,8 +50,10 @@ In this example, an Apache HttpClient is used.
 
    public class TestMain {
 
-       public static String accessKey = "UDSIAMSTUBTEST000012"; //The value of this parameter is the AK obtained.
-        public static String securityKey = "Udsiamstubtest000000UDSIAMSTUBTEST000012";  //The value of this parameter is the SK obtained.
+       /* Hard-coded or plaintext AK and SK are risky. For security purposes, encrypt your AK and SK and store them in the configuration file or environment variables.
+       In this example, the AK and SK are stored in environment variables for identity authentication. Before running the code in this example, configure environment variables YOUR_AK and YOUR_SK. */
+       public static String accessKey = System.getenv("YOUR_AK"); //The value is the AK obtained.
+       public static String securityKey = System.getenv("YOUR_SK");  //The value is the SK obtained.
 
        public static void main(String[] str) {
 

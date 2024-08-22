@@ -10,7 +10,7 @@ Functions
 
 OPTIONS refers to pre-requests that are sent to servers by clients. Generally, the requests are used to check whether clients have permissions to perform operations on servers. Only after a pre-request is returned successfully, clients start to execute the follow-up requests.
 
-The OBS allows buckets to store static web resources. OBS buckets can serve as website resources if the buckets are properly used. In this scenario, buckets in the OBS serve as servers to process OPTIONS pre-requests from clients.
+OBS allows static web resources to be stored in buckets with appropriate configurations. In this scenario, buckets in the OBS serve as servers to process OPTIONS pre-requests from clients.
 
 OBS can process OPTIONS pre-requests only after CORS is configured for buckets in OBS. For details about CORS, see :ref:`Configuring Bucket CORS <obs_04_0074>`.
 

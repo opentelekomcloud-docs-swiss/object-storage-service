@@ -67,7 +67,7 @@ Response Headers
 
 The response to the request uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
 
-In addition to the common response headers, the message headers listed in :ref:`Table 2 <obs_04_0023__table13151171313444>` may be used.
+In addition to the common response headers, the headers listed in :ref:`Table 2 <obs_04_0023__table13151171313444>` may be used.
 
 .. _obs_04_0023__table13151171313444:
 

@@ -26,8 +26,8 @@ Advanced Bucket Settings
 -  :ref:`Querying Bucket Storage Quota <obs_04_0053>`
 -  :ref:`Obtaining Storage Information of a Bucket <obs_04_0054>`
 -  :ref:`Configuring Bucket Inventories <obs_04_0055>`
--  :ref:`Obtaining Bucket Inventories <obs_04_0056>`
--  :ref:`Listing Bucket Inventories <obs_04_0057>`
+-  :ref:`Obtaining a Specific Inventory of a Bucket <obs_04_0056>`
+-  :ref:`Listing All Inventories of a Bucket <obs_04_0057>`
 -  :ref:`Deleting Bucket Inventories <obs_04_0058>`
 -  :ref:`Configuring a Default WORM Policy for a Bucket <obs_04_0167>`
 -  :ref:`Obtaining the Default WORM Policy of a Bucket <obs_04_0168>`
@@ -57,8 +57,8 @@ Advanced Bucket Settings
    querying_bucket_storage_quota
    obtaining_storage_information_of_a_bucket
    configuring_bucket_inventories
-   obtaining_bucket_inventories
-   listing_bucket_inventories
+   obtaining_a_specific_inventory_of_a_bucket
+   listing_all_inventories_of_a_bucket
    deleting_bucket_inventories
    configuring_a_default_worm_policy_for_a_bucket
    obtaining_the_default_worm_policy_of_a_bucket

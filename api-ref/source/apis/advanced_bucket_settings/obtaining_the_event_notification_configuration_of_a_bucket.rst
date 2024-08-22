@@ -91,57 +91,57 @@ This response contains elements to detail the configuration. :ref:`Table 1 <obs_
    |                                   |                                                                                                                             |
    |                                   | Type: container                                                                                                             |
    |                                   |                                                                                                                             |
-   |                                   | Ancestor: none                                                                                                              |
+   |                                   | Parent: none                                                                                                                |
    |                                   |                                                                                                                             |
-   |                                   | Children: one or more TopicConfiguration elements                                                                           |
+   |                                   | Child: one or more TopicConfiguration elements                                                                              |
    +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
    | TopicConfiguration                | Element for configuring the event notification topic.                                                                       |
    |                                   |                                                                                                                             |
    |                                   | Type: container                                                                                                             |
    |                                   |                                                                                                                             |
-   |                                   | Ancestor: NotificationConfiguration                                                                                         |
+   |                                   | Parent: NotificationConfiguration                                                                                           |
    |                                   |                                                                                                                             |
-   |                                   | Children: Id, Filter, Topic, Event, or Events                                                                               |
+   |                                   | Child: Id, Filter, Topic, and one or more Event elements                                                                    |
    +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
    | Topic                             | URN of the event notification topic. After detecting a specific event in the bucket, OBS sends a message to the topic.      |
    |                                   |                                                                                                                             |
    |                                   | Type: string                                                                                                                |
    |                                   |                                                                                                                             |
-   |                                   | Ancestor: TopicConfiguration                                                                                                |
+   |                                   | Parent: TopicConfiguration                                                                                                  |
    +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-   | Id                                | Unique ID of each event notification. If the user does not specify an ID, the system assigns an ID automatically.           |
+   | Id                                | Unique ID of each event notification. If the ID is not specified, OBS automatically assigns an ID.                          |
    |                                   |                                                                                                                             |
    |                                   | Type: string                                                                                                                |
    |                                   |                                                                                                                             |
-   |                                   | Ancestor: TopicConfiguration                                                                                                |
+   |                                   | Parent: TopicConfiguration                                                                                                  |
    +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
    | Filter                            | Element used to store rules of filtering object names.                                                                      |
    |                                   |                                                                                                                             |
    |                                   | Type: container                                                                                                             |
    |                                   |                                                                                                                             |
-   |                                   | Ancestor: TopicConfiguration                                                                                                |
+   |                                   | Parent: TopicConfiguration                                                                                                  |
    |                                   |                                                                                                                             |
-   |                                   | Children: Object                                                                                                            |
+   |                                   | Child: Object                                                                                                               |
    +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
    | Object                            | Element used to store rules of filtering object names.                                                                      |
    |                                   |                                                                                                                             |
    |                                   | Type: container                                                                                                             |
    |                                   |                                                                                                                             |
-   |                                   | Ancestor: TopicConfiguration                                                                                                |
+   |                                   | Parent: TopicConfiguration                                                                                                  |
    +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
    | FilterRule                        | Element that defines key-value pairs of the filtering rule.                                                                 |
    |                                   |                                                                                                                             |
    |                                   | Type: container                                                                                                             |
    |                                   |                                                                                                                             |
-   |                                   | Ancestor: Object                                                                                                            |
+   |                                   | Parent: Object                                                                                                              |
    |                                   |                                                                                                                             |
-   |                                   | Children: Name, Value                                                                                                       |
+   |                                   | Child: Name and Value                                                                                                       |
    +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
    | Name                              | Prefix or suffix of object names for filtering                                                                              |
    |                                   |                                                                                                                             |
    |                                   | Type: string                                                                                                                |
    |                                   |                                                                                                                             |
-   |                                   | Ancestor: FilterRule                                                                                                        |
+   |                                   | Parent: FilterRule                                                                                                          |
    |                                   |                                                                                                                             |
    |                                   | Value options: **prefix**, **suffix**                                                                                       |
    +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
@@ -149,7 +149,7 @@ This response contains elements to detail the configuration. :ref:`Table 1 <obs_
    |                                   |                                                                                                                             |
    |                                   | Type: string                                                                                                                |
    |                                   |                                                                                                                             |
-   |                                   | Ancestor: FilterRule                                                                                                        |
+   |                                   | Parent: FilterRule                                                                                                          |
    +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
    | Event                             | Type of events that need to be notified                                                                                     |
    |                                   |                                                                                                                             |
@@ -181,7 +181,7 @@ This response contains elements to detail the configuration. :ref:`Table 1 <obs_
    |                                   |                                                                                                                             |
    |                                   | -  ObjectRemoved:\*                                                                                                         |
    |                                   |                                                                                                                             |
-   |                                   | Ancestor: TopicConfiguration                                                                                                |
+   |                                   | Parent: TopicConfiguration                                                                                                  |
    +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 
 Error Responses

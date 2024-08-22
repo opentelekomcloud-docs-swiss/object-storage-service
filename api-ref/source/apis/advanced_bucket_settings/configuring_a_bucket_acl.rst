@@ -132,7 +132,7 @@ This response contains no elements.
 Error Responses
 ---------------
 
-No special error responses are returned. For details, see :ref:`Table 2 <obs_04_0115__d0e843>`.
+No special error responses are returned. For details about error responses, see :ref:`Table 2 <obs_04_0115__d0e843>`.
 
 Sample Request
 --------------

@@ -8,9 +8,9 @@ Configuring a Default WORM Policy for a Bucket
 Functions
 ---------
 
-This operation enables WORM for a bucket and allows you to configure the default WORM policy and a retention period.
+This operation allows you to configure the default WORM policy and a retention period for a bucket.
 
-With the bucket's default WORM policy, if you do not specify a WORM policy or a retention period when you upload an object to the bucket, the default policy will be automatically applied to the newly uploaded object. In an object-level WORM policy, a specific date is required to make the object protected before the date. In the default bucket-level WORM policy, a retention period is required, and the protection for an object starts when the object is uploaded to the bucket.
+With the bucket's default WORM policy, if you do not specify a WORM policy or a retention period when you upload an object to the bucket, the default policy will be automatically applied to the newly uploaded object. An object-level WORM policy requires configuring a specific date, which indicates an object will be protected until that date. For a default bucket-level WORM policy, a retention period is required, and the protection for an object starts when the object is uploaded to the bucket.
 
 To perform this operation, you must have the PutBucketObjectLockConfiguration permission. The bucket owner can perform this operation by default and can grant this permission to others by using a bucket policy or a user policy.
 
@@ -130,13 +130,13 @@ Error Responses
 
 .. table:: **Table 2**
 
-   +----------------+--------------------------------------------------------------------------------------------------------+------------------+
-   | Error Code     | Description                                                                                            | HTTP Status Code |
-   +================+========================================================================================================+==================+
-   | InvalidRequest | The default object lock rule cannot be configured, because object lock is not enabled for this bucket. | 400              |
-   +----------------+--------------------------------------------------------------------------------------------------------+------------------+
-   | MalformedXML   | Invalid format of the Object Lock configuration.                                                       | 400              |
-   +----------------+--------------------------------------------------------------------------------------------------------+------------------+
+   +----------------+--------------------------------------------------+------------------+
+   | Error Code     | Description                                      | HTTP Status Code |
+   +================+==================================================+==================+
+   | InvalidRequest | The object lock is disabled for the bucket.      | 400              |
+   +----------------+--------------------------------------------------+------------------+
+   | MalformedXML   | Invalid format of the Object Lock configuration. | 400              |
+   +----------------+--------------------------------------------------+------------------+
 
 For other errors, see :ref:`Table 2 <obs_04_0115__d0e843>`.
 
