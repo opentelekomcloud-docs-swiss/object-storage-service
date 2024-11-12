@@ -5,13 +5,11 @@
 Failed to Configure Event Notifications
 =======================================
 
-Question
---------
+**Symptom**
 
 During the configuration of event notifications on OBS, message "OBS is not authorized to use this topic. Go to SMN to authorize OBS to use this topic." is displayed.
 
-Answer
-------
+**Solution**
 
 Go to the SMN console. On the **Configure Topic Policy** page, select **OBS** under **Services that can publish messages to this topic**.
 

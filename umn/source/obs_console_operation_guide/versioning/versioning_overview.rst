@@ -43,7 +43,7 @@ Enabling Versioning
 
 -  Objects can be downloaded by version IDs. By default, the latest object is downloaded if the version ID is not specified. For details, see :ref:`Related Operations <obs_03_0327__section29772226>` in :ref:`Configuring Versioning <obs_03_0327>`.
 
--  You can select an object and click **Delete** on the right to delete the object. After the object is deleted, OBS generates a **Delete Marker** with a unique version ID for the deleted object, and the deleted object is displayed in the **Deleted Objects** list. For details, see :ref:`Deleting an Object or Folder <en-us_topic_0045853756>`. The 404 error will be returned if attempts are made to access this deleted object.
+-  You can select an object and click **Delete** on the right to delete the object. After the object is deleted, OBS generates a **Delete Marker** with a unique version ID for the deleted object, and the deleted object is displayed in the **Deleted Objects** list. For details, see :ref:`Deleting an Object or Folder <en-us_topic_0045853756>`. If attempts are then made to access this deleted object, error 404 will be returned.
 
 
    .. figure:: /_static/images/en-us_image_0135698309.png
@@ -55,9 +55,9 @@ Enabling Versioning
 
 -  After an object is deleted, you can specify the version number in **Deleted Objects** to permanently delete the object of the specified version. For details, see :ref:`Related Operations <en-us_topic_0045853756__section089519314196>` in :ref:`Deleting an Object or Folder <en-us_topic_0045853756>`.
 
--  An object is displayed either in the object list or the list of deleted objects. It will never be displayed in both the lists at the same time.
+-  An object appears in either the object list or the list of deleted objects. It will never appear in both lists at the same time.
 
-   For example, after object **A** is uploaded and deleted, it will be displayed in the **Deleted Objects** list. If you upload an object named **A** again, the object **A** will be displayed in the **Objects** list, and the previously deleted object **A** will no longer be displayed in the **Deleted Objects** list. For details, see :ref:`Figure 4 <en-us_topic_0045853504__fig1469714544377>`.
+   For example, after object **A** is deleted, it will appear in the **Deleted Objects** list. If you later upload another object with the same name **A**, the new object **A** will appear in the **Objects** list, but the previously deleted object **A** will disappear from the **Deleted Objects** list. For details, see :ref:`Figure 4 <en-us_topic_0045853504__fig1469714544377>`.
 
    .. _en-us_topic_0045853504__fig1469714544377:
 
@@ -69,7 +69,7 @@ Enabling Versioning
 Suspending Versioning
 ---------------------
 
-Once the versioning function is enabled, it can be suspended but cannot be disabled. Once versioning is suspended, version IDs will no longer be allocated to newly uploaded objects. If an object with the same name already exists and does not have a version ID, the object will be overwritten.
+Once versioning is enabled for a bucket, it cannot be disabled, but it can be suspended. When versioning is suspended, a null, not a specific version ID, will be allocated to a newly uploaded object. If the newly uploaded object has the same name as an existing object with a null version ID, the new object will overwrite the existing object.
 
 
 .. figure:: /_static/images/en-us_image_0135715557.png
@@ -77,9 +77,9 @@ Once the versioning function is enabled, it can be suspended but cannot be disab
 
    **Figure 5** Object versions in the scenario when versioning is suspended
 
-If versions of objects in a bucket do not need to be controlled, you can suspend the versioning function.
+If versioning is no longer needed, you can suspend it. After versioning is suspended:
 
--  Historical versions will be retained in OBS. If you do not need these historical versions, manually delete them.
+-  Existing object versions are still retained in OBS. If you no longer desire these versions, manually delete them.
 -  Objects can be downloaded by version IDs. By default, the latest object is downloaded if the version ID is not specified.
 
 Differences Between Scenarios When Versioning Is Suspended and Disabled

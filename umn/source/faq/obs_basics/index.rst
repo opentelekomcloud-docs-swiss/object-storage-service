@@ -18,10 +18,11 @@ OBS Basics
 -  :ref:`Does OBS Support Batch Upload? <obs_faq_0015>`
 -  :ref:`Does OBS Support Batch Download? <obs_faq_0047>`
 -  :ref:`Does OBS Support Batch Deletion of Objects? <obs_faq_0020>`
--  :ref:`What Are the Factors That Affect Upload and Download Speed of OBS? <obs_03_0100>`
+-  :ref:`What Are the Factors That Affect Upload and Download Speeds of OBS? <obs_03_0100>`
 -  :ref:`Why Did Some of My Data Stored on OBS Get Lost? <obs_03_0138>`
 -  :ref:`Can Deleted Data Be Recovered? <obs_03_0139>`
 -  :ref:`Will There Be Data Left Over in OBS After I Delete an Object? <obs_faq_0023>`
+-  :ref:`Will My Bucket Performance Be Affected by Other Users' Services? <obs_faq_0149>`
 
 .. toctree::
    :maxdepth: 1
@@ -40,7 +41,8 @@ OBS Basics
    does_obs_support_batch_upload
    does_obs_support_batch_download
    does_obs_support_batch_deletion_of_objects
-   what_are_the_factors_that_affect_upload_and_download_speed_of_obs
+   what_are_the_factors_that_affect_upload_and_download_speeds_of_obs
    why_did_some_of_my_data_stored_on_obs_get_lost
    can_deleted_data_be_recovered
    will_there_be_data_left_over_in_obs_after_i_delete_an_object
+   will_my_bucket_performance_be_affected_by_other_users_services

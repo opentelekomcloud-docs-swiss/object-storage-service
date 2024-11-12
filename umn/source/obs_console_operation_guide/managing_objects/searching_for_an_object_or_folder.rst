@@ -10,9 +10,7 @@ On OBS Console, you can search for files or folders by prefix.
 Searching by Prefixes of Object Names
 -------------------------------------
 
-#. In the bucket list, click the bucket you want to operate. The **Overview** page is displayed.
-
-#. In the navigation pane, choose **Objects**.
+#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
 
 #. In the search box above the object list, enter the name prefix of the file or folder that you want to search for.
 

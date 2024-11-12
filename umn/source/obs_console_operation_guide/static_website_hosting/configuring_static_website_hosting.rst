@@ -7,7 +7,7 @@ Configuring Static Website Hosting
 
 You can configure static website hosting for a bucket and then use the bucket's domain name to access static websites hosted in the bucket.
 
-The configuration of static website hosting takes two minutes at most to take effect.
+It can take up to two minutes for the configuration of static website hosting to take effect.
 
 Prerequisites
 -------------
@@ -16,16 +16,18 @@ Web page files required for static website hosting have been uploaded to the spe
 
 The static website files hosted in the bucket are accessible to anonymous users.
 
+Static web page files in the Cold storage class have been restored. For more information, see :ref:`Restoring an Object from Cold Storage <obs_03_0320>`.
+
 Procedure
 ---------
 
-#. In the bucket list, click the bucket you want to operate. The **Overview** page is displayed.
+#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
 
 #. (**Optional**) If the static website files in the bucket are not accessible to anonymous users, perform this step. If they are already accessible to everyone, skip this step.
 
    Grant the read permission for static website files to anonymous users. For details, see :ref:`Granting Anonymous Users Permission to Access Objects <obs_03_0132>`.
 
-   If the bucket contains only static website files, configure the **Public Read** policy for the bucket so that all files in it can be accessed publicly.
+   If the bucket contains only static website files, configure the **Public Read** policy for the bucket so that all files in it are publicly accessible.
 
    a. Choose **Permissions** > **Bucket Policies**.
 
@@ -40,9 +42,7 @@ Procedure
 
          **Figure 1** Configuring the public read permission
 
-#. In the **Basic Configurations** area, click **Static Website Hosting**. The **Static Website Hosting** page is displayed.
-
-   Alternatively, you can choose **Basic Configurations** > **Static Website Hosting** from the navigation pane on the left.
+#. In the navigation pane, choose **Basic Configurations** > **Static Website Hosting**. The **Static Website Hosting** page is displayed.
 
 #. Click **Configure Static Website Hosting**. The **Configure Static Website Hosting** dialog box is displayed.
 
@@ -63,11 +63,13 @@ Procedure
 
       OBS only allows files such as **index.html** in the root directory of a bucket to function as the default homepage. Do not set the default homepage with a multi-level directory structure (for example, **/page/index.html**).
 
-   -  **404 Error Page**: specifies the error page returned when an error occurs during static website access. When OBS Console is used to configure static website hosting, only HTML, JPG, PNG, BMP, and WEBP files under the root directory are supported.
+   -  **404 Error Page**: specifies the error page returned when an error occurs during static website access. When OBS Console is used to configure static website hosting, only HTML, JPG, PNG, BMP, and WebP files under the root directory are supported.
 
 #. **Optional**: In **Redirection Rules**, configure redirection rules. Requests that comply with the redirection rules are redirected to the specific host or page.
 
-   A redirection rule is compiled in the JSON or XML format. Each rule contains a **Condition** and a **Redirect**. The parameters are described as follows:
+   A redirection rule is compiled in the JSON or XML format. Each rule contains a **Condition** and a **Redirect**. The parameters are described in :ref:`Table 1 <en-us_topic_0045853755__table59166151447>`.
+
+   .. _en-us_topic_0045853755__table59166151447:
 
    .. table:: **Table 1** Parameter description
 

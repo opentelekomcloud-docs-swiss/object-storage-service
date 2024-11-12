@@ -7,7 +7,7 @@ Configuring User Permissions
 
 If your cloud service account does not need individual IAM users, then you may skip this section. Your permissions to use OBS functions are not affected.
 
-If IAM users are required, you need to grant them access permissions for OBS, because OBS is separately deployed from other cloud resources.
+OBS is separately deployed from other cloud resources. If IAM users are required, you need to grant them access permissions for OBS.
 
 Process
 -------
@@ -47,29 +47,6 @@ Procedure
 
          Due to data caching, an RBAC policy or a fine-grained policy involving OBS actions will take effect 10 to 15 minutes after it is attached to a user or a user group.
 
-#. Create a user.
-
-   a. In the navigation pane, choose **Users**. The **Users** page is displayed.
-   b. Click **Create User**.
-   c. Set user information and click **Next**.
-
-      .. table:: **Table 1** User parameters
-
-         +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-         | Parameter                         | Description                                                                                                                                                                                                                                                |
-         +===================================+============================================================================================================================================================================================================================================================+
-         | Username                          | The user name for logging in to the cloud service.                                                                                                                                                                                                         |
-         +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-         | Credential Type                   | A credential refers to the identity credential used for user system authentication. In this example, password is selected.                                                                                                                                 |
-         |                                   |                                                                                                                                                                                                                                                            |
-         |                                   | -  **Password**: Used for accessing cloud services using the console or development tools.                                                                                                                                                                 |
-         |                                   | -  **Access key**: Used for logging to the cloud service using development tools. This credential type is more secure, and is recommended if the user does not need to use the console.                                                                    |
-         +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-         | User Groups                       | You can add a user to one or more user groups. Then the user will inherit the permissions granted to these user groups. The default user group **admin** has the administrator permissions and all of the permissions required to use all cloud resources. |
-         +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-         | Description                       | (Optional) Brief description about the user.                                                                                                                                                                                                               |
-         +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-   d. Select a type for password generation, set the email address and mobile number, and click **OK**.
+#. Create an IAM user. For details, see section "Creating an IAM User" in the *Identity and Access Management User Guide*.
 
 #. Use the created IAM user to log in to OBS Console and verify the user permissions.

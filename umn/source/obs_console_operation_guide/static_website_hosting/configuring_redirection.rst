@@ -14,18 +14,18 @@ Web page files required for static website hosting have been uploaded to the spe
 
 The static website files hosted in the bucket are accessible to anonymous users.
 
+Static web page files in the Cold storage class have been restored. For more information, see :ref:`Restoring an Object from Cold Storage <obs_03_0320>`.
+
 Procedure
 ---------
 
-#. In the bucket list, click the bucket you want to operate. The **Overview** page is displayed.
+#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
 
-#. In the **Basic Configurations** area, click **Static Website Hosting**. The **Static Website Hosting** page is displayed.
-
-   Alternatively, you can choose **Basic Configurations** > **Static Website Hosting** from the navigation pane on the left.
+#. In the navigation pane, choose **Basic Configurations** > **Static Website Hosting**. The **Static Website Hosting** page is displayed.
 
 #. Click **Configure Static Website Hosting**. The **Configure Static Website Hosting** dialog box is displayed.
 
-#. Enable it by turning on the status switch.
+#. Enable **Status**.
 
 #. Set **Hosting By** to **Redirection**, and enter the access domain name or URL of the bucket to which requests are redirected.
 
@@ -43,7 +43,7 @@ Procedure
 
    Grant the read permission for static website files to anonymous users. For details, see :ref:`Granting Anonymous Users Permission to Access Objects <obs_03_0132>`.
 
-   If the bucket contains only static website files, configure the **Public Read** policy for the bucket so that all files in it can be accessed publicly.
+   If the bucket contains only static website files, configure the **Public Read** policy for the bucket so that all files in it are publicly accessible.
 
    a. Choose **Permissions** > **Bucket Policies**.
 
