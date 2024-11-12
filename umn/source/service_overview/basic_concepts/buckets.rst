@@ -9,7 +9,7 @@ Buckets are containers for storing objects. OBS provides flat storage in the for
 
 Each bucket has its own attributes, such as access permissions, and the region. You can specify access permissions, and regions when creating buckets. You can also configure advanced attributes to meet storage requirements in different scenarios.
 
-Each bucket name in OBS is globally unique and cannot be changed after the bucket has been created. The region where a bucket resides cannot be changed once the bucket is created. When you create a bucket, OBS creates a default access control list (ACL) that grants users permissions (such as read and write permissions) on the bucket. Only authorized users can perform operations such as creating, deleting, viewing, and configuring buckets.
+Each bucket name in OBS is globally unique and cannot be changed after the bucket is created. The region where a bucket resides cannot be changed once the bucket is created. When you create a bucket, OBS creates a default access control list (ACL) that grants users permissions (such as read and write permissions) on the bucket. Only authorized users can perform operations such as creating, deleting, viewing, and configuring buckets.
 
 An account (including all IAM users under this account) can create a maximum of 100 buckets. However, there is no restriction on the number and total size of objects in a bucket.
 

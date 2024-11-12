@@ -41,3 +41,4 @@ The metadata defined by the system is classified into the following types: syste
 .. note::
 
    -  When versioning is enabled for a bucket, you can set metadata for objects which are **Latest Version**, but cannot set metadata for objects which are **Historical Version**.
+   -  Metadata cannot be configured for Cold objects.

@@ -17,6 +17,45 @@ An object consists of the following:
 
 -  Data that refers to the content of an object.
 
-Generally, objects are managed as files. However, OBS is an object-based storage service and there is no concept of files and folders. For easy data management, OBS provides a method to simulate folders. By adding a slash (/) to an object name, for example, **test/123.jpg**, you can specify **test** as a folder and **123.jpg** as the name of a file in the **test** folder. The key of the object is **test/123.jpg**.
+Objects are generally managed as files, but OBS, as an object-based service, has no concept of files and folders. For easy data management, OBS provides a method to simulate folders. By adding a slash (/) to an object name, for example, **test/123.jpg**, you can specify **test** as a folder and **123.jpg** as the name of a file in the **test** folder. The key of the object is **test/123.jpg**.
+
+When uploading an object, you can specify a storage class for it. If you do not specify a storage class, the object inherits the storage class of the bucket. You can also change the storage class of an existing object in a bucket.
 
 On OBS Console and OBS Browser+, you can use folders the same way you use them in a file system.
+
+.. _obs_03_0206__section320173016163:
+
+Object Key Naming Guidelines
+----------------------------
+
+Although any UTF-8 characters can be used in an object key name, naming object keys according to the following guidelines can help maximize the object keys' compatibility with other applications. Ways to analyze special characters vary depending on applications. The following guidelines help object key names substantially meet the requirements of DNS, web security characters, XML analyzers and other APIs.
+
+The following character sets can be safely used in key names.
+
++---------------------------------------------------------------+-----------------------------------+
+| Alphanumeric characters (also known as unreserved characters) | 0-9, a-z, and A-Z                 |
++---------------------------------------------------------------+-----------------------------------+
+| Special characters (also known as reserved characters)        | Exclamation mark (!)              |
+|                                                               |                                   |
+|                                                               | Hyphen (-)                        |
+|                                                               |                                   |
+|                                                               | Underscore (_)                    |
+|                                                               |                                   |
+|                                                               | Period (.)                        |
+|                                                               |                                   |
+|                                                               | Asterisk (``*``)                  |
+|                                                               |                                   |
+|                                                               | Single quote (')                  |
+|                                                               |                                   |
+|                                                               | Left parenthesis (()              |
+|                                                               |                                   |
+|                                                               | Right parenthesis ())             |
++---------------------------------------------------------------+-----------------------------------+
+
+The following are examples of valid object key names:
+
+.. code-block::
+
+   4my-organization
+   my.great_photos-2014/jan/myvacation.jpg
+   videos/2014/birthday/video1.wmv

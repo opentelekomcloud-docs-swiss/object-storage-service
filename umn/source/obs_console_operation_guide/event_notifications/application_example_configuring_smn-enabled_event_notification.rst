@@ -31,9 +31,8 @@ Procedure
 
    Create a folder.
 
-   Click the bucket created in :ref:`Step 2 <obs_03_0333__li29947515>` to go to the **Overview** page. Choose **Objects** > **Create Folder**, enter a folder name, and click **OK**, as shown in :ref:`Figure 2 <obs_03_0333__fig28070790193136>`. In the following example, **SMN** is the folder name.
+   Click the name of the bucket created in :ref:`2 <obs_03_0333__li29947515>` to go to the **Overview** page. Then, choose **Objects** and click **Create Folder**. In the displayed dialog box, enter a folder name and click **OK**. In the following example, **SMN** is the folder name.
 
-   .. _obs_03_0333__fig28070790193136:
 
    .. figure:: /_static/images/en-us_image_0000001180502786.png
       :alt: **Figure 2** Creating a folder
@@ -66,7 +65,7 @@ Procedure
 
       .. note::
 
-         -  A folder path ends with a slash (/). Therefore, if you want to configure the event notification for operations on folders and you need to filter folders by suffix, the suffix must also end with a slash (/).
+         -  A folder path ends with a slash (/). Therefore, if you want to configure event notification rules for operations on folders and you need to filter folders by suffix, the suffix must also end with a slash (/).
          -  If neither the **Prefix** nor the **Suffix** is configured, the event notification rule applies to all objects in the bucket.
 
       .. _obs_03_0333__fig377201314360:

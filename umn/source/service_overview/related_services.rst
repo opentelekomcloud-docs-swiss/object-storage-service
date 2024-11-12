@@ -20,5 +20,7 @@ Related Services
    +-------------------------------------------------------------------------------+--------------------------------------+-----------------------------------------------------------------+
    | Tags are used to label and classify buckets in OBS.                           | Tag Management Service (TMS)         | :ref:`Tag Overview <en-us_topic_0059888284>`                    |
    +-------------------------------------------------------------------------------+--------------------------------------+-----------------------------------------------------------------+
+   | KMS encrypts files uploaded to the OBS.                                       | Data Encryption Workshop (DEW)       | :ref:`Server-Side Encryption Overview <en-us_topic_0066036553>` |
+   +-------------------------------------------------------------------------------+--------------------------------------+-----------------------------------------------------------------+
 
 OBS can be used as the storage resource pool for other cloud services such as Image Management Service (IMS).

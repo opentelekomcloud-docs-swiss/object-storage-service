@@ -9,7 +9,7 @@ You can upload the content files of static websites to your bucket on OBS, autho
 
 Static websites contain static web pages and some scripts that can run on clients, such as JavaScript and Flash. Different from static websites, dynamic websites rely on servers to process scripts, including PHP, JSP, and ASP.NET. OBS does not support scripts running on servers.
 
-The configuration of static website hosting takes effect within two minutes. After the static website hosting is effective in OBS, you can access the static website by using the URL provided by OBS.
+It can take up to two minutes for the configuration of static website hosting to take effect. After the static website hosting is effective in OBS, you can access the static website by using the URL provided by OBS.
 
 
 .. figure:: /_static/images/en-us_image_0136405078.png

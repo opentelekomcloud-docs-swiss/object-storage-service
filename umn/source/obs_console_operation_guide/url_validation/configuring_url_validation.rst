@@ -15,7 +15,7 @@ Static website hosting has been enabled.
 Procedure
 ---------
 
-#. In the bucket list, click the bucket you want to operate. The **Overview** page is displayed.
+#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
 
 #. In the **Basic Configurations** area, click **URL Validation**. The **URL Validation** page is displayed.
 

@@ -10,7 +10,9 @@ After logging is enabled for a bucket, OBS automatically converts bucket logs in
 Procedure
 ---------
 
-#. In the bucket list, click the bucket you want to operate. The **Overview** page is displayed.
+#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
+
+#. In the navigation pane, choose **Overview**.
 
 #. In the **Basic Configurations** area, click **Logging**. The **Logging** dialog box is displayed.
 
@@ -43,7 +45,7 @@ Procedure
 
 #. Select an IAM agency to grant OBS the permission to upload log files to the specified bucket.
 
-   By default, when configuring permissions for an agency, you only need to grant the agency the permission to upload log files (PutObject) to the bucket for storing log files. In the following example, **mybucketlogs** is the bucket. If default encryption is enabled for the log storage bucket, the IAM agency also requires the **KMS Administrator** permission for the region where the bucket is located.
+   By default, when configuring permissions for an agency, you only need to grant the agency the permission to upload log files (PutObject) to the bucket for storing log files. In the following example, **mybucketlogs** is the bucket. If the log storage bucket has server-side encryption enabled, the agency also requires the **KMS Administrator** permission for the region where the bucket is located.
 
    .. code-block::
 
@@ -62,7 +64,7 @@ Procedure
           ]
       }
 
-   You can choose an existing IAM agency from the drop-down list or click **Create Agency** to create one. For details about how to create an agency, see :ref:`Creating an IAM Agency <obs_03_0037>`.
+   You can choose an existing IAM agency from the drop-down list or click **Create Agency** to create one. For details about how to create an agency, see :ref:`Creating an Agency <obs_03_0037>`.
 
 #. Click **OK**.
 
@@ -71,4 +73,4 @@ Procedure
 Related Operations
 ------------------
 
-If you do not need to record logs, click **Disable** in the **Logging** dialog box and then click **OK**. After logging is disabled, logs are not recorded, but existing logs in the target bucket will be retained.
+If you do not need to record logs, in the **Logging** dialog box, select **Disable** and then click **OK**. After logging is disabled, logs are not recorded, but existing logs in the target bucket will be retained.

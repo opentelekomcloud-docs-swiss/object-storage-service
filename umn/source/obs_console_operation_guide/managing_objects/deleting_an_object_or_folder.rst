@@ -33,17 +33,25 @@ When versioning is enabled for a bucket, OBS works slightly different when delet
 Procedure
 ---------
 
-#. In the bucket list, click the bucket you want to operate. The **Overview** page is displayed.
+#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
 
-#. In the navigation pane, choose **Objects**.
-
-#. Select the file or folder you want to delete, and choose **More** > **Delete** on the right.
+#. Select the file or folder you want to delete and choose **More** > **Delete** on the right.
 
    You can select multiple files or folders and click **Delete** above the object list to batch delete them.
 
 #. Click **Yes** to confirm the deletion.
 
+   .. caution::
+
+      If you delete an object from a bucket with versioning enabled, the object is not permanently deleted but retained in the **Deleted Objects** list. All versions of the object are still kept in the bucket and are billed for storage. If you need to permanently delete the object, see the following steps.
+
 #. If versioning is enabled for the bucket, delete the files or folders again from the **Deleted Objects** list to permanently delete them.
+
+   .. note::
+
+      In a bucket with WORM enabled, objects cannot be permanently deleted from the **Deleted Objects** list. You can permanently delete an object on its details page. For details, see :ref:`Related Operations <obs_03_0327__section29772226>` or :ref:`Configuring WORM Retention <obs_03_0718>`.
+
+      Likewise, folders cannot be permanently deleted from the **Deleted Objects** list either. To permanently delete a folder, you can only :ref:`configure a lifecycle rule <obs_03_0335>`.
 
    a. Click **Deleted Objects**.
 

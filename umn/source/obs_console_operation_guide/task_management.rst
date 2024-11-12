@@ -5,7 +5,7 @@
 Task Management
 ===============
 
-When you delete an object, the **Task Management** is displayed in the lower part of the console. You can manage tasks through **Task Management**.
+When you delete or change the storage class of an object, the **Task Management** is displayed in the lower part of the console. You can manage tasks through **Task Management**.
 
 .. note::
 
