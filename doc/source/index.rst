@@ -7,6 +7,7 @@ Object Storage Service (OBS) is an object-based storage service that provides cu
    :class: container-sbv
 
    .. service_card::
+      :environment: internal
       :service_type: obs
       :umn: This document describes the concepts, functions, and basic operations about how to manage Object Storage Service (OBS) using the management console and client.
       :api-ref: This document describes the Representational State Transfer (REST) application programming interfaces (APIs) supported by Object Storage Service, including request and response formats as well as parameters.
