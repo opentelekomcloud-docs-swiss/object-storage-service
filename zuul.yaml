@@ -4,6 +4,12 @@
     default-branch: main
     templates:
       - helpcenter-swiss-base-jobs
+    vars:
+      sphinx_pdf_files:
+        - obs-umn.pdf
+        - obs-tool-guide.pdf
+        - obs-s3api.pdf
+        - obs-api-ref.pdf
     check:
       jobs:
         - noop
