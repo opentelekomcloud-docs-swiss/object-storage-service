@@ -38,6 +38,7 @@ otcdocs_doc_type = 'tool-guide'
 otcdocs_service_category = 'storage'
 otcdocs_service_title = 'Object Storage Service'
 otcdocs_service_type = 'obs'
+otcdocs_cloud_environment = 'swiss'
 otcdocs_search_environment = 'hc_swiss'
 otcdocs_search_index = 'search_index_swiss'
 otcdocs_search_url = "https://opensearch.eco.tsi-dev.otc-service.com/"
