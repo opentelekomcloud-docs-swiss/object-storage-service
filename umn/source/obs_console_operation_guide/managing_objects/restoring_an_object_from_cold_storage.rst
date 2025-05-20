@@ -12,7 +12,7 @@ Constraints
 
 -  If a Cold object is being restored, its restore task cannot be suspended or deleted.
 -  An object being restored cannot be restored again.
--  After an object is restored, an object copy in the Standard storage class will be generated. This way, there is a Cold object and also its Standard copy in the bucket. The copy will be automatically deleted once the restore expires.
+-  After an object is restored, an object copy in the Standard storage class will be generated. This way, there is a Cold object and also its Standard copy in the bucket. The copy will be automatically deleted once the restoration expires.
 
 Procedure
 ---------

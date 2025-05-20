@@ -12,11 +12,7 @@ Procedure
 
 #. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
 
-#. In the navigation pane, choose **Overview**.
-
-#. In the **Basic Configurations** area, click **Tags**.
-
-   Alternatively, you can choose **Basic Configurations** > **Tags** in the navigation pane.
+#. In the navigation pane, choose **Basic Configurations** > **Tagging**.
 
 #. Click **Add Tag**. The **Add Tag** dialog box is displayed.
 
@@ -26,29 +22,29 @@ Procedure
 
       **Figure 1** Add Tag
 
-#. Set the key and value based on :ref:`Table 1 <obs_03_0331__table4503491017244>`.
+#. Set the key and value based on :ref:`Table 1 <obs_03_0331__table13674114016216>`.
 
-   .. _obs_03_0331__table4503491017244:
+   .. _obs_03_0331__table13674114016216:
 
    .. table:: **Table 1** Parameter description
 
-      +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-      | Parameter                         | Description                                                                                                             |
-      +===================================+=========================================================================================================================+
-      | Tag key                           | Key of a tag. Tag keys for the same bucket must be unique. You can customize tags or select the ones predefined on TMS. |
-      |                                   |                                                                                                                         |
-      |                                   | A tag key:                                                                                                              |
-      |                                   |                                                                                                                         |
-      |                                   | -  Must contain 1 to 36 characters and be case sensitive.                                                               |
-      |                                   | -  Cannot start or end with a space or contain the following characters: ``=*<>\,|/``                                   |
-      +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-      | Tag value                         | Value of a tag. A tag value can be repetitive or left blank.                                                            |
-      |                                   |                                                                                                                         |
-      |                                   | A tag value:                                                                                                            |
-      |                                   |                                                                                                                         |
-      |                                   | -  Can contain 0 to 43 characters and must be case sensitive.                                                           |
-      |                                   | -  Cannot contain the following characters: ``=*<>\,|/``                                                                |
-      +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+      +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+      | Parameter                         | Description                                                                                                                         |
+      +===================================+=====================================================================================================================================+
+      | Key                               | Specifies the key of the tag. Each tag of a bucket has a unique key. The value of the key can be self-defined or predefined by TMS. |
+      |                                   |                                                                                                                                     |
+      |                                   | A tag key must comply with the following naming rules:                                                                              |
+      |                                   |                                                                                                                                     |
+      |                                   | -  Must contain 1 to 36 characters.                                                                                                 |
+      |                                   | -  Only digits, letters, underscores (_), hyphens (-) are allowed.                                                                  |
+      +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+      | Value                             | Specifies the value of the tag. Tags of a bucket can have repetitive or blank values.                                               |
+      |                                   |                                                                                                                                     |
+      |                                   | The tag value must comply with the following naming rules:                                                                          |
+      |                                   |                                                                                                                                     |
+      |                                   | -  Must contain 0 to 43 characters.                                                                                                 |
+      |                                   | -  Only digits, letters, underscores (_), hyphens (-) are allowed.                                                                  |
+      +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 
 #. Click **OK**.
 

@@ -28,16 +28,6 @@ Procedure
 
 #. Go to the folder where you want to upload files and click **Upload Object**. The **Upload Object** dialog box is displayed.
 
-   .. note::
-
-      If the files that you want to upload to OBS are stored in Microsoft OneDrive, it is recommended that the names of these files contain a maximum of 32 characters to ensure compatibility.
-
-
-   .. figure:: /_static/images/en-us_image_0000001180660152.png
-      :alt: **Figure 1** Uploading objects
-
-      **Figure 1** Uploading objects
-
 #. Select a storage class. If you do not specify a storage class, the objects you upload inherit the default storage class of the bucket.
 
    .. note::
@@ -54,7 +44,7 @@ Procedure
 
       If the bucket has server-side encryption configured, the object you upload will inherit encryption from the bucket by default.
 
-#. (Optional) To configure metadata or WORM retention policies, click **Next: (Optional) Configure Advanced Settings**.
+#. (Optional) To configure WORM retention policies, or metadata, click **Next: (Optional) Configure Advanced Settings**.
 
    .. note::
 
@@ -66,8 +56,8 @@ Procedure
 
 
    .. figure:: /_static/images/en-us_image_0000001925837700.png
-      :alt: **Figure 2** Configuring metadata or WORM retention
+      :alt: **Figure 1** Configuring metadata or WORM retention
 
-      **Figure 2** Configuring metadata or WORM retention
+      **Figure 1** Configuring metadata or WORM retention
 
 #. Click **Upload**.

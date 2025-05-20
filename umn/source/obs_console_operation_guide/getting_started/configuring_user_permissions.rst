@@ -33,17 +33,19 @@ Procedure
 
    b. Click **Create User Group**.
 
-   c. Enter a user group name and click **OK**.
+   c. Enter a user group name and description and click **OK**.
 
       The user group is displayed in the user group list once the creation is complete.
 
-   d. Locate the user group you created and click **Modify** in the **Operation** column of the row.
+   d. Locate the user group you created and click **Authorize** in the **Operation** column of the row.
 
-   e. In the **Group Permissions** area, locate the row that displays **Global service** > **OBS**, click **Attach Policy** in the **Operation** column, select the policy name, and click **OK**.
+   e. Under **Select Policy/Role**, filter policies based on policy types in the upper right corner, required policy names, and click **Next**.
+
+   f. Under **Select Scope**, select **Global services** and click **OK**.
 
       .. note::
 
-         In the **Policy Information** area, you can view the details about the policy.
+         In the policy content area, you can view the authorization details.
 
          Due to data caching, an RBAC policy or a fine-grained policy involving OBS actions will take effect 10 to 15 minutes after it is attached to a user or a user group.
 

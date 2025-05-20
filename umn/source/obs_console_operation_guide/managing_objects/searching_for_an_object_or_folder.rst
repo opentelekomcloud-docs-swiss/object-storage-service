@@ -28,7 +28,7 @@ Searching by Prefixes of Object Names
 Related Operations
 ------------------
 
-In the object list, click |image2| next to the size or last modification time to sort objects.
+In the object list, click |image2| next to the size or last modified time to sort objects.
 
 .. |image1| image:: /_static/images/en-us_image_0000001730497813.png
 .. |image2| image:: /_static/images/en-us_image_0000001627960406.png

@@ -11,38 +11,30 @@ Procedure
 ---------
 
 #. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
-#. In the navigation pane, choose **Permissions**.
-#. Choose **Bucket Policies**.
+#. In the navigation pane, choose **Permissions** > **Bucket Policies**.
 #. Click **Create**.
-#. Configure parameters according to the following table, so that you can grant anonymous users the permission to access the folder and objects in it. Retain the default values for the other parameters.
+#. Configure the following parameters in the **Create Bucket Policy** dialog box.
 
-   .. table:: **Table 1** Parameters for granting the object listing and upload permissions
+   .. table:: **Table 1** Authorizing folder access permissions to anonymous users
 
-      +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-      | Parameter                         | Description                                                                                                                                |
-      +===================================+============================================================================================================================================+
-      | Configuration method              | Choose **Visual Editor**.                                                                                                                  |
-      +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-      | Policy Name                       | Enter a policy name.                                                                                                                       |
-      +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-      | Effect                            | Allow                                                                                                                                      |
-      +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-      | Principal                         | -  Select **Other accounts**.                                                                                                              |
-      |                                   | -  IAM users: Specify IAM users in the *Account ID*\ **/**\ *IAM user ID* format, with each IAM user on a separate line.                   |
-      |                                   |                                                                                                                                            |
-      |                                   |    -  *Account ID*\ **/\*** indicates that permissions are granted to all IAM users under the account.                                     |
-      |                                   |    -  **\*/\*** indicates that permissions are granted to all anonymous users.                                                             |
-      |                                   |                                                                                                                                            |
-      |                                   | .. note::                                                                                                                                  |
-      |                                   |                                                                                                                                            |
-      |                                   |    You can obtain the account ID and IAM user ID from the **My Credentials** page.                                                         |
-      +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-      | Resources                         | Select **Specified objects**. Then, set an object name prefix (for example, **folder-001/\***) to allow access to all objects in a folder. |
-      +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-      | Actions                           | Select **Customize** and then the **GetObject** action.                                                                                    |
-      +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+      +-----------------------------------+------------------------------------------------------------------------------------------------------------------------+
+      | Parameter                         | Description                                                                                                            |
+      +===================================+========================================================================================================================+
+      | Configuration method              | Choose **Visual Editor**.                                                                                              |
+      +-----------------------------------+------------------------------------------------------------------------------------------------------------------------+
+      | Policy Name                       | Enter a custom name.                                                                                                   |
+      +-----------------------------------+------------------------------------------------------------------------------------------------------------------------+
+      | Effect                            | Allow                                                                                                                  |
+      +-----------------------------------+------------------------------------------------------------------------------------------------------------------------+
+      | Principal                         | Select **All accounts**.                                                                                               |
+      +-----------------------------------+------------------------------------------------------------------------------------------------------------------------+
+      | Resources                         | -  Resource scope: Select **Specified objects**.                                                                       |
+      |                                   | -  Resource path: If the folder name is **folder-001**, enter **folder-001/\***, indicating all objects in the folder. |
+      +-----------------------------------+------------------------------------------------------------------------------------------------------------------------+
+      | Actions                           | Select **Customize** and select the **GetObject** action.                                                              |
+      +-----------------------------------+------------------------------------------------------------------------------------------------------------------------+
 
-#. Click **Create**.
+#. Click **Create** in the lower right corner.
 
 Verification
 ------------

@@ -11,63 +11,45 @@ Procedure
 ---------
 
 #. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
-
-#. In the navigation pane, choose **Permissions**.
-
-#. Choose **Bucket Policies** and click **Create**.
-
-
-   .. figure:: /_static/images/en-us_image_0000002049514480.png
-      :alt: **Figure 1** Creating a bucket policy
-
-      **Figure 1** Creating a bucket policy
-
-#. Configure parameters listed in the table below.
-
-   .. table:: **Table 1** Parameters for granting permission to access a bucket
-
-      +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-      | Parameter                         | Value                                                                                                                                 |
-      +===================================+=======================================================================================================================================+
-      | Configuration method              | Choose **Visual Editor**.                                                                                                             |
-      +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-      | Policy Name                       | Enter a policy name.                                                                                                                  |
-      +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-      | Effect                            | **Allow**                                                                                                                             |
-      +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-      | Principal                         | -  Select **Other accounts**.                                                                                                         |
-      |                                   | -  IAM users: Specify IAM users in the *Account ID*\ **/**\ *IAM user ID* format, with each IAM user on a separate line.              |
-      |                                   |                                                                                                                                       |
-      |                                   |    -  *Account ID*\ **/\*** indicates that permissions are granted to all IAM users under the account.                                |
-      |                                   |    -  **\*/\*** indicates that permissions are granted to all anonymous users.                                                        |
-      |                                   |                                                                                                                                       |
-      |                                   | .. note::                                                                                                                             |
-      |                                   |                                                                                                                                       |
-      |                                   |    You can obtain the account ID and IAM user ID from the **My Credentials** page.                                                    |
-      +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-      | Resources                         | Select **Entire bucket (including the objects in it)**.                                                                               |
-      +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-      | Actions                           | Select **Customize** and click **Select Actions**. In the displayed dialog box, select **Get\*** that indicates all read permissions. |
-      |                                   |                                                                                                                                       |
-      |                                   | .. caution::                                                                                                                          |
-      |                                   |                                                                                                                                       |
-      |                                   |    CAUTION:                                                                                                                           |
-      |                                   |    Selecting **\*** (indicating all actions) may cause resources to be deleted.                                                       |
-      +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-      | Conditions                        | -  **Key**: Select **CurrentTime**.                                                                                                   |
-      |                                   | -  **Condition Operator**: Select **DateGreaterThan**.                                                                                |
-      |                                   | -  **Value**: Enter **2019-03-26T12:00:00Z** (UTC).                                                                                   |
-      +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-      | Conditions                        | -  **Key**: Select **CurrentTime**.                                                                                                   |
-      |                                   | -  **Condition Operator**: Select **DateLessThan**.                                                                                   |
-      |                                   | -  **Value**: Enter **2019-03-26T15:00:00Z** (UTC).                                                                                   |
-      +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-
-   .. note::
-
-      The preceding two conditions must be configured in the same bucket policy.
-
+#. In the navigation pane, choose **Permissions** > **Bucket Policies**.
 #. Click **Create**.
+#. Configure the following parameters in the **Create Bucket Policy** dialog box.
+
+   .. table:: **Table 1** Parameters for limiting the time when objects in the bucket are accessible
+
+      +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+      | Parameter                         | Description                                                                                                                      |
+      +===================================+==================================================================================================================================+
+      | Configuration method              | Choose **Visual Editor**.                                                                                                        |
+      +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+      | Policy Name                       | Enter a custom name.                                                                                                             |
+      +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+      | Effect                            | Allow                                                                                                                            |
+      +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+      | Principal                         | Select **All accounts**.                                                                                                         |
+      +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+      | Resources                         | Select **Entire bucket (including the objects in it)**.                                                                          |
+      +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+      | Actions                           | Select **Customize** and then **\*** (indicating all actions).                                                                   |
+      |                                   |                                                                                                                                  |
+      |                                   | .. note::                                                                                                                        |
+      |                                   |                                                                                                                                  |
+      |                                   |    Selecting **\*** may cause resources to be deleted. To avoid this risk, select **Get\*** that indicates all read permissions. |
+      +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+      | Conditions                        | -  Condition 1:                                                                                                                  |
+      |                                   |                                                                                                                                  |
+      |                                   |    -  Condition Operator: DateGreaterThan                                                                                        |
+      |                                   |    -  Key: CurrentTime                                                                                                           |
+      |                                   |    -  Value: 2019-03-26T12:00:00Z (UTC format)                                                                                   |
+      |                                   |                                                                                                                                  |
+      |                                   | -  Condition 2:                                                                                                                  |
+      |                                   |                                                                                                                                  |
+      |                                   |    -  Condition Operator: DateLessThan                                                                                           |
+      |                                   |    -  Key: CurrentTime                                                                                                           |
+      |                                   |    -  Value: 2019-03-26T15:00:00Z (UTC format)                                                                                   |
+      +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+
+#. Click **Create** in the lower right corner.
 
 Verification
 ------------
