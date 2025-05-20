@@ -9,7 +9,7 @@ The bucket inventory function periodically generates lists of metadata informati
 
 An inventory is a CSV file. Inventory files are automatically uploaded to the specified bucket.
 
-You specify that inventories are generated for objects with the same object name prefix. You can also determine the inventory generation interval and whether to list all object versions in the inventory file. The object metadata you specify in the inventory include the file size, last modification time, ETag, multipart upload, encryption status, and replication status.
+You specify that inventories are generated for objects with the same object name prefix. You can also determine the inventory generation interval and whether to list all object versions in the inventory file. The object metadata you specify in the inventory include the file size, last modification time, storage class, ETag, multipart upload, encryption status, and replication status.
 
 Constraints
 -----------
@@ -85,7 +85,7 @@ The name of an inventory file is in the following format:
 The manifest.json File
 ----------------------
 
-If there are a large number of objects in a bucket, multiple inventory files may be generated for a single inventory configuration. It takes some time to generate these files. For example, if there are 200,000 objects in a bucket, it takes about 1.5 minutes to generate all inventory files. One or two hours after all inventory files are generated, a **manifest.json** file will be generated. The **manifest.json** file contains information about all inventory files generated this time, including:
+If there are a large number of objects in a bucket, multiple inventory files may be generated for a single inventory configuration. It takes some time to generate these files. For example, if there are 200,000 objects in a bucket, it will take about 1.5 minutes to generate all inventory files. One or two hours after all inventory files are generated, a **manifest.json** file will be generated. The **manifest.json** file contains information about all inventory files generated this time, including:
 
 -  **sourceBucket** that indicates the name of the source bucket
 -  **destinationBucket** that indicates the name of the destination bucket

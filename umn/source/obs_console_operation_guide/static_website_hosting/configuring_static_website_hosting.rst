@@ -23,43 +23,56 @@ Procedure
 
 #. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
 
-#. (**Optional**) If the static website files in the bucket are not accessible to anonymous users, perform this step. If they are already accessible to everyone, skip this step.
+#. (**Optional**) If the static website files in the bucket are not accessible to everyone, perform this step. If they are already accessible to everyone, skip this step.
 
-   Grant the read permission for static website files to anonymous users. For details, see :ref:`Granting Anonymous Users Permission to Access Objects <obs_03_0132>`.
+   To grant required permissions, see :ref:`Granting Anonymous Users Permission to Access Objects <obs_03_0132>`.
 
-   If the bucket contains only static website files, configure the **Public Read** policy for the bucket so that all files in it are publicly accessible.
+   If the bucket contains only static website files, configure the **Object Read-Only** policy for the bucket, so that all files in it are publicly accessible.
 
    a. Choose **Permissions** > **Bucket Policies**.
+   b. Click **Create**.
+   c. Configure bucket policy information.
 
-   b. In the **Standard Bucket Policies** area, select the **Public Read** policy for the bucket.
+      .. table:: **Table 1** Parameters for configuring a public read policy
 
-   c. Click **Public Read**. For details, see :ref:`Figure 1 <en-us_topic_0045853755__fig15186794193556>`. In the confirmation dialog box that is displayed, click **Yes**.
+         +-----------------------+-----------------------+------------------------------------------------------------------------------+
+         | Parameter             |                       | Description                                                                  |
+         +=======================+=======================+==============================================================================+
+         | Configuration method  |                       | **Visual Editor** and **JSON** are available. Choose **Visual Editor** here. |
+         +-----------------------+-----------------------+------------------------------------------------------------------------------+
+         | Policy Name           |                       | Enter a custom policy name.                                                  |
+         +-----------------------+-----------------------+------------------------------------------------------------------------------+
+         | Policy content        | Effect                | Select **Allow**.                                                            |
+         +-----------------------+-----------------------+------------------------------------------------------------------------------+
+         |                       | Principals            | Select **All accounts**.                                                     |
+         +-----------------------+-----------------------+------------------------------------------------------------------------------+
+         |                       | Resources             | -  Select **Specified objects**.                                             |
+         |                       |                       | -  Set the resource path to **\*** (indicating all objects in the bucket).   |
+         +-----------------------+-----------------------+------------------------------------------------------------------------------+
+         |                       | Actions               | -  Choose **Use a template**.                                                |
+         |                       |                       | -  Select **Object Read-Only**.                                              |
+         +-----------------------+-----------------------+------------------------------------------------------------------------------+
 
-      .. _en-us_topic_0045853755__fig15186794193556:
+   d. Click **Create**. The bucket policy is created.
 
-      .. figure:: /_static/images/en-us_image_0000001226102917.png
-         :alt: **Figure 1** Configuring the public read permission
-
-         **Figure 1** Configuring the public read permission
-
-#. In the navigation pane, choose **Basic Configurations** > **Static Website Hosting**. The **Static Website Hosting** page is displayed.
+#. In the navigation pane, choose **Basic Configurations** > **Static Website Hosting**.
 
 #. Click **Configure Static Website Hosting**. The **Configure Static Website Hosting** dialog box is displayed.
 
 #. Enable **Status**.
 
-#. Set the hosting type to the current bucket. For details, see :ref:`Figure 2 <en-us_topic_0045853755__fig1131112528711>`.
+#. Set the hosting type to the current bucket. For details, see :ref:`Figure 1 <en-us_topic_0045853755__fig1131112528711>`.
 
    .. _en-us_topic_0045853755__fig1131112528711:
 
-   .. figure:: /_static/images/en-us_image_0000001226221521.png
-      :alt: **Figure 2** Configuring static website hosting
+   .. figure:: /_static/images/en-us_image_0145846197.png
+      :alt: **Figure 1** Configuring static website hosting
 
-      **Figure 2** Configuring static website hosting
+      **Figure 1** Configuring static website hosting
 
 #. Configure the homepage and 404 error page.
 
-   -  **Home Page**: specifies the default homepage of the static website. When OBS Console is used to configure static website hosting, only HTML web pages are supported.
+   -  **Homepage**: specifies the default homepage of the static website. When OBS Console is used to configure static website hosting, only HTML web pages are supported.
 
       OBS only allows files such as **index.html** in the root directory of a bucket to function as the default homepage. Do not set the default homepage with a multi-level directory structure (for example, **/page/index.html**).
 
@@ -67,11 +80,11 @@ Procedure
 
 #. **Optional**: In **Redirection Rules**, configure redirection rules. Requests that comply with the redirection rules are redirected to the specific host or page.
 
-   A redirection rule is compiled in the JSON or XML format. Each rule contains a **Condition** and a **Redirect**. The parameters are described in :ref:`Table 1 <en-us_topic_0045853755__table59166151447>`.
+   A redirection rule is compiled in the JSON or XML format. Each rule contains a **Condition** and a **Redirect**. The parameters are described in :ref:`Table 2 <en-us_topic_0045853755__table59166151447>`.
 
    .. _en-us_topic_0045853755__table59166151447:
 
-   .. table:: **Table 1** Parameter description
+   .. table:: **Table 2** Parameter description
 
       +-----------------------+-----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Container             | Key                         | Description                                                                                                                                                                                                                                                                                                                                                       |

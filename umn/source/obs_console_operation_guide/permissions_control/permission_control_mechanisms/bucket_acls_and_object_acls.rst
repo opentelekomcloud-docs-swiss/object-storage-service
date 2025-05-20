@@ -49,27 +49,29 @@ A principal can be an account or one of the predefined OBS groups. For details, 
 What Permissions Can I Grant Using an ACL?
 ------------------------------------------
 
-:ref:`Table 2 <en-us_topic_0066088967__table28226836>` lists the permissions you can grant using a bucket ACL.
+:ref:`Table 2 <en-us_topic_0066088967__table18896141322516>` lists the permissions you can grant using a bucket ACL.
 
-.. _en-us_topic_0066088967__table28226836:
+.. _en-us_topic_0066088967__table18896141322516:
 
 .. table:: **Table 2** Access permissions controlled by a bucket ACL
 
-   +-----------------------+-----------------------+-------------------------------------------------------------------------+
-   | Permission            | Option                | Description                                                             |
-   +=======================+=======================+=========================================================================+
-   | Access to Bucket      | READ                  | Used to obtain the list of objects in a bucket and the bucket metadata. |
-   +-----------------------+-----------------------+-------------------------------------------------------------------------+
-   |                       | WRITE                 | Used to upload, overwrite, and delete any object in a bucket.           |
-   +-----------------------+-----------------------+-------------------------------------------------------------------------+
-   | Access to ACL         | READ_ACP              | Used to obtain the ACL of a bucket.                                     |
-   |                       |                       |                                                                         |
-   |                       |                       | The bucket owner has this permission permanently by default.            |
-   +-----------------------+-----------------------+-------------------------------------------------------------------------+
-   |                       | WRITE_ACP             | Used to update the ACL of a bucket.                                     |
-   |                       |                       |                                                                         |
-   |                       |                       | The bucket owner has this permission permanently by default.            |
-   +-----------------------+-----------------------+-------------------------------------------------------------------------+
+   +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Permission            | Option                | Description                                                                                                                                           |
+   +=======================+=======================+=======================================================================================================================================================+
+   | Access to Bucket      | READ                  | Used to obtain the list of objects or object versions in a bucket and to obtain the multipart uploads, metadata, and versioning settings of a bucket. |
+   +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+   |                       | WRITE                 | Used to upload, overwrite, and delete any object in a bucket.                                                                                         |
+   +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Access to Object      | Object READ           | Used to obtain the object content and metadata.                                                                                                       |
+   +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Access to ACL         | READ_ACP              | Used to list the ACLs of a bucket and of objects in the bucket.                                                                                       |
+   |                       |                       |                                                                                                                                                       |
+   |                       |                       | The bucket owner has this permission permanently by default.                                                                                          |
+   +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+   |                       | WRITE_ACP             | Used to update the ACL of a bucket.                                                                                                                   |
+   |                       |                       |                                                                                                                                                       |
+   |                       |                       | The bucket owner has this permission permanently by default.                                                                                          |
+   +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 :ref:`Table 3 <en-us_topic_0066088967__table63381242464>` lists the permissions you can grant using an object ACL.
 

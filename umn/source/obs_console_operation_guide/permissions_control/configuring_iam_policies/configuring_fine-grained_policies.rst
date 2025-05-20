@@ -11,7 +11,7 @@ Procedure
 ---------
 
 #. Log in to the IAM management console.
-#. In the navigation pane on the left, click **Policies**.
+#. In the navigation pane on the left, choose **Policies/Roles**.
 #. On the page that is displayed, click **Create Custom Policy**.
 #. On the **Create Custom Policy** page, set the following parameters:
 

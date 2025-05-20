@@ -8,16 +8,17 @@ Relationship Between a Bucket ACL and a Bucket Policy
 Mapping Between Bucket ACLs and Bucket Policies
 -----------------------------------------------
 
-Bucket ACLs are used to control basic read and write access to buckets. Custom settings of bucket policies support more actions that can be performed on buckets. Bucket policies supplement bucket ACLs. In most cases (granting permissions to log delivery user groups excluded), you can use bucket policies to manage access to buckets. :ref:`Table 1 <obs_03_0325__table183716545593>` shows the mapping between bucket ACL access permissions and bucket policy actions.
+Bucket ACLs are used to control basic read and write access to buckets. Custom settings of bucket policies support more actions that can be performed on buckets. Bucket policies supplement bucket ACLs. In most cases (granting permissions to log delivery user groups excluded), you can use bucket policies to manage access to buckets. :ref:`Table 1 <obs_03_0325__table8311113173517>` shows the mapping between bucket ACL access permissions and bucket policy actions.
 
-.. _obs_03_0325__table183716545593:
+.. _obs_03_0325__table8311113173517:
 
 .. table:: **Table 1** Mapping between bucket ACL access permissions and bucket policy actions
 
    +-----------------------+-----------------------+-----------------------------------------+
    | ACL Permission        | Option                | Mapped Action in a Custom Bucket Policy |
    +=======================+=======================+=========================================+
-   | Access to bucket      | Read                  | -  ListBucket                           |
+   | Access to bucket      | Read                  | -  HeadBucket                           |
+   |                       |                       | -  ListBucket                           |
    |                       |                       | -  ListBucketVersions                   |
    |                       |                       | -  ListBucketMultipartUploads           |
    +-----------------------+-----------------------+-----------------------------------------+
@@ -25,9 +26,11 @@ Bucket ACLs are used to control basic read and write access to buckets. Custom s
    |                       |                       | -  DeleteObject                         |
    |                       |                       | -  DeleteObjectVersion                  |
    +-----------------------+-----------------------+-----------------------------------------+
-   | Access to ACL         | Read                  | GetBucketAcl                            |
+   | Access to object      | Object read           | -  GetObject                            |
    +-----------------------+-----------------------+-----------------------------------------+
-   |                       | Write                 | PutBucketAcl                            |
+   | Access to ACL         | Read                  | -  GetBucketAcl                         |
+   +-----------------------+-----------------------+-----------------------------------------+
+   |                       | Write                 | -  PutBucketAcl                         |
    +-----------------------+-----------------------+-----------------------------------------+
 
 Mapping Relationship Between Object ACLs and Bucket Policies

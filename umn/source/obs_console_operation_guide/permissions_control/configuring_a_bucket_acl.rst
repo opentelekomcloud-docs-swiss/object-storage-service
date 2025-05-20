@@ -15,18 +15,22 @@ Procedure
 
 #. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
 
-#. In the navigation pane, choose **Permissions**.
+#. In the navigation pane, choose **Permissions** > **Bucket ACLs**.
 
-#. Under **Bucket ACLs**, click **Edit** to grant the owner, anonymous user, and log delivery user required permissions for the bucket.
+#. On the **Bucket ACLs** page, choose **Private**, **Public Read**, or **Public Read/Write** to grant the bucket ACL permission for anonymous users.
 
-#. Click **Add** to apply specific ACL permissions to an account.
+   .. note::
 
-   Enter an account ID or account name and specify ACL permissions for the account. You can obtain the account ID or account name from the **My Credentials** page. The account ID and account name correspond to the **Domain ID** and **Domain Name** respectively on the **My Credentials** page.
+      -  After you change **Public Read** or **Public Read/Write** to **Private**, only the bucket owner or object owner has the access.
+      -  After you change **Private** to **Public Read**, anyone can read objects in the bucket. No identity authentication is required.
+      -  After you change **Private** to **Public Read/Write**, anyone can read, write, and delete objects in the bucket. No identity authentication is required.
 
+#. In the **Operation** column, click **Edit** to grant the owner, anonymous user, or log delivery user required ACL permissions for the bucket.
 
-   .. figure:: /_static/images/en-us_image_0000001180820598.png
-      :alt: **Figure 1** Granting permissions
+#. In the middle of the page, click **Export** to get the bucket ACL configuration. The file includes the user type, account, bucket access, and ACL access.
 
-      **Figure 1** Granting permissions
+#. In the middle of the page, click **Add** to apply specific ACL permissions to an account.
 
-#. Click **Save**.
+   Enter an account ID and specify ACL permissions for the account. You can obtain the account ID from the **My Credentials** page.
+
+   Click **OK**.

@@ -9,10 +9,10 @@ Objects are basic units stored in OBS. An object contains both data and the meta
 
 An object consists of the following:
 
--  A key that specifies the name of an object. An object key is a UTF-8 string up to 1,024 characters long. Each object is uniquely identified by a key within a bucket.
+-  A key that specifies the name of an object. An object key is a UTF-8 string up to 1,024 characters long. Each object within a bucket is uniquely identified by a key.
 -  Metadata that describes an object. The metadata is a set of key-value pairs that are assigned to objects stored in OBS. There are two types of metadata: system-defined metadata and custom metadata.
 
-   -  System-defined metadata is automatically assigned by OBS for processing objects. Such metadata includes Date, Content-Length, Last-Modified, ETag, and more.
+   -  System-defined metadata is automatically assigned by OBS. Such metadata includes Date, Content-Length, Last-Modified, ETag, and more.
    -  You can specify custom metadata to describe the object when you upload an object to OBS.
 
 -  Data that refers to the content of an object.

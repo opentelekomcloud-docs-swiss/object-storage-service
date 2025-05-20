@@ -18,7 +18,7 @@ Related Services
    +-------------------------------------------------------------------------------+--------------------------------------+-----------------------------------------------------------------+
    | SMN sends OBS related alarms and event notifications, and triggers workflows. | Simple Message Notification (SMN)    | :ref:`SMN-Enabled Event Notifications <en-us_topic_0045853816>` |
    +-------------------------------------------------------------------------------+--------------------------------------+-----------------------------------------------------------------+
-   | Tags are used to label and classify buckets in OBS.                           | Tag Management Service (TMS)         | :ref:`Tag Overview <en-us_topic_0059888284>`                    |
+   | Tags are used to identify and organize buckets in OBS.                        | Tag Management Service (TMS)         | :ref:`Tag Overview <en-us_topic_0059888284>`                    |
    +-------------------------------------------------------------------------------+--------------------------------------+-----------------------------------------------------------------+
    | KMS encrypts files uploaded to the OBS.                                       | Data Encryption Workshop (DEW)       | :ref:`Server-Side Encryption Overview <en-us_topic_0066036553>` |
    +-------------------------------------------------------------------------------+--------------------------------------+-----------------------------------------------------------------+

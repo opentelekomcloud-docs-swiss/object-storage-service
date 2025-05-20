@@ -8,6 +8,7 @@ OBS Console Operation Guide
 -  :ref:`Console Function Overview <obs_03_0054>`
 -  :ref:`Restrictions <obs_03_0301>`
 -  :ref:`Getting Started <obs_03_0302>`
+-  :ref:`Storage Classes <en-us_topic_0050937852>`
 -  :ref:`Managing Buckets <obs_03_0311>`
 -  :ref:`Managing Objects <obs_03_0315>`
 -  :ref:`Server-Side Encryption <obs_03_0321>`
@@ -35,6 +36,7 @@ OBS Console Operation Guide
    console_function_overview
    restrictions
    getting_started/index
+   storage_classes
    managing_buckets/index
    managing_objects/index
    server-side_encryption/index

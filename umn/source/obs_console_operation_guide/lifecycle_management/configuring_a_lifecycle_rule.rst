@@ -22,6 +22,8 @@ Procedure
 
 #. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
 
+#. In the navigation pane, choose **Overview**.
+
 #. In the navigation pane, choose **Basic Configurations** > **Lifecycle Rules**.
 
 #. Click **Create**.
@@ -65,10 +67,6 @@ Procedure
    -  **Transition to Warm**: After this number of days since the last update, objects meeting specified conditions will be transitioned to Warm. This number must be at least 30.
    -  **Transition to Cold**: After this number of days since the last update, objects meeting specified conditions will be transitioned to Cold. If you configure to transition objects first to Warm and then Cold, the objects must stay Warm at least 30 days before they can be transitioned to Cold. If transition to Cold is used, but transition to Warm is not, there is no limit on the number of days for transition.
    -  **Delete Objects After (Days)**: After this number of days since the last update, objects meeting certain conditions will be expired and then deleted. This number must be an integer larger than that specified for any of the transition operations.
-
-   .. note::
-
-      The object update time refers to when common objects were uploaded or when historical objects became historical.
 
    For example, on January 7, 2015, you saved the following files in OBS:
 

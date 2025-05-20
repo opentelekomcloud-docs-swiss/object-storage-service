@@ -11,38 +11,33 @@ Procedure
 ---------
 
 #. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
-#. In the navigation pane, choose **Permissions**.
-#. Choose **Bucket Policies**.
+#. In the navigation pane, choose **Permissions** > **Bucket Policies**.
 #. Click **Create**.
-#. Configure parameters listed in the table below.
+#. Configure the following parameters in the **Create Bucket Policy** dialog box.
 
-   .. table:: **Table 1** Parameters for granting the object listing and upload permissions
+   .. table:: **Table 1** Restricting access to a bucket for specific addresses
 
-      +-----------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------+
-      | Parameter             |                       | Description                                                                                                              |
-      +=======================+=======================+==========================================================================================================================+
-      | Configuration method  |                       | Choose **Visual Editor**.                                                                                                |
-      +-----------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------+
-      | Policy Name           |                       | Enter a custom policy name.                                                                                              |
-      +-----------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------+
-      | Policy content        | Effect                | Select **Deny**.                                                                                                         |
-      +-----------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------+
-      |                       | Principal             | -  Select **Other accounts**.                                                                                            |
-      |                       |                       | -  IAM users: Specify IAM users in the *Account ID*\ **/**\ *IAM user ID* format, with each IAM user on a separate line. |
-      |                       |                       |                                                                                                                          |
-      |                       |                       |    -  *Account ID*\ **/\*** indicates that permissions are granted to all IAM users under the account.                   |
-      |                       |                       |    -  **\*/\*** indicates that permissions are granted to all anonymous users.                                           |
-      +-----------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------+
-      |                       | Resources             | Select **Entire bucket (including the objects in it)**.                                                                  |
-      +-----------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------+
-      |                       | Actions               | Select **Customize** and then **\*** (indicating all actions).                                                           |
-      +-----------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------+
-      |                       | Conditions            | -  **Key**: Select **SourceIp**.                                                                                         |
-      |                       |                       | -  **Condition Operator**: Select **IpAddress**.                                                                         |
-      |                       |                       | -  **Value**: Enter **114.115.1.0/24**.                                                                                  |
-      +-----------------------+-----------------------+--------------------------------------------------------------------------------------------------------------------------+
+      +-----------------------------------+----------------------------------------------------------------+
+      | Parameter                         | Description                                                    |
+      +===================================+================================================================+
+      | Configuration method              | Choose **Visual Editor**.                                      |
+      +-----------------------------------+----------------------------------------------------------------+
+      | Policy Name                       | Enter a custom name.                                           |
+      +-----------------------------------+----------------------------------------------------------------+
+      | Effect                            | Deny                                                           |
+      +-----------------------------------+----------------------------------------------------------------+
+      | Principal                         | Select **All accounts**.                                       |
+      +-----------------------------------+----------------------------------------------------------------+
+      | Resources                         | Select **Entire bucket (including the objects in it)**.        |
+      +-----------------------------------+----------------------------------------------------------------+
+      | Actions                           | Select **Customize** and then **\*** (indicating all actions). |
+      +-----------------------------------+----------------------------------------------------------------+
+      | Conditions                        | -  **Conditional Operator**: **IpAddress**                     |
+      |                                   | -  **Key**: **SourceIP**                                       |
+      |                                   | -  **Value**: **114.115.1.0/24**                               |
+      +-----------------------------------+----------------------------------------------------------------+
 
-#. Click **Create**.
+#. Click **Create** in the lower right corner.
 
 Verification
 ------------

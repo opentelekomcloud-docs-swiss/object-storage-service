@@ -19,7 +19,7 @@ Procedure
 
    Create a bucket.
 
-   Click **Create Bucket** in the upper right corner of the page. On the page, select a region, and specify a bucket name and other parameters. Then, click **Create Now**.
+   Click **Create Bucket** in the upper right corner of the page. On the page, select a region and storage class, and specify a bucket name and other parameters. Then, click **Create Now**.
 
 
    .. figure:: /_static/images/en-us_image_0000001226220995.png
