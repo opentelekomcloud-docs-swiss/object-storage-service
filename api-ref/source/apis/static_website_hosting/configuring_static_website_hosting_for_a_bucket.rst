@@ -21,7 +21,7 @@ To perform this operation, you must have the **PutBucketWebsite** permission. By
 
    Avoid using periods (.) in the destination bucket name. Otherwise, failures in client authentication certificate may occur when users use HTTPS for access.
 
-   The maximum size of a network configuration request for a bucket is 10 KB.
+   The maximum size of a request body for configuring static website hosting for a bucket is 10 KB.
 
 Request Syntax
 --------------

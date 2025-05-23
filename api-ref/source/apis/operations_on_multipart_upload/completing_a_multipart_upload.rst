@@ -8,9 +8,9 @@ Completing a Multipart Upload
 Functions
 ---------
 
-After uploading all parts for a multipart upload, you can use this operation to complete the multipart upload. Before performing this operation, you cannot download the uploaded data. When merging parts, you need to copy the additional message header information recorded during the initialization of the multipart upload task to the object metadata. The processing process is the same as that of the common upload object with these message headers. In the case of merging parts concurrently, the Last Write Win policy must be followed but the time for initiating Last Write is specified as the time when a part multipart upload is initiated.
+After all parts are uploaded, you can call this API to assemble specified parts into an object. Before performing this operation, you cannot download the uploaded data. When merging parts, you need to copy the additional message header information recorded during the initialization of the multipart upload task to the object metadata. The processing process is the same as that of the common upload object with these message headers. In the case of merging parts concurrently, the Last Write Win policy must be followed but the time for initiating Last Write is specified as the time when a part multipart upload is initiated.
 
-If a multipart upload has not been aborted, the uploaded parts occupy your storage quota. After all parts in the multipart upload are merged to an object, only the object occupies your storage quota. If a part uploaded in a multipart upload is not used in any merging parts multipart uploads, the part will be deleted to release storage quota.
+As long as the multipart upload is not aborted, all uploaded parts occupy the space. However, after you assembled the specified parts, the uploaded but not assembled parts will be deleted to free up space.
 
 You can send a request for downloading all or some data of the generated multipart by specifying a range.
 
@@ -18,7 +18,7 @@ You can send a request for deleting all parts uploaded in a multipart upload. De
 
 The merged parts do not use the MD5 value of entire object as the ETag. Their ETag is calculated as follows: *MD5(M\ 1\ M\ 2...M\ N)-N*, where *M\ n* is the MD5 value of part *n* (*N* is the total number of parts). As described in the :ref:`Sample Request <obs_04_0102__section74706439232>`, there are three parts and each part has an MD5 value. The MD5 values of the three parts are recalculated to obtain a new MD5 value. Then *-N* is added to the right of the MD5 value to get the ETag of the combined parts. In this example, *-N* is **-3**.
 
-If the response to an object merge request times out and error 500 or 503 is returned, you can first obtain the object metadata of the multipart upload task. Then, check whether the value of header **x-obs-uploadId** in the response is the same as the ID of this multipart upload task. If they are the same, object parts have been successfully merged on the server and you do not need to try again. For details, see :ref:`Consistency of Concurrent Operations <obs_04_0118>`.
+If the response to an object assembling request timed out and error 500 or 503 was returned, you can first obtain the object metadata of the multipart upload task. Then, check whether the value of header **x-obs-uploadId** in the response is the same as the ID of the current multipart upload task. If they are, it means the object parts have been successfully assembled on the server and you do not need to try again. For details, see :ref:`Consistency of Concurrent Operations <obs_04_0118>`.
 
 WORM
 ----
@@ -62,19 +62,27 @@ Request Syntax
 Request Parameters
 ------------------
 
-This request uses parameters to specify the ID of a multipart upload whose parts will be merged. :ref:`Table 1 <obs_04_0102__table6473820>` describes the parameters.
+This request uses parameters to specify the ID of a multipart upload whose parts will be assembled. :ref:`Table 1 <obs_04_0102__table12641661382>` describes the parameters.
 
-.. _obs_04_0102__table6473820:
+.. _obs_04_0102__table12641661382:
 
 .. table:: **Table 1** Request parameters
 
-   +-----------------------+-------------------------------+-----------------------+
-   | Parameter             | Description                   | Mandatory             |
-   +=======================+===============================+=======================+
-   | uploadId              | Indicates a multipart upload. | Yes                   |
-   |                       |                               |                       |
-   |                       | Type: string                  |                       |
-   +-----------------------+-------------------------------+-----------------------+
+   +-----------------+-----------------+--------------------+---------------------------------------+
+   | Parameter       | Type            | Mandatory (Yes/No) | Description                           |
+   +=================+=================+====================+=======================================+
+   | uploadId        | String          | Yes                | **Explanation**:                      |
+   |                 |                 |                    |                                       |
+   |                 |                 |                    | Multipart upload ID.                  |
+   |                 |                 |                    |                                       |
+   |                 |                 |                    | **Value range**:                      |
+   |                 |                 |                    |                                       |
+   |                 |                 |                    | The value must contain 32 characters. |
+   |                 |                 |                    |                                       |
+   |                 |                 |                    | **Default value**:                    |
+   |                 |                 |                    |                                       |
+   |                 |                 |                    | None                                  |
+   +-----------------+-----------------+--------------------+---------------------------------------+
 
 Request Headers
 ---------------
@@ -84,27 +92,63 @@ This request uses common headers. For details, see :ref:`Table 3 <obs_04_0007__t
 Request Elements
 ----------------
 
-This request uses elements to specify the list of parts to be merged. :ref:`Table 2 <obs_04_0102__table57330131>` describes the elements.
+This request uses elements to specify the list of parts to be assembled. :ref:`Table 2 <obs_04_0102__table18241105490>` describes the elements.
 
-.. _obs_04_0102__table57330131:
+.. _obs_04_0102__table18241105490:
 
-.. table:: **Table 2** Request Elements
+.. table:: **Table 2** Request elements
 
-   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
-   | Element                 | Description                                                                                                                                                                     | Mandatory             |
-   +=========================+=================================================================================================================================================================================+=======================+
-   | CompleteMultipartUpload | List of parts to be combined                                                                                                                                                    | Yes                   |
-   |                         |                                                                                                                                                                                 |                       |
-   |                         | Type: XML                                                                                                                                                                       |                       |
-   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
-   | PartNumber              | Part number                                                                                                                                                                     | Yes                   |
-   |                         |                                                                                                                                                                                 |                       |
-   |                         | Type: integer                                                                                                                                                                   |                       |
-   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
-   | ETag                    | ETag value returned upon successful upload of a part. It is the unique identifier of the part content. This parameter is used to verify data consistency when parts are merged. | Yes                   |
-   |                         |                                                                                                                                                                                 |                       |
-   |                         | Type: string                                                                                                                                                                    |                       |
-   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+   +-------------------------+-----------------+--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Element                 | Type            | Mandatory (Yes/No) | Description                                                                                                                                                                     |
+   +=========================+=================+====================+=================================================================================================================================================================================+
+   | CompleteMultipartUpload | XML             | Yes                | **Explanation**:                                                                                                                                                                |
+   |                         |                 |                    |                                                                                                                                                                                 |
+   |                         |                 |                    | List of parts to be assembled                                                                                                                                                   |
+   |                         |                 |                    |                                                                                                                                                                                 |
+   |                         |                 |                    | **Restrictions**:                                                                                                                                                               |
+   |                         |                 |                    |                                                                                                                                                                                 |
+   |                         |                 |                    | None                                                                                                                                                                            |
+   |                         |                 |                    |                                                                                                                                                                                 |
+   |                         |                 |                    | **Value range**:                                                                                                                                                                |
+   |                         |                 |                    |                                                                                                                                                                                 |
+   |                         |                 |                    | None                                                                                                                                                                            |
+   |                         |                 |                    |                                                                                                                                                                                 |
+   |                         |                 |                    | **Default value**:                                                                                                                                                              |
+   |                         |                 |                    |                                                                                                                                                                                 |
+   |                         |                 |                    | None                                                                                                                                                                            |
+   +-------------------------+-----------------+--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | PartNumber              | Integer         | Yes                | **Explanation**:                                                                                                                                                                |
+   |                         |                 |                    |                                                                                                                                                                                 |
+   |                         |                 |                    | Part number                                                                                                                                                                     |
+   |                         |                 |                    |                                                                                                                                                                                 |
+   |                         |                 |                    | **Restrictions**:                                                                                                                                                               |
+   |                         |                 |                    |                                                                                                                                                                                 |
+   |                         |                 |                    | None                                                                                                                                                                            |
+   |                         |                 |                    |                                                                                                                                                                                 |
+   |                         |                 |                    | **Value range**:                                                                                                                                                                |
+   |                         |                 |                    |                                                                                                                                                                                 |
+   |                         |                 |                    | [1,10000]                                                                                                                                                                       |
+   |                         |                 |                    |                                                                                                                                                                                 |
+   |                         |                 |                    | **Default value**:                                                                                                                                                              |
+   |                         |                 |                    |                                                                                                                                                                                 |
+   |                         |                 |                    | None                                                                                                                                                                            |
+   +-------------------------+-----------------+--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | ETag                    | String          | Yes                | **Explanation**:                                                                                                                                                                |
+   |                         |                 |                    |                                                                                                                                                                                 |
+   |                         |                 |                    | ETag value returned upon successful upload of a part. It is the unique identifier of the part content. This parameter is used to verify data consistency when parts are merged. |
+   |                         |                 |                    |                                                                                                                                                                                 |
+   |                         |                 |                    | **Restrictions**:                                                                                                                                                               |
+   |                         |                 |                    |                                                                                                                                                                                 |
+   |                         |                 |                    | None                                                                                                                                                                            |
+   |                         |                 |                    |                                                                                                                                                                                 |
+   |                         |                 |                    | **Value range**:                                                                                                                                                                |
+   |                         |                 |                    |                                                                                                                                                                                 |
+   |                         |                 |                    | The value must contain 32 characters.                                                                                                                                           |
+   |                         |                 |                    |                                                                                                                                                                                 |
+   |                         |                 |                    | **Default value**:                                                                                                                                                              |
+   |                         |                 |                    |                                                                                                                                                                                 |
+   |                         |                 |                    | None                                                                                                                                                                            |
+   +-------------------------+-----------------+--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Response Syntax
 ---------------
@@ -126,48 +170,119 @@ Response Headers
 
 The response to the request uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
 
-In addition to the common response headers, the message headers listed in :ref:`Table 3 <obs_04_0102__table31698209142128>` may be used.
+In addition to the common response headers, the message headers listed in :ref:`Table 3 <obs_04_0102__table374518451013>` may be used.
 
-.. _obs_04_0102__table31698209142128:
+.. _obs_04_0102__table374518451013:
 
 .. table:: **Table 3** Additional response headers
 
-   +-----------------------------------+-------------------------------------------------+
-   | Header                            | Description                                     |
-   +===================================+=================================================+
-   | x-obs-version-id                  | Version of the object after parts being merged. |
-   |                                   |                                                 |
-   |                                   | Type: string                                    |
-   +-----------------------------------+-------------------------------------------------+
+   +-----------------------+-----------------------+--------------------------------------------------+
+   | Header                | Type                  | Description                                      |
+   +=======================+=======================+==================================================+
+   | x-obs-version-id      | String                | **Explanation**:                                 |
+   |                       |                       |                                                  |
+   |                       |                       | Version of the object after parts are assembled. |
+   |                       |                       |                                                  |
+   |                       |                       | **Restrictions**:                                |
+   |                       |                       |                                                  |
+   |                       |                       | None                                             |
+   |                       |                       |                                                  |
+   |                       |                       | **Value range**:                                 |
+   |                       |                       |                                                  |
+   |                       |                       | The value must contain 32 characters.            |
+   |                       |                       |                                                  |
+   |                       |                       | **Default value**:                               |
+   |                       |                       |                                                  |
+   |                       |                       | None                                             |
+   +-----------------------+-----------------------+--------------------------------------------------+
 
 Response Elements
 -----------------
 
-This response uses elements to return the result of merging parts. :ref:`Table 4 <obs_04_0102__table32583578>` describes the elements.
+This response uses elements to return the result of assembling parts. :ref:`Table 4 <obs_04_0102__table11481163411011>` describes the elements.
 
-.. _obs_04_0102__table32583578:
+.. _obs_04_0102__table11481163411011:
 
 .. table:: **Table 4** Response elements
 
-   +-----------------------------------+------------------------------------------------------------------------------------------------------+
-   | Element                           | Description                                                                                          |
-   +===================================+======================================================================================================+
-   | Location                          | Path of the object after parts have been merged.                                                     |
-   |                                   |                                                                                                      |
-   |                                   | Type: string                                                                                         |
-   +-----------------------------------+------------------------------------------------------------------------------------------------------+
-   | Bucket                            | Bucket in which parts are merged.                                                                    |
-   |                                   |                                                                                                      |
-   |                                   | Type: string                                                                                         |
-   +-----------------------------------+------------------------------------------------------------------------------------------------------+
-   | Key                               | Indicates the key of the generated object.                                                           |
-   |                                   |                                                                                                      |
-   |                                   | Type: string                                                                                         |
-   +-----------------------------------+------------------------------------------------------------------------------------------------------+
-   | ETag                              | The result calculated based on the ETag of each part is the unique identifier of the object content. |
-   |                                   |                                                                                                      |
-   |                                   | Type: string                                                                                         |
-   +-----------------------------------+------------------------------------------------------------------------------------------------------+
+   +-----------------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Element               | Type                  | Description                                                                                                                                                                       |
+   +=======================+=======================+===================================================================================================================================================================================+
+   | Location              | String                | **Explanation**:                                                                                                                                                                  |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       | Path of the object after parts are assembled.                                                                                                                                     |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       | **Restrictions**:                                                                                                                                                                 |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       | Format: http://bucketName.obs.\ *region*.example.com/objectName                                                                                                                   |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       | **Value range**:                                                                                                                                                                  |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       | None                                                                                                                                                                              |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       | **Default value**:                                                                                                                                                                |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       | None                                                                                                                                                                              |
+   +-----------------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Bucket                | String                | **Explanation**:                                                                                                                                                                  |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       | Bucket where parts are assembled                                                                                                                                                  |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       | **Restrictions**:                                                                                                                                                                 |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       | -  A bucket name must be unique across all accounts and regions.                                                                                                                  |
+   |                       |                       | -  A bucket name:                                                                                                                                                                 |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       |    -  Must be 3 to 63 characters long and start with a digit or letter. Lowercase letters, digits, hyphens (-), and periods (.) are allowed.                                      |
+   |                       |                       |    -  Cannot be formatted as an IP address.                                                                                                                                       |
+   |                       |                       |    -  Cannot start or end with a hyphen (-) or period (.).                                                                                                                        |
+   |                       |                       |    -  Cannot contain two consecutive periods (..), for example, **my..bucket**.                                                                                                   |
+   |                       |                       |    -  Cannot contain a period (.) and a hyphen (-) adjacent to each other, for example, **my-.bucket** or **my.-bucket**.                                                         |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       | -  If you repeatedly create buckets of the same name in the same region, no error will be reported and the bucket attributes comply with those set in the first creation request. |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       | **Value range**:                                                                                                                                                                  |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       | None                                                                                                                                                                              |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       | **Default value**:                                                                                                                                                                |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       | None                                                                                                                                                                              |
+   +-----------------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Key                   | String                | **Explanation**:                                                                                                                                                                  |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       | Object name obtained after part assembling.                                                                                                                                       |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       | An object is uniquely identified by an object name in a bucket. An object name is a complete path that does not contain the bucket name.                                          |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       | **Restrictions**:                                                                                                                                                                 |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       | None                                                                                                                                                                              |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       | **Value range**:                                                                                                                                                                  |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       | The value must contain 1 to 1,024 characters.                                                                                                                                     |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       | **Default value**:                                                                                                                                                                |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       | None                                                                                                                                                                              |
+   +-----------------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | ETag                  | String                | **Explanation**:                                                                                                                                                                  |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       | The ETag that uniquely identifies the object after its parts were assembled, calculated based on the ETag of each part.                                                           |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       | **Restrictions**:                                                                                                                                                                 |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       | If an object is encrypted using server-side encryption, the ETag is not the MD5 value of the object.                                                                              |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       | **Value range**:                                                                                                                                                                  |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       | The value must contain 32 characters.                                                                                                                                             |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       | **Default value**:                                                                                                                                                                |
+   |                       |                       |                                                                                                                                                                                   |
+   |                       |                       | None                                                                                                                                                                              |
+   +-----------------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Error Responses
 ---------------
@@ -231,9 +346,9 @@ Sample Response
    Content-Length: 326
 
    <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-   <CompleteMultipartUploadResult xmlns="http://obs.example.com/doc/2015-06-30/">
-     <Location>/examplebucket/object02</Location>
-     <Bucket>examplebucket</Bucket>
-     <Key>object02</Key>
-     <ETag>"03f814825e5a691489b947a2e120b2d3-3"</ETag>
+   <CompleteMultipartUploadResult xmlns="http://obs.region.example.com/doc/2015-06-30/">
+       <Location>http://examplebucket.obs.region.example.com/object02</Location>
+       <Bucket>examplebucket</Bucket>
+       <Key>object02</Key>
+       <ETag>"03f814825e5a691489b947a2e120b2d3-3"</ETag>
    </CompleteMultipartUploadResult>

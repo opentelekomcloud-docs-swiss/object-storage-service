@@ -12,8 +12,12 @@ Operations on Objects
 -  :ref:`Querying Object Metadata <obs_04_0084>`
 -  :ref:`Deleting an Object <obs_04_0085>`
 -  :ref:`Deleting Objects <obs_04_0086>`
+-  :ref:`Restoring Cold Objects <obs_04_0087>`
 -  :ref:`Configuring an Object ACL <obs_04_0089>`
 -  :ref:`Obtaining Object ACL Configuration <obs_04_0090>`
+-  :ref:`Adding Object Tags <obs_04_0172>`
+-  :ref:`Obtaining Object Tags <obs_04_0164>`
+-  :ref:`Deleting Object Tags <obs_04_0165>`
 -  :ref:`Configuring WORM Retention for an Object <obs_04_0166>`
 
 .. toctree::
@@ -27,6 +31,10 @@ Operations on Objects
    querying_object_metadata
    deleting_an_object
    deleting_objects
+   restoring_cold_objects
    configuring_an_object_acl
    obtaining_object_acl_configuration
+   adding_object_tags
+   obtaining_object_tags
+   deleting_object_tags
    configuring_worm_retention_for_an_object

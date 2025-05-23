@@ -8,7 +8,7 @@ Canceling a Multipart Upload Task
 Functions
 ---------
 
-You can perform this operation to abort a multipart upload. You cannot upload or list parts after operations to merge parts or abort a multipart upload are performed.
+You can call this API to cancel a multipart upload task. You cannot upload or list parts after operations to merge parts or abort a multipart upload are performed.
 
 Request Syntax
 --------------

@@ -9,7 +9,7 @@ This section describes fine-grained permissions management for your OBS. If your
 
 By default, new IAM users do not have any permissions assigned. You need to add a user to one or more groups, and attach IAM policies to these groups. The user then inherits permissions from the groups it is a member of. This process is called authorization. After authorization, the user can perform specified operations on OBS based on the IAM policies.
 
-For details about user policies related to OBS, see "Permissions Management" in the "Service Overview" section of *Object Storage Service User Guide*. For details about the syntax and examples of IAM policies, see "IAM Policies" in the section "Permission Control" > "Permission Control Mechanisms" in the "Console Operation Guide" of *Object Storage Service User Guide*.
+For details about user policies related to OBS, see "Permissions Management" in the "Service Overview" section of *Object Storage Service User Guide*. For details about the syntax and examples of IAM policies, see **Console Operation Guide** > **Permissions Control** > **Permission Control Mechanisms** > **IAM Policies** in the *Object Storage Service User Guide*.
 
 There are fine-grained policies and role-based access control (RBAC) policies. An RBAC policy consists of permissions for an entire service. Users in a group with such a policy assigned are granted all of the permissions required for that service. A fine-grained policy consists of API-based permissions for operations on specific resource types. Fine-grained policies, as the name suggests, allow for more fine-grained control than RBAC policies.
 

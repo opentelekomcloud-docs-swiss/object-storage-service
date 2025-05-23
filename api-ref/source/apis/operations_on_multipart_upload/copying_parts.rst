@@ -8,13 +8,22 @@ Copying Parts
 Functions
 ---------
 
-After creating a multipart upload job, you can specify its upload ID and upload a part to the job in OBS. Alternatively, you can make an API call to add a part (part of an object or the whole object).
+After a multipart upload task is created, you can upload parts for this task using the obtained multipart upload ID. Alternatively, you can make an API call to copy a part or a whole uploaded object as a part.
 
 .. important::
 
    You cannot determine whether a request is successful only based on the **status_code** in the returned HTTP header. If **200** is returned for **status_code**, the server has received the request and started to process the request. The copy is successful only when the body in the response contains ETag.
 
 Copy the source object and save it as **part1**. If a **part1** already exists before the copying, the original **part1** will be overwritten by the newly copied **part1**. After the copy is successful, only the latest **part1** is displayed. The old **part1** data will be deleted. Therefore, ensure that the target part does not exist or has no value when using the part copy operation. Otherwise, data may be deleted by mistake. The source object in the copy process does not change.
+
+Cold Objects
+------------
+
+If source objects are in the Cold storage class, ensure that these objects have been restored before you copy them. If the source object is not restored or is being restored, the copy fails and error **403 Forbidden** is returned. The fault is described as follows:
+
+ErrorCode: InvalidObjectState
+
+ErrorMessage: Operation is not valid for the source object's storage class
 
 Request Syntax
 --------------
@@ -53,7 +62,7 @@ To copy a part, you need to specify the part number of the target part and the m
 Request Headers
 ---------------
 
-In addition the common message headers, the request uses two extended headers. :ref:`Table 3 <obs_04_0007__table25197309>` describes the common message header.
+In addition to the common message headers, the request uses two extended headers. :ref:`Table 3 <obs_04_0007__table25197309>` describes the common message header.
 
 .. table:: **Table 2** Request headers
 

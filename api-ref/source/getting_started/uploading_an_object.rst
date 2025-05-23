@@ -25,6 +25,10 @@ Uploading the Object **objecttest1** to Bucket **bucket001** in the a1 Region
 
 In this example, an Apache HttpClient is used.
 
+.. note::
+
+   If the **contentType** parameter in the sample code is left blank, the parameter in the signature header must also be left blank during signature calculation. Otherwise, a signature mismatch error is reported.
+
 ::
 
    package com.obsclient;
