@@ -8,7 +8,7 @@ Listing Uploaded Parts that Have Not Been Assembled
 Functions
 ---------
 
-You can perform this operation to query all parts of a multipart upload that have not been assembled. The size of each part listed by this API is the same as the size of the part uploaded.
+You can use this API to query all parts of an uncompleted multipart upload task. The size of each part listed by this API is the same as the size of the part uploaded.
 
 Request Syntax
 --------------
@@ -81,6 +81,7 @@ Response Syntax
        <Owner>
            <ID>ownerid</ID>
        </Owner>
+       <StorageClass>storageclass</StorageClass>
        <PartNumberMarker>partNmebermarker</PartNumberMarker>
        <NextPartNumberMarker>nextPartnumberMarker</NextPartNumberMarker>
        <MaxParts>maxParts</MaxParts>
@@ -157,6 +158,14 @@ This response uses elements to return information about uploaded parts. :ref:`Ta
    |                                   | Type: string                                                                                                                                                   |
    |                                   |                                                                                                                                                                |
    |                                   | Parent: Initiator or Owner                                                                                                                                     |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | StorageClass                      | Storage class                                                                                                                                                  |
+   |                                   |                                                                                                                                                                |
+   |                                   | Type: string                                                                                                                                                   |
+   |                                   |                                                                                                                                                                |
+   |                                   | Value options: **STANDARD**, **WARM**, **COLD**                                                                                                                |
+   |                                   |                                                                                                                                                                |
+   |                                   | Parent: ListPartsResult                                                                                                                                        |
    +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | PartNumberMarker                  | Part number after which listing parts begins                                                                                                                   |
    |                                   |                                                                                                                                                                |
@@ -263,6 +272,7 @@ Sample Response
      <Owner>
        <ID>domainiddomainiddomainiddo000008</ID>
      </Owner>
+     <StorageClass>STANDARD</StorageClass>
      <PartNumberMarker>0</PartNumberMarker>
      <NextPartNumberMarker>2</NextPartNumberMarker>
      <MaxParts>1000</MaxParts>

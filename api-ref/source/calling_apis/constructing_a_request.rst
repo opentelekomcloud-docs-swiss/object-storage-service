@@ -49,21 +49,21 @@ HTTP methods, which are also called operations or actions, specify the type of o
 
 .. table:: **Table 2** HTTP request methods supported by the OBS
 
-   +---------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | Method  | Description                                                                                                                             |
-   +=========+=========================================================================================================================================+
-   | GET     | Requests the server to return a specific resource, for example, a bucket list or object.                                                |
-   +---------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | PUT     | Requests the server to update a specific resource, for example, creating a bucket or uploading an object.                               |
-   +---------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | POST    | Requests the server to add a resource or perform a special operation, for example, part uploading or merging.                           |
-   +---------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | DELETE  | Requests the server to delete specified resources, for example, an object.                                                              |
-   +---------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | HEAD    | Requests the server to return the digest of a specific resource, for example, object metadata.                                          |
-   +---------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | OPTIONS | The request server checks whether the user has the operation permission for a resource. The CORS needs to be configured for the bucket. |
-   +---------+-----------------------------------------------------------------------------------------------------------------------------------------+
+   +---------+----------------------------------------------------------------------------------------------------------------------------------------------+
+   | Method  | Description                                                                                                                                  |
+   +=========+==============================================================================================================================================+
+   | GET     | Requests that the server return a specific resource, for example, a bucket list or object.                                                   |
+   +---------+----------------------------------------------------------------------------------------------------------------------------------------------+
+   | PUT     | Requests that the server update a specific resource, for example, creating a bucket or uploading an object.                                  |
+   +---------+----------------------------------------------------------------------------------------------------------------------------------------------+
+   | POST    | Requests that the server add a resource or perform a special operation, for example, initiating multipart uploads or assembling parts.       |
+   +---------+----------------------------------------------------------------------------------------------------------------------------------------------+
+   | DELETE  | Requests that the server delete specified resources, for example, an object.                                                                 |
+   +---------+----------------------------------------------------------------------------------------------------------------------------------------------+
+   | HEAD    | Requests that the server return the description of a specific resource, for example, object metadata.                                        |
+   +---------+----------------------------------------------------------------------------------------------------------------------------------------------+
+   | OPTIONS | Requests that the server check whether the user has the operation permission for a resource. The CORS needs to be configured for the bucket. |
+   +---------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 Request Headers
 ---------------

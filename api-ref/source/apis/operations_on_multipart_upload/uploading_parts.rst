@@ -8,9 +8,9 @@ Uploading Parts
 Functions
 ---------
 
-After initiating a multipart upload, you can use this operation to upload parts for the multipart upload using its task ID. When parts are uploaded in a multipart upload of an object, the upload sequence does not affect part merging, namely, multiple parts can be uploaded concurrently.
+After a multipart upload task is created, you can upload parts for this task using the obtained multipart upload ID. When parts are uploaded in a multipart upload of an object, the upload sequence does not affect part merging, namely, multiple parts can be uploaded concurrently.
 
-Part sizes range from 100 KB to 5 GB. However, when parts are being merged, the size of the last uploaded part ranges from 0 to 5 GB. The upload part ID ranges from 1 to 10,000.
+Ensure that the part size ranges from 100 KB to 5 GB and the size of the last part ranges from 0 to 5 GB. Otherwise, an error will be reported when you assemble parts. The upload part ID ranges from 1 to 10,000.
 
 .. important::
 
@@ -32,23 +32,47 @@ Request Syntax
 Request Parameters
 ------------------
 
-This request uses parameters to specify the upload task ID and part number. :ref:`Table 1 <obs_04_0099__table6481817>` describes the parameters.
+This request uses parameters to specify the upload task ID and part number. :ref:`Table 1 <obs_04_0099__table8720142719451>` describes the parameters.
 
-.. _obs_04_0099__table6481817:
+.. _obs_04_0099__table8720142719451:
 
 .. table:: **Table 1** Request parameters
 
-   +-----------------------+-------------------------------------------------------------------------------------+-----------------------+
-   | Parameter             | Description                                                                         | Mandatory             |
-   +=======================+=====================================================================================+=======================+
-   | partNumber            | Indicates the ID of a part to be uploaded. The value is an integer from 1 to 10000. | Yes                   |
-   |                       |                                                                                     |                       |
-   |                       | Type: integer                                                                       |                       |
-   +-----------------------+-------------------------------------------------------------------------------------+-----------------------+
-   | uploadId              | Indicates a multipart upload ID.                                                    | Yes                   |
-   |                       |                                                                                     |                       |
-   |                       | Type: string                                                                        |                       |
-   +-----------------------+-------------------------------------------------------------------------------------+-----------------------+
+   +-----------------+-----------------+--------------------+--------------------------------------------+
+   | Parameter       | Type            | Mandatory (Yes/No) | Description                                |
+   +=================+=================+====================+============================================+
+   | partNumber      | Integer         | Yes                | **Explanation**:                           |
+   |                 |                 |                    |                                            |
+   |                 |                 |                    | Indicates the ID of a part to be uploaded. |
+   |                 |                 |                    |                                            |
+   |                 |                 |                    | **Restrictions**:                          |
+   |                 |                 |                    |                                            |
+   |                 |                 |                    | None                                       |
+   |                 |                 |                    |                                            |
+   |                 |                 |                    | **Value range**:                           |
+   |                 |                 |                    |                                            |
+   |                 |                 |                    | An integer ranging from 1 to 10000.        |
+   |                 |                 |                    |                                            |
+   |                 |                 |                    | **Default value**:                         |
+   |                 |                 |                    |                                            |
+   |                 |                 |                    | None                                       |
+   +-----------------+-----------------+--------------------+--------------------------------------------+
+   | uploadId        | String          | Yes                | **Explanation**:                           |
+   |                 |                 |                    |                                            |
+   |                 |                 |                    | Indicates a multipart upload ID.           |
+   |                 |                 |                    |                                            |
+   |                 |                 |                    | **Restrictions**:                          |
+   |                 |                 |                    |                                            |
+   |                 |                 |                    | None                                       |
+   |                 |                 |                    |                                            |
+   |                 |                 |                    | **Value range**:                           |
+   |                 |                 |                    |                                            |
+   |                 |                 |                    | None                                       |
+   |                 |                 |                    |                                            |
+   |                 |                 |                    | **Default value**:                         |
+   |                 |                 |                    |                                            |
+   |                 |                 |                    | None                                       |
+   +-----------------+-----------------+--------------------+--------------------------------------------+
 
 Request Headers
 ---------------
