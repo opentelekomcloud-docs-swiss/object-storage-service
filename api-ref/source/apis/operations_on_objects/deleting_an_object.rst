@@ -45,13 +45,27 @@ Request Parameters
 
 .. table:: **Table 1** Request parameters
 
-   +-----------------------+-----------------------+-----------------------+
-   | Parameter             | Description           | Mandatory             |
-   +=======================+=======================+=======================+
-   | versionId             | Object version ID     | No                    |
-   |                       |                       |                       |
-   |                       | Type: string          |                       |
-   +-----------------------+-----------------------+-----------------------+
+   +-----------------------+-----------------------------------------+-----------------------+
+   | Parameter             | Description                             | Mandatory             |
+   +=======================+=========================================+=======================+
+   | versionId             | **Explanation**:                        | No                    |
+   |                       |                                         |                       |
+   |                       | Version ID of the object to be deleted. |                       |
+   |                       |                                         |                       |
+   |                       | Type: string                            |                       |
+   |                       |                                         |                       |
+   |                       | **Restrictions**:                       |                       |
+   |                       |                                         |                       |
+   |                       | None                                    |                       |
+   |                       |                                         |                       |
+   |                       | **Value range**:                        |                       |
+   |                       |                                         |                       |
+   |                       | The value must contain 32 characters.   |                       |
+   |                       |                                         |                       |
+   |                       | **Default value**:                      |                       |
+   |                       |                                         |                       |
+   |                       | None                                    |                       |
+   +-----------------------+-----------------------------------------+-----------------------+
 
 Request Headers
 ---------------
@@ -82,23 +96,46 @@ If versioning is enabled for the bucket, the headers listed in :ref:`Table 2 <ob
 
 .. table:: **Table 2** Additional response headers
 
-   +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-   | Header                            | Description                                                                                                                |
-   +===================================+============================================================================================================================+
-   | x-obs-delete-marker               | Indicates whether an object is deleted. If the object is not marked as deleted, the response does not contain this header. |
-   |                                   |                                                                                                                            |
-   |                                   | Type: boolean                                                                                                              |
-   |                                   |                                                                                                                            |
-   |                                   | Value options: **true**, **false**                                                                                         |
-   |                                   |                                                                                                                            |
-   |                                   | The default value is **false**.                                                                                            |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-   | x-obs-version-id                  | Object version ID. If the object has no version number specified, the response does not contain this header.               |
-   |                                   |                                                                                                                            |
-   |                                   | Valid value: string                                                                                                        |
-   |                                   |                                                                                                                            |
-   |                                   | Default value: none                                                                                                        |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+   | Header                            | Description                                                                                                               |
+   +===================================+===========================================================================================================================+
+   | x-obs-delete-marker               | **Explanation**:                                                                                                          |
+   |                                   |                                                                                                                           |
+   |                                   | Whether an object has a delete marker. If the object is not marked as deleted, the response does not contain this header. |
+   |                                   |                                                                                                                           |
+   |                                   | Type: boolean                                                                                                             |
+   |                                   |                                                                                                                           |
+   |                                   | **Restrictions**:                                                                                                         |
+   |                                   |                                                                                                                           |
+   |                                   | None                                                                                                                      |
+   |                                   |                                                                                                                           |
+   |                                   | **Value range**:                                                                                                          |
+   |                                   |                                                                                                                           |
+   |                                   | -  **true**                                                                                                               |
+   |                                   | -  **false**                                                                                                              |
+   |                                   |                                                                                                                           |
+   |                                   | **Default value**:                                                                                                        |
+   |                                   |                                                                                                                           |
+   |                                   | false                                                                                                                     |
+   +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+   | x-obs-version-id                  | **Explanation**:                                                                                                          |
+   |                                   |                                                                                                                           |
+   |                                   | Object version ID. If the object has no version number specified, the response does not contain this header.              |
+   |                                   |                                                                                                                           |
+   |                                   | Type: string                                                                                                              |
+   |                                   |                                                                                                                           |
+   |                                   | **Restrictions**:                                                                                                         |
+   |                                   |                                                                                                                           |
+   |                                   | None                                                                                                                      |
+   |                                   |                                                                                                                           |
+   |                                   | **Value range**:                                                                                                          |
+   |                                   |                                                                                                                           |
+   |                                   | The value must contain 32 characters.                                                                                     |
+   |                                   |                                                                                                                           |
+   |                                   | **Default value**:                                                                                                        |
+   |                                   |                                                                                                                           |
+   |                                   | None                                                                                                                      |
+   +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 
 Response Elements
 -----------------

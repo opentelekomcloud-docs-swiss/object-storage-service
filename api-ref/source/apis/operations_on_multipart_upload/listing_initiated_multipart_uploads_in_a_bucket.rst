@@ -8,7 +8,7 @@ Listing Initiated Multipart Uploads in a Bucket
 Functions
 ---------
 
-This operation queries all the multipart upload tasks that are initialized but have not been merged or canceled in a bucket.
+You can use this API to query all initiated multipart uploads that have not been completed or canceled in a bucket.
 
 Request Syntax
 --------------
@@ -90,7 +90,7 @@ Response Syntax
            <Owner>
                <ID>ownerID</ID>
            </Owner>
-
+           <StorageClass>storageclass</StorageClass>
            <Initiated>initiatedDate</Initiated>
        </Upload>
    </ListMultipartUploadsResult>
@@ -166,7 +166,7 @@ This response contains elements of information about the multipart uploads. :ref
    |                                   |                                                                                                                                                                                          |
    |                                   | Type: container                                                                                                                                                                          |
    |                                   |                                                                                                                                                                                          |
-   |                                   | Child: Key, UploadId, InitiatorOwner, and Initiated                                                                                                                                      |
+   |                                   | Child: Key, UploadId, InitiatorOwner, StorageClass, and Initiated                                                                                                                        |
    |                                   |                                                                                                                                                                                          |
    |                                   | Parent: ListMultipartUploadsResult                                                                                                                                                       |
    +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -201,6 +201,12 @@ This response contains elements of information about the multipart uploads. :ref
    |                                   | Type: container                                                                                                                                                                          |
    |                                   |                                                                                                                                                                                          |
    |                                   | Child: ID                                                                                                                                                                                |
+   |                                   |                                                                                                                                                                                          |
+   |                                   | Parent: Upload                                                                                                                                                                           |
+   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | StorageClass                      | Indicates the storage class that will be used for storing an object when the multipart is uploaded.                                                                                      |
+   |                                   |                                                                                                                                                                                          |
+   |                                   | Type: string                                                                                                                                                                             |
    |                                   |                                                                                                                                                                                          |
    |                                   | Parent: Upload                                                                                                                                                                           |
    +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -285,6 +291,7 @@ Sample Response: Listing Initiated Multipart Uploads
        <Owner>
          <ID>b4bf1b36d9ca43d984fbcb9491b6fce9</ID>
        </Owner>
+       <StorageClass>STANDARD</StorageClass>
        <Initiated>2015-07-01T02:30:54.582Z</Initiated>
      </Upload>
    </ListMultipartUploadsResult>

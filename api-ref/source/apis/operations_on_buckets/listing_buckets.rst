@@ -24,6 +24,8 @@ Request Syntax
 
    Regardless of the endpoint you specified, a list of buckets spanning all regions is returned.
 
+   When creating a bucket, do not list buckets.
+
 Request Parameters
 ------------------
 
@@ -124,7 +126,8 @@ Sample Request
 
 .. code-block:: text
 
-   GET / HTTP/1.1
+   GET /
+    HTTP/1.1
    User-Agent: curl/7.29.0
    Host: obs.region.example.com
    Accept: */*

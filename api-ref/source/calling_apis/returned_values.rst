@@ -15,7 +15,7 @@ A status code is a group of digits ranging from 2\ *xx* (indicating successes) t
 Response Headers
 ----------------
 
-A response header corresponds to a request header, for example, Content-Type.
+Responses have some headers matching their corresponding requests, for example, **Content-Length**.
 
 For details about common response headers, see :ref:`Table 1 <obs_04_0013__d0e686>`.
 

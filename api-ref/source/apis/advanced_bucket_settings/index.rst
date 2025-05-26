@@ -19,6 +19,8 @@ Advanced Bucket Settings
 -  :ref:`Obtaining Bucket Versioning Status <obs_04_0038>`
 -  :ref:`Configuring Event Notification for a Bucket <obs_04_0039>`
 -  :ref:`Obtaining the Event Notification Configuration of a Bucket <obs_04_0040>`
+-  :ref:`Configuring Storage Class for a Bucket <obs_04_0044>`
+-  :ref:`Obtaining Bucket Storage Class Information <obs_04_0045>`
 -  :ref:`Configuring Tags for a Bucket <obs_04_0049>`
 -  :ref:`Obtaining Bucket Tags <obs_04_0050>`
 -  :ref:`Deleting Tags <obs_04_0051>`
@@ -50,6 +52,8 @@ Advanced Bucket Settings
    obtaining_bucket_versioning_status
    configuring_event_notification_for_a_bucket
    obtaining_the_event_notification_configuration_of_a_bucket
+   configuring_storage_class_for_a_bucket
+   obtaining_bucket_storage_class_information
    configuring_tags_for_a_bucket
    obtaining_bucket_tags
    deleting_tags
