@@ -8,6 +8,7 @@ Object Storage Service (OBS) is an object-based storage service that provides cu
 
    .. service_card::
       :service_type: obs
+      :cloud_environment: swiss
       :umn: This document describes the concepts, functions, and basic operations about how to manage Object Storage Service (OBS) using the management console and client.
       :api-ref: This document describes the Representational State Transfer (REST) application programming interfaces (APIs) supported by Object Storage Service, including request and response formats as well as parameters.
       :s3api: This document describes the Representational State Transfer (REST) application programming interfaces (APIs) supported by Object Storage Service (compatible with Amazon S3), including request and response formats as well as parameters.
