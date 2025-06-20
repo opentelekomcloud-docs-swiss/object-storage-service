@@ -10,9 +10,13 @@ Functions
 
 This operation deletes specified buckets. This operation can be performed only by the bucket owner and users who have been authorized (via a policy) with the permission to delete the bucket. The bucket to be deleted must be an empty bucket. If a bucket has an object or a multipart task, the bucket is not empty. You can list objects and multipart upload tasks in a bucket to check whether the bucket is empty.
 
-Note:
+.. note::
 
-If the server returns a **5XX** error or times out when a bucket is being deleted, the system needs to synchronize the bucket information. During this period, the bucket information may be inaccurate. Therefore, wait a while and then check whether the bucket is successfully deleted. If the bucket can still be queried, send the deletion request again.
+   If the server returns a **5XX** error or times out when a bucket is being deleted, the system needs to synchronize the bucket information. During this period, the bucket information may be inaccurate. Therefore, wait a while and then check whether the bucket is successfully deleted. If the bucket can still be queried, send the deletion request again.
+
+.. note::
+
+   If a bucket was deleted and its name was reused for a new bucket, all the links to the deleted bucket will now lead to the newly created bucket.
 
 Request Syntax
 --------------
