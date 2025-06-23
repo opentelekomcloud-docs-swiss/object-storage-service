@@ -14,9 +14,13 @@ This operation deletes specified buckets. This operation can be performed only b
 
    If the server returns a **5XX** error or times out when a bucket is being deleted, the system needs to synchronize the bucket information. During this period, the bucket information may be inaccurate. Therefore, wait a while and then check whether the bucket is successfully deleted. If the bucket can still be queried, send the deletion request again.
 
-.. note::
+.. important::
 
-   If a bucket was deleted and its name was reused for a new bucket, all the links to the deleted bucket will now lead to the newly created bucket.
+   Bucket name reuse may cause unintended data exposure. If a bucket is deleted and later a new bucket is created with the same name, all previously stored links or references to the old bucket will automatically point to the new one. 
+
+   We strongly advise users to treat all bucket names and references as persistent and sensitive. If you publish or share links, always assume they might be reused in unintended ways.
+
+   **Important**: we cannot take responsibility for any data exposure, misrouting, or access issues resulting from name reuse or improper reference management.
 
 Request Syntax
 --------------
