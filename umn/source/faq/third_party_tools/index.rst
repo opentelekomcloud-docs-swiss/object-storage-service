@@ -5,10 +5,10 @@
 Third-Party Tools
 =================
 
--  :ref:`What Are the Supported Versions of the AWS Tools? <obs_aws_supported_versions>`
+-  :ref:`Which Versions of AWS Tools Work with OBS? <obs_aws_supported_versions>`
 
 .. toctree::
    :maxdepth: 1
    :hidden: 
 
-   what_are_the_supported_versions_of_the_aws_tools
+   which_versions_of_aws_tools_work_with_obs
