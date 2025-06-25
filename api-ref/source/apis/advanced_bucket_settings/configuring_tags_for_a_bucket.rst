@@ -17,7 +17,7 @@ To perform this operation, you must have the **PutBucketTagging** permission. By
 Restrictions
 ------------
 
--  A bucket can have up to 10 tags.
+-  A bucket can have up to 20 tags.
 
 Request Syntax
 --------------
