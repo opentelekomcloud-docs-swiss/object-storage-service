@@ -27,4 +27,10 @@ Procedure
 
       The name of a deleted bucket can be reused for another bucket at least 30 minutes after the deletion.
 
+   .. important::
+   
+      Bucket name reuse may cause unintended data exposure. If a bucket is deleted and later a new bucket is created with the same name, all previously stored links or references to the old bucket will automatically point to the new one.
+
+      It is strongly advised to treat all bucket names and references as persistent and sensitive. Any published or shared links might be reused in unintended ways.
+
 #. Click **Yes** to confirm the deletion.
