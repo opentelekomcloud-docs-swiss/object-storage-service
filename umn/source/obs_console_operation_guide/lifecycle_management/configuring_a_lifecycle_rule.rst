@@ -64,8 +64,8 @@ Procedure
       -  **Current Version** and **Historical Version** are two concepts for versioning. If versioning is enabled for a bucket, uploading objects with the same name to the bucket creates different object versions. The last uploaded object is called the current version, while those previously uploaded are called historical versions.
       -  You can configure either the **Current Version** or **Historical Version**, or both of them.
 
-   -  **Transition to Warm**: After this number of days since the last update, objects meeting specified conditions will be transitioned to Warm. This number must be at least 30.
-   -  **Transition to Cold**: After this number of days since the last update, objects meeting specified conditions will be transitioned to Cold. If you configure to transition objects first to Warm and then Cold, the objects must stay Warm at least 30 days before they can be transitioned to Cold. If transition to Cold is used, but transition to Warm is not, there is no limit on the number of days for transition.
+   -  **Transition to Warm**: After this number of days since the last update, objects meeting specified conditions will be transitioned to Warm.
+   -  **Transition to Cold**: After this number of days since the last update, objects meeting specified conditions will be transitioned to Cold.
    -  **Delete Objects After (Days)**: After this number of days since the last update, objects meeting certain conditions will be expired and then deleted. This number must be an integer larger than that specified for any of the transition operations.
 
    For example, on January 7, 2015, you saved the following files in OBS:
