@@ -13,14 +13,6 @@ Only the bucket owner and users who are granted the permission to delete buckets
 
    If a 5\ *xx* error is returned from the server or the request times out during bucket deletion, the system takes about 10 minutes to make bucket information consistent. During the process, bucket information is inaccurate.
 
-.. important::
-
-   Bucket name reuse may cause unintended data exposure. If a bucket is deleted and later a new bucket is created with the same name, all previously stored links or references to the old bucket will automatically point to the new one. 
-
-   We strongly advise users to treat all bucket names and references as persistent and sensitive. If you publish or share links, always assume they might be reused in unintended ways.
-
-   **Important**: we cannot take responsibility for any data exposure, misrouting, or access issues resulting from name reuse or improper reference management.
-
 Request Syntax
 --------------
 
