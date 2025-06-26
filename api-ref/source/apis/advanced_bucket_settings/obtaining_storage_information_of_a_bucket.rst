@@ -12,7 +12,7 @@ This operation queries the number of bucket objects and the space occupied by th
 
 .. note::
 
-   OBS bucket storage statistics are calculated in the background and are not updated in real time. Therefore, it isn't recommended to use storage data for real-time verification or monitoring purposes, as slight delays or inconsistencies may occur.
+   OBS bucket storage statistics are calculated in the background and are not updated in real time. Therefore, it isn't recommended to use storage data for real-time verification or monitoring purposes.
 
 Request Syntax
 --------------
