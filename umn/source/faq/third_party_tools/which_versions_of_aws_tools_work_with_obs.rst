@@ -12,8 +12,8 @@ The following versions of AWS Tools have been tested with OBS and are known to w
 
 .. note::
 
-   These versions have been tested internally and confirmed to work with OBS at the time of validation. However, compatibility with future versions is not guaranteed, and we cannot take responsibility for issues arising from version mismatches or tool updates.
+   These versions have been tested internally and confirmed to work with OBS at the time of validation. However, compatibility with future versions is not guaranteed.
 
 .. note::
 
-   If you encounter any problems with AWS tool compatibility, please let us know so we can improve the service quality accordingly.
+   If you encounter any problems with AWS tool compatibility, please contact customer service.
