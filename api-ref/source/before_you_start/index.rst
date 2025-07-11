@@ -6,8 +6,6 @@ Before You Start
 ================
 
 -  :ref:`Overview <en-us_topic_0031051947>`
--  :ref:`API Calling <obs_04_0002>`
--  :ref:`Endpoints <obs_04_0003>`
 -  :ref:`Basic Concepts <obs_04_0004>`
 
 .. toctree::
@@ -15,6 +13,4 @@ Before You Start
    :hidden: 
 
    overview
-   api_calling
-   endpoints
    basic_concepts
