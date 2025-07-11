@@ -10,7 +10,7 @@ You may configure lifecycle rules to:
 -  Periodically delete logs that are only meant to be retained for a specific period of time (a week or a month).
 -  Transition documents that are seldom accessed to the Warm or Cold storage class or delete them.
 
-If you want to delete a large number of objects from a bucket, you can configure a lifecycle rule to automatically delete the expired objects. :ref:`Table 1 <obs_faq_0027__table115262311380>` lists the parameters for configuring such a lifecycle rule on OBS Console.
+If you want to delete a large number of objects from a bucket, you can configure a lifecycle rule to automatically expire and delete the objects. :ref:`Table 1 <obs_faq_0027__table115262311380>` lists the parameters for configuring such a lifecycle rule on OBS Console.
 
 .. _obs_faq_0027__table115262311380:
 
