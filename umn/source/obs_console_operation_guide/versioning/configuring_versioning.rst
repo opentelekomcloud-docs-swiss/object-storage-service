@@ -44,10 +44,10 @@ After versioning is configured for a bucket, you can go to the object details pa
 
          If the version you want to download is in the Cold storage class, restore it first.
 
-   b. Delete a version of the object by choosing **Delete** in the **Operation** column. If you delete the latest version, the most recent version will become the latest version.
+   b. Permanently delete a version of the object by choosing **Delete** in the **Operation** column. The deleted object version cannot be recovered. If you delete the latest version, the most recent version will become the latest version.
 
       .. note::
 
          In a WORM-enabled bucket, if an object has no retention policy configured or its retention policy has expired, you can delete a desired object version on the object's **Versions** tab page. If an object version is within the retention period, it cannot be deleted.
 
-   c. Locate the object version for which you want to extend the retention period, choose **Extend Retention Period**, and select a date. A retention period can only be extended, but not shortened.
+   c. Locate the object version for which you want to extend the retention period, choose **Extend Retention Period**, and select a date. A retention period can be extended, but cannot be shortened.

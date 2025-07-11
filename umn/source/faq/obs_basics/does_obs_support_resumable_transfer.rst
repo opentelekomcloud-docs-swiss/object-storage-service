@@ -5,14 +5,14 @@
 Does OBS Support Resumable Transfer?
 ====================================
 
-Resumable transfer is supported for all transfer methods except API.
+The following table describes the resumable transfer support across OBS tools.
 
-.. table:: **Table 1** Support for resumable transfer by different OBS tools
+.. table:: **Table 1** Resumable transfer support across OBS tools
 
-   ============ =======================
-   OBS Tool     Resumable Data Transfer
-   ============ =======================
+   ============ ==================
+   OBS Tool     Resumable Transfer
+   ============ ==================
    OBS Console  Not supported
    OBS Browser+ Supported
    APIs         Not supported
-   ============ =======================
+   ============ ==================

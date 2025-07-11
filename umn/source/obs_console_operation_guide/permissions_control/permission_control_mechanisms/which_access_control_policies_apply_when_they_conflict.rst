@@ -2,10 +2,10 @@
 
 .. _obs_03_0114:
 
-How Does Authorization Work When Multiple Access Control Mechanisms Co-Exist?
-=============================================================================
+Which Access Control Policies Apply When They Conflict?
+=======================================================
 
--  Based on the principle of least privilege, the default access control result is always deny, and an explicit deny statement always take precedence over an allow statement.
+-  According to the principle of least privilege, the default access control result is "Deny", and an explicit deny statement always takes precedence over an allow statement.
 
    Suppose that IAM policies grant a user the access to an object, a bucket policy denies the user's access to that object, and there is no ACL configured. Then user's access to the object will be denied.
 
