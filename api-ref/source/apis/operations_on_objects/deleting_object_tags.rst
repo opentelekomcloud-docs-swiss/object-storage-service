@@ -31,7 +31,23 @@ Request Syntax
 Request Parameters
 ------------------
 
-This request contains no message parameters.
+:ref:`Table 1 <obs_04_0165__table416285709507>` describes the parameters in the request.
+
+.. _obs_04_0165__table416285709507:
+
+.. table:: **Table 1** Request parameters
+
+   +-----------------------+---------------------------------------------------------------------------------------------+-----------------------+
+   | Parameter             | Description                                                                                 | Mandatory (Yes/No)    |
+   +=======================+=============================================================================================+=======================+
+   | tagging               | Indicates an object tag request.                                                            | Yes                   |
+   |                       |                                                                                             |                       |
+   |                       | Type: string                                                                                |                       |
+   +-----------------------+---------------------------------------------------------------------------------------------+-----------------------+
+   | versionId             | ID of the tagged object version. Its corresponding response header is **x-obs-version-id**. | No                    |
+   |                       |                                                                                             |                       |
+   |                       | Type: string                                                                                |                       |
+   +-----------------------+---------------------------------------------------------------------------------------------+-----------------------+
 
 Request Headers
 ---------------

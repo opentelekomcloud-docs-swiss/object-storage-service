@@ -31,7 +31,23 @@ Request Syntax
 Request Parameters
 ------------------
 
-This request contains no message parameters.
+:ref:`Table 1 <obs_04_0164__table416285709507>` describes the parameters in the request.
+
+.. _obs_04_0164__table416285709507:
+
+.. table:: **Table 1** Request parameters
+
+   +-----------------------+---------------------------------------------------------------------------------------------+-----------------------+
+   | Parameter             | Description                                                                                 | Mandatory (Yes/No)    |
+   +=======================+=============================================================================================+=======================+
+   | tagging               | Indicates an object tag request.                                                            | Yes                   |
+   |                       |                                                                                             |                       |
+   |                       | Type: string                                                                                |                       |
+   +-----------------------+---------------------------------------------------------------------------------------------+-----------------------+
+   | versionId             | ID of the tagged object version. Its corresponding response header is **x-obs-version-id**. | No                    |
+   |                       |                                                                                             |                       |
+   |                       | Type: string                                                                                |                       |
+   +-----------------------+---------------------------------------------------------------------------------------------+-----------------------+
 
 Request Headers
 ---------------
@@ -78,11 +94,11 @@ For more information about the object tag elements returned in the response, see
 Error Responses
 ---------------
 
-In addition to common error codes, this API also returns others. :ref:`Table 1 <obs_04_0164__table1488314173514>` lists the common errors and possible causes.
+In addition to common error codes, this API also returns others. :ref:`Table 2 <obs_04_0164__table1488314173514>` lists the common errors and possible causes.
 
 .. _obs_04_0164__table1488314173514:
 
-.. table:: **Table 1** Error codes of obtaining object tags
+.. table:: **Table 2** Error codes of obtaining object tags
 
    +--------------+---------------------------------------------------+------------------+
    | Error Code   | Description                                       | HTTP Status Code |

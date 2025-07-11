@@ -33,7 +33,7 @@ Request Syntax
 
 .. code-block:: text
 
-   PUT /ObjectName?retention HTTP/1.1
+   PUT /ObjectName?retention&versionId=versionid HTTP/1.1
    Host: bucketname.obs.region.example.com
    Date: date
    Authorization: authorization
@@ -55,6 +55,10 @@ Request Parameters
    +-----------------------+--------------------------------------------------------------------------------------------------------------------------+-----------------------+
    | Parameter             | Description                                                                                                              | Mandatory             |
    +=======================+==========================================================================================================================+=======================+
+   | retention             | Indicates that the request is made to configure or modify the object retention period.                                   | Yes                   |
+   |                       |                                                                                                                          |                       |
+   |                       | Type: string                                                                                                             |                       |
+   +-----------------------+--------------------------------------------------------------------------------------------------------------------------+-----------------------+
    | versionId             | ID of the object version requested. If this header is not carried, this operation applies to the current object version. | No                    |
    |                       |                                                                                                                          |                       |
    |                       | Type: string                                                                                                             |                       |
