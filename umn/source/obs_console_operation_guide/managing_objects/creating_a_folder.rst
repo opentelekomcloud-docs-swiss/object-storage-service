@@ -5,7 +5,7 @@
 Creating a Folder
 =================
 
-This section describes how to create a folder on OBS Console. Folders facilitate data management in OBS.
+You can create folders in a bucket on OBS Console to help organize and manage your data more efficiently.
 
 Background Information
 ----------------------
