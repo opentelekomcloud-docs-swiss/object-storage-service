@@ -8,6 +8,8 @@ Operations on Buckets
 The requests that are sent to OBS by users must comply with REST specifications and contain required header parameters. If a request is successfully processed, OBS returns a success response. If the request fails to be processed, OBS returns a message that contains the reason of the error. This chapter describes REST operations on buckets using the common header authorization. You can also use temporarily authorized requests described in section :ref:`V2 Temporarily Authorized Request <en-us_topic_0125560431>`.
 
 -  :ref:`PUT Bucket <en-us_topic_0125560305>`
+-  :ref:`PUT Bucket storage class <en-us_topic_0125560403>`
+-  :ref:`GET Bucket storage class <en-us_topic_0125560378>`
 -  :ref:`List Buckets <en-us_topic_0125560308>`
 -  :ref:`DELETE Bucket <en-us_topic_0125560472>`
 -  :ref:`GET Bucket (List Objects) <en-us_topic_0125560237>`
@@ -54,6 +56,8 @@ The requests that are sent to OBS by users must comply with REST specifications 
    :hidden: 
 
    put_bucket
+   put_bucket_storage_class
+   get_bucket_storage_class
    list_buckets
    delete_bucket
    get_bucket_list_objects

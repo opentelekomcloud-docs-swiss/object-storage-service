@@ -141,6 +141,10 @@ In addition to common headers, when CORS is configured for buckets, you can use 
    |                                   |                                                                                                                                                   |
    |                                   | Type: String                                                                                                                                      |
    +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | x-amz-bucket-region               | Indicates the region of the bucket.                                                                                                               |
+   |                                   |                                                                                                                                                   |
+   |                                   | Type: String                                                                                                                                      |
+   +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Response Elements
 -----------------
@@ -254,6 +258,14 @@ This response contains the XML list of the objects in a bucket. :ref:`Table 4 <e
    |                                   |                                                                                                                                                                                                          |
    |                                   | Parent node: ListBucketResult.Contents                                                                                                                                                                   |
    +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | StorageClass                      | Storage class of an object                                                                                                                                                                               |
+   |                                   |                                                                                                                                                                                                          |
+   |                                   | Type: String                                                                                                                                                                                             |
+   |                                   |                                                                                                                                                                                                          |
+   |                                   | Values: STANDARD \| STANDARD_IA \|GLACIER                                                                                                                                                                |
+   |                                   |                                                                                                                                                                                                          |
+   |                                   | Parent node: ListBucketResult.Contents                                                                                                                                                                   |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Error Responses
 ---------------
@@ -303,6 +315,7 @@ Sample Response
     <ID>bcaf1ffd86f41caff1a493dc2ad8c2c281e37522a640e161ca5fb16fd081034f</ID>
     <DisplayName>apple</DisplayName>
     </Owner>
+    <StorageClass>STANDARD</StorageClass>
     </Contents>
     </ListBucketResult>
 
@@ -350,7 +363,7 @@ Sample Response (Example of listing objects in a bucket by specifying prefix)
     <ID>214153b66967d86f031c7487b4566cb1b</ID>
     <DisplayName>John Smith</DisplayName>
     </Owner>
-
+    <StorageClass>STANDARD</StorageClass>
     </Contents>
     <CommonPrefixes>
     <Prefix>photos/2006/January/</Prefix>

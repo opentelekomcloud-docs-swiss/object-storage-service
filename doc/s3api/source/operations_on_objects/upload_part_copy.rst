@@ -19,6 +19,15 @@ After initiating a multipart upload, you can send an **Upload Part** request to 
 
    During the copy process, the source object is not changed.
 
+OBS Cold Objects
+----------------
+
+If source objects are OBS cold objects, check the restore status of the objects. You can copy the OBS cold objects only after the objects are restored. If the objects are not restored or are being restored, the copy fails, and error "403 Forbidden" is returned. The fault is described as follows:
+
+ErrorCode: InvalidObjectState
+
+ErrorMessage: Operation is not valid for the source object's storage class
+
 Request Syntax
 --------------
 

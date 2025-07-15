@@ -67,6 +67,7 @@ Response Syntax
         <Field>Size</Field>
         <Field>LastModifiedDate</Field>
         <Field>ETag</Field>
+        <Field>StorageClass</Field>
         <Field>IsMultipartUploaded</Field>
         <Field>ReplicationStatus</Field>
       </OptionalFields>
@@ -149,6 +150,7 @@ Sample Response
         <Field>Size</Field>
         <Field>LastModifiedDate</Field>
         <Field>ETag</Field>
+        <Field>StorageClass</Field>
         <Field>IsMultipartUploaded</Field>
         <Field>ReplicationStatus</Field>
       </OptionalFields>

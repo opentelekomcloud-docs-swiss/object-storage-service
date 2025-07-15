@@ -12,6 +12,11 @@ Versioning
 
 By default, the content of the object with the latest version ID is obtained. If the version ID of the object is a deletion mark, **404** is returned. You can specify **versionId** to obtain the content of an object of the desired version.
 
+Cold Objects
+------------
+
+For Cold objects, the response varies with the restoration status of the objects. If the objects have been restored, then the **x-amz-restore** header is returned indicating the expiry date of the objects when they are successfully downloaded. If you request to download Cold objects that are not restored or are being restored, a **403 Forbidden** error is returned.
+
 Request Syntax
 --------------
 
@@ -229,6 +234,23 @@ This response can also include optional headers. :ref:`Table 3 <en-us_topic_0125
    |                                   | Valid values: **GET**, **PUT**, **HEAD**, **POST**, and **DELETE**                                                                                                                                                                  |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Access-Control-Expose-Headers     | Indicates **ExposeHeader** in the CORS configuration of a server when CORS is configured for buckets.                                                                                                                               |
+   |                                   |                                                                                                                                                                                                                                     |
+   |                                   | Type: String                                                                                                                                                                                                                        |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | x-amz-storage-class               | This header is returned when the storage class of an object is not Standard.                                                                                                                                                        |
+   |                                   |                                                                                                                                                                                                                                     |
+   |                                   | Type: String                                                                                                                                                                                                                        |
+   |                                   |                                                                                                                                                                                                                                     |
+   |                                   | Valid values: **STANDARD_IA** and **GLACIER**                                                                                                                                                                                       |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | x-amz-restore                     | This header is returned when the storage class of an object is OBS Cold and the object has been restored.                                                                                                                           |
+   |                                   |                                                                                                                                                                                                                                     |
+   |                                   | Example:                                                                                                                                                                                                                            |
+   |                                   |                                                                                                                                                                                                                                     |
+   |                                   | x-amz-restore:ongoing-request="false", expiry-date="Wed, 07 Nov 2012 00:00:00 GMT"                                                                                                                                                  |
+   |                                   |                                                                                                                                                                                                                                     |
+   |                                   | -  **ongoing-request="false"**\ indicates that the object has been restored.                                                                                                                                                        |
+   |                                   | -  In **expiry-date="Wed, 07 Nov 2012 00:00:00 GMT"**, **expiry-date** indicates the expiry date of the restored object.                                                                                                            |
    |                                   |                                                                                                                                                                                                                                     |
    |                                   | Type: String                                                                                                                                                                                                                        |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

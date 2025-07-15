@@ -80,6 +80,7 @@ Response Syntax
        <Field>Size</Field>
        <Field>LastModifiedDate</Field>
        <Field>ETag</Field>
+       <Field>StorageClass</Field>
        <Field>IsMultipartUploaded</Field>
        <Field>ReplicationStatus</Field>
      </OptionalFields>
@@ -211,7 +212,7 @@ Response Elements
    |                                   |                                                                                                                                                                                                                                        |
    |                                   | Ancestor: OptionalFields                                                                                                                                                                                                               |
    |                                   |                                                                                                                                                                                                                                        |
-   |                                   | Valid values: **Size**, **LastModifiedDate**, **ETag**, **IsMultipartUploaded**, **ReplicationStatus**.                                                                                                                                |
+   |                                   | Valid values: **Size**, **LastModifiedDate**, **StorageClass**, **ETag**, **IsMultipartUploaded**, **ReplicationStatus**.                                                                                                              |
    +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Error Responses
@@ -271,6 +272,7 @@ Sample Response
        <Field>Size</Field>
        <Field>LastModifiedDate</Field>
        <Field>ETag</Field>
+       <Field>StorageClass</Field>
        <Field>IsMultipartUploaded</Field>
        <Field>ReplicationStatus</Field>
      </OptionalFields>
