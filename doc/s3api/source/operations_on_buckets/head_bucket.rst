@@ -84,35 +84,39 @@ In addition to common headers, when CORS is configured for buckets, you can use 
 
 .. table:: **Table 2** Appended response headers when CORS is configured for buckets
 
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Header                            | Description                                                                                                                                      |
-   +===================================+==================================================================================================================================================+
-   | Access-Control-Allow-Origin       | If **Origin** in the request meets the CORS configuration requirements, **Origin** is included in the response.                                  |
-   |                                   |                                                                                                                                                  |
-   |                                   | Type: String                                                                                                                                     |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Access-Control-Allow-Headers      | If **headers** in the request meet the CORS configuration requirements, **headers** are included in the response.                                |
-   |                                   |                                                                                                                                                  |
-   |                                   | Type: String                                                                                                                                     |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Access-Control-Max-Age            | Indicates **MaxAgeSeconds** in the CORS configuration of a server.                                                                               |
-   |                                   |                                                                                                                                                  |
-   |                                   | Type: Integer                                                                                                                                    |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Access-Control-Allow-Methods      | If **Access-Control-Request-Method** in the request meets the CORS configuration requirements, methods in the rule are included in the response. |
-   |                                   |                                                                                                                                                  |
-   |                                   | Type: String                                                                                                                                     |
-   |                                   |                                                                                                                                                  |
-   |                                   | Valid values: **GET**, **PUT**, **HEAD**, **POST**, and **DELETE**                                                                               |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Access-Control-Expose-Headers     | Indicates **ExposeHeader** in the CORS configuration of a server.                                                                                |
-   |                                   |                                                                                                                                                  |
-   |                                   | Type: String                                                                                                                                     |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
-   | x-amz-bucket-region               | Indicates the region of the bucket.                                                                                                              |
-   |                                   |                                                                                                                                                  |
-   |                                   | Type: String                                                                                                                                     |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Header                            | Description                                                                                                                                                          |
+   +===================================+======================================================================================================================================================================+
+   | Access-Control-Allow-Origin       | If **Origin** in the request meets the CORS configuration requirements, **Origin** is included in the response.                                                      |
+   |                                   |                                                                                                                                                                      |
+   |                                   | Type: String                                                                                                                                                         |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Access-Control-Allow-Headers      | If **headers** in the request meet the CORS configuration requirements, **headers** are included in the response.                                                    |
+   |                                   |                                                                                                                                                                      |
+   |                                   | Type: String                                                                                                                                                         |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Access-Control-Max-Age            | Indicates **MaxAgeSeconds** in the CORS configuration of a server.                                                                                                   |
+   |                                   |                                                                                                                                                                      |
+   |                                   | Type: Integer                                                                                                                                                        |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Access-Control-Allow-Methods      | If **Access-Control-Request-Method** in the request meets the CORS configuration requirements, methods in the rule are included in the response.                     |
+   |                                   |                                                                                                                                                                      |
+   |                                   | Type: String                                                                                                                                                         |
+   |                                   |                                                                                                                                                                      |
+   |                                   | Valid values: **GET**, **PUT**, **HEAD**, **POST**, and **DELETE**                                                                                                   |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Access-Control-Expose-Headers     | Indicates **ExposeHeader** in the CORS configuration of a server.                                                                                                    |
+   |                                   |                                                                                                                                                                      |
+   |                                   | Type: String                                                                                                                                                         |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | x-amz-bucket-region               | Indicates the region of the bucket.                                                                                                                                  |
+   |                                   |                                                                                                                                                                      |
+   |                                   | Type: String                                                                                                                                                         |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | x-default-storage-class           | Indicates the default storage class of the current bucket. There are three storage classes: STANDARD (OBS Standard), STANDARD_IA (OBS Warm), and GLACIER (OBS Cold). |
+   |                                   |                                                                                                                                                                      |
+   |                                   | Type: String                                                                                                                                                         |
+   +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Response Elements
 -----------------
@@ -148,7 +152,7 @@ Sample Response
    x-amz-bucket-region: R1
    Content-Type: application/xml
    x-obs-version: 3.0
-
+   x-default-storage-class: STANDARD
    x-amz-id-2: MzY3Q0I2M0EyRjI4MzA0NDk4MTI4NTQ5MjcxOTA2MEFBQUFBQUFBYmJiYmJiYmJD
    Date: Sun, 26 Sep 2010 09:18:36 GMT
    Content-Length: 0

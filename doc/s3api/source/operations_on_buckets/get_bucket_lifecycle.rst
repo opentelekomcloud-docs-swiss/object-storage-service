@@ -62,6 +62,25 @@ Response Syntax
    <NoncurrentVersionExpiration>
    <NoncurrentDays>365</NoncurrentDays>
    </NoncurrentVersionExpiration>
+   <Transition>
+   <Date>date</Date>
+   <StorageClass>STANDARD_IA</StorageClass>
+   </Transition>
+   <Transition>
+   <Date>date</Date>
+   <StorageClass>GLACIER</StorageClass>
+   </Transition>
+   <NoncurrentVersionTransition>
+   <NoncurrentDays>30</NoncurrentDays>
+   <StorageClass>STANDARD_IA</StorageClass>
+   </NoncurrentVersionTransition>
+   <NoncurrentVersionTransition>
+   <NoncurrentDays>60</NoncurrentDays>
+   <StorageClass>GLACIER</StorageClass>
+   </NoncurrentVersionTransition>
+   <AbortIncompleteMultipartUpload>
+   <DaysAfterInitiation>10</DaysAfterInitiation>
+   </AbortIncompleteMultipartUpload>
    </Rule>
    </LifecycleConfiguration>
 
@@ -88,13 +107,27 @@ This response contains elements to detail bucket lifecycle configuration. :ref:`
    |                                   |                                                                                                                                                                                                                                                             |
    |                                   | Type: String                                                                                                                                                                                                                                                |
    |                                   |                                                                                                                                                                                                                                                             |
-   |                                   | Ancestor: Expiration                                                                                                                                                                                                                                        |
+   |                                   | Ancestor: Expiration, Transition                                                                                                                                                                                                                            |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Days                              | Indicates the number of days after object creation when the specified rule takes effect.                                                                                                                                                                    |
    |                                   |                                                                                                                                                                                                                                                             |
    |                                   | Type: Positive integer                                                                                                                                                                                                                                      |
    |                                   |                                                                                                                                                                                                                                                             |
-   |                                   | Ancestor: Expiration                                                                                                                                                                                                                                        |
+   |                                   | Ancestor: Expiration, Transition                                                                                                                                                                                                                            |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | StorageClass                      | Indicates the new storage class of the object.                                                                                                                                                                                                              |
+   |                                   |                                                                                                                                                                                                                                                             |
+   |                                   | Type: **STANDARD_IA** or **GLACIER**                                                                                                                                                                                                                        |
+   |                                   |                                                                                                                                                                                                                                                             |
+   |                                   | Ancestor: **Transition, NoncurrentVersionTransition**                                                                                                                                                                                                       |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Transition                        | Indicates the element of the transition time and new storage class (applicable to the latest version of the object) in the lifecycle configuration.                                                                                                         |
+   |                                   |                                                                                                                                                                                                                                                             |
+   |                                   | Type: XML                                                                                                                                                                                                                                                   |
+   |                                   |                                                                                                                                                                                                                                                             |
+   |                                   | Children: **Date** or **Days**                                                                                                                                                                                                                              |
+   |                                   |                                                                                                                                                                                                                                                             |
+   |                                   | Ancestor: **Rule**                                                                                                                                                                                                                                          |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Expiration                        | Indicates the container for the object expiration rule.                                                                                                                                                                                                     |
    |                                   |                                                                                                                                                                                                                                                             |
@@ -122,7 +155,15 @@ This response contains elements to detail bucket lifecycle configuration. :ref:`
    |                                   |                                                                                                                                                                                                                                                             |
    |                                   | Type: Positive integer                                                                                                                                                                                                                                      |
    |                                   |                                                                                                                                                                                                                                                             |
-   |                                   | Ancestor: NoncurrentVersionExpiration                                                                                                                                                                                                                       |
+   |                                   | Ancestor: NoncurrentVersionExpiration, NoncurrentVersionTransition                                                                                                                                                                                          |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | NoncurrentVersionTransition       | Indicates the element of the transition time and new storage class (applicable to historical versions) in the lifecycle configuration.                                                                                                                      |
+   |                                   |                                                                                                                                                                                                                                                             |
+   |                                   | Type: XML                                                                                                                                                                                                                                                   |
+   |                                   |                                                                                                                                                                                                                                                             |
+   |                                   | Children: NoncurrentDays, StorageClass                                                                                                                                                                                                                      |
+   |                                   |                                                                                                                                                                                                                                                             |
+   |                                   | Ancestor: Rule                                                                                                                                                                                                                                              |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | NoncurrentVersionExpiration       | Indicates the container for the noncurrent object expiration rule. You set this lifecycle configuration action on a bucket that has versioning enabled (or suspended) to request that OBS delete noncurrent object versions which meet the expiration rule. |
    |                                   |                                                                                                                                                                                                                                                             |
@@ -131,6 +172,20 @@ This response contains elements to detail bucket lifecycle configuration. :ref:`
    |                                   | Children: NoncurrentDays                                                                                                                                                                                                                                    |
    |                                   |                                                                                                                                                                                                                                                             |
    |                                   | Ancestor: Rule                                                                                                                                                                                                                                              |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | AbortIncompleteMultipartUpload    | Container for specifying when the not merged parts (fragments) in an incomplete upload will be deleted.                                                                                                                                                     |
+   |                                   |                                                                                                                                                                                                                                                             |
+   |                                   | Type: XML                                                                                                                                                                                                                                                   |
+   |                                   |                                                                                                                                                                                                                                                             |
+   |                                   | Children node: DaysAfterInitiation                                                                                                                                                                                                                          |
+   |                                   |                                                                                                                                                                                                                                                             |
+   |                                   | Ancestor node: Rule                                                                                                                                                                                                                                         |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | DaysAfterInitiation               | Specifies the number of days since the initiation of an incomplete multipart upload that OBS will wait before deleting the not merged parts (fragments) of the upload.                                                                                      |
+   |                                   |                                                                                                                                                                                                                                                             |
+   |                                   | Type: positive integer                                                                                                                                                                                                                                      |
+   |                                   |                                                                                                                                                                                                                                                             |
+   |                                   | Ancestor node: AbortIncompleteMultipartUpload                                                                                                                                                                                                               |
    +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Prefix                            | Indicates the object key prefix identifying one or more objects to which the rule applies.                                                                                                                                                                  |
    |                                   |                                                                                                                                                                                                                                                             |
@@ -206,5 +261,24 @@ Sample Response
    <NoncurrentVersionExpiration>
    <NoncurrentDays>365</NoncurrentDays>
    </NoncurrentVersionExpiration>
+   <Transition>
+   <Date>2015-07-10T00:00:00.000Z</Date>
+   <StorageClass>STANDARD_IA</StorageClass>
+   </Transition>
+   <Transition>
+   <Date>2015-07-11T00:00:00.000Z</Date>
+   <StorageClass>GLACIER</StorageClass>
+   </Transition>
+   <NoncurrentVersionTransition>
+   <NoncurrentDays>30</NoncurrentDays>
+   <StorageClass>STANDARD_IA</StorageClass>
+   </NoncurrentVersionTransition>
+   <NoncurrentVersionTransition>
+   <NoncurrentDays>60</NoncurrentDays>
+   <StorageClass>GLACIER</StorageClass>
+   </NoncurrentVersionTransition>
+   <AbortIncompleteMultipartUpload>
+   <DaysAfterInitiation>10</DaysAfterInitiation>
+   </AbortIncompleteMultipartUpload>
    </Rule>
    </LifecycleConfiguration>

@@ -42,6 +42,7 @@ Request Syntax
              <Field>Size</Field>
              <Field>LastModifiedDate</Field>
              <Field>ETag</Field>
+             <Field>StorageClass</Field>
              <Field>IsMultipartUploaded</Field>
              <Field>ReplicationStatus</Field>
       </OptionalFields>
@@ -192,7 +193,7 @@ In this request, you must configure the bucket inventory in the request body. Up
    |                        |                                                                                                                                                                                                                                        |                       |
    |                        | Ancestor: OptionalFields                                                                                                                                                                                                               |                       |
    |                        |                                                                                                                                                                                                                                        |                       |
-   |                        | Valid values: **Size**, **LastModifiedDate**, **ETag**, **IsMultipartUploaded**, **ReplicationStatus**.                                                                                                                                |                       |
+   |                        | Valid values: **Size**, **LastModifiedDate**, **StorageClass**, **ETag**, **IsMultipartUploaded**, **ReplicationStatus**.                                                                                                              |                       |
    +------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
 
 Response Syntax
@@ -270,6 +271,7 @@ Sample Request
              <Field>Size</Field>
              <Field>LastModifiedDate</Field>
              <Field>ETag</Field>
+             <Field>StorageClass</Field>
              <Field>IsMultipartUploaded</Field>
              <Field>ReplicationStatus</Field>
       </OptionalFields>

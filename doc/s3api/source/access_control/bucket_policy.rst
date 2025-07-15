@@ -133,6 +133,8 @@ In OBS, **Action** can be the following operations on buckets:
 -  s3:DeleteBucketPolicy
 -  s3:PutBucketQuota
 -  s3:GetBucketQuota
+-  s3:PutBucketStoragePolicy
+-  s3:GetBucketStoragePolicy
 -  s3:GetBucketStorage
 -  s3:PutBucketTagging
 -  s3:GetBucketTagging

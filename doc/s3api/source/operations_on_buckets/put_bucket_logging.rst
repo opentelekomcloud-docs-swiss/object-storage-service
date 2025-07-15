@@ -11,7 +11,7 @@ This PUT operation uses the **logging** subresource to set the logging parameter
 
 By default, logs are not created during bucket creation. The logs for a bucket are created after logging in enabled. To enable logging, configure the log management function in the **LoggingEnabled** request element. You can disable logging using an empty **BucketLoggingStatus** request element. To ensure log files are delivered correctly, the log delivery group must also have **WRITE** and **READ_ACP** permission for the target bucket which stores logging.
 
-When configuring bucket log management, the owner of the source bucket can specify a target bucket to store logs. The owner of the source bucket can only deliver logs to any bucket of the owner. In the mean time, the target bucket and source bucket must reside in the same region.
+When configuring bucket log management, the owner of the source bucket can specify a target bucket to store logs. The owner of the source bucket can only deliver logs to any bucket of the owner. In the mean time, the target bucket and source bucket must reside in the same region. When uploading a log object, its storage class is set to Standard.
 
 The traffic consumed by uploading bucket logs is not charged, but it will be reflected in the uplink traffic of the Cloud Eye service.
 

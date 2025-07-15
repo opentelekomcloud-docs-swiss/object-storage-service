@@ -88,6 +88,7 @@ Response Syntax
     <ID>ownerid</ID>
     <DisplayName>ownername</DisplayName>
     </Owner>
+    <StorageClass>STANDARD</StorageClass>
     <PartNumberMarker>partNmebermarker</PartNumberMarker>
     <NextPartNumberMarker>nextpartnumbermarker</NextPartNumberMarker>
     <MaxParts>2</MaxParts>
@@ -169,6 +170,14 @@ This response uses elements to provide details about the listed parts. :ref:`Tab
    |                                   | Type: String                                                                                                                                                                                                                    |
    |                                   |                                                                                                                                                                                                                                 |
    |                                   | Ancestor: **Initiator** or **Owner**                                                                                                                                                                                            |
+   +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | StorageClass                      | Storage class.                                                                                                                                                                                                                  |
+   |                                   |                                                                                                                                                                                                                                 |
+   |                                   | Type: Enumeration                                                                                                                                                                                                               |
+   |                                   |                                                                                                                                                                                                                                 |
+   |                                   | Valid values: STANDARD \| STANDARD_IA \|GLACIER                                                                                                                                                                                 |
+   |                                   |                                                                                                                                                                                                                                 |
+   |                                   | Ancestor: ListPartsResult                                                                                                                                                                                                       |
    +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | PartNumberMarker                  | Part number after which the part listing begins                                                                                                                                                                                 |
    |                                   |                                                                                                                                                                                                                                 |
@@ -277,6 +286,7 @@ Sample Response
     <ID>75aa57f09aa0c8caeab4f8c24e99d10f8e7faeebf76c078efc7c6caea54ba06a</ID>
     <DisplayName>someName</DisplayName>
     </Owner>
+    <StorageClass>STANDARD</StorageClass>
     <PartNumberMarker>1</PartNumberMarker>
     <NextPartNumberMarker>3</NextPartNumberMarker>
     <MaxParts>2</MaxParts>

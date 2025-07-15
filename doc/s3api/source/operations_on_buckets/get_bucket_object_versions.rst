@@ -129,6 +129,7 @@ Response Syntax
     <ID>ownerID</ID>
     <DisplayName>name</DisplayName>
     </Owner>
+    <StorageClass>storageClass</StorageClass>
     </Version>
     <DeleteMarker>
     <Key>object</Key>
@@ -309,6 +310,12 @@ This response contains elements to specify the objects (including objects with m
    |                                   |                                                                                                                                                                                                                                                   |
    |                                   | Ancestor: ListVersionsResult.Version.Owner \| ListVersionsResult.Version.Owner                                                                                                                                                                    |
    +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | StorageClass                      | Storage type of an object                                                                                                                                                                                                                         |
+   |                                   |                                                                                                                                                                                                                                                   |
+   |                                   | Type: Enumeration                                                                                                                                                                                                                                 |
+   |                                   |                                                                                                                                                                                                                                                   |
+   |                                   | Ancestor: ListVersionsResult.Version                                                                                                                                                                                                              |
+   +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | CommonPrefixes                    | Grouping information. If you specify a delimiter in the request, the response contains grouping information in **CommonPrefixes**.                                                                                                                |
    |                                   |                                                                                                                                                                                                                                                   |
    |                                   | Type: Container                                                                                                                                                                                                                                   |
@@ -382,6 +389,7 @@ Sample Response
     <ID>DCD2FC9CAB78000001438EC051BD0002</ID>
     <DisplayName>user</DisplayName>
     </Owner>
+    <StorageClass>STANDARD</StorageClass>
     </Version>
     <Version>
     <Key>suspend</Key>
@@ -394,6 +402,7 @@ Sample Response
     <ID>DCD2FC9CAB78000001438EC051BD0002</ID>
     <DisplayName>user</DisplayName>
     </Owner>
+    <StorageClass>STANDARD</StorageClass>
     </Version>
     </ListVersionsResult>
 
@@ -442,6 +451,7 @@ Sample Response (Example of getting bucket object versions by using key-marker a
     <ID>DCD2FC9CAB78000001438EC051BD0002</ID>
     <DisplayName>user</DisplayName>
     </Owner>
+    <StorageClass>STANDARD</StorageClass>
     </Version>
     <Version>
     <Key>suspend</Key>
@@ -454,5 +464,6 @@ Sample Response (Example of getting bucket object versions by using key-marker a
     <ID>DCD2FC9CAB78000001438EC051BD0002</ID>
     <DisplayName>user</DisplayName>
     </Owner>
+    <StorageClass>STANDARD</StorageClass>
     </Version>
     </ListVersionsResult>

@@ -11,6 +11,8 @@ By default, a **PUT Object - Copy** operation copies object metadata together wi
 
 The **PUT Object - Copy** request must contain authentication information and cannot contain a request body.
 
+When objects are copied, the storage classes of target objects are consistent with the default storage classes of target buckets.
+
 Versioning
 ----------
 
@@ -34,6 +36,15 @@ If a bucket has WORM enabled, you can configure retention policies for objects i
 .. note::
 
    In a copy operation, the object protection status is not copied, so the protection status of an object copy is independent of that of the source object. After the copy is complete, WORM retention changes made on the source object does not affect the object copy.
+
+OBS Cold Objects
+----------------
+
+If source objects are OBS cold objects, check the restore status of the objects. You can copy the OBS cold objects only after the objects are restored. If the objects are not restored or are being restored, the copy fails, and error "403 Forbidden" is returned. The fault is described as follows:
+
+ErrorCode: InvalidObjectState
+
+ErrorMessage: Operation is not valid for the source object's storage class
 
 Request Syntax
 --------------
@@ -128,6 +139,14 @@ This request uses common headers. For details about common request headers, see 
    |                                       | Example: x-amz-copy-source-if-modified-since: time-stamp                                                                                                                                                                        |                                                                                  |
    |                                       |                                                                                                                                                                                                                                 |                                                                                  |
    |                                       | Constraints: This header can be used with **x-amz-copy-source-if-none-match** but cannot be used with other conditional copy headers.                                                                                           |                                                                                  |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+   | x-amz-storage-class                   | When creating an object, you can add this header in the request to set the storage class of the object. If you do not add this header, the object will use the default storage class of the bucket.                             | Optional                                                                         |
+   |                                       |                                                                                                                                                                                                                                 |                                                                                  |
+   |                                       | Type: String                                                                                                                                                                                                                    |                                                                                  |
+   |                                       |                                                                                                                                                                                                                                 |                                                                                  |
+   |                                       | Note: The storage class can be **STANDARD** (OBS Standard), **STANDARD_IA** (OBS Warm), or **GLACIER** (OBS Cold). Note that the three storage class values are case-sensitive.                                                 |                                                                                  |
+   |                                       |                                                                                                                                                                                                                                 |                                                                                  |
+   |                                       | Example: x-amz-storage-class: STANDARD                                                                                                                                                                                          |                                                                                  |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
    | x-amz-website-redirect-location       | If a bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. OBS stores the value of this header in the object metadata.                              | Optional                                                                         |
    |                                       |                                                                                                                                                                                                                                 |                                                                                  |

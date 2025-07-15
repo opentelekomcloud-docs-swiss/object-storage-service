@@ -100,6 +100,7 @@ Response Syntax
     <ID>ownerID</ID>
     <DisplayName>OwnerDisplayName</DisplayName>
     </Owner>
+    <StorageClass>STANDARD</StorageClass>
     <Initiated>initiatedDate</Initiated>
     </Upload>
     </ListMultipartUploadsResult>
@@ -175,7 +176,7 @@ This response contains elements to provide details about the listed multipart up
    |                                   |                                                                                                                                                                                                                                 |                       |
    |                                   | Type: Container                                                                                                                                                                                                                 |                       |
    |                                   |                                                                                                                                                                                                                                 |                       |
-   |                                   | Children: **Key**, **UploadId**, **InitiatorOwner**, **Initiated**                                                                                                                                                              |                       |
+   |                                   | Children: **Key**, **UploadId**, **InitiatorOwner**, **StorageClass**, **Initiated**                                                                                                                                            |                       |
    |                                   |                                                                                                                                                                                                                                 |                       |
    |                                   | Ancestor: **ListMultipartUploadsResult**                                                                                                                                                                                        |                       |
    +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
@@ -216,6 +217,12 @@ This response contains elements to provide details about the listed multipart up
    |                                   | Type: Container                                                                                                                                                                                                                 |                       |
    |                                   |                                                                                                                                                                                                                                 |                       |
    |                                   | Children: **ID**, **DisplayName**                                                                                                                                                                                               |                       |
+   |                                   |                                                                                                                                                                                                                                 |                       |
+   |                                   | Ancestor: **Upload**                                                                                                                                                                                                            |                       |
+   +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | StorageClass                      | Type of storage that will be used for storing objects after the multipart upload is complete.                                                                                                                                   | Mandatory             |
+   |                                   |                                                                                                                                                                                                                                 |                       |
+   |                                   | Type: Enumeration                                                                                                                                                                                                               |                       |
    |                                   |                                                                                                                                                                                                                                 |                       |
    |                                   | Ancestor: **Upload**                                                                                                                                                                                                            |                       |
    +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
@@ -308,7 +315,7 @@ Sample Response
     <ID>75aa57f09aa0c8caeab4f84e99d10f8e</ID>
     <DisplayName>OwnerDisplayName</DisplayName>
     </Owner>
-
+    <StorageClass>STANDARD</StorageClass>
     <Initiated>2010-11-10T20:48:33.000Z</Initiated>
     </Upload>
     <Upload>
@@ -322,6 +329,7 @@ Sample Response
     <ID>b1d16700c70b0b05597d7acd6a3f92be</ID>
     <DisplayName>InitiatorDisplayName</DisplayName>
     </Owner>
+    <StorageClass>STANDARD</StorageClass>
     <Initiated>2010-11-10T20:48:33.000Z</Initiated>
     </Upload>
     <Upload>
@@ -335,6 +343,7 @@ Sample Response
     <ID>b1d16700c70b0b05597d7acd6a3f92be</ID>
     <DisplayName>InitiatorDisplayName</DisplayName>
     </Owner>
+    <StorageClass>STANDARD</StorageClass>
     <Initiated>2010-11-10T20:49:33.000Z</Initiated>
     </Upload>
     </ListMultipartUploadsResult>
