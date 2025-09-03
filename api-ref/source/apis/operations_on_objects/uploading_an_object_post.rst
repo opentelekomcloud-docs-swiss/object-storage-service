@@ -1191,7 +1191,7 @@ Sample Response: Specifying a Status Code
    Date: Thu, 15 Jun 2023 13:12:51 GMT
    Content-Length: 0
    Connection: keep-alive
-   Location: http://obs.region.example.com/srcbucket/obj
+   Location: http://srcbucket.obs.region.example.com/obj
    ETag: "d41d8cd98f00b204e9800998ecf8427e"
    x-obs-request-id: 00000188BF2FF55F5306426E000FE366
    x-obs-id-2: 32AAAUJAIAABAAAQAAEAABAAAQAAEAABCScDjcXgZ7oMYSVnZnk4+HrClVwLVPTi
@@ -1257,7 +1257,7 @@ Sample Response: Uploading an Object (with a WORM Retention Policy Configured)
    Server: OBS
    Date: Thu, 15 Jun 2023 13:24:03 GMT
    Connection: keep-alive
-   Location: http://obs.region.example.com/srcbucket/obj
+   Location: http://srcbucket.obs.region.example.com/obj
    ETag: "d41d8cd98f00b204e9800998ecf8427e"
    x-obs-request-id: 00000188BF3A36EE5306427D000FEE0A
    x-obs-id-2: 32AAAUJAIAABAAAQAAEAABAAAQAAEAABCS/5pj0p0hAQcDVI3B6E5y167zy4eAQv
