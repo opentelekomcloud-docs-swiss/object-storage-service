@@ -359,7 +359,7 @@ Sample Response for Uploading Objects to a Bucket with No Versioning Configured
     x-amz-id-2: OTBFMkJBMDBDMjZDMDAwMDAxMzNCNDQyQTkwMDYzRkRBQUFBQUFBQWJiYmJiYmJi
     x-reserved: amazon, aws and amazon web services are trademarks or registered trademarks of Amazon Technologies, Inc
     Content-Type: text/xml
-    Location: http://obs.example.com/tc.post.expires.001/object01
+    Location: http://tc.post.expires.001.obs.example.com/object01
     Date: Fri, 18 Nov 2011 01:20:27 GMT
     ETag: "ab7abb0da4bca5323ab6119bb5dcd296"
 
@@ -454,7 +454,7 @@ Sample Response for Configuring a WORM Retention Policy When Uploading an Object
    Server: OBS
    Date: Thu, 15 Jun 2023 13:24:03 GMT
    Connection: keep-alive
-   Location: http://obs.example.com/srcbucket/obj
+   Location: http://srcbucket.obs.example.com/obj
    ETag: "d41d8cd98f00b204e9800998ecf8427e"
    x-amz-request-id: 00000188BF3A36EE5306427D000FEE0A
    x-amz-id-2: 32AAAUJAIAABAAAQAAEAABAAAQAAEAABCS/5pj0p0hAQcDVI3B6E5y167zy4eAQv

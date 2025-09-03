@@ -7,7 +7,7 @@ GET Bucket Object versions
 
 After being granted the **READ** permission for a bucket, you can use this operation to obtain the list of objects in this bucket.
 
-If you specify only the bucket name in the request (**GET /BucketName**), OBS returns descriptions of all objects (a maximum of 1000 objects) in the bucket.
+If you specify only the bucket name in the request, OBS returns descriptions of all objects (a maximum of 1000 objects) in the bucket.
 
 If you specify one or more parameters among **prefix**, **marker**, **max-keys**, **delimiter**, and **version-id-marker**, OBS returns a list of objects in alphabetic order as specified. :ref:`Table 1 <en-us_topic_0125560273__table5679749>` describes the request parameters.
 
