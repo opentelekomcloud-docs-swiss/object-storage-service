@@ -7,7 +7,7 @@ Flash Configuration for Cross-Domain Access
 
 By default, OBS system is configured to support cross-domain access using the root domain name. This allows access from all domains, so clients are likely to be attacked.
 
-To address this issue, you can create a **crossdomain.xml** file with specific rules in the bucket for each client, and add **Security.loadPolicyFile(http://obs.example.com/bucket/crossdomain.xml)** in the file's flash code to prevent attacks.
+To address this issue, you can create a **crossdomain.xml** file with specific rules in the bucket for each client, and add **Security.loadPolicyFile(http://bucket.obs.example.com/crossdomain.xml)** in the file's flash code to prevent attacks.
 
 The following is an example of the **crossdomain.xml** file:
 
