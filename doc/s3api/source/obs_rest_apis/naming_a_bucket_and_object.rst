@@ -22,7 +22,7 @@ A bucket name must conform to the following rules:
 
 .. important::
 
-   To avoid SSL certificate verification problems, it is recommended that no period (.) is contained in the bucket name when you are accessing the bucket through HTTPS. If the bucket name contains periods (.), it is recommended that you access the bucket through the path. For example: https://obs.example.com/bucketname
+   To avoid SSL certificate verification problems, it is recommended that no period (.) is contained in the bucket name when you are accessing the bucket through HTTPS. If the bucket name contains periods (.), it is recommended that you access the bucket through the path. For example: https://bucketname.obs.example.com/
 
 Object Names
 ------------
