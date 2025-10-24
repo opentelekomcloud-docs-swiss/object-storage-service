@@ -8,10 +8,9 @@ FAQs
 -  :ref:`Where Can I Obtain Access Keys (AK and SK)? <obs_03_1007>`
 -  :ref:`Can I Install Two OBS Browser+ Tools from Different Sites in One System? <obs_03_1008>`
 -  :ref:`What Are the Differences Between OBS Browser+ and OBS Browser? <obs_03_1009>`
--  :ref:`Does OBS Browser+ Support the Migration of Account and Task Information From OBS Browser? <obs_03_1010>`
+-  :ref:`Does OBS Browser+ Support the Migration of Account and Task Information from OBS Browser? <obs_03_1010>`
 -  :ref:`Why Does the Task Processing Speed Slow After the Number of Tasks Exceeds a Million? <obs_03_1011>`
 -  :ref:`Why Are the Displayed Number of Objects and Used Storage Capacity Different from the Actual Number of Objects and Storage Capacity? <obs_03_1012>`
--  :ref:`How Can I Locate Common Network Errors? <obs_03_1034>`
 -  :ref:`How Can I Permanently Share Files or Folders with Other Users? <obs_03_1035>`
 -  :ref:`How Can I Access a Specific Bucket or Directory? <obs_03_1036>`
 -  :ref:`Can I Cancel the Directory Sharing After a Directory Has Been Shared with Others? <obs_03_1037>`
@@ -27,7 +26,6 @@ FAQs
    does_obs_browser_support_the_migration_of_account_and_task_information_from_obs_browser
    why_does_the_task_processing_speed_slow_after_the_number_of_tasks_exceeds_a_million
    why_are_the_displayed_number_of_objects_and_used_storage_capacity_different_from_the_actual_number_of_objects_and_storage_capacity
-   how_can_i_locate_common_network_errors
    how_can_i_permanently_share_files_or_folders_with_other_users
    how_can_i_access_a_specific_bucket_or_directory
    can_i_cancel_the_directory_sharing_after_a_directory_has_been_shared_with_others

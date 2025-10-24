@@ -5,4 +5,4 @@
 What Are the Differences Between OBS Browser+ and OBS Browser?
 ==============================================================
 
-OBS Browser+ is an upgraded edition of OBS Browser, with the brand new GUI offering optimized user experiences. In addition, OBS Browser+ provides more login options, better performance, and higher efficiency.
+OBS Browser+ is an upgraded edition of OBS Browser, with the brand-new GUI offering optimized user experiences. In addition, OBS Browser+ provides more login options, better performance, and higher efficiency.
