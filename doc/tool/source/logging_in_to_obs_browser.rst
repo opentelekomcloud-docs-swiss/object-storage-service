@@ -5,47 +5,73 @@
 Logging In to OBS Browser+
 ==========================
 
-OBS Browser+ supports login using a permanent AK.
+You can log in to OBS Browser+ to access OBS and perform operations on buckets and objects. You can also log in to OBS Browser+ to access other object storage services compatible with OBS.
+
+Cloud users and users of other service providers can use a permanent AK/SK pair to log in to OBS Browser+.
+
+For details, see :ref:`Table 1 <obs_03_1004__table18482104332410>`.
+
+.. _obs_03_1004__table18482104332410:
+
+.. table:: **Table 1** OBS Browser+ login methods
+
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+----------------------------------+
+   | Service                                           | Method                                                                                    | Scenario                         |
+   +===================================================+===========================================================================================+==================================+
+   | OBS                                               | :ref:`Login with a Permanent AK/SK Pair <obs_03_1004__s6eee9c5cf28244198d6c28ef50ce2276>` | You have a permanent AK/SK pair. |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+----------------------------------+
+   | Other object storage services compatible with OBS |                                                                                           |                                  |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+----------------------------------+
+
+Prerequisites
+-------------
+
+-  You have configured a proxy (if needed) by choosing **More** > **Settings** > **Network** on the login page.
+
+Using OBS Browser+ to Access OBS
+--------------------------------
+
+The following explains how to log in to OBS Browser+ to access OBS.
+
+.. _obs_03_1004__s6eee9c5cf28244198d6c28ef50ce2276:
+
+Login with a Permanent AK/SK Pair
+---------------------------------
+
+In AK/SK login, you need to enter the AK and SK.
 
 .. note::
 
-   #. If a proxy is required for access, choose **More** > **Settings** > **Network** on the login page to configure the proxy before login.
    #. OBS Browser+ does not support login using a temporary AK/SK pair and a security token.
-
-Permanent AK Login
-------------------
-
-In AK-based login mode, access keys (AK and SK) are used for login authentication. You need to enter the AK and SK for login.
 
 |image1|
 
-.. table:: **Table 1** Login parameters
+.. table:: **Table 2** Login parameters
 
-   +-----------------------------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Parameter                         | Mandatory (Yes/No)    | Description                                                                                                                                                                                                                                         |
-   +===================================+=======================+=====================================================================================================================================================================================================================================================+
-   | Account Name                      | Yes                   | Account names are used to differentiate login accounts of OBS Browser+, which do not have to be the same as your cloud service account.                                                                                                             |
-   +-----------------------------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Service                           | Yes                   | Support for the default OBS or other object storage services compatible with OBS.                                                                                                                                                                   |
-   |                                   |                       |                                                                                                                                                                                                                                                     |
-   |                                   |                       | -  **OBS (default)**: Selecting this option allows operations on buckets in all regions available on OBS.                                                                                                                                           |
-   |                                   |                       | -  **Other object storage services**: With this option selected, you need to specify the corresponding service address (endpoint of the object storage service), either the global or regional domain name.                                         |
-   +-----------------------------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Server Address                    | Yes                   | OBS backend address                                                                                                                                                                                                                                 |
-   +-----------------------------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Access Key ID & Secret Access Key | Yes                   | AK login leverages the access key authentication mechanism of IAM. You can click **Obtain Access Keys** on the login page to jump to the IAM console and create access keys. More information about access keys (AK and SK) is provided as follows: |
-   |                                   |                       |                                                                                                                                                                                                                                                     |
-   |                                   |                       | -  An access key ID (AK) defines a user that accesses the OBS system. An AK belongs to only one user, but one user can have multiple AKs. OBS identifies users through access key IDs.                                                              |
-   |                                   |                       | -  A secret access key (SK) is the key used by users to access OBS. It is the authentication information generated based on the AK and the request header. An SK matches an AK, and they group into a pair.                                         |
-   +-----------------------------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Access Path                       | No                    | You can enter a frequently used path in the text box, so that you will be directed to the path upon login. Example: obs://bucketName/folder01/                                                                                                      |
-   +-----------------------------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Remember my access keys           | No                    | If you select this option, the access keys (both AK and SK) are saved. You do not need to enter the access keys upon next login. To avoid account information leakage, deselect this option on a temporary computer.                                |
-   +-----------------------------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Parameter             | Mandatory (Yes/No)    | Description                                                                                                                                                                                                 |
+   +=======================+=======================+=============================================================================================================================================================================================================+
+   | Account Name          | Yes                   | It is user-defined and is a unique identifier that is different from the cloud service accounts you use to log in to OBS Browser+.                                                                          |
+   |                       |                       |                                                                                                                                                                                                             |
+   |                       |                       | An account name contains 3 to 63 characters, and cannot contain the following special characters: \\ : \* ? ' < > \| ! @ # $ % ^ ~                                                                          |
+   +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Service               | Yes                   | **OBS (default)** is selected by default. Selecting this option allows access to buckets in all regions where OBS is available.                                                                             |
+   +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Server Address        | Yes                   | OBS backend address                                                                                                                                                                                         |
+   +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Access Key ID         | Yes                   | You can click **Obtain Access Keys** on the login page to jump to the IAM console and create access keys.                                                                                                   |
+   |                       |                       |                                                                                                                                                                                                             |
+   | &                     |                       | -  An access key ID (AK) defines a user that accesses the OBS system. An AK belongs to only one user, but one user can have multiple AKs. OBS identifies users through access key IDs.                      |
+   |                       |                       | -  A secret access key (SK) is the key used by users to access OBS. It is the authentication information generated based on the AK and the request header. An SK matches an AK, and they group into a pair. |
+   | Secret Access Key     |                       |                                                                                                                                                                                                             |
+   +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Access Path           | No                    | Enter the path of a bucket or object. After login, you can only see the specified bucket or object.                                                                                                         |
+   |                       |                       |                                                                                                                                                                                                             |
+   |                       |                       | Example: **obs://bucket/folder**                                                                                                                                                                            |
+   +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
 
-   -  OBS Browser+ can keep the login information of up to 100 accounts.
-   -  If a proxy is required to access your network environment, configure the network proxy before login.
+   OBS Browser+ can keep the login information of up to 100 accounts.
 
-.. |image1| image:: /_static/images/en-us_image_0000001198508245.png
+.. |image1| image:: /_static/images/en-us_image_0000002002871337.png

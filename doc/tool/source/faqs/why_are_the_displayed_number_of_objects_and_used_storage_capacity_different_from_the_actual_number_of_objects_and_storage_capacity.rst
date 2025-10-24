@@ -5,4 +5,9 @@
 Why Are the Displayed Number of Objects and Used Storage Capacity Different from the Actual Number of Objects and Storage Capacity?
 ===================================================================================================================================
 
-The statistics displayed on OBS Browser+ are not real-time statistics, which is for reference only.
+Possible causes are as follows:
+
+-  The statistics are not collected in real time and there is a delay.
+-  The statistics are estimates only.
+
+The number of objects and used storage capacity displayed on OBS Browser+ are for reference only.

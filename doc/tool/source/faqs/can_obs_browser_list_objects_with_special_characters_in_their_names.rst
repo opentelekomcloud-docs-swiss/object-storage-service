@@ -5,4 +5,8 @@
 Can OBS Browser+ List Objects with Special Characters in Their Names?
 =====================================================================
 
-No. You can use OBS SDKs to list such objects.
+No.
+
+You are advised to use OBS SDKs to list objects with special characters in their names.
+
+For details about how to use SDKs to list such objects, see section "Listing Objects" in the SDK documentation of OBS.
