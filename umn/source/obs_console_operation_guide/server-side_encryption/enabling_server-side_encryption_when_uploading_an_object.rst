@@ -29,7 +29,7 @@ Procedure
 
 #. Add the files to be uploaded.
 
-#. Choose **SSE-KMS**. You can select the default key in the current region to encrypt the objects you upload to the bucket. If you do not have a default key, OBS automatically creates one the first time you upload an object. You can also choose **Custom** to use a custom key for encryption. If there is no custom key available, click **Create KMS Key** to create one.
+#. Choose **SSE-KMS**. You can select the default key in the current region to encrypt the objects you upload to the bucket. If you do not have a default key, OBS automatically creates one the first time you upload an object. You can also choose **Custom** to use a custom key for encryption. If there is no custom key available, click **Create KMS Key** to create one on the DEW console. Then, go back here and choose the created key from the drop-down list.
 
    .. note::
 

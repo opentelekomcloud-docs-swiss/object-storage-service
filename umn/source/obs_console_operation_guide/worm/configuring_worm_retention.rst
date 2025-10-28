@@ -61,15 +61,11 @@ Skipping the WORM Retention Configuration
 Extending the Retention Period
 ------------------------------
 
-After WORM is configured for an object, you can go to the object details page and extend the retention period of an object version on the **Versions** page. Before the specified date, OBS prevents protected object versions from being deleted.
+After WORM is configured for an object, you can extend the retention period of an object version. Before the specified date, OBS prevents protected object versions from being deleted.
 
 #. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
 
-#. In the object list, click the object you want to go to the object details page.
-
-#. On the **Versions** tab page, view all versions of the object.
-
-#. Locate the object version for which you want to extend the retention period, choose **Extend Retention Period**, and select a date.
+#. Locate the object version for which you want to extend the retention period, choose **More** > **Extend Retention Period**, and select a date.
 
 
    .. figure:: /_static/images/en-us_image_0000001953346977.png
@@ -79,30 +75,19 @@ After WORM is configured for an object, you can go to the object details page an
 
    .. note::
 
-      A retention period can only be extended, but not shortened.
+      A retention period can be extended, but cannot be shortened.
 
       Assume that an object version was configured to be protected until March 30, 2023. If you want to extend the retention period on March 1, 2023, you can extend it to March 31, 2023 or a later date. If you extend the retention period on April 1, 2023, you can extend it to the current day (April 1, 2023) or a later date. If the current day is used, the object version will no longer be protected by WORM after 24:00 on that day.
 
 Manually and Permanently Deleting Objects from a WORM-Enabled Bucket
 --------------------------------------------------------------------
 
-In the **Deleted Objects** list, objects cannot be permanently deleted from a WORM-enabled bucket. In a WORM-enabled bucket, if an object has no retention policy configured or its retention policy has expired, you can manually delete a desired object version on the object's **Versions** tab page. If an object version is within the retention period, it cannot be deleted.
+In the **Deleted Objects** list, objects cannot be permanently deleted from a WORM-enabled bucket. In a WORM-enabled bucket, if an object has no retention policy configured or its retention policy has expired, you can manually delete a desired object version. If the object version is within the retention period, it cannot be deleted.
 
 #. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
-#. In the object list, click the object you want to go to the object details page.
-#. On the **Versions** tab page, view all versions of the object.
-#. Find the object's current version and choose **Extend Retention Period** to check its retention status.
-
-   .. note::
-
-      If the object version is within the retention period, you will see a message indicating the remaining retention days.
-
-      If the retention for the object version has expired, you will see a message indicating the retention expiration days.
-
-      If the object version has no retention policy configured, you will not see a message indicating the retention status.
-
-#. Confirm that the current object version is out of the retention period or has no retention policy configured, and choose **Delete**.
-#. Verify that the object is no longer displayed in the **Deleted Objects** list after all object versions are deleted.
+#. Enable **Historical Versions**.
+#. Select the object version to be permanently deleted and click **Permanently Delete** above the search bar.
+#. Click **OK**.
 
 Using a Lifecycle Rule to Delete Objects from a WORM-Enabled Bucket
 -------------------------------------------------------------------
@@ -115,7 +100,7 @@ You can configure a lifecycle rule to let OBS automatically expire and delete ob
 
 #. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
 
-#. In the navigation pane, choose **Basic Configurations** > **Lifecycle Rules**.
+#. In the navigation pane, choose **Data Management** > **Lifecycle Rules**.
 
 #. Click **Create**.
 

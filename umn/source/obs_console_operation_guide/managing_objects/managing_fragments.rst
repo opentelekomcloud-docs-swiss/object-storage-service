@@ -30,4 +30,4 @@ Procedure
 
    You can also select multiple fragments and click **Delete** above the fragment list to batch delete them.
 
-#. Click **Yes** to confirm the deletion.
+#. Click **OK** to confirm the deletion.
