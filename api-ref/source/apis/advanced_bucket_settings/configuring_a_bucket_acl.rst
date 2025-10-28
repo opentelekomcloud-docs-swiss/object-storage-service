@@ -54,15 +54,15 @@ You can change the ACL of a bucket by using the header settings. Each ACL config
    +-----------------+-----------------+--------------------+-----------------------------------+
    | Header          | Type            | Mandatory (Yes/No) | Description                       |
    +=================+=================+====================+===================================+
-   | x-obs-acl       | String          | No                 | **Explanation**:                  |
+   | x-obs-acl       | String          | No                 | **Definition**:                   |
    |                 |                 |                    |                                   |
    |                 |                 |                    | Uses the canned ACL for a bucket. |
    |                 |                 |                    |                                   |
-   |                 |                 |                    | **Restrictions**:                 |
+   |                 |                 |                    | **Constraints**:                  |
    |                 |                 |                    |                                   |
    |                 |                 |                    | None                              |
    |                 |                 |                    |                                   |
-   |                 |                 |                    | **Value range**:                  |
+   |                 |                 |                    | **Range**:                        |
    |                 |                 |                    |                                   |
    |                 |                 |                    | -  private                        |
    |                 |                 |                    | -  public-read                    |
@@ -84,142 +84,126 @@ This request carries ACL information in elements to specify an ACL. :ref:`Table 
 
 .. table:: **Table 2** Additional request elements
 
-   +-------------------+-----------------+--------------------+-------------------------------------------------------------------------------------------------+
-   | Element           | Type            | Mandatory (Yes/No) | Description                                                                                     |
-   +===================+=================+====================+=================================================================================================+
-   | Owner             | XML             | Yes                | **Explanation**:                                                                                |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | Bucket owner information, including the ID                                                      |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | **Restrictions**:                                                                               |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | None                                                                                            |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | **Value range**:                                                                                |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | None                                                                                            |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | **Default value**:                                                                              |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | None                                                                                            |
-   +-------------------+-----------------+--------------------+-------------------------------------------------------------------------------------------------+
-   | ID                | String          | Yes                | **Explanation**:                                                                                |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | Account ID of the authorized user.                                                              |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | **Restrictions**:                                                                               |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | None                                                                                            |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | **Value range**:                                                                                |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | None                                                                                            |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | **Default value**:                                                                              |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | None                                                                                            |
-   +-------------------+-----------------+--------------------+-------------------------------------------------------------------------------------------------+
-   | Grant             | XML             | No                 | **Explanation**:                                                                                |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | Container for the grantee and the granted permissions                                           |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | **Restrictions**:                                                                               |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | A single bucket can contain at most 100 grants in its ACL.                                      |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | **Value range**:                                                                                |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | None                                                                                            |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | **Default value**:                                                                              |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | None                                                                                            |
-   +-------------------+-----------------+--------------------+-------------------------------------------------------------------------------------------------+
-   | Grantee           | XML             | No                 | **Explanation**:                                                                                |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | Grantee information                                                                             |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | **Restrictions**:                                                                               |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | None                                                                                            |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | **Value range**:                                                                                |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | None                                                                                            |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | **Default value**:                                                                              |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | None                                                                                            |
-   +-------------------+-----------------+--------------------+-------------------------------------------------------------------------------------------------+
-   | Canned            | String          | No                 | **Explanation**:                                                                                |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | Grants permissions to all users.                                                                |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | **Restrictions**:                                                                               |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | None                                                                                            |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | **Value range**:                                                                                |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | Everyone                                                                                        |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | **Default value**:                                                                              |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | None                                                                                            |
-   +-------------------+-----------------+--------------------+-------------------------------------------------------------------------------------------------+
-   | Delivered         | Boolean         | No                 | **Explanation**:                                                                                |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | Whether the bucket ACL is applied to all objects in the bucket.                                 |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | **Restrictions**:                                                                               |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | None                                                                                            |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | **Value range**:                                                                                |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | -  true: The bucket ACL is applied to all objects in the bucket.                                |
-   |                   |                 |                    | -  false: The bucket ACL is not applied to any objects in the bucket.                           |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | **Default value**:                                                                              |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | false                                                                                           |
-   +-------------------+-----------------+--------------------+-------------------------------------------------------------------------------------------------+
-   | Permission        | String          | Yes                | **Explanation**:                                                                                |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | Permissions to be granted.                                                                      |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | **Restrictions**:                                                                               |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | None                                                                                            |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | **Value range**:                                                                                |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | -  READ                                                                                         |
-   |                   |                 |                    | -  READ_ACP                                                                                     |
-   |                   |                 |                    | -  WRITE                                                                                        |
-   |                   |                 |                    | -  WRITE_ACP                                                                                    |
-   |                   |                 |                    | -  FULL_CONTROL                                                                                 |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | **Default value**:                                                                              |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | None                                                                                            |
-   +-------------------+-----------------+--------------------+-------------------------------------------------------------------------------------------------+
-   | AccessControlList | XML             | Yes                | **Explanation**:                                                                                |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | Indicates an ACL, which consists of three elements: **Grant**, **Grantee**, and **Permission**. |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | **Restrictions**:                                                                               |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | None                                                                                            |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | **Value range**:                                                                                |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | None                                                                                            |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | **Default value**:                                                                              |
-   |                   |                 |                    |                                                                                                 |
-   |                   |                 |                    | None                                                                                            |
-   +-------------------+-----------------+--------------------+-------------------------------------------------------------------------------------------------+
+   +-------------------+-----------------+--------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | Element           | Type            | Mandatory (Yes/No) | Description                                                                                                                      |
+   +===================+=================+====================+==================================================================================================================================+
+   | Owner             | XML             | Yes                | **Definition**:                                                                                                                  |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | Owner information of a bucket. Owner is a parent node of ID.                                                                     |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | **Constraints**:                                                                                                                 |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | None                                                                                                                             |
+   +-------------------+-----------------+--------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | ID                | String          | Yes                | **Definition**:                                                                                                                  |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | Account ID of the bucket owner.                                                                                                  |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | **Constraints**:                                                                                                                 |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | None                                                                                                                             |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | **Range**:                                                                                                                       |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | None                                                                                                                             |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | **Default value**:                                                                                                               |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | None                                                                                                                             |
+   +-------------------+-----------------+--------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | AccessControlList | XML             | Yes                | **Definition**:                                                                                                                  |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | Access control list, which is the parent node of Grant.                                                                          |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | **Constraints**:                                                                                                                 |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | None                                                                                                                             |
+   +-------------------+-----------------+--------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | Grant             | XML             | No                 | **Definition**:                                                                                                                  |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | Used to identify users and user permissions. It is the parent node of Grantee, Permission and Delivered.                         |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | **Constraints**:                                                                                                                 |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | A single bucket can contain at most 100 grants in its ACL.                                                                       |
+   +-------------------+-----------------+--------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | Grantee           | XML             | No                 | **Definition**:                                                                                                                  |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | Records user information and is the parent node of the authorized account ID.                                                    |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | **Constraints**:                                                                                                                 |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | None                                                                                                                             |
+   +-------------------+-----------------+--------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | ID                | String          | Yes                | **Definition**:                                                                                                                  |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | Account ID of the authorized user.                                                                                               |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | **Constraints**:                                                                                                                 |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | None                                                                                                                             |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | **Range**:                                                                                                                       |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | None                                                                                                                             |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | **Default value**:                                                                                                               |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | None                                                                                                                             |
+   +-------------------+-----------------+--------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | Canned            | String          | No                 | **Definition**:                                                                                                                  |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | Grants permissions to all users.                                                                                                 |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | **Constraints**:                                                                                                                 |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | None                                                                                                                             |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | **Range**:                                                                                                                       |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | Everyone                                                                                                                         |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | **Default value**:                                                                                                               |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | None                                                                                                                             |
+   +-------------------+-----------------+--------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | Permission        | String          | Yes                | **Definition**:                                                                                                                  |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | Permissions to be granted.                                                                                                       |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | **Constraints**:                                                                                                                 |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | None                                                                                                                             |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | **Range**:                                                                                                                       |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | -  READ: Grants the permission to obtain the list of objects in the bucket and the metadata of the bucket.                       |
+   |                   |                 |                    | -  READ_ACP: Grants the permission to read the ACL of the bucket.                                                                |
+   |                   |                 |                    | -  WRITE: Grants the permission to upload objects to the bucket and allows to delete and overwrite existing objects in a bucket. |
+   |                   |                 |                    | -  WRITE_ACP: Grants the permission to update the ACL of the bucket.                                                             |
+   |                   |                 |                    | -  FULL_CONTROL: Grants the permission to read, write, read ACL, and write ACL of the bucket.                                    |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | **Default value**:                                                                                                               |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | None                                                                                                                             |
+   +-------------------+-----------------+--------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | Delivered         | Boolean         | No                 | **Definition**:                                                                                                                  |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | Whether the bucket ACL is applied to all objects in the bucket.                                                                  |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | **Constraints**:                                                                                                                 |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | None                                                                                                                             |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | **Range**:                                                                                                                       |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | -  true: The bucket ACL is applied to all objects in the bucket.                                                                 |
+   |                   |                 |                    | -  false: The bucket ACL is not applied to any objects in the bucket.                                                            |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | **Default value**:                                                                                                               |
+   |                   |                 |                    |                                                                                                                                  |
+   |                   |                 |                    | false                                                                                                                            |
+   +-------------------+-----------------+--------------------+----------------------------------------------------------------------------------------------------------------------------------+
 
 Response Syntax
 ---------------

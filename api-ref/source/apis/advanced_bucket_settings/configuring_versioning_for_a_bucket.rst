@@ -66,21 +66,34 @@ This request contains elements to configure the bucket versioning in XML format.
 
 .. table:: **Table 1** Elements for configuring bucket versioning
 
-   +-------------------------+-------------------------------------------+-----------------------+
-   | Element                 | Description                               | Mandatory             |
-   +=========================+===========================================+=======================+
-   | VersioningConfiguration | Root node for configuring versioning      | Yes                   |
-   |                         |                                           |                       |
-   |                         | Parent: none                              |                       |
-   +-------------------------+-------------------------------------------+-----------------------+
-   | Status                  | Versioning status of the bucket           | Yes                   |
-   |                         |                                           |                       |
-   |                         | Type: string                              |                       |
-   |                         |                                           |                       |
-   |                         | Parent: VersioningConfiguration           |                       |
-   |                         |                                           |                       |
-   |                         | Value options: **Enabled**, **Suspended** |                       |
-   +-------------------------+-------------------------------------------+-----------------------+
+   +-------------------------+-----------------+--------------------+----------------------------------------------------------------------------+
+   | Parameter               | Type            | Mandatory (Yes/No) | Description                                                                |
+   +=========================+=================+====================+============================================================================+
+   | VersioningConfiguration | XML             | Yes                | **Definition**:                                                            |
+   |                         |                 |                    |                                                                            |
+   |                         |                 |                    | Root node of versioning configuration, which is the parent node of Status. |
+   |                         |                 |                    |                                                                            |
+   |                         |                 |                    | **Constraints**:                                                           |
+   |                         |                 |                    |                                                                            |
+   |                         |                 |                    | None                                                                       |
+   +-------------------------+-----------------+--------------------+----------------------------------------------------------------------------+
+   | Status                  | String          | Yes                | **Definition**:                                                            |
+   |                         |                 |                    |                                                                            |
+   |                         |                 |                    | Versioning status of the bucket.                                           |
+   |                         |                 |                    |                                                                            |
+   |                         |                 |                    | **Constraints**:                                                           |
+   |                         |                 |                    |                                                                            |
+   |                         |                 |                    | None                                                                       |
+   |                         |                 |                    |                                                                            |
+   |                         |                 |                    | **Range**:                                                                 |
+   |                         |                 |                    |                                                                            |
+   |                         |                 |                    | -  Enabled: Versioning is enabled.                                         |
+   |                         |                 |                    | -  Suspended: Versioning is suspended.                                     |
+   |                         |                 |                    |                                                                            |
+   |                         |                 |                    | **Default value**:                                                         |
+   |                         |                 |                    |                                                                            |
+   |                         |                 |                    | None                                                                       |
+   +-------------------------+-----------------+--------------------+----------------------------------------------------------------------------+
 
 Response Syntax
 ---------------

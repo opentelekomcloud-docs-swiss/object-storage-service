@@ -66,45 +66,73 @@ The response to the request uses common headers. For details, see :ref:`Table 1 
 Response Elements
 -----------------
 
-This response contains elements to detail bucket tag configuration. :ref:`Table 1 <obs_04_0050__table1881863118318>` describes the elements.
+This response contains elements to detail bucket tag configuration. :ref:`Table 1 <obs_04_0050__table1181123018399>` describes the elements.
 
-.. _obs_04_0050__table1881863118318:
+.. _obs_04_0050__table1181123018399:
 
-.. table:: **Table 1** Elements for configuring bucket tags
+.. table:: **Table 1** Bucket tag configuration elements
 
-   +-----------------------------------+-----------------------------------+
-   | Element                           | Description                       |
-   +===================================+===================================+
-   | Tagging                           | Element of the tag set and tag.   |
-   |                                   |                                   |
-   |                                   | Type: container                   |
-   |                                   |                                   |
-   |                                   | Parent: none                      |
-   +-----------------------------------+-----------------------------------+
-   | TagSet                            | Element of the tag set.           |
-   |                                   |                                   |
-   |                                   | Type: container                   |
-   |                                   |                                   |
-   |                                   | Parent: Tagging                   |
-   +-----------------------------------+-----------------------------------+
-   | Tag                               | Element of the tag information.   |
-   |                                   |                                   |
-   |                                   | Type: container                   |
-   |                                   |                                   |
-   |                                   | Parent: TagSet                    |
-   +-----------------------------------+-----------------------------------+
-   | Key                               | Tag name.                         |
-   |                                   |                                   |
-   |                                   | Type: string                      |
-   |                                   |                                   |
-   |                                   | Parent: Tag                       |
-   +-----------------------------------+-----------------------------------+
-   | Value                             | Tag value.                        |
-   |                                   |                                   |
-   |                                   | Type: string                      |
-   |                                   |                                   |
-   |                                   | Parent: Tag                       |
-   +-----------------------------------+-----------------------------------+
+   +-----------------------+-----------------------+----------------------------------------------------------------------------------------------------------+
+   | Header                | Type                  | Description                                                                                              |
+   +=======================+=======================+==========================================================================================================+
+   | Tagging               | XML                   | **Definition**:                                                                                          |
+   |                       |                       |                                                                                                          |
+   |                       |                       | Parent element of TagSet and Tag.                                                                        |
+   |                       |                       |                                                                                                          |
+   |                       |                       | **Constraints**:                                                                                         |
+   |                       |                       |                                                                                                          |
+   |                       |                       | None                                                                                                     |
+   +-----------------------+-----------------------+----------------------------------------------------------------------------------------------------------+
+   | TagSet                | XML                   | **Definition**:                                                                                          |
+   |                       |                       |                                                                                                          |
+   |                       |                       | Parent element of Tag. Parent: Tagging                                                                   |
+   |                       |                       |                                                                                                          |
+   |                       |                       | **Constraints**:                                                                                         |
+   |                       |                       |                                                                                                          |
+   |                       |                       | A maximum of 20 tags can be set for a bucket. That means a TagSet can contain a maximum of 20 Tag nodes. |
+   +-----------------------+-----------------------+----------------------------------------------------------------------------------------------------------+
+   | Tag                   | XML                   | **Definition**:                                                                                          |
+   |                       |                       |                                                                                                          |
+   |                       |                       | Information element of Tag Parent: TagSet                                                                |
+   |                       |                       |                                                                                                          |
+   |                       |                       | **Constraints**:                                                                                         |
+   |                       |                       |                                                                                                          |
+   |                       |                       | A maximum of 20 tags can be set for a bucket. That means a TagSet can contain a maximum of 20 Tag nodes. |
+   +-----------------------+-----------------------+----------------------------------------------------------------------------------------------------------+
+   | Key                   | String                | **Definition**:                                                                                          |
+   |                       |                       |                                                                                                          |
+   |                       |                       | Name of a tag. Parent: Tag                                                                               |
+   |                       |                       |                                                                                                          |
+   |                       |                       | **Constraints**:                                                                                         |
+   |                       |                       |                                                                                                          |
+   |                       |                       | -  A tag key can contain a maximum of 36 characters.                                                     |
+   |                       |                       | -  A tag key cannot start or end with a space or contain the following characters: ``,/|<>=*\``          |
+   |                       |                       |                                                                                                          |
+   |                       |                       | **Range**:                                                                                               |
+   |                       |                       |                                                                                                          |
+   |                       |                       | A string between 1 and 36 characters long.                                                               |
+   |                       |                       |                                                                                                          |
+   |                       |                       | **Default value**:                                                                                       |
+   |                       |                       |                                                                                                          |
+   |                       |                       | None                                                                                                     |
+   +-----------------------+-----------------------+----------------------------------------------------------------------------------------------------------+
+   | Value                 | String                | **Definition**:                                                                                          |
+   |                       |                       |                                                                                                          |
+   |                       |                       | Tag value. Parent: Tag                                                                                   |
+   |                       |                       |                                                                                                          |
+   |                       |                       | **Constraints**:                                                                                         |
+   |                       |                       |                                                                                                          |
+   |                       |                       | -  A tag value can contain a maximum of 43 characters.                                                   |
+   |                       |                       | -  A tag value cannot contain the following characters: ``,/|<>=*\``                                     |
+   |                       |                       |                                                                                                          |
+   |                       |                       | **Range**:                                                                                               |
+   |                       |                       |                                                                                                          |
+   |                       |                       | A string of 0 (included) to 43 (excluded) characters.                                                    |
+   |                       |                       |                                                                                                          |
+   |                       |                       | **Default value**:                                                                                       |
+   |                       |                       |                                                                                                          |
+   |                       |                       | None                                                                                                     |
+   +-----------------------+-----------------------+----------------------------------------------------------------------------------------------------------+
 
 Error Responses
 ---------------
@@ -150,7 +178,7 @@ Sample Response
      <TagSet>
        <Tag>
          <Key>TagName1</Key>
-         <Value>TageSetVaule1</Value>
+         <Value>TagSetValue1</Value>
        </Tag>
      </TagSet>
    </Tagging>

@@ -65,19 +65,34 @@ This response contains elements to specify the bucket versioning status. :ref:`T
 
 .. table:: **Table 1** Response elements
 
-   +-----------------------------------+-------------------------------------------+
-   | Element                           | Description                               |
-   +===================================+===========================================+
-   | VersioningConfiguration           | Element of versioning status information. |
-   |                                   |                                           |
-   |                                   | Type: container                           |
-   +-----------------------------------+-------------------------------------------+
-   | Status                            | Versioning status of the bucket.          |
-   |                                   |                                           |
-   |                                   | Type: string                              |
-   |                                   |                                           |
-   |                                   | Value options: **Enabled**, **Suspended** |
-   +-----------------------------------+-------------------------------------------+
+   +-------------------------+-----------------------+----------------------------------------------------------------------------+
+   | Parameter               | Type                  | Description                                                                |
+   +=========================+=======================+============================================================================+
+   | VersioningConfiguration | XML                   | **Definition**:                                                            |
+   |                         |                       |                                                                            |
+   |                         |                       | Root node of versioning configuration, which is the parent node of Status. |
+   |                         |                       |                                                                            |
+   |                         |                       | **Constraints**:                                                           |
+   |                         |                       |                                                                            |
+   |                         |                       | None                                                                       |
+   +-------------------------+-----------------------+----------------------------------------------------------------------------+
+   | Status                  | String                | **Definition**:                                                            |
+   |                         |                       |                                                                            |
+   |                         |                       | Versioning status of the bucket.                                           |
+   |                         |                       |                                                                            |
+   |                         |                       | **Constraints**:                                                           |
+   |                         |                       |                                                                            |
+   |                         |                       | None                                                                       |
+   |                         |                       |                                                                            |
+   |                         |                       | **Range**:                                                                 |
+   |                         |                       |                                                                            |
+   |                         |                       | -  Enabled: Versioning is enabled.                                         |
+   |                         |                       | -  Suspended: Versioning is suspended.                                     |
+   |                         |                       |                                                                            |
+   |                         |                       | **Default value**:                                                         |
+   |                         |                       |                                                                            |
+   |                         |                       | None                                                                       |
+   +-------------------------+-----------------------+----------------------------------------------------------------------------+
 
 Error Responses
 ---------------

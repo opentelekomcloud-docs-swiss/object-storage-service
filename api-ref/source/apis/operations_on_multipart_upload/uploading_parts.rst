@@ -41,15 +41,15 @@ This request uses parameters to specify the upload task ID and part number. :ref
    +-----------------+-----------------+--------------------+--------------------------------------------+
    | Parameter       | Type            | Mandatory (Yes/No) | Description                                |
    +=================+=================+====================+============================================+
-   | partNumber      | Integer         | Yes                | **Explanation**:                           |
+   | partNumber      | Integer         | Yes                | **Definition**:                            |
    |                 |                 |                    |                                            |
    |                 |                 |                    | Indicates the ID of a part to be uploaded. |
    |                 |                 |                    |                                            |
-   |                 |                 |                    | **Restrictions**:                          |
+   |                 |                 |                    | **Constraints**:                           |
    |                 |                 |                    |                                            |
    |                 |                 |                    | None                                       |
    |                 |                 |                    |                                            |
-   |                 |                 |                    | **Value range**:                           |
+   |                 |                 |                    | **Range**:                                 |
    |                 |                 |                    |                                            |
    |                 |                 |                    | An integer ranging from 1 to 10000.        |
    |                 |                 |                    |                                            |
@@ -57,15 +57,15 @@ This request uses parameters to specify the upload task ID and part number. :ref
    |                 |                 |                    |                                            |
    |                 |                 |                    | None                                       |
    +-----------------+-----------------+--------------------+--------------------------------------------+
-   | uploadId        | String          | Yes                | **Explanation**:                           |
+   | uploadId        | String          | Yes                | **Definition**:                            |
    |                 |                 |                    |                                            |
    |                 |                 |                    | Indicates a multipart upload ID.           |
    |                 |                 |                    |                                            |
-   |                 |                 |                    | **Restrictions**:                          |
+   |                 |                 |                    | **Constraints**:                           |
    |                 |                 |                    |                                            |
    |                 |                 |                    | None                                       |
    |                 |                 |                    |                                            |
-   |                 |                 |                    | **Value range**:                           |
+   |                 |                 |                    | **Range**:                                 |
    |                 |                 |                    |                                            |
    |                 |                 |                    | None                                       |
    |                 |                 |                    |                                            |

@@ -10,13 +10,13 @@ Functions
 
 This operation configures or updates the retention period for objects uploaded to a bucket with WORM enabled.
 
--  When you upload an object, if you do not configure a protection period or apply the default bucket-level protection rule to the object, you can perform this operation to configure a protection period for the object.
--  When you upload an object, if you configure a protection period or apply the default bucket-level protection rule to the object, you can perform this operation to prolong the protection period for the object.
--  The protection period of an object can only be modified, but not deleted.
+-  If you do not configure a retention period or apply the default bucket-level protection rule to the object when you upload an object, you can perform this operation to configure a retention period for the object.
+-  If you already configure a retention period or apply the default bucket-level protection rule to the object when you upload an object, you can perform this operation to prolong the retention period for the object.
+-  The retention period of an object can only be modified, but not deleted.
 
    .. note::
 
-      To configure or update the protection period of an object, you must have the PutObjectRetention permission.
+      To configure or update the retention period of an object, you must have the PutObjectRetention permission.
 
 Versioning
 ----------
@@ -46,14 +46,14 @@ Request Syntax
 Request Parameters
 ------------------
 
-:ref:`Table 1 <obs_04_0166__table44298471191845>` describes the parameters.
+:ref:`Table 1 <obs_04_0166__table44298471191845>` describes the request parameters.
 
 .. _obs_04_0166__table44298471191845:
 
 .. table:: **Table 1** Request parameters
 
    +-----------------------+--------------------------------------------------------------------------------------------------------------------------+-----------------------+
-   | Parameter             | Description                                                                                                              | Mandatory             |
+   | Parameter             | Description                                                                                                              | Mandatory (Yes/No)    |
    +=======================+==========================================================================================================================+=======================+
    | retention             | Indicates that the request is made to configure or modify the object retention period.                                   | Yes                   |
    |                       |                                                                                                                          |                       |
@@ -73,7 +73,7 @@ Request Elements
 ----------------
 
 +-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
-| Element               | Description                                                                                                                                    | Mandatory             |
+| Element               | Description                                                                                                                                    | Mandatory (Yes/No)    |
 +=======================+================================================================================================================================================+=======================+
 | Retention             | Container for configuring an object-level WORM retention policy.                                                                               | Yes                   |
 |                       |                                                                                                                                                |                       |
@@ -128,7 +128,7 @@ Error Responses
 
 .. _obs_04_0166__table13791928162213:
 
-.. table:: **Table 2**
+.. table:: **Table 2** Error Responses
 
    +--------------------------+----------------------------------------------------------------------------------+------------------+
    | Error Code               | Description                                                                      | HTTP Status Code |
@@ -137,7 +137,7 @@ Error Responses
    +--------------------------+----------------------------------------------------------------------------------+------------------+
    | InvalidRequest           | The retention period date must be later than the current or the configured date. | 400              |
    +--------------------------+----------------------------------------------------------------------------------+------------------+
-   | MalformedObjectLockError | Invalid format of the Object Lock configuration.                                 | 400              |
+   | MalformedObjectLockError | Invalid policy configuration format.                                             | 400              |
    +--------------------------+----------------------------------------------------------------------------------+------------------+
 
 For other errors, see :ref:`Table 2 <obs_04_0115__d0e843>`.
@@ -173,7 +173,7 @@ Sample Response 1
 Sample Request 2
 ----------------
 
-Configure the WORM protection (with the protection period specified in the ISO format) for an object.
+Configure WORM (with the retention period specified in the ISO format) for an object.
 
 .. code-block:: text
 

@@ -23,7 +23,7 @@ Request Syntax
 Request Parameters
 ------------------
 
-This request uses message parameters to specify the multipart upload task number of the segment task. :ref:`Table 1 <obs_04_0103__table46411854>` describes the parameters.
+This request uses message parameters to specify the multipart upload task number. :ref:`Table 1 <obs_04_0103__table46411854>` describes the parameters.
 
 .. _obs_04_0103__table46411854:
 
