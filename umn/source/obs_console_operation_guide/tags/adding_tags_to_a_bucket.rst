@@ -28,23 +28,24 @@ Procedure
 
    .. table:: **Table 1** Parameter description
 
-      +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-      | Parameter                         | Description                                                                                                                         |
-      +===================================+=====================================================================================================================================+
-      | Key                               | Specifies the key of the tag. Each tag of a bucket has a unique key. The value of the key can be self-defined or predefined by TMS. |
-      |                                   |                                                                                                                                     |
-      |                                   | A tag key must comply with the following naming rules:                                                                              |
-      |                                   |                                                                                                                                     |
-      |                                   | -  Must contain 1 to 36 characters.                                                                                                 |
-      |                                   | -  Only digits, letters, underscores (_), hyphens (-) are allowed.                                                                  |
-      +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-      | Value                             | Specifies the value of the tag. Tags of a bucket can have repetitive or blank values.                                               |
-      |                                   |                                                                                                                                     |
-      |                                   | The tag value must comply with the following naming rules:                                                                          |
-      |                                   |                                                                                                                                     |
-      |                                   | -  Must contain 0 to 43 characters.                                                                                                 |
-      |                                   | -  Only digits, letters, underscores (_), hyphens (-) are allowed.                                                                  |
-      +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
+      +-----------------------------------+------------------------------------------------------------------------------------------------+
+      | Parameter                         | Description                                                                                    |
+      +===================================+================================================================================================+
+      | Key                               | Specifies the key of the tag. The value of the key can be self-defined or predefined by TMS.   |
+      |                                   |                                                                                                |
+      |                                   | Tag key constraints:                                                                           |
+      |                                   |                                                                                                |
+      |                                   | -  If there are multiple tags specified for an object, each tag key must be unique.            |
+      |                                   | -  A tag key must contain 1 to 36 characters and be case sensitive.                            |
+      |                                   | -  A tag key can't start or end with a space or contain the following characters: ``,/|<>=*\`` |
+      +-----------------------------------+------------------------------------------------------------------------------------------------+
+      | Value                             | Specifies the value of the tag. Tags of a bucket can have repetitive or blank values.          |
+      |                                   |                                                                                                |
+      |                                   | Tag value constraints:                                                                         |
+      |                                   |                                                                                                |
+      |                                   | -  A tag value can contain 0 to 43 characters and must be case sensitive.                      |
+      |                                   | -  A tag value can't contain the following characters: ``,/|<>=*\``                            |
+      +-----------------------------------+------------------------------------------------------------------------------------------------+
 
 #. Click **OK**.
 

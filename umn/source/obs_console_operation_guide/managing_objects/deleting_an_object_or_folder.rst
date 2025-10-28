@@ -39,11 +39,11 @@ Procedure
 
    You can select multiple files or folders and click **Delete** above the object list to batch delete them.
 
-#. Click **Yes** to confirm the deletion.
+#. Click **OK** to confirm the deletion.
 
    .. caution::
 
-      If you delete an object from a bucket with versioning enabled, the object is not permanently deleted but retained in the **Deleted Objects** list. All versions of the object are still kept in the bucket and are billed for storage. If you need to permanently delete the object, complete the following steps:
+      If you delete an object from a bucket with versioning enabled, the object is not permanently deleted but retained in the **Deleted Objects** list. If you need to permanently delete the object to save space, complete the following steps:
 
 #. If versioning is enabled for the bucket, delete the files or folders again from the **Deleted Objects** list to permanently delete them.
 

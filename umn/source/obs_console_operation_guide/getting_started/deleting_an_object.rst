@@ -20,7 +20,7 @@ Procedure
 
    You can select multiple files and click **Delete** above the file list to batch delete them.
 
-#. Click **Yes** to confirm the deletion.
+#. Click **OK** to confirm the deletion.
 
 Important Notes
 ---------------

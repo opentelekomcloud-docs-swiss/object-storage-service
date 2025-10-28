@@ -76,7 +76,7 @@ Actions Related to Buckets
    +---------+---------------------------------+---------------------------------------+-----------------------------------------------------------------+
    |         |                                 | PutBucketCORS                         | Configures CORS for a bucket.                                   |
    +---------+---------------------------------+---------------------------------------+-----------------------------------------------------------------+
-   |         | Message notifications           | GetBucketNotification                 | Obtains the event notification configuration of a bucket.       |
+   |         | Event notifications             | GetBucketNotification                 | Obtains the event notification configuration of a bucket.       |
    +---------+---------------------------------+---------------------------------------+-----------------------------------------------------------------+
    |         |                                 | PutBucketNotification                 | Configures event notifications for a bucket.                    |
    +---------+---------------------------------+---------------------------------------+-----------------------------------------------------------------+

@@ -5,7 +5,7 @@
 About Object Metadata Content-Type
 ==================================
 
-When an object is uploaded to OBS, the system automatically matches the value of **Content-Type** based on the file name extension of the object. When you access an object through a web browser, the system specifies an application to open the object according to the value of **Content-Type**. You can modify the **Content-Type** of an object based on its file name extension.
+When an object is uploaded to OBS, OBS automatically assigns a **Content-Type** based on the object's file name extension. When you access the object through a web browser, the browser relies on the **Content-Type** to decide how to handle or display the object. You can change the object's **Content-Type** based on its file name extension.
 
 .. table:: **Table 1** Common Content-Type values
 

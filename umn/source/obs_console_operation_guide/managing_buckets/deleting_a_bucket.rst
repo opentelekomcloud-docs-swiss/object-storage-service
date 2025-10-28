@@ -33,4 +33,4 @@ Procedure
 
       It is strongly advised to treat all bucket names and references as persistent and sensitive. Any published or shared links might be reused in unintended ways.
 
-#. Click **Yes** to confirm the deletion.
+#. Click **OK** to confirm the deletion.
