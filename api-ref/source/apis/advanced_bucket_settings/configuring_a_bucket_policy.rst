@@ -182,7 +182,7 @@ For details about how to obtain the account ID and user ID, see :ref:`Obtaining 
                "NotPrincipal": {
                    "ID": [
                        "domain/783fc6652cf246c096ea836694f71855:user/71f3901173514e6988115ea2c26d1999",
-                       "domain/783fc6652cf246c096ea836694f71855"
+                       "domain/783fc6652cf246c096ea836694f71855:root"
                    ]
                }
            }

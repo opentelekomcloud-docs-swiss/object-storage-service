@@ -12,7 +12,7 @@ This API configures a default WORM policy and retention period for a bucket.
 
 With the bucket's default WORM policy, if you do not specify a WORM policy or a retention period when you upload an object to the bucket, the default policy will be automatically applied to the newly uploaded object. An object-level WORM policy requires configuring a specific date, which indicates an object will be protected until that date. For a default bucket-level WORM policy, a retention period is required, and the protection for an object starts when the object is uploaded to the bucket.
 
-To perform this operation, you must have the PutBucketObjectLockConfiguration permission. The bucket owner can perform this operation by default and can grant this permission to others by using a bucket policy or a user policy.
+To perform this operation, you must have the PutBucketObjectLockConfiguration permission. By default, only the bucket owner can perform this operation. The bucket owner can grant the permission to other users by configuring the bucket policy or user policy.
 
 .. note::
 
@@ -63,7 +63,7 @@ Request Elements
 .. table:: **Table 1** Request elements
 
    +-------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Element                 | Description                                                                                                            | Mandatory                                                                                                                                                |
+   | Element                 | Description                                                                                                            | Mandatory (Yes/No)                                                                                                                                       |
    +=========================+========================================================================================================================+==========================================================================================================================================================+
    | ObjectLockConfiguration | Container for configuring WORM for a bucket.                                                                           | Yes                                                                                                                                                      |
    |                         |                                                                                                                        |                                                                                                                                                          |
@@ -79,11 +79,11 @@ Request Elements
    |                         |                                                                                                                        |                                                                                                                                                          |
    |                         | Type: container                                                                                                        |                                                                                                                                                          |
    +-------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | DefaultRetention        | Container for the default WORM retention policy for the bucket.                                                        | Mandatory if the Rule container is included.                                                                                                             |
+   | DefaultRetention        | Container for the default WORM retention policy for the bucket.                                                        | Yes if Rule is specified                                                                                                                                 |
    |                         |                                                                                                                        |                                                                                                                                                          |
    |                         | Type: container                                                                                                        |                                                                                                                                                          |
    +-------------------------+------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Mode                    | Default protection mode. It can only be set to **COMPLIANCE** now.                                                     | Mandatory if the DefaultRetention container is included.                                                                                                 |
+   | Mode                    | Default protection mode. It can only be set to **COMPLIANCE** now.                                                     | Yes if DefaultRetention is specified                                                                                                                     |
    |                         |                                                                                                                        |                                                                                                                                                          |
    |                         | Type: string                                                                                                           |                                                                                                                                                          |
    |                         |                                                                                                                        |                                                                                                                                                          |
@@ -128,15 +128,15 @@ Error Responses
 
 .. _obs_04_0167__table13791928162213:
 
-.. table:: **Table 2**
+.. table:: **Table 2** Error Responses
 
-   +----------------+--------------------------------------------------+------------------+
-   | Error Code     | Description                                      | HTTP Status Code |
-   +================+==================================================+==================+
-   | InvalidRequest | The object lock is disabled for the bucket.      | 400              |
-   +----------------+--------------------------------------------------+------------------+
-   | MalformedXML   | Invalid format of the Object Lock configuration. | 400              |
-   +----------------+--------------------------------------------------+------------------+
+   +----------------+---------------------------------------------+------------------+
+   | Error Code     | Description                                 | HTTP Status Code |
+   +================+=============================================+==================+
+   | InvalidRequest | The object lock is disabled for the bucket. | 400              |
+   +----------------+---------------------------------------------+------------------+
+   | MalformedXML   | Invalid policy configuration format.        | 400              |
+   +----------------+---------------------------------------------+------------------+
 
 For other errors, see :ref:`Table 2 <obs_04_0115__d0e843>`.
 

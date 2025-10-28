@@ -71,11 +71,11 @@ This request uses parameters to specify the ID of a multipart upload whose parts
    +-----------------+-----------------+--------------------+---------------------------------------+
    | Parameter       | Type            | Mandatory (Yes/No) | Description                           |
    +=================+=================+====================+=======================================+
-   | uploadId        | String          | Yes                | **Explanation**:                      |
+   | uploadId        | String          | Yes                | **Definition**:                       |
    |                 |                 |                    |                                       |
    |                 |                 |                    | Multipart upload ID.                  |
    |                 |                 |                    |                                       |
-   |                 |                 |                    | **Value range**:                      |
+   |                 |                 |                    | **Range**:                            |
    |                 |                 |                    |                                       |
    |                 |                 |                    | The value must contain 32 characters. |
    |                 |                 |                    |                                       |
@@ -101,15 +101,15 @@ This request uses elements to specify the list of parts to be assembled. :ref:`T
    +-------------------------+-----------------+--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Element                 | Type            | Mandatory (Yes/No) | Description                                                                                                                                                                     |
    +=========================+=================+====================+=================================================================================================================================================================================+
-   | CompleteMultipartUpload | XML             | Yes                | **Explanation**:                                                                                                                                                                |
+   | CompleteMultipartUpload | XML             | Yes                | **Definition**:                                                                                                                                                                 |
    |                         |                 |                    |                                                                                                                                                                                 |
    |                         |                 |                    | List of parts to be assembled                                                                                                                                                   |
    |                         |                 |                    |                                                                                                                                                                                 |
-   |                         |                 |                    | **Restrictions**:                                                                                                                                                               |
+   |                         |                 |                    | **Constraints**:                                                                                                                                                                |
    |                         |                 |                    |                                                                                                                                                                                 |
    |                         |                 |                    | None                                                                                                                                                                            |
    |                         |                 |                    |                                                                                                                                                                                 |
-   |                         |                 |                    | **Value range**:                                                                                                                                                                |
+   |                         |                 |                    | **Range**:                                                                                                                                                                      |
    |                         |                 |                    |                                                                                                                                                                                 |
    |                         |                 |                    | None                                                                                                                                                                            |
    |                         |                 |                    |                                                                                                                                                                                 |
@@ -117,15 +117,15 @@ This request uses elements to specify the list of parts to be assembled. :ref:`T
    |                         |                 |                    |                                                                                                                                                                                 |
    |                         |                 |                    | None                                                                                                                                                                            |
    +-------------------------+-----------------+--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | PartNumber              | Integer         | Yes                | **Explanation**:                                                                                                                                                                |
+   | PartNumber              | Integer         | Yes                | **Definition**:                                                                                                                                                                 |
    |                         |                 |                    |                                                                                                                                                                                 |
    |                         |                 |                    | Part number                                                                                                                                                                     |
    |                         |                 |                    |                                                                                                                                                                                 |
-   |                         |                 |                    | **Restrictions**:                                                                                                                                                               |
+   |                         |                 |                    | **Constraints**:                                                                                                                                                                |
    |                         |                 |                    |                                                                                                                                                                                 |
    |                         |                 |                    | None                                                                                                                                                                            |
    |                         |                 |                    |                                                                                                                                                                                 |
-   |                         |                 |                    | **Value range**:                                                                                                                                                                |
+   |                         |                 |                    | **Range**:                                                                                                                                                                      |
    |                         |                 |                    |                                                                                                                                                                                 |
    |                         |                 |                    | [1,10000]                                                                                                                                                                       |
    |                         |                 |                    |                                                                                                                                                                                 |
@@ -133,15 +133,15 @@ This request uses elements to specify the list of parts to be assembled. :ref:`T
    |                         |                 |                    |                                                                                                                                                                                 |
    |                         |                 |                    | None                                                                                                                                                                            |
    +-------------------------+-----------------+--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | ETag                    | String          | Yes                | **Explanation**:                                                                                                                                                                |
+   | ETag                    | String          | Yes                | **Definition**:                                                                                                                                                                 |
    |                         |                 |                    |                                                                                                                                                                                 |
    |                         |                 |                    | ETag value returned upon successful upload of a part. It is the unique identifier of the part content. This parameter is used to verify data consistency when parts are merged. |
    |                         |                 |                    |                                                                                                                                                                                 |
-   |                         |                 |                    | **Restrictions**:                                                                                                                                                               |
+   |                         |                 |                    | **Constraints**:                                                                                                                                                                |
    |                         |                 |                    |                                                                                                                                                                                 |
    |                         |                 |                    | None                                                                                                                                                                            |
    |                         |                 |                    |                                                                                                                                                                                 |
-   |                         |                 |                    | **Value range**:                                                                                                                                                                |
+   |                         |                 |                    | **Range**:                                                                                                                                                                      |
    |                         |                 |                    |                                                                                                                                                                                 |
    |                         |                 |                    | The value must contain 32 characters.                                                                                                                                           |
    |                         |                 |                    |                                                                                                                                                                                 |
@@ -170,31 +170,39 @@ Response Headers
 
 The response to the request uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
 
-In addition to the common response headers, the message headers listed in :ref:`Table 3 <obs_04_0102__table374518451013>` may be used.
+In addition to the common response headers, the headers listed in :ref:`Table 3 <obs_04_0102__table374518451013>` may be used.
 
 .. _obs_04_0102__table374518451013:
 
 .. table:: **Table 3** Additional response headers
 
-   +-----------------------+-----------------------+--------------------------------------------------+
-   | Header                | Type                  | Description                                      |
-   +=======================+=======================+==================================================+
-   | x-obs-version-id      | String                | **Explanation**:                                 |
-   |                       |                       |                                                  |
-   |                       |                       | Version of the object after parts are assembled. |
-   |                       |                       |                                                  |
-   |                       |                       | **Restrictions**:                                |
-   |                       |                       |                                                  |
-   |                       |                       | None                                             |
-   |                       |                       |                                                  |
-   |                       |                       | **Value range**:                                 |
-   |                       |                       |                                                  |
-   |                       |                       | The value must contain 32 characters.            |
-   |                       |                       |                                                  |
-   |                       |                       | **Default value**:                               |
-   |                       |                       |                                                  |
-   |                       |                       | None                                             |
-   +-----------------------+-----------------------+--------------------------------------------------+
+   +------------------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Header                       | Type                  | Description                                                                                                                                                |
+   +==============================+=======================+============================================================================================================================================================+
+   | x-obs-version-id             | String                | **Definition**:                                                                                                                                            |
+   |                              |                       |                                                                                                                                                            |
+   |                              |                       | Version of the object after parts are assembled.                                                                                                           |
+   |                              |                       |                                                                                                                                                            |
+   |                              |                       | **Constraints**:                                                                                                                                           |
+   |                              |                       |                                                                                                                                                            |
+   |                              |                       | None                                                                                                                                                       |
+   |                              |                       |                                                                                                                                                            |
+   |                              |                       | **Range**:                                                                                                                                                 |
+   |                              |                       |                                                                                                                                                            |
+   |                              |                       | The value must contain 32 characters.                                                                                                                      |
+   |                              |                       |                                                                                                                                                            |
+   |                              |                       | **Default value**:                                                                                                                                         |
+   |                              |                       |                                                                                                                                                            |
+   |                              |                       | None                                                                                                                                                       |
+   +------------------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | x-obs-sse-kms-key-project-id | String                | **Definition:**                                                                                                                                            |
+   |                              |                       |                                                                                                                                                            |
+   |                              |                       | If SSE-KMS encryption is used with a custom master key, the ID of the project (not enterprise project) to which the custom master key belongs is returned. |
+   |                              |                       |                                                                                                                                                            |
+   |                              |                       | **Range:**                                                                                                                                                 |
+   |                              |                       |                                                                                                                                                            |
+   |                              |                       | ID of the project (not enterprise project) to which the custom master key specified by **x-obs-server-side-encryption-kms-key-id** belongs                 |
+   +------------------------------+-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Response Elements
 -----------------
@@ -208,15 +216,15 @@ This response uses elements to return the result of assembling parts. :ref:`Tabl
    +-----------------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Element               | Type                  | Description                                                                                                                                                                       |
    +=======================+=======================+===================================================================================================================================================================================+
-   | Location              | String                | **Explanation**:                                                                                                                                                                  |
+   | Location              | String                | **Definition**:                                                                                                                                                                   |
    |                       |                       |                                                                                                                                                                                   |
    |                       |                       | Path of the object after parts are assembled.                                                                                                                                     |
    |                       |                       |                                                                                                                                                                                   |
-   |                       |                       | **Restrictions**:                                                                                                                                                                 |
+   |                       |                       | **Constraints**:                                                                                                                                                                  |
    |                       |                       |                                                                                                                                                                                   |
    |                       |                       | Format: http://bucketName.obs.\ *region*.example.com/objectName                                                                                                                   |
    |                       |                       |                                                                                                                                                                                   |
-   |                       |                       | **Value range**:                                                                                                                                                                  |
+   |                       |                       | **Range**:                                                                                                                                                                        |
    |                       |                       |                                                                                                                                                                                   |
    |                       |                       | None                                                                                                                                                                              |
    |                       |                       |                                                                                                                                                                                   |
@@ -224,11 +232,11 @@ This response uses elements to return the result of assembling parts. :ref:`Tabl
    |                       |                       |                                                                                                                                                                                   |
    |                       |                       | None                                                                                                                                                                              |
    +-----------------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Bucket                | String                | **Explanation**:                                                                                                                                                                  |
+   | Bucket                | String                | **Definition**:                                                                                                                                                                   |
    |                       |                       |                                                                                                                                                                                   |
    |                       |                       | Bucket where parts are assembled                                                                                                                                                  |
    |                       |                       |                                                                                                                                                                                   |
-   |                       |                       | **Restrictions**:                                                                                                                                                                 |
+   |                       |                       | **Constraints**:                                                                                                                                                                  |
    |                       |                       |                                                                                                                                                                                   |
    |                       |                       | -  A bucket name must be unique across all accounts and regions.                                                                                                                  |
    |                       |                       | -  A bucket name:                                                                                                                                                                 |
@@ -241,7 +249,7 @@ This response uses elements to return the result of assembling parts. :ref:`Tabl
    |                       |                       |                                                                                                                                                                                   |
    |                       |                       | -  If you repeatedly create buckets of the same name in the same region, no error will be reported and the bucket attributes comply with those set in the first creation request. |
    |                       |                       |                                                                                                                                                                                   |
-   |                       |                       | **Value range**:                                                                                                                                                                  |
+   |                       |                       | **Range**:                                                                                                                                                                        |
    |                       |                       |                                                                                                                                                                                   |
    |                       |                       | None                                                                                                                                                                              |
    |                       |                       |                                                                                                                                                                                   |
@@ -249,17 +257,17 @@ This response uses elements to return the result of assembling parts. :ref:`Tabl
    |                       |                       |                                                                                                                                                                                   |
    |                       |                       | None                                                                                                                                                                              |
    +-----------------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Key                   | String                | **Explanation**:                                                                                                                                                                  |
+   | Key                   | String                | **Definition**:                                                                                                                                                                   |
    |                       |                       |                                                                                                                                                                                   |
    |                       |                       | Object name obtained after part assembling.                                                                                                                                       |
    |                       |                       |                                                                                                                                                                                   |
    |                       |                       | An object is uniquely identified by an object name in a bucket. An object name is a complete path that does not contain the bucket name.                                          |
    |                       |                       |                                                                                                                                                                                   |
-   |                       |                       | **Restrictions**:                                                                                                                                                                 |
+   |                       |                       | **Constraints**:                                                                                                                                                                  |
    |                       |                       |                                                                                                                                                                                   |
    |                       |                       | None                                                                                                                                                                              |
    |                       |                       |                                                                                                                                                                                   |
-   |                       |                       | **Value range**:                                                                                                                                                                  |
+   |                       |                       | **Range**:                                                                                                                                                                        |
    |                       |                       |                                                                                                                                                                                   |
    |                       |                       | The value must contain 1 to 1,024 characters.                                                                                                                                     |
    |                       |                       |                                                                                                                                                                                   |
@@ -267,15 +275,15 @@ This response uses elements to return the result of assembling parts. :ref:`Tabl
    |                       |                       |                                                                                                                                                                                   |
    |                       |                       | None                                                                                                                                                                              |
    +-----------------------+-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | ETag                  | String                | **Explanation**:                                                                                                                                                                  |
+   | ETag                  | String                | **Definition**:                                                                                                                                                                   |
    |                       |                       |                                                                                                                                                                                   |
    |                       |                       | The ETag that uniquely identifies the object after its parts were assembled, calculated based on the ETag of each part.                                                           |
    |                       |                       |                                                                                                                                                                                   |
-   |                       |                       | **Restrictions**:                                                                                                                                                                 |
+   |                       |                       | **Constraints**:                                                                                                                                                                  |
    |                       |                       |                                                                                                                                                                                   |
    |                       |                       | If an object is encrypted using server-side encryption, the ETag is not the MD5 value of the object.                                                                              |
    |                       |                       |                                                                                                                                                                                   |
-   |                       |                       | **Value range**:                                                                                                                                                                  |
+   |                       |                       | **Range**:                                                                                                                                                                        |
    |                       |                       |                                                                                                                                                                                   |
    |                       |                       | The value must contain 32 characters.                                                                                                                                             |
    |                       |                       |                                                                                                                                                                                   |

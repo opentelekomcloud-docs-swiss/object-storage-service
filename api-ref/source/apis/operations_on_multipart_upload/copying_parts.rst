@@ -62,7 +62,7 @@ To copy a part, you need to specify the part number of the target part and the m
 Request Headers
 ---------------
 
-In addition to the common message headers, the request uses two extended headers. :ref:`Table 3 <obs_04_0007__table25197309>` describes the common message header.
+In addition to the common message headers, the request uses two extended headers. :ref:`Table 3 <obs_04_0007__table25197309>` describes the common message headers.
 
 .. table:: **Table 2** Request headers
 

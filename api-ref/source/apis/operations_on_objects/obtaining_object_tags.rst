@@ -136,7 +136,7 @@ Sample Response
      <TagSet>
        <Tag>
          <Key>TagName1</Key>
-         <Value>TageSetVaule1</Value>
+         <Value>TagSetValue1</Value>
        </Tag>
      </TagSet>
    </Tagging>

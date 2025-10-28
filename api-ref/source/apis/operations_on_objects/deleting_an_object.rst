@@ -48,17 +48,17 @@ Request Parameters
    +-----------------------+-----------------------------------------+-----------------------+
    | Parameter             | Description                             | Mandatory             |
    +=======================+=========================================+=======================+
-   | versionId             | **Explanation**:                        | No                    |
+   | versionId             | **Definition**:                         | No                    |
    |                       |                                         |                       |
    |                       | Version ID of the object to be deleted. |                       |
    |                       |                                         |                       |
    |                       | Type: string                            |                       |
    |                       |                                         |                       |
-   |                       | **Restrictions**:                       |                       |
+   |                       | **Constraints**:                        |                       |
    |                       |                                         |                       |
    |                       | None                                    |                       |
    |                       |                                         |                       |
-   |                       | **Value range**:                        |                       |
+   |                       | **Range**:                              |                       |
    |                       |                                         |                       |
    |                       | The value must contain 32 characters.   |                       |
    |                       |                                         |                       |
@@ -99,17 +99,17 @@ If versioning is enabled for the bucket, the headers listed in :ref:`Table 2 <ob
    +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    | Header                            | Description                                                                                                               |
    +===================================+===========================================================================================================================+
-   | x-obs-delete-marker               | **Explanation**:                                                                                                          |
+   | x-obs-delete-marker               | **Definition**:                                                                                                           |
    |                                   |                                                                                                                           |
    |                                   | Whether an object has a delete marker. If the object is not marked as deleted, the response does not contain this header. |
    |                                   |                                                                                                                           |
    |                                   | Type: boolean                                                                                                             |
    |                                   |                                                                                                                           |
-   |                                   | **Restrictions**:                                                                                                         |
+   |                                   | **Constraints**:                                                                                                          |
    |                                   |                                                                                                                           |
    |                                   | None                                                                                                                      |
    |                                   |                                                                                                                           |
-   |                                   | **Value range**:                                                                                                          |
+   |                                   | **Range**:                                                                                                                |
    |                                   |                                                                                                                           |
    |                                   | -  **true**                                                                                                               |
    |                                   | -  **false**                                                                                                              |
@@ -118,17 +118,17 @@ If versioning is enabled for the bucket, the headers listed in :ref:`Table 2 <ob
    |                                   |                                                                                                                           |
    |                                   | false                                                                                                                     |
    +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-   | x-obs-version-id                  | **Explanation**:                                                                                                          |
+   | x-obs-version-id                  | **Definition**:                                                                                                           |
    |                                   |                                                                                                                           |
    |                                   | Object version ID. If the object has no version number specified, the response does not contain this header.              |
    |                                   |                                                                                                                           |
    |                                   | Type: string                                                                                                              |
    |                                   |                                                                                                                           |
-   |                                   | **Restrictions**:                                                                                                         |
+   |                                   | **Constraints**:                                                                                                          |
    |                                   |                                                                                                                           |
    |                                   | None                                                                                                                      |
    |                                   |                                                                                                                           |
-   |                                   | **Value range**:                                                                                                          |
+   |                                   | **Range**:                                                                                                                |
    |                                   |                                                                                                                           |
    |                                   | The value must contain 32 characters.                                                                                     |
    |                                   |                                                                                                                           |
