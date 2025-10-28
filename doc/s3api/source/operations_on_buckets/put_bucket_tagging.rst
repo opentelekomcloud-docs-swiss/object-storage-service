@@ -51,49 +51,50 @@ In this request, you must configure the tags of buckets in the request body. The
 
 .. table:: **Table 1** Elements to be configured for bucket tags
 
-   +-----------------------+--------------------------------------------------------------------+-----------------------+
-   | Element               | Description                                                        | Mandatory or Not      |
-   +=======================+====================================================================+=======================+
-   | Tagging               | Container for the **TagSet** and **Tag** elements                  | Yes                   |
-   |                       |                                                                    |                       |
-   |                       | Type: Container                                                    |                       |
-   |                       |                                                                    |                       |
-   |                       | Ancestor: None                                                     |                       |
-   +-----------------------+--------------------------------------------------------------------+-----------------------+
-   | TagSet                | Container for a set of tags                                        | Yes                   |
-   |                       |                                                                    |                       |
-   |                       | Type: Container                                                    |                       |
-   |                       |                                                                    |                       |
-   |                       | Ancestor: Tagging                                                  |                       |
-   +-----------------------+--------------------------------------------------------------------+-----------------------+
-   | Tag                   | Container for tag information                                      | Yes                   |
-   |                       |                                                                    |                       |
-   |                       | Type: Container. Each bucket supports a maximum of 20 tags.        |                       |
-   |                       |                                                                    |                       |
-   |                       | Ancestor: TagSet                                                   |                       |
-   +-----------------------+--------------------------------------------------------------------+-----------------------+
-   | Key                   | Name of the tag                                                    | Yes                   |
-   |                       |                                                                    |                       |
-   |                       | Type: String.                                                      |                       |
-   |                       |                                                                    |                       |
-   |                       | A tag key must comply with the following naming rules:             |                       |
-   |                       |                                                                    |                       |
-   |                       | -  Must contain 1 to 36 characters.                                |                       |
-   |                       | -  Only digits, letters, underscores (_), hyphens (-) are allowed. |                       |
-   |                       |                                                                    |                       |
-   |                       | Ancestor: Tag                                                      |                       |
-   +-----------------------+--------------------------------------------------------------------+-----------------------+
-   | Value                 | Value of the tag                                                   | Yes                   |
-   |                       |                                                                    |                       |
-   |                       | Type: String.                                                      |                       |
-   |                       |                                                                    |                       |
-   |                       | The tag value must comply with the following naming rules:         |                       |
-   |                       |                                                                    |                       |
-   |                       | -  Must contain 0 to 43 characters.                                |                       |
-   |                       | -  Only digits, letters, underscores (_), hyphens (-) are allowed. |                       |
-   |                       |                                                                    |                       |
-   |                       | Ancestor: Tag                                                      |                       |
-   +-----------------------+--------------------------------------------------------------------+-----------------------+
+   +-----------------------+------------------------------------------------------------------------------------------------+-----------------------+
+   | Element               | Description                                                                                    | Mandatory or Not      |
+   +=======================+================================================================================================+=======================+
+   | Tagging               | Container for the **TagSet** and **Tag** elements                                              | Yes                   |
+   |                       |                                                                                                |                       |
+   |                       | Type: Container                                                                                |                       |
+   |                       |                                                                                                |                       |
+   |                       | Ancestor: None                                                                                 |                       |
+   +-----------------------+------------------------------------------------------------------------------------------------+-----------------------+
+   | TagSet                | Container for a set of tags                                                                    | Yes                   |
+   |                       |                                                                                                |                       |
+   |                       | Type: Container                                                                                |                       |
+   |                       |                                                                                                |                       |
+   |                       | Ancestor: Tagging                                                                              |                       |
+   +-----------------------+------------------------------------------------------------------------------------------------+-----------------------+
+   | Tag                   | Container for tag information                                                                  | Yes                   |
+   |                       |                                                                                                |                       |
+   |                       | Type: Container. Each bucket supports a maximum of 20 tags.                                    |                       |
+   |                       |                                                                                                |                       |
+   |                       | Ancestor: TagSet                                                                               |                       |
+   +-----------------------+------------------------------------------------------------------------------------------------+-----------------------+
+   | Key                   | Name of the tag                                                                                | Yes                   |
+   |                       |                                                                                                |                       |
+   |                       | Type: String.                                                                                  |                       |
+   |                       |                                                                                                |                       |
+   |                       | Tag key constraints:                                                                           |                       |
+   |                       |                                                                                                |                       |
+   |                       | -  If there are multiple tags specified for an object, each tag key must be unique.            |                       |
+   |                       | -  A tag key must contain 1 to 36 characters and be case sensitive.                            |                       |
+   |                       | -  A tag key can't start or end with a space or contain the following characters: ``,/|<>=*\`` |                       |
+   |                       |                                                                                                |                       |
+   |                       | Ancestor: Tag                                                                                  |                       |
+   +-----------------------+------------------------------------------------------------------------------------------------+-----------------------+
+   | Value                 | Value of the tag                                                                               | Yes                   |
+   |                       |                                                                                                |                       |
+   |                       | Type: String.                                                                                  |                       |
+   |                       |                                                                                                |                       |
+   |                       | Tag value constraints:                                                                         |                       |
+   |                       |                                                                                                |                       |
+   |                       | -  A tag value can contain 0 to 43 characters and must be case sensitive.                      |                       |
+   |                       | -  A tag value can't contain the following characters: ``,/|<>=*\``                            |                       |
+   |                       |                                                                                                |                       |
+   |                       | Ancestor: Tag                                                                                  |                       |
+   +-----------------------+------------------------------------------------------------------------------------------------+-----------------------+
 
 Response Syntax
 ---------------
