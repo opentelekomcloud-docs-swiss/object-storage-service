@@ -58,7 +58,7 @@ This request uses elements to specify the list of objects to be deleted in a bat
 .. table:: **Table 1** Request elements
 
    +-----------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
-   | Element               | Description                                                                                                                                                                                   | Mandatory             |
+   | Element               | Description                                                                                                                                                                                   | Mandatory (Yes/No)    |
    +=======================+===============================================================================================================================================================================================+=======================+
    | Quiet                 | Specifies the **quiet** mode. With the **quiet** mode, OBS only returns the list of objects that failed to be deleted. This element is valid when set to **true**. Otherwise, OBS ignores it. | No                    |
    |                       |                                                                                                                                                                                               |                       |

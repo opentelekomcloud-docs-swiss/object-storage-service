@@ -82,7 +82,7 @@ Response Syntax
            <ID>ownerid</ID>
        </Owner>
        <StorageClass>storageclass</StorageClass>
-       <PartNumberMarker>partNmebermarker</PartNumberMarker>
+       <PartNumberMarker>partNumbermarker</PartNumberMarker>
        <NextPartNumberMarker>nextPartnumberMarker</NextPartNumberMarker>
        <MaxParts>maxParts</MaxParts>
        <IsTruncated>true</IsTruncated>

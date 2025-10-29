@@ -10,7 +10,7 @@ Functions
 
 This operation returns the default WORM policy of a bucket.
 
-To perform this operation, you must have the GetBucketObjectLockConfiguration permission. The bucket owner can perform this operation by default and can grant this permission to others by using a bucket policy or a user policy.
+To perform this operation, you must have the GetBucketObjectLockConfiguration permission. By default, only the bucket owner can perform this operation. The bucket owner can grant the permission to other users by configuring the bucket policy or user policy.
 
 .. note::
 
@@ -126,7 +126,7 @@ Error Responses
 
 .. _obs_04_0168__table13791928162213:
 
-.. table:: **Table 2**
+.. table:: **Table 2** Error Responses
 
    +----------------+---------------------------------------------+------------------+
    | Error Code     | Description                                 | HTTP Status Code |

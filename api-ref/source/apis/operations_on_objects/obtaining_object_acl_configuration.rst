@@ -28,14 +28,14 @@ Request Syntax
 Request Parameters
 ------------------
 
-The request parameter specifies the object ACL to be obtained. For details about the parameters, see :ref:`Table 1 <obs_04_0090__table22962068>`.
+The request parameters required are described in :ref:`Table 1 <obs_04_0090__table22962068>`.
 
 .. _obs_04_0090__table22962068:
 
 .. table:: **Table 1** Request parameters
 
    +-----------------------+------------------------------+-----------------------+
-   | Parameter             | Description                  | Mandatory             |
+   | Parameter             | Description                  | Mandatory (Yes/No)    |
    +=======================+==============================+=======================+
    | versionId             | Version number of an object. | No                    |
    |                       |                              |                       |
@@ -83,21 +83,23 @@ Response Headers
 
 The response to the request uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
 
-In addition to the common response headers, the headers listed in :ref:`Table 2 <obs_04_0090__table995015721520>` may be used.
+In addition to the common response headers, the headers listed in :ref:`Table 2 <obs_04_0090__table1784619142918>` may be used.
 
-.. _obs_04_0090__table995015721520:
+.. _obs_04_0090__table1784619142918:
 
-.. table:: **Table 2** Additional response header
+.. table:: **Table 2** Additional response headers
 
-   +-----------------------------------+-----------------------------------+
-   | Header                            | Description                       |
-   +===================================+===================================+
-   | x-obs-version-id                  | Version number of an object.      |
-   |                                   |                                   |
-   |                                   | Valid value: string               |
-   |                                   |                                   |
-   |                                   | Default value: none               |
-   +-----------------------------------+-----------------------------------+
+   +-----------------------+-----------------------+---------------------------------------+
+   | Parameter             | Type                  | Description                           |
+   +=======================+=======================+=======================================+
+   | x-obs-version-id      | String                | **Definition**:                       |
+   |                       |                       |                                       |
+   |                       |                       | Version number of an object.          |
+   |                       |                       |                                       |
+   |                       |                       | **Range**:                            |
+   |                       |                       |                                       |
+   |                       |                       | The value must contain 32 characters. |
+   +-----------------------+-----------------------+---------------------------------------+
 
 Response Elements
 -----------------
