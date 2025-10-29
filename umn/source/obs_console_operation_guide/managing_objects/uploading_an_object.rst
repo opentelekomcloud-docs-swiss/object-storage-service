@@ -44,7 +44,7 @@ Procedure
 
       If the bucket has server-side encryption configured, the object you upload will inherit encryption from the bucket by default.
 
-#. (Optional) To configure WORM retention policies, or metadata, click **Next: (Optional) Configure Advanced Settings**.
+#. (Optional) To configure metadata, or WORM retention policies, click **Next: (Optional) Configure Advanced Settings**.
 
    .. note::
 

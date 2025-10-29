@@ -43,7 +43,7 @@ Enabling Versioning
 
 -  Objects can be downloaded by version IDs. By default, the latest object is downloaded if the version ID is not specified. For details, see :ref:`Related Operations <obs_03_0327__section29772226>` in :ref:`Configuring Versioning <obs_03_0327>`.
 
--  You can select an object and click **Delete** on the right to delete the object. After the object is deleted, OBS generates a **Delete Marker** with a unique version ID for the deleted object, and the deleted object is displayed in the **Deleted Objects** list. For details, see :ref:`Deleting an Object or Folder <en-us_topic_0045853756>`. If attempts are then made to access this deleted object, error 404 will be returned.
+-  You can select an object and click **Delete** on the right to delete the object. After the object is deleted, OBS inserts a delete marker. The deleted object appears in the **Deleted Objects** list. For details, see :ref:`Deleting an Object or Folder <en-us_topic_0045853756>`. If attempts are then made to access this deleted object, error 404 will be returned.
 
 
    .. figure:: /_static/images/en-us_image_0135698309.png
@@ -85,4 +85,4 @@ If versioning is no longer needed, you can suspend it. After versioning is suspe
 Differences Between Scenarios When Versioning Is Suspended and Disabled
 -----------------------------------------------------------------------
 
-If you delete an object after versioning is suspended for the bucket, a delete marker will be generated, no matter whether the object has historical versions. But, if versioning is disabled, the same operation will not generate a delete marker.
+If you delete an object after versioning is suspended for the bucket, a delete marker will be created, regardless of whether the object has historical versions. But, if versioning is disabled, the same operation will not generate a delete marker.

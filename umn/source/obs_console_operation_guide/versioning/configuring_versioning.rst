@@ -24,18 +24,19 @@ Procedure
 
 #. Click **OK** to enable versioning for the bucket.
 
-#. Click an object to go to the object details page. On the **Versions** tab page, view all versions of the object.
+#. In the navigation pane, choose **Objects**. The object list page is displayed.
+
+#. Above the search box, enable **Historical Versions** to view multiple versions of an object.
 
 .. _obs_03_0327__section29772226:
 
 Related Operations
 ------------------
 
-After versioning is configured for a bucket, you can go to the object details page, click the **Versions** tab, and then delete and download object versions, and extend the retention period of an object version.
+After versioning is enabled for a bucket, you can extend the retention period of a WORM-protected object version, as well as delete and download object versions.
 
 #. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
-#. In the object list, click the object you want to go to the object details page.
-#. On the **Versions** tab page, view all versions of the object.
+#. In the object list, view all versions of the object.
 #. Perform the following operations on object versions:
 
    a. Download a desired version of the object by clicking **Download** in the **Operation** column.
@@ -44,10 +45,10 @@ After versioning is configured for a bucket, you can go to the object details pa
 
          If the version you want to download is in the Cold storage class, restore it first.
 
-   b. Permanently delete a version of the object by choosing **Delete** in the **Operation** column. The deleted object version cannot be recovered. If you delete the latest version, the most recent version will become the latest version.
+   b. Permanently delete a version of the object by choosing **More** > **Permanently** **Delete** in the **Operation** column. The deleted object version cannot be recovered. If you delete the latest version, the most recent version will become the latest version.
 
       .. note::
 
-         In a WORM-enabled bucket, if an object has no retention policy configured or its retention policy has expired, you can delete a desired object version on the object's **Versions** tab page. If an object version is within the retention period, it cannot be deleted.
+         In a WORM-enabled bucket, if an object has no retention policy configured or its retention policy has expired, you can delete a desired object versionon the object list page. If the object version is within the retention period, it cannot be deleted.
 
-   c. Locate the object version for which you want to extend the retention period, choose **Extend Retention Period**, and select a date. A retention period can be extended, but cannot be shortened.
+   c. Locate the object version for which you want to extend the retention period, choose **More** > **Extend Retention Period**, and select a date. A retention period can be extended, but cannot be shortened.

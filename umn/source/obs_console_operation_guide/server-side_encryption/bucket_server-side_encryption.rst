@@ -22,7 +22,7 @@ Enabling Server-Side Encryption for a Bucket
 
 #. Select **SSE-KMS**.
 
-   You can select **Default** to use the default key in the current region to encrypt the objects you upload. If you do not have a default key, OBS automatically creates one the first time you upload an object. You can also choose **Custom** to use a custom key for encryption. If there is no custom key available, click **Create KMS Key** to create one.
+   You can select **Default** to use the default key in the current region to encrypt the objects you upload. If you do not have a default key, OBS creates one the first time you upload an object. You can also choose **Custom** to use a custom key for encryption. If there is no custom key available, click **Create KMS Key** to create one on the DEW console. Then, go back here and choose the created key from the drop-down list.
 
 #. Click **OK**.
 
