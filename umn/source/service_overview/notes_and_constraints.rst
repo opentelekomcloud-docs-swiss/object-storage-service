@@ -2,8 +2,8 @@
 
 .. _obs_03_0360:
 
-Constraints
-===========
+Notes and Constraints
+=====================
 
 This section describes the constraints on the use of OBS features.
 

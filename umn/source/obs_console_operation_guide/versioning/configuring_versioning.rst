@@ -49,6 +49,6 @@ After versioning is enabled for a bucket, you can extend the retention period of
 
       .. note::
 
-         In a WORM-enabled bucket, if an object has no retention policy configured or its retention policy has expired, you can delete a desired object versionon the object list page. If the object version is within the retention period, it cannot be deleted.
+         In a WORM-enabled bucket, if an object has no retention policy configured or its retention policy has expired, you can delete a desired object version on the object list page. If the object version is within the retention period, it cannot be deleted.
 
    c. Locate the object version for which you want to extend the retention period, choose **More** > **Extend Retention Period**, and select a date. A retention period can be extended, but cannot be shortened.

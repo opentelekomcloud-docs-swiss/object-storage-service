@@ -49,7 +49,7 @@ Procedure
 
    .. note::
 
-      In a bucket with WORM enabled, objects cannot be permanently deleted from the **Deleted Objects** list. You can permanently delete an object on its details page. For details, see :ref:`Related Operations <obs_03_0327__section29772226>` or :ref:`Configuring WORM Retention <obs_03_0718>`.
+      In a bucket with WORM enabled, objects cannot be permanently deleted from the **Deleted Objects** list. To permanently delete an object, enable **Historical Versions**, select the desired object version, and click **Permanently Delete** above the search box. For details, see :ref:`Related Operations <obs_03_0327__section29772226>` or :ref:`Configuring WORM Retention <obs_03_0718>`.
 
       Likewise, folders cannot be permanently deleted from the **Deleted Objects** list either. To permanently delete a folder, you can only :ref:`configure a lifecycle rule <obs_03_0335>`.
 

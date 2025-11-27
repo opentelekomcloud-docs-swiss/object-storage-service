@@ -9,7 +9,7 @@ You can delete unnecessary files one by one or in a batch on OBS Console to save
 
 .. note::
 
-   When WORM has been enabled for a bucket, versioning is also enabled for the bucket by default. If an object version has any WORM retention policy configured, this object version cannot be permanently deleted during the retention period. On the **Versions** tab of the object details page, you can choose **More** > **Extend Retention Period** in the **Operation** column in the row of the object version to check whether this version is within the retention period. If no WORM retention policy is configured for an object version, you can delete it on the **Versions** tab of the object details page.
+   When you enable WORM for a bucket, versioning is automatically enabled as well. If a WORM retention policy is configured, object versions cannot be permanently deleted during the retention period. On the object list page, you can enable **Historical Versions** and choose **More** > **Extend Retention Period** in the **Operation** column of a specific object version to check whether this version is within the retention period. If no WORM retention policy is configured, you can delete object versions on the object list page with **Historical Versions** enabled.
 
 Procedure
 ---------
