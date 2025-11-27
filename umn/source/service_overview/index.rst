@@ -9,7 +9,7 @@ Service Overview
 -  :ref:`Advantages <obs_03_0201>`
 -  :ref:`Application Scenarios <obs_03_0202>`
 -  :ref:`Permissions Management <obs_03_0045>`
--  :ref:`Constraints <obs_03_0360>`
+-  :ref:`Notes and Constraints <obs_03_0360>`
 -  :ref:`Using OBS <obs_03_0203>`
 -  :ref:`Related Services <obs_03_0204>`
 -  :ref:`Basic Concepts <obs_03_0205>`
@@ -22,7 +22,7 @@ Service Overview
    advantages
    application_scenarios
    permissions_management
-   constraints
+   notes_and_constraints
    using_obs
    related_services
    basic_concepts/index
