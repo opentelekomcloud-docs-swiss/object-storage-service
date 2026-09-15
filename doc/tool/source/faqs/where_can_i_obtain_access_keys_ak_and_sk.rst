@@ -12,7 +12,7 @@ When using OBS Browser+ to access OBS, you need to use the AK and SK for authent
 #. Choose **Access Keys**.
 #. Click **Create Access Key**.
 #. Enter an access key description (optional) and click **OK**.
-#. Enter the verification code sent to your mobile phone, virtual MFA device, or email, and click **OK**.
+#. Enter the verification code sent to your mobile phone or email, and click **OK**.
 
    .. note::
 
