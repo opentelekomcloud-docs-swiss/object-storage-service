@@ -53,7 +53,7 @@ In AK/SK login, you need to enter the AK and SK.
    +=======================+=======================+=============================================================================================================================================================================================================+
    | Account Name          | Yes                   | It is user-defined and is a unique identifier that is different from the cloud service accounts you use to log in to OBS Browser+.                                                                          |
    |                       |                       |                                                                                                                                                                                                             |
-   |                       |                       | An account name contains 3 to 63 characters, and cannot contain the following special characters: \\ : \* ? ' < > \| ! @ # $ % ^ ~                                                                          |
+   |                       |                       | An account name contains 3 to 63 characters, and cannot contain the following special characters: ``\:*?'<>|!@#$%^~``                                                                                       |
    +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Service               | Yes                   | **OBS (default)** is selected by default. Selecting this option allows access to buckets in all regions where OBS is available.                                                                             |
    +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -74,4 +74,4 @@ In AK/SK login, you need to enter the AK and SK.
 
    OBS Browser+ can keep the login information of up to 100 accounts.
 
-.. |image1| image:: /_static/images/en-us_image_0000002002871337.png
+.. |image1| image:: /_static/images/en-us_image_0000002713118411.png
