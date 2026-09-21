@@ -16,7 +16,7 @@ By default, OBS Browser+ uploads or downloads files or objects larger than 50 MB
    +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Max. Concurrent Parts             | The maximum number of parts that can be concurrently uploaded or downloaded in a task. The value ranges from 1 to 50 and the default value is **3**.                                                      |
    +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Auto select part size             | This option is selected by default, which automatically sets the size for each part based on the source file or object size.                                                                              |
+   | Auto select part size             | This option is selected by default. When enabled, OBS Browser+ automatically sets the part size for each multipart upload based on the size of the source file or object.                                 |
    +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Upload Part Size                  | Threshold for triggering multipart upload. If the size of the file to be uploaded is larger than the configured threshold, the file will be uploaded in multipart mode. The default value is 50 MB.       |
    |                                   |                                                                                                                                                                                                           |
@@ -41,5 +41,5 @@ If you want to upload or download **large files**, set **Upload Part Size**, **D
 
 .. caution::
 
-   -  Due to limiting resources, if there are too many concurrent tasks (calculated from **Max. Number of Concurrent Tasks** x **Max. Concurrent Parts**), the upload and download performance may deteriorate because of resource switchover and preemption between threads. To avoid this, adjust the corresponding parameter values based on the actual file size and network condition.
+   -  Because resources are limited, too many concurrent tasks (calculated as **Max. Number of Concurrent Tasks** x **Max. Concurrent Parts**) can degrade upload and download performance due to resource switching and contention between threads. To avoid this, adjust the corresponding parameters according to the actual file size and network conditions.
    -  If the client network is poor, you can reduce the size of parts to be uploaded or downloaded and the total number of concurrent tasks to avoid task failures caused by the network fluctuation.

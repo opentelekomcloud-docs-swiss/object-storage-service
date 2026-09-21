@@ -9,7 +9,7 @@ OBS Browser+ Function Overview
 
 .. _obs_03_1001__table1553220203517:
 
-.. table:: **Table 1** OBS Browser+ supported functions
+.. table:: **Table 1** Functions supported by OBS Browser+
 
    +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Function                               | Description                                                                                                                                                                                                        |
@@ -39,11 +39,11 @@ OBS Browser+ Function Overview
    |                                        | -  Searching for completed and failed tasks by types                                                                                                                                                               |
    |                                        | -  Automatic retry of failed tasks                                                                                                                                                                                 |
    +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Account management                     | Login using an AK and logout                                                                                                                                                                                       |
+   | Account management                     | Login and logout supported. Login can be performed using an AK.                                                                                                                                                    |
    |                                        |                                                                                                                                                                                                                    |
-   |                                        | -  Keeping a maximum of 100 accounts login information by default                                                                                                                                                  |
+   |                                        | -  Keeping the login information of a maximum of 100 accounts by default                                                                                                                                           |
    |                                        | -  Clearing and querying login history                                                                                                                                                                             |
    +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Auxiliary functions                    | -  Favorites folder available for you to save frequently used paths (a maximum of 100 paths by default)                                                                                                            |
+   | Auxiliary functions                    | -  The Favorites folder available for you to save frequently used paths (a maximum of 100 paths by default)                                                                                                        |
    |                                        | -  Shortcut menus available for bucket and object lists, helping you quickly find the desired operation                                                                                                            |
    +----------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
