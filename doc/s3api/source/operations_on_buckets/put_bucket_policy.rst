@@ -90,7 +90,7 @@ Account's domain ID is **783fc6652cf246c096ea836694f71855**.
                    "s3:GetBucketLogging"
                ],
                "Effect": "Allow",
-               "Resource": "arn:aws:s3:::logging.bucket3",
+               "Resource": "arn:aws:s3:::bucketname",
                "Principal": {
                    "AWS": [
                        "arn:aws:iam::783fc6652cf246c096ea836694f71855:root"
@@ -136,7 +136,7 @@ User ID is **71f3901173514e6988115ea2c26d1999** and Account's domain ID is **219
                    "s3:PutBucketLogging"
                ],
                "Effect": "Allow",
-               "Resource": "arn:aws:s3:::logging.bucket3",
+               "Resource": "arn:aws:s3:::bucketname",
                "Principal": {
                    "AWS": [
                        "arn:aws:iam::219d520ceac84c5a98b237431a2cf4c2:user/71f3901173514e6988115ea2c26d1999"
