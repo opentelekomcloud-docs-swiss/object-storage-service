@@ -5,10 +5,10 @@
 Authentication
 ==============
 
--  :ref:`User Signature Authentication <obs_04_0009>`
--  :ref:`Authentication of Signature in a Header <obs_04_0010>`
--  :ref:`Authentication of Signature in a URL <obs_04_0011>`
--  :ref:`Authenticating the Signature Carried in a Form Uploaded Through a Browser <obs_04_0012>`
+-  :ref:`User Signature Authentication <obs_04_0009ss>`
+-  :ref:`Authentication of Signature in a Header <obs_04_0010ss>`
+-  :ref:`Authentication of Signature in a URL <obs_04_0011s>`
+-  :ref:`Authenticating the Signature Carried in a Form Uploaded Through a Browser <obs_04_0012ss>`
 
 .. toctree::
    :maxdepth: 1

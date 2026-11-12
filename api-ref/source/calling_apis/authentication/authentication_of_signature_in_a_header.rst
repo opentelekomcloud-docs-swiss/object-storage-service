@@ -1,6 +1,6 @@
-:original_name: obs_04_0010.html
+:original_name: obs_04_0010ss.html
 
-.. _obs_04_0010:
+.. _obs_04_0010ss:
 
 Authentication of Signature in a Header
 =======================================
@@ -15,21 +15,21 @@ In the header, the signature is carried in the authorization header field of the
 
 The process of calculating a signature is as follows:
 
-#. .. _obs_04_0010__li162697142015:
+#. .. _obs_04_0010ss__li162697142015:
 
    Construct the StringToSign.
 
-#. .. _obs_04_0010__li5269617200:
+#. .. _obs_04_0010ss__li5269617200:
 
-   Encode the result of :ref:`1 <obs_04_0010__li162697142015>` in UTF-8.
+   Encode the result of :ref:`1 <obs_04_0010ss__li162697142015>` in UTF-8.
 
-#. .. _obs_04_0010__li1226919112203:
+#. .. _obs_04_0010ss__li1226919112203:
 
-   Use the SK to calculate the HMAC-SHA1 signature on the result of :ref:`2 <obs_04_0010__li5269617200>`.
+   Use the SK to calculate the HMAC-SHA1 signature on the result of :ref:`2 <obs_04_0010ss__li5269617200>`.
 
-#. Encode the result of :ref:`3 <obs_04_0010__li1226919112203>` in Base64 to obtain the signature.
+#. Encode the result of :ref:`3 <obs_04_0010ss__li1226919112203>` in Base64 to obtain the signature.
 
-The StringToSign is constructed according to the following rules. :ref:`Table 1 <obs_04_0010__table34479832212511>` describes the parameters.
+The StringToSign is constructed according to the following rules. :ref:`Table 1 <obs_04_0010ss__table34479832212511>` describes the parameters.
 
 .. code-block::
 
@@ -40,7 +40,7 @@ The StringToSign is constructed according to the following rules. :ref:`Table 1 
        Date + "\n" +
        CanonicalizedHeaders + CanonicalizedResource
 
-.. _obs_04_0010__table34479832212511:
+.. _obs_04_0010ss__table34479832212511:
 
 .. table:: **Table 1** Parameters required for constructing a StringToSign
 
@@ -49,15 +49,15 @@ The StringToSign is constructed according to the following rules. :ref:`Table 1 
    +===================================+===================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+
    | HTTP-Verb                         | Indicates an HTTP request method supported by the OBS REST API. The value can be an HTTP verb such as **PUT**, **GET**, or **DELETE**.                                                                                                                                                                                                                                                                                                                                                                                                                                            |
    +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Content-MD5                       | Base64-encoded 128-bit MD5 digest of the message according to RFC 1864. This parameter can be empty. For details, see :ref:`Table 6 <obs_04_0010__table12510133817416>` and the algorithm examples below the table.                                                                                                                                                                                                                                                                                                                                                               |
+   | Content-MD5                       | Base64-encoded 128-bit MD5 digest of the message according to RFC 1864. This parameter can be empty. For details, see :ref:`Table 6 <obs_04_0010ss__table12510133817416>` and the algorithm examples below the table.                                                                                                                                                                                                                                                                                                                                                             |
    +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Content-Type                      | Specifies the message type, for example, **text/plain**.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
    |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-   |                                   | If a request does not contain this header field, this parameter is deemed as an empty string. For details, see :ref:`Table 2 <obs_04_0010__table14775325212511>`.                                                                                                                                                                                                                                                                                                                                                                                                                 |
+   |                                   | If a request does not contain this header field, this parameter is deemed as an empty string. For details, see :ref:`Table 2 <obs_04_0010ss__table14775325212511>`.                                                                                                                                                                                                                                                                                                                                                                                                               |
    +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Date                              | Time when a request is initiated. This parameter uses the RFC 1123 time format. If the deviation between the time specified by this parameter and the server time is over 15 minutes, the server returns error 403.                                                                                                                                                                                                                                                                                                                                                               |
    |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-   |                                   | This parameter is an empty string when the **x-obs-date** is specified. For details, see :ref:`Table 6 <obs_04_0010__table12510133817416>`.                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+   |                                   | This parameter is an empty string when the **x-obs-date** is specified. For details, see :ref:`Table 6 <obs_04_0010ss__table12510133817416>`.                                                                                                                                                                                                                                                                                                                                                                                                                                     |
    |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
    |                                   | If an operation (for example, obtaining an object content) is temporarily authorized, this parameter is not required.                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
    +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -67,7 +67,7 @@ The StringToSign is constructed according to the following rules. :ref:`Table 1 
    |                                   | #. If multiple header fields in a request have the same prefix, combine the header fields into one. For example, **x-obs-meta-name:name1** and **x-obs-meta-name:name2** should be reorganized into **x-obs-meta-name:name1,name2**. Use comma to separate the values.                                                                                                                                                                                                                                                                                                            |
    |                                   | #. Keywords in the request header field cannot contain non-ASCII or unrecognizable characters, which are also not advisable for values in the request header field. If the two types of characters are necessary, they should be encoded and decoded on the client side. Either URL encoding or Base64 encoding is acceptable, but the server does not perform decoding.                                                                                                                                                                                                          |
    |                                   | #. Delete meaningless spaces and tabs in a header field. For example, **x-obs-meta-name: name** (with a meaningless space before **name**) must be changed to **x-obs-meta-name:name**.                                                                                                                                                                                                                                                                                                                                                                                           |
-   |                                   | #. Each header field occupies a separate line. See :ref:`Table 4 <obs_04_0010__table46456687212511>`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+   |                                   | #. Each header field occupies a separate line. See :ref:`Table 4 <obs_04_0010ss__table46456687212511>`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
    +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | CanonicalizedResource             | Indicates the OBS resource specified by an HTTP request. This parameter is constructed as follows:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
    |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
@@ -89,7 +89,7 @@ The StringToSign is constructed according to the following rules. :ref:`Table 1 
 
 The following tables provide some examples of generating StringToSign.
 
-.. _obs_04_0010__table14775325212511:
+.. _obs_04_0010ss__table14775325212511:
 
 .. table:: **Table 2** Obtaining an object
 
@@ -131,7 +131,7 @@ The following tables provide some examples of generating StringToSign.
 
    For details about how to obtain a temporary AK/SK pair and security token, see `Obtaining a Temporary AK/SK Pair <https://docs.sc.otc.t-systems.com/api/iam/en-us_topic_0097949518.html>`__.
 
-.. _obs_04_0010__table46456687212511:
+.. _obs_04_0010ss__table46456687212511:
 
 .. table:: **Table 4** An object upload request containing header fields
 
@@ -169,7 +169,7 @@ The following tables provide some examples of generating StringToSign.
    |                                         | /bucket/object.txt?acl            |
    +-----------------------------------------+-----------------------------------+
 
-.. _obs_04_0010__table12510133817416:
+.. _obs_04_0010ss__table12510133817416:
 
 .. table:: **Table 6** An object upload request carrying the Content-MD5 header
 

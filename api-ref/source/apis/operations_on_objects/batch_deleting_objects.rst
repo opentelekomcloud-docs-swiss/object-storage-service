@@ -2,15 +2,15 @@
 
 .. _obs_04_0086:
 
-Deleting Objects
-================
+Batch Deleting Objects
+======================
 
 Functions
 ---------
 
-This operation can be used to batch delete some objects in a bucket. The deletion cannot be undone. After the operation is implemented, the returned information contains the implementation result of each object in the specified bucket. OBS deletes the objects synchronously. The deletion result of each object is returned to the request user.
+This operation batch deletes certain objects from a bucket. The deletion operation cannot be undone. OBS deletes the objects synchronously. Once the operation is complete, the response returns the deletion result for each object in the bucket to the requester.
 
-Objects in batches can be deleted in **verbose** or **quiet** mode. With **verbose** mode, OBS returns results of successful and failed deletion in an XML response; with **quiet** mode, OBS only returns results of failed deletion in an XML response. OBS uses the **verbose** mode by default and you can specify the **quiet** mode in the request body.
+Batch deletion of objects can be performed in either quiet or non-quiet mode: In non-quiet mode, OBS returns the deletion results (both successful and failed) in XML format. In quiet mode, OBS returns only the failed deletion results in XML format. OBS uses the non-quiet mode by default. You can specify the quiet mode in the request body.
 
 For batch deletion, the request header must contain **Content-MD5** and **Content-Length**, so that the message body can be identified if network transmission error is detected at the server side.
 
@@ -110,7 +110,7 @@ Response Syntax
 Response Headers
 ----------------
 
-The response to the request uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
+This response uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
 
 Response Elements
 -----------------
@@ -136,7 +136,7 @@ This response uses elements to return results of deleted objects in a batch. :re
    |                                   |                                                                                                                                                                                                        |
    |                                   | Type: container                                                                                                                                                                                        |
    +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Key                               | Object names in a deletion result                                                                                                                                                                      |
+   | Key                               | Object name in each deletion result                                                                                                                                                                    |
    |                                   |                                                                                                                                                                                                        |
    |                                   | Type: string                                                                                                                                                                                           |
    +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

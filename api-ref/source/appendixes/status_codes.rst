@@ -5,7 +5,7 @@
 Status Codes
 ============
 
-:ref:`Table 1 <obs_04_0114__table6083869622854>` lists the status codes and prompt message returned by the server to the user.
+:ref:`Table 1 <obs_04_0114__table6083869622854>` lists the status codes and prompt messages returned by the server to the user.
 
 .. _obs_04_0114__table6083869622854:
 

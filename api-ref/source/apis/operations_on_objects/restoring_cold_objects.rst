@@ -127,6 +127,7 @@ Request Elements
    |                 |                 |                    |                                                                                                                                                                                                                 |
    |                 |                 |                    | -  **Expedited** indicates that objects can be quickly restored from Archive storage within 1 to 5 minutes.                                                                                                     |
    |                 |                 |                    | -  **Standard** indicates that objects can be restored from Archive storage within 3 to 5 hours.                                                                                                                |
+   |                 |                 |                    | -  **Bulk** indicates that objects can be restored from Archive storage within 5 to 12 hours.                                                                                                                   |
    |                 |                 |                    |                                                                                                                                                                                                                 |
    |                 |                 |                    | **Default value**:                                                                                                                                                                                              |
    |                 |                 |                    |                                                                                                                                                                                                                 |
@@ -144,7 +145,7 @@ Response Syntax
 Response Headers
 ----------------
 
-The response to the request uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
+This response uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
 
 Response Elements
 -----------------
@@ -191,7 +192,7 @@ Error Responses
    +--------------------------+--------------------------------------------------------------------------------------------------------------------+-----------------------+
    | InvalidObjectState       | **Definition**:                                                                                                    | 403 Forbidden         |
    |                          |                                                                                                                    |                       |
-   |                          | The restored object is not in the Cold storage.                                                                    |                       |
+   |                          | The object to be restored is not in the Cold storage.                                                              |                       |
    |                          |                                                                                                                    |                       |
    |                          | ErrorMessage: Restore is not allowed, as object's storage class is not COLD                                        |                       |
    +--------------------------+--------------------------------------------------------------------------------------------------------------------+-----------------------+

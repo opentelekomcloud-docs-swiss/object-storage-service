@@ -10,11 +10,11 @@ Functions
 
 After a multipart upload task is created, you can upload parts for this task using the obtained multipart upload ID. When parts are uploaded in a multipart upload of an object, the upload sequence does not affect part merging, namely, multiple parts can be uploaded concurrently.
 
-Ensure that the part size ranges from 100 KB to 5 GB and the size of the last part ranges from 0 to 5 GB. Otherwise, an error will be reported when you assemble parts. The upload part ID ranges from 1 to 10,000.
+Ensure that the part size ranges from 100 KB to 5 GB and the size of the last part ranges from 0 to 5 GB. Otherwise, an error will be reported when you assemble the parts. The upload part ID ranges from 1 to 10,000.
 
 .. important::
 
-   The value of **partNumber** in a multipart task is unique. If you upload a part of the same **partNumber** repeatedly, the last part uploaded will overwrite the previous one. When multiple concurrent uploading of the same **partNumber** part of the same object is performed, the Last Write Win policy is applied. The time of **Last Write** is defined as the time when the metadata of the part is created. To ensure data accuracy, the client must be locked to ensure concurrent upload of the same part of the same object. Concurrent upload of different parts of the same object does not need to be locked.
+   The value of **partNumber** in a multipart task is unique. If you upload a part of the same **partNumber** repeatedly, the last part uploaded will overwrite the previous one. When multiple concurrent uploading of the same **partNumber** part of the same object is performed, the Last Write Win policy is applied. The time of **Last Write** is defined as the time when the metadata of the part is created. To ensure data accuracy, the client must use a locking mechanism to prevent concurrent uploads of the same part of an object. Concurrent upload of different parts of the same object does not need to be locked.
 
 Request Syntax
 --------------

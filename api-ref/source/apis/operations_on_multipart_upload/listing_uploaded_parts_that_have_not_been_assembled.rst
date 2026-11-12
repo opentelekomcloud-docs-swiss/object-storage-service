@@ -232,7 +232,7 @@ Error Responses
 #. If the AK or signature is invalid, OBS returns **403 Forbidden** and the error code is **AccessDenied**.
 #. If the requested bucket is not found, OBS returns **404 Not Found** and the error code is **NoSuchBucket**.
 #. If the requested multipart upload task does not exist, OBS returns **404 Not Found** and the error code is **NoSuchUpload**.
-#. OBS determines whether the use's domain ID has the read permission for the specified bucket. If the user does not have the permission, OBS returns **403 Forbidden** and the error code is **AccessDenied**.
+#. OBS checks whether the user has the read permission for the specified bucket based on the domain ID. If the user does not have the permission, OBS returns **403 Forbidden** and the error code is **AccessDenied**.
 
 Other errors are included in :ref:`Table 2 <obs_04_0115__d0e843>`.
 

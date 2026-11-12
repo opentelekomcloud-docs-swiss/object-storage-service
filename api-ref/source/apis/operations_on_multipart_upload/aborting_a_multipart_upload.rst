@@ -2,20 +2,20 @@
 
 .. _obs_04_0103:
 
-Canceling a Multipart Upload Task
-=================================
+Aborting a Multipart Upload
+===========================
 
 Functions
 ---------
 
-You can call this API to cancel a multipart upload task. You cannot upload or list parts after operations to merge parts or abort a multipart upload are performed.
+You can call this API to abort a multipart upload. You cannot upload or list parts after operations to merge parts or abort a multipart upload are performed.
 
 Request Syntax
 --------------
 
 .. code-block:: text
 
-   DELETE /ObjectName?uploadId=uplaodID HTTP/1.1
+   DELETE /ObjectName?uploadId=uploadID HTTP/1.1
    Host: bucketname.obs.region.example.com
    Date: date
    Authorization: auth

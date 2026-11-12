@@ -2,8 +2,8 @@
 
 .. _obs_04_0039:
 
-Configuring Event Notification for a Bucket
-===========================================
+Configuring Event Notifications for a Bucket
+============================================
 
 Functions
 ---------
@@ -200,7 +200,7 @@ Response Syntax
 Response Headers
 ----------------
 
-The response to the request uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
+This response uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
 
 Response Elements
 -----------------
@@ -214,18 +214,18 @@ When this operation is being called, the system checks whether the **Notificatio
 
 .. table:: **Table 2** Error codes and possible causes
 
-   +-----------------------+-----------------------------------------------------------------------------------------------------+-----------------------+
-   | Error Code            | Description                                                                                         | HTTP Status Code      |
-   +=======================+=====================================================================================================+=======================+
-   | InvalidArgument       | Possible causes of this error are:                                                                  | 400 Bad Request       |
-   |                       |                                                                                                     |                       |
-   |                       | -  The specified event is not supported.                                                            |                       |
-   |                       | -  The specified URN does not exist or is incorrect.                                                |                       |
-   |                       | -  The specified region in the URN is different as the region where the bucket resides.             |                       |
-   |                       | -  The specified filtering rules overlap.                                                           |                       |
-   +-----------------------+-----------------------------------------------------------------------------------------------------+-----------------------+
-   | AccessDenied          | The operator is not the bucket owner and not granted with the **PutBucketNotification** permission. | 403 Forbidden         |
-   +-----------------------+-----------------------------------------------------------------------------------------------------+-----------------------+
+   +-----------------------+------------------------------------------------------------------------------------------------+-----------------------+
+   | Error Code            | Description                                                                                    | HTTP Status Code      |
+   +=======================+================================================================================================+=======================+
+   | InvalidArgument       | Possible causes of this error are:                                                             | 400 Bad Request       |
+   |                       |                                                                                                |                       |
+   |                       | -  The specified event is not supported.                                                       |                       |
+   |                       | -  The specified URN does not exist or is incorrect.                                           |                       |
+   |                       | -  The specified region in the URN is different from the region where the bucket resides.      |                       |
+   |                       | -  The specified filtering rules overlap.                                                      |                       |
+   +-----------------------+------------------------------------------------------------------------------------------------+-----------------------+
+   | AccessDenied          | The operator is neither the bucket owner nor granted the **PutBucketNotification** permission. | 403 Forbidden         |
+   +-----------------------+------------------------------------------------------------------------------------------------+-----------------------+
 
 Sample Request
 --------------

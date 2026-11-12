@@ -1,6 +1,6 @@
-:original_name: obs_04_0012.html
+:original_name: obs_04_0012ss.html
 
-.. _obs_04_0012:
+.. _obs_04_0012ss:
 
 Authenticating the Signature Carried in a Form Uploaded Through a Browser
 =========================================================================
@@ -9,19 +9,19 @@ OBS supports browser-based uploads using POST requests. Authenticating such a re
 
 The process of calculating a signature is as follows:
 
-#. .. _obs_04_0012__li13246145519488:
+#. .. _obs_04_0012ss__li13246145519488:
 
    Encode the policy content in UTF-8.
 
-#. .. _obs_04_0012__li1160858144812:
+#. .. _obs_04_0012ss__li1160858144812:
 
-   Encode the result of :ref:`1 <obs_04_0012__li13246145519488>` in Base64.
+   Encode the result of :ref:`1 <obs_04_0012ss__li13246145519488>` in Base64.
 
-#. .. _obs_04_0012__li207269014915:
+#. .. _obs_04_0012ss__li207269014915:
 
-   Use the SK to calculate the HMAC-SHA1 signature on the result of :ref:`2 <obs_04_0012__li1160858144812>`.
+   Use the SK to calculate the HMAC-SHA1 signature on the result of :ref:`2 <obs_04_0012ss__li1160858144812>`.
 
-#. Encode the result of :ref:`3 <obs_04_0012__li207269014915>` in Base64 to obtain the signature.
+#. Encode the result of :ref:`3 <obs_04_0012ss__li207269014915>` in Base64 to obtain the signature.
 
 .. code-block::
 
@@ -41,16 +41,16 @@ The content of the policy is as follows:
      ]
    }
 
-The policy contains the validity period (see :ref:`Expiration <obs_04_0012__section6158671218>`) and conditions (see :ref:`Conditions <obs_04_0012__section675581585817>`).
+The policy contains the validity period (see :ref:`Expiration <obs_04_0012ss__section6158671218>`) and conditions (see :ref:`Conditions <obs_04_0012ss__section675581585817>`).
 
-.. _obs_04_0012__section6158671218:
+.. _obs_04_0012ss__section6158671218:
 
 Expiration
 ----------
 
 The **expiration** field describes when the signature will expire, which is expressed in the format according to ISO 8601 UTC. For example, **expiration: 2017-12-31T12:00:00.000Z** in the example means that the request becomes invalid after 12:00:00 on December 31, 2017. This field must be specified in a policy. It can only be in the **yyyy-MM-dd'T'HH:mm:ss'Z'** or **yyyy-MM-dd'T'HH:mm:ss.SSS'Z'** format.
 
-.. _obs_04_0012__section675581585817:
+.. _obs_04_0012ss__section675581585817:
 
 Conditions
 ----------
@@ -80,11 +80,11 @@ A mechanism used to verify the validity of a request. Conditions are used to def
    |                                                                             |                                                                                                                                                                                                                                      |
    |                                                                             | Supports exact match.                                                                                                                                                                                                                |
    +-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | success_action_redirect                                                     | Redirection address after the upload is successful. For details, see :ref:`Uploading an Object - POST <obs_04_0081>`.                                                                                                                |
+   | success_action_redirect                                                     | Redirection address after the upload is successful. For details, see :ref:`Uploading an Object with POST <obs_04_0081>`.                                                                                                             |
    |                                                                             |                                                                                                                                                                                                                                      |
    |                                                                             | Supports exact match and conditional match such as **starts-with**.                                                                                                                                                                  |
    +-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | success_action_status                                                       | If **success_action_redirect** is not specified, the status code is returned to the client when the upload is successful. For details, see :ref:`Uploading an Object - POST <obs_04_0081>`.                                          |
+   | success_action_status                                                       | If **success_action_redirect** is not specified, the status code is returned to the client when the upload is successful. For details, see :ref:`Uploading an Object with POST <obs_04_0081>`.                                       |
    |                                                                             |                                                                                                                                                                                                                                      |
    |                                                                             | Supports exact match.                                                                                                                                                                                                                |
    +-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

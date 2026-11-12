@@ -16,7 +16,7 @@ You can send a request for downloading all or some data of the generated multipa
 
 You can send a request for deleting all parts uploaded in a multipart upload. Deleted data cannot be restored.
 
-The merged parts do not use the MD5 value of entire object as the ETag. Their ETag is calculated as follows: *MD5(M\ 1\ M\ 2...M\ N)-N*, where *M\ n* is the MD5 value of part *n* (*N* is the total number of parts). As described in the :ref:`Sample Request <obs_04_0102__section74706439232>`, there are three parts and each part has an MD5 value. The MD5 values of the three parts are recalculated to obtain a new MD5 value. Then *-N* is added to the right of the MD5 value to get the ETag of the combined parts. In this example, *-N* is **-3**.
+The merged parts do not use the MD5 value of the entire object as the ETag. Their ETag is calculated as follows: *MD5(M\ 1\ M\ 2...M\ N)-N*, where *M\ n* is the MD5 value of part *n* (*N* is the total number of parts). As described in the :ref:`Sample Request <obs_04_0102__section74706439232>`, there are three parts and each part has an MD5 value. The MD5 values of the three parts are recalculated to obtain a new MD5 value. Then *-N* is added to the right of the MD5 value to get the ETag of the combined parts. In this example, *-N* is **-3**.
 
 If the response to an object assembling request timed out and error 500 or 503 was returned, you can first obtain the object metadata of the multipart upload task. Then, check whether the value of header **x-obs-uploadId** in the response is the same as the ID of the current multipart upload task. If they are, it means the object parts have been successfully assembled on the server and you do not need to try again. For details, see :ref:`Consistency of Concurrent Operations <obs_04_0118>`.
 
@@ -28,7 +28,7 @@ If a bucket has WORM enabled, the WORM protection will be automatically applied 
 Versioning
 ----------
 
-If a bucket has versioning enabled, a unique version ID is generated for an object created from a multipart upload in this bucket and the version ID is returned in response header **x-obs-version-id**. If versioning is suspended for a bucket, the object version obtained after the merge is **null**. For details about the versioning statuses of a bucket, see :ref:`Configuring Versioning for a Bucket <obs_04_0037>`.
+If a bucket has versioning enabled, a unique version ID is generated for an object created from a multipart upload in this bucket and the version ID is returned in response header **x-obs-version-id**. If versioning is suspended for a bucket, the version ID of the object obtained from assembling the parts is **null**. For details about the versioning status of a bucket, see :ref:`Configuring Versioning for a Bucket <obs_04_0037>`.
 
 .. important::
 
@@ -117,6 +117,22 @@ This request uses elements to specify the list of parts to be assembled. :ref:`T
    |                         |                 |                    |                                                                                                                                                                                 |
    |                         |                 |                    | None                                                                                                                                                                            |
    +-------------------------+-----------------+--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | part                    | XML             | Yes                | **Definition:**                                                                                                                                                                 |
+   |                         |                 |                    |                                                                                                                                                                                 |
+   |                         |                 |                    | Parent node of the part information, that is, the parent node of PartNumber and ETag. It indicates a part to be assembled.                                                      |
+   |                         |                 |                    |                                                                                                                                                                                 |
+   |                         |                 |                    | **Constraints:**                                                                                                                                                                |
+   |                         |                 |                    |                                                                                                                                                                                 |
+   |                         |                 |                    | None                                                                                                                                                                            |
+   |                         |                 |                    |                                                                                                                                                                                 |
+   |                         |                 |                    | **Range**:                                                                                                                                                                      |
+   |                         |                 |                    |                                                                                                                                                                                 |
+   |                         |                 |                    | None                                                                                                                                                                            |
+   |                         |                 |                    |                                                                                                                                                                                 |
+   |                         |                 |                    | **Default value**:                                                                                                                                                              |
+   |                         |                 |                    |                                                                                                                                                                                 |
+   |                         |                 |                    | None                                                                                                                                                                            |
+   +-------------------------+-----------------+--------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | PartNumber              | Integer         | Yes                | **Definition**:                                                                                                                                                                 |
    |                         |                 |                    |                                                                                                                                                                                 |
    |                         |                 |                    | Part number                                                                                                                                                                     |
@@ -168,7 +184,7 @@ Response Syntax
 Response Headers
 ----------------
 
-The response to the request uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
+This response uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
 
 In addition to the common response headers, the headers listed in :ref:`Table 3 <obs_04_0102__table374518451013>` may be used.
 

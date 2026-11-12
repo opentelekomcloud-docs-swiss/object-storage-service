@@ -8,7 +8,7 @@ Listing Initiated Multipart Uploads in a Bucket
 Functions
 ---------
 
-You can use this API to query all initiated multipart uploads that have not been completed or canceled in a bucket.
+You can call this API to query all initiated multipart uploads that have not been completed or aborted in a bucket.
 
 Request Syntax
 --------------
@@ -299,7 +299,7 @@ Sample Response: Listing Initiated Multipart Uploads
 Sample Request: Listing Initiated Multipart Uploads (with a Prefix and Delimiter Specified)
 -------------------------------------------------------------------------------------------
 
-The following example describes how to list two initiated multipart uploads (with objects **multipart-object001** and **part2-key02** in bucket **examplebucket**. In this listing operation, **prefix** is set to **multipart** and **object001** is set to **delimiter**.
+The following example describes how to list two initiated multipart uploads (with objects **multipart-object001** and **part2-key02** in bucket **examplebucket**). In this listing operation, **prefix** is set to **multipart** and **delimiter** is set to **object001**.
 
 .. code-block:: text
 

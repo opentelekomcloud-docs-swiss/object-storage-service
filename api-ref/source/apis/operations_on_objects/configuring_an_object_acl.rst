@@ -10,14 +10,14 @@ Functions
 
 OBS supports the control of access permission for objects. By default, only the object creator has the read and write permissions for the object. However, the creator can set a public access policy to assign the read permission to all other users.
 
-You can set an access control policy when uploading an object or make a call of an API operation to modify or obtain the object ACL. An object ACL supports a maximum of 100 grants.
+You can set an access control policy when uploading an object or call an ACL API to modify or obtain the ACL of an existing object. An object ACL supports a maximum of 100 grants.
 
 This section explains how to modify an object ACL and change access permission on an object.
 
 Versioning
 ----------
 
-By default, this operation modifies the ACL of the latest version of an object. To specify a specified version, the request can carry the **versionId** parameter.
+By default, this operation modifies the ACL of the latest version of an object. To set the ACL of a specific object version, the request can include the **versionId** parameter.
 
 Request Syntax
 --------------

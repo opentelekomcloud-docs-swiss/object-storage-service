@@ -10,6 +10,12 @@ Functions
 
 You can perform this operation to list all buckets that you have created across all regions.
 
+Constraints
+-----------
+
+-  Regardless of the endpoint you specified, a list of buckets spanning all regions is returned.
+-  When creating a bucket, do not list buckets.
+
 Request Syntax
 --------------
 
@@ -19,12 +25,6 @@ Request Syntax
    Host: obs.region.example.com
    Date: date
    Authorization: authorization
-
-.. note::
-
-   Regardless of the endpoint you specified, a list of buckets spanning all regions is returned.
-
-   When creating a bucket, do not list buckets.
 
 Request Parameters
 ------------------

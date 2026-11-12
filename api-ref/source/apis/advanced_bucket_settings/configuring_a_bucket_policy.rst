@@ -10,7 +10,7 @@ Functions
 
 This operation creates or modifies policies for buckets. The existing policy in a bucket is overwritten by the policy in the request. You can add as many statements as you would like to a bucket. All these statements in JSON cannot exceed 20 KB.
 
-To perform this operation, the user must be the bucket owner or the bucket owner's IAM user that has permissions required for configuring bucket policies.
+To perform this operation, the user must be the bucket owner or the bucket owner's IAM user who has permissions required for configuring bucket policies.
 
 Request Syntax
 --------------
@@ -50,7 +50,7 @@ Response Syntax
 Response Headers
 ----------------
 
-The response to the request uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
+This response uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
 
 Response Elements
 -----------------
@@ -86,7 +86,7 @@ For details about how to obtain the tenant ID, see :ref:`Obtaining a Domain ID a
                    "GetBucketLogging"
                ],
                "Effect": "Allow",
-               "Resource": "logging.bucket",
+               "Resource": "examplebucket",
                "Principal": {
                    "ID": [
                        "domain/783fc6652cf246c096ea836694f71855:user/*"
@@ -271,7 +271,7 @@ The tenant whose account ID is **783fc6652cf246c096ea836694f71855** has an agenc
                    "GetBucketLogging"
                ],
                "Effect": "Allow",
-               "Resource": "logging.bucket",
+               "Resource": "examplebucket",
                "Principal": {
                    "ID": [
                        "domain/783fc6652cf246c096ea836694f71855:agency/exampleAgency"

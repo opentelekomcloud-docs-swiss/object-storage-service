@@ -10,8 +10,8 @@ Functions
 
 This operation configures or updates the retention period for objects uploaded to a bucket with WORM enabled.
 
--  If you do not configure a retention period or apply the default bucket-level protection rule to the object when you upload an object, you can perform this operation to configure a retention period for the object.
--  If you already configure a retention period or apply the default bucket-level protection rule to the object when you upload an object, you can perform this operation to prolong the retention period for the object.
+-  If you did not configure a retention period or apply the default bucket-level protection rule when uploading an object, you can perform this operation to configure a retention period for the object.
+-  If you already configured a retention period or applied the default bucket-level protection rule when uploading an object, you can perform this operation to prolong the retention period for the object.
 -  The retention period of an object can only be modified, but not deleted.
 
    .. note::
@@ -21,12 +21,12 @@ This operation configures or updates the retention period for objects uploaded t
 Versioning
 ----------
 
-OBS automatically enables versioning when you enable WORM for a bucket. In such case, the object you uploaded to the bucket will be assigned a version ID. An object-level WORM policy is applied to the current object version by default, but you can specify a version ID to make the policy applied to a specific object version. The WORM configuration does not apply to a delete marker with a unique version ID.
+OBS automatically enables versioning when you enable WORM for a bucket. In such case, the object you uploaded to the bucket is assigned a version ID. An object-level WORM policy is applied to the current object version by default, but you can specify a version ID to make the policy applied to a specific object version. The WORM configuration does not apply to a delete marker with a unique version ID.
 
 Multipart Upload
 ----------------
 
-Before a multipart upload is complete, the default bucket-level WORM policy is not automatically applied to the object parts uploaded. Besides, you cannot configure an object-level WORM policy using a header when you upload a part or assemble the object parts, or for a part that is already uploaded to the bucket. You can call this API to configure a WORM retention policy for the new object after the object parts are assembled.
+Before a multipart upload is complete, the default bucket-level WORM policy is not automatically applied to the object parts uploaded. Besides, you cannot configure an object-level WORM policy using a header when you upload a part or assemble the object parts, or for a part that has already been uploaded to the bucket. You can call this API to configure a WORM retention policy for the new object after the object parts are assembled.
 
 Request Syntax
 --------------
