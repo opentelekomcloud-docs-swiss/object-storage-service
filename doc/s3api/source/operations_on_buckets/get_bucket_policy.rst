@@ -102,7 +102,7 @@ Sample Response
                    "s3:GetBucketLogging"
                ],
                "Effect": "Allow",
-               "Resource": "arn:aws:s3:::logging.bucket3",
+               "Resource": "arn:aws:s3:::bucketname",
                "Principal": {
                    "AWS": [
                        "norman"

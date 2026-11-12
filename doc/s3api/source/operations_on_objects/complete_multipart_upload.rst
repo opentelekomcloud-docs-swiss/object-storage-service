@@ -289,7 +289,7 @@ Sample Response (Getting an Object Created from a Multipart Upload with Version 
     Content-Length: 300
     <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     <CompleteMultipartUploadResult xmlns="http://obs.example.com/doc/2015-06-30/">
-    <Location>/example/multi</Location>
+    <Location>http://bucketname.obs.example.com/object</Location>
     <Bucket>example</Bucket>
     <Key>multi</Key>
     <ETag>"59297fcb0de64c706cbb46e382d9c625-1"</ETag>

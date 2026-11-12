@@ -44,10 +44,6 @@ The requests that are sent to OBS by users must comply with REST specifications 
 -  :ref:`PUT Bucket tagging <en-us_topic_0125560290>`
 -  :ref:`GET Bucket tagging <en-us_topic_0125560249>`
 -  :ref:`DELETE Bucket tagging <en-us_topic_0125560426>`
--  :ref:`PUT Bucket Inventory <en-us_topic_0000001243677443>`
--  :ref:`GET Bucket Inventory <en-us_topic_0000001198597564>`
--  :ref:`List Bucket Inventory <en-us_topic_0000001198437590>`
--  :ref:`DELETE Bucket Inventory <en-us_topic_0000001243597437>`
 -  :ref:`Configuring a Default WORM Policy for a Bucket <en-us_topic_0000001806313033>`
 -  :ref:`Obtaining the Default WORM Policy of a Bucket <en-us_topic_0000001759314566>`
 
@@ -92,9 +88,5 @@ The requests that are sent to OBS by users must comply with REST specifications 
    put_bucket_tagging
    get_bucket_tagging
    delete_bucket_tagging
-   put_bucket_inventory
-   get_bucket_inventory
-   list_bucket_inventory
-   delete_bucket_inventory
    configuring_a_default_worm_policy_for_a_bucket
    obtaining_the_default_worm_policy_of_a_bucket

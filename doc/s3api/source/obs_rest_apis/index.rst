@@ -13,6 +13,7 @@ This chapter explains how to use OBS REST APIs to access and operate the object 
 -  :ref:`Authenticating a Request <en-us_topic_0125560435>`
 -  :ref:`Federal Authentication <en-us_topic_0125560478>`
 -  :ref:`Request Responses <en-us_topic_0125560255>`
+-  :ref:`Server-Side Encryption <en-us_topic_0125560343>`
 
 .. toctree::
    :maxdepth: 1
@@ -24,3 +25,4 @@ This chapter explains how to use OBS REST APIs to access and operate the object 
    authenticating_a_request/index
    federal_authentication
    request_responses
+   server-side_encryption/index

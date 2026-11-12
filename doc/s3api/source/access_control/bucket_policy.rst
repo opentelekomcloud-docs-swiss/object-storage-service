@@ -294,7 +294,7 @@ or
 
 .. note::
 
-   Elements in **Condition** are case-sensitive. Date conditions must be in the ISO 8601 format. For details, see http://www.w3.org/TR/NOTE-datetime.
+   Elements in **Condition** are case-sensitive. Date conditions must be in the ISO 8601 format. For details, see https://www.w3.org/TR/NOTE-datetime.
 
 A **Condition** block (element) can contain multiple key value pairs. The following example **Condition** block specifies requests initiated between 2009-04-16T12:00:00Z and 2009-04-16T15:00:00Z from IP addresses on network segment 192.168.176.0/24 or 192.168.143.0/24:
 
