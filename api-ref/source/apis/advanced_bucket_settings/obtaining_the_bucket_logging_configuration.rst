@@ -2,8 +2,8 @@
 
 .. _obs_04_0033:
 
-Obtaining a Bucket Logging Configuration
-========================================
+Obtaining the Bucket Logging Configuration
+==========================================
 
 Functions
 ---------
@@ -67,7 +67,7 @@ Response Syntax
 Response Headers
 ----------------
 
-The response to the request uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
+This response uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
 
 Response Elements
 -----------------
@@ -97,7 +97,7 @@ This response contains elements to specify the bucket logging status. :ref:`Tabl
    |                                   |                                                                                                                                                                                                                                                                                                                             |
    |                                   | Type: container                                                                                                                                                                                                                                                                                                             |
    +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | Grantee                           | Container for the user that is granted with the logging permission                                                                                                                                                                                                                                                          |
+   | Grantee                           | Container for the user who is granted the logging permission.                                                                                                                                                                                                                                                               |
    |                                   |                                                                                                                                                                                                                                                                                                                             |
    |                                   | Type: container                                                                                                                                                                                                                                                                                                             |
    +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

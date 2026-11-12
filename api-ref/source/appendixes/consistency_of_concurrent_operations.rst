@@ -16,7 +16,7 @@ Example of Concurrent Operations
 
 .. _obs_04_0118__fig143262124514:
 
-.. figure:: /_static/images/en-us_image_0100846816.png
+.. figure:: /_static/images/en-us_image_0000002679628513.png
    :alt: **Figure 1** Concurrent upload of the same object
 
    **Figure 1** Concurrent upload of the same object
@@ -25,7 +25,7 @@ Example of Concurrent Operations
 
 .. _obs_04_0118__fig143141034184518:
 
-.. figure:: /_static/images/en-us_image_0100846818.png
+.. figure:: /_static/images/en-us_image_0000002649548852.png
    :alt: **Figure 2** Concurrent upload and deletion of the same object (1)
 
    **Figure 2** Concurrent upload and deletion of the same object (1)
@@ -34,7 +34,7 @@ Example of Concurrent Operations
 
 .. _obs_04_0118__fig017318519469:
 
-.. figure:: /_static/images/en-us_image_0100846820.png
+.. figure:: /_static/images/en-us_image_0000002679628511.png
    :alt: **Figure 3** Concurrent upload and deletion of the same object (2)
 
    **Figure 3** Concurrent upload and deletion of the same object (2)
@@ -43,7 +43,7 @@ Example of Concurrent Operations
 
 .. _obs_04_0118__fig17810203484616:
 
-.. figure:: /_static/images/en-us_image_0100846822.png
+.. figure:: /_static/images/en-us_image_0000002649388942.png
    :alt: **Figure 4** Concurrent download and deletion of the same object
 
    **Figure 4** Concurrent download and deletion of the same object
@@ -52,7 +52,7 @@ Example of Concurrent Operations
 
 .. _obs_04_0118__fig16197219472:
 
-.. figure:: /_static/images/en-us_image_0100846824.png
+.. figure:: /_static/images/en-us_image_0000002649548854.png
    :alt: **Figure 5** Concurrent download and update of the same object
 
    **Figure 5** Concurrent download and update of the same object
@@ -61,7 +61,7 @@ Example of Concurrent Operations
 
 .. _obs_04_0118__fig097482816477:
 
-.. figure:: /_static/images/en-us_image_0100846826.png
+.. figure:: /_static/images/en-us_image_0000002679468683.png
    :alt: **Figure 6** Concurrently uploading the same part of the same object
 
    **Figure 6** Concurrently uploading the same part of the same object

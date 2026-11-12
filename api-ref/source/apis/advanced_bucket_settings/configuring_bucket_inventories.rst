@@ -57,19 +57,19 @@ Request Parameters
 
 .. table:: **Table 1** Request parameters
 
-   +-----------------------+----------------------------------------------------------------------------------------------------------------------+-----------------------+
-   | Parameter             | Description                                                                                                          | Mandatory             |
-   +=======================+======================================================================================================================+=======================+
-   | id                    | ID of the inventory configuration, which must be consistent with the inventory configuration ID in the message body. | Yes                   |
-   |                       |                                                                                                                      |                       |
-   |                       | Type: string                                                                                                         |                       |
-   |                       |                                                                                                                      |                       |
-   |                       | Specifications: A maximum of 64 characters                                                                           |                       |
-   |                       |                                                                                                                      |                       |
-   |                       | There is no default value.                                                                                           |                       |
-   |                       |                                                                                                                      |                       |
-   |                       | Valid characters: letters, digits, hyphens (-), periods (.) and underscores (_)                                      |                       |
-   +-----------------------+----------------------------------------------------------------------------------------------------------------------+-----------------------+
+   +-----------------------+---------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | Parameter             | Description                                                                                                         | Mandatory (Yes/No)    |
+   +=======================+=====================================================================================================================+=======================+
+   | id                    | ID of the inventory configuration, which must be consistent with the inventory configuration ID in the message body | Yes                   |
+   |                       |                                                                                                                     |                       |
+   |                       | Type: string                                                                                                        |                       |
+   |                       |                                                                                                                     |                       |
+   |                       | Specifications: a maximum of 64 bytes                                                                               |                       |
+   |                       |                                                                                                                     |                       |
+   |                       | Default value: N/A                                                                                                  |                       |
+   |                       |                                                                                                                     |                       |
+   |                       | Valid characters: letters, digits, hyphens (-), periods (.), and underscores (_)                                    |                       |
+   +-----------------------+---------------------------------------------------------------------------------------------------------------------+-----------------------+
 
 Request Headers
 ---------------
@@ -116,7 +116,7 @@ In this request, you must configure the bucket inventory in the request body. Up
    |                        |                                                                                                                                                                                                                                        |                       |
    |                        | Parent: InventoryConfiguration                                                                                                                                                                                                         |                       |
    +------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
-   | Filter                 | Inventory filter configuration. The inventory contains only objects that meet the filter criteria (filtering by object name prefix). If no filter criteria is configured, all objects are included.                                    | No                    |
+   | Filter                 | Inventory filter configuration. The inventory contains only objects that meet the filter criteria (filtering by object name prefix). If no filter criteria are configured, all objects are included.                                   | No                    |
    |                        |                                                                                                                                                                                                                                        |                       |
    |                        | Type: container                                                                                                                                                                                                                        |                       |
    |                        |                                                                                                                                                                                                                                        |                       |
@@ -172,16 +172,16 @@ In this request, you must configure the bucket inventory in the request body. Up
    |                        |                                                                                                                                                                                                                                        |                       |
    |                        | Parent: Destination                                                                                                                                                                                                                    |                       |
    +------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
-   | IncludedObjectVersions | Indicates whether versions of objects are included in an inventory.                                                                                                                                                                    | Yes                   |
+   | IncludedObjectVersions | Whether versions of objects are included in an inventory.                                                                                                                                                                              | Yes                   |
    |                        |                                                                                                                                                                                                                                        |                       |
    |                        | -  If this parameter is set to **All**, all the versions of objects are included in the inventory, and versioning related fields are added to the inventory, including: **VersionId**, **IsLatest**, and **DeleteMarker**.             |                       |
-   |                        | -  If this parameter is set to **Current**, the inventory contains only the current objects versions at the time when the inventory is generated. No versioning fields are displayed in the inventory.                                 |                       |
+   |                        | -  If this parameter is set to **Current**, the inventory only lists information about the current object version and does not contain the **VersionId**, **IsLatest**, and **DeleteMarker** fields that are related to versioning.    |                       |
    |                        |                                                                                                                                                                                                                                        |                       |
    |                        | Type: string                                                                                                                                                                                                                           |                       |
    |                        |                                                                                                                                                                                                                                        |                       |
    |                        | Parent: InventoryConfiguration                                                                                                                                                                                                         |                       |
    |                        |                                                                                                                                                                                                                                        |                       |
-   |                        | Value options: **All**, **Current**                                                                                                                                                                                                    |                       |
+   |                        | Valid values: **ALL**, **Current**                                                                                                                                                                                                     |                       |
    +------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
    | OptionalFields         | Extra metadata fields that can be added to an inventory. If this parameter is configured, fields specified in this parameter are contained in the inventory.                                                                           | No                    |
    |                        |                                                                                                                                                                                                                                        |                       |
@@ -214,7 +214,7 @@ Response Syntax
 Response Headers
 ----------------
 
-The response to the request uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
+This response uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
 
 Response Elements
 -----------------

@@ -8,7 +8,7 @@ Obtaining Bucket ACL Information
 Functions
 ---------
 
-This operation returns the ACL information of a bucket. To obtain the ACL of a bucket, you need to have the **READ_ACP** or **FULL_CONTROL** permission for the bucket.
+This operation returns the ACL information of a bucket. To obtain the ACL of a bucket, you need to have the **READ_ACP** or **FULL_CONTROL** permission for the bucket. For more information about bucket ACLs, see `Configuring a Bucket ACL <https://docs.sc.otc.t-systems.com/object-storage-service/umn/obs_console_operation_guide/permissions_control/configuring_a_bucket_acl.html#obs-03-0326>`__.
 
 Request Syntax
 --------------
@@ -64,7 +64,7 @@ Response Syntax
 Response Headers
 ----------------
 
-The response to the request uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
+This response uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
 
 Response Elements
 -----------------

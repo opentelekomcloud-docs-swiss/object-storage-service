@@ -1,6 +1,6 @@
-:original_name: obs_04_0009.html
+:original_name: obs_04_0009ss.html
 
-.. _obs_04_0009:
+.. _obs_04_0009ss:
 
 User Signature Authentication
 =============================
@@ -12,11 +12,11 @@ OBS signs a request using AK/SK. When a client is sending a request to OBS, the 
 
 A user can obtain the AK and SK from IAM. For details, see :ref:`Obtaining Access Keys (AK/SK) <obs_04_0116>`.
 
-OBS provides three signature calculation methods based on application scenarios: :ref:`Authentication of Signature in a Header <obs_04_0010>`, :ref:`Authentication of Signature in a URL <obs_04_0011>`, and :ref:`Authenticating the Signature Carried in a Form Uploaded Through a Browser <obs_04_0012>`.
+OBS provides three signature calculation methods based on application scenarios: :ref:`Authentication of Signature in a Header <obs_04_0010ss>`, :ref:`Authentication of Signature in a URL <obs_04_0011s>`, and :ref:`Authenticating the Signature Carried in a Form Uploaded Through a Browser <obs_04_0012ss>`.
 
-:ref:`Table 1 <obs_04_0009__table1151632183812>` shows the user signature verification process in which a signature is carried in a header. For details about the parameters and code examples of authentication of signature in a header, see :ref:`Authentication of Signature in a Header <obs_04_0010>`.
+:ref:`Table 1 <obs_04_0009ss__table1151632183812>` shows the user signature verification process in which a signature is carried in a header. For details about the parameters and code examples of authentication of signature in a header, see :ref:`Authentication of Signature in a Header <obs_04_0010ss>`.
 
-.. _obs_04_0009__table1151632183812:
+.. _obs_04_0009ss__table1151632183812:
 
 .. table:: **Table 1** Signature calculation and verification procedure
 

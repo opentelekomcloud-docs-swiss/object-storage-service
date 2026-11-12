@@ -8,8 +8,6 @@ Creating a Bucket
 Functions
 ---------
 
-This operation is used to create a bucket with a specified name.
-
 .. note::
 
    -  By default, a user can have a maximum of 100 buckets.
@@ -23,7 +21,7 @@ Storage Class
 
 You can create buckets with different storage classes. The **x-obs-storage-class** header in a bucket creation request specifies the bucket's storage class. If you do not specify a storage class when you upload an object to the bucket, the object inherits the storage class of the bucket. The storage class options are as follows: **STANDARD** (Standard), **WARM** (Warm), **COLD** (Cold). If the **x-obs-storage-class** header is not in the request, a Standard bucket will be created.
 
-If the storage class of an object is not specified when it is uploaded to a bucket (see :ref:`Uploading an Object - PUT <obs_04_0080>`), the object will be stored in the default storage class of the bucket.
+If the storage class of an object is not specified when it is uploaded to a bucket (see :ref:`Uploading an Object with PUT <obs_04_0080>`), the object will be stored in the default storage class of the bucket.
 
 -  OBS Standard features low access latency and high throughput. It is most suitable for storing frequently accessed (multiple times per month) hot files. Potential application scenarios include big data, mobile applications, trending videos, and social media images.
 -  OBS Warm storage class is suitable for storing data that is infrequently accessed (less than 12 times a year) yet has quick response requirements. Potential application scenarios include file synchronization or sharing and enterprise backup. It provides the same durability, access latency, and throughput as the Standard storage class but at a lower price. However, the Warm storage class has lower availability than the Standard one.
@@ -61,7 +59,7 @@ The operation message header is the same as that of a common request. For detail
    +====================================+=================+====================+======================================================================================================================================================================================================================================================================================================================================================================+
    | x-obs-acl                          | String          | No                 | **Definition**:                                                                                                                                                                                                                                                                                                                                                      |
    |                                    |                 |                    |                                                                                                                                                                                                                                                                                                                                                                      |
-   |                                    |                 |                    | When creating a bucket, you can use this parameter to set a pre-defined ACL.                                                                                                                                                                                                                                                                                         |
+   |                                    |                 |                    | When creating a bucket, you can use this parameter to set a predefined ACL.                                                                                                                                                                                                                                                                                          |
    |                                    |                 |                    |                                                                                                                                                                                                                                                                                                                                                                      |
    |                                    |                 |                    | **Range**:                                                                                                                                                                                                                                                                                                                                                           |
    |                                    |                 |                    |                                                                                                                                                                                                                                                                                                                                                                      |
@@ -285,7 +283,7 @@ Response Syntax
 Response Headers
 ----------------
 
-The response to the request uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
+This response uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
 
 Response Elements
 -----------------

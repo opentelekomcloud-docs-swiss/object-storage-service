@@ -22,12 +22,12 @@ Tags are added to the current version of an object by default. You can use the *
 
       -  If there are multiple tags specified for an object, each tag key must be unique.
       -  A tag key must contain 1 to 36 characters and be case sensitive.
-      -  A tag key cannot start or end with a space or contain the following characters: ``,/|<>=*\``
+      -  A tag key cannot start or end with a space, and can contain only digits, letters, underscores (_), and hyphens (-).
 
    -  Tag value constraints:
 
       -  A tag value can contain 0 to 43 characters and must be case sensitive.
-      -  A tag value cannot contain the following characters: ``,/|<>=*\``
+      -  A tag value can contain only digits, letters, underscores (_), and hyphens (-).
 
 Request Syntax
 --------------
@@ -98,50 +98,46 @@ In this request body, you need to configure the object tags in XML. :ref:`Table 
 
 .. table:: **Table 3** Object tag elements
 
-   +-----------------------+-------------------------------------------------------------------------------------------------+-----------------------+
-   | Header                | Description                                                                                     | Mandatory             |
-   +=======================+=================================================================================================+=======================+
-   | Tagging               | Root element for TagSet and Tag                                                                 | Yes                   |
-   |                       |                                                                                                 |                       |
-   |                       | Type: container                                                                                 |                       |
-   |                       |                                                                                                 |                       |
-   |                       | Parent: none                                                                                    |                       |
-   +-----------------------+-------------------------------------------------------------------------------------------------+-----------------------+
-   | TagSet                | A collection for a set of tags.                                                                 | Yes                   |
-   |                       |                                                                                                 |                       |
-   |                       | Type: container                                                                                 |                       |
-   |                       |                                                                                                 |                       |
-   |                       | Parent: Tagging                                                                                 |                       |
-   +-----------------------+-------------------------------------------------------------------------------------------------+-----------------------+
-   | Tag                   | Information element of Tag                                                                      | Yes                   |
-   |                       |                                                                                                 |                       |
-   |                       | Type: container                                                                                 |                       |
-   |                       |                                                                                                 |                       |
-   |                       | Parent: TagSet                                                                                  |                       |
-   +-----------------------+-------------------------------------------------------------------------------------------------+-----------------------+
-   | Key                   | Tag name                                                                                        | Yes                   |
-   |                       |                                                                                                 |                       |
-   |                       | Type: string                                                                                    |                       |
-   |                       |                                                                                                 |                       |
-   |                       | Parent: Tag                                                                                     |                       |
-   |                       |                                                                                                 |                       |
-   |                       | Tag key constraints:                                                                            |                       |
-   |                       |                                                                                                 |                       |
-   |                       | -  If there are multiple tags specified for an object, each tag key must be unique.             |                       |
-   |                       | -  A tag key must contain 1 to 36 characters and be case sensitive.                             |                       |
-   |                       | -  A tag key cannot start or end with a space or contain the following characters: ``,/|<>=*\`` |                       |
-   +-----------------------+-------------------------------------------------------------------------------------------------+-----------------------+
-   | Value                 | Tag value                                                                                       | Yes                   |
-   |                       |                                                                                                 |                       |
-   |                       | Type: string                                                                                    |                       |
-   |                       |                                                                                                 |                       |
-   |                       | Parent: Tag                                                                                     |                       |
-   |                       |                                                                                                 |                       |
-   |                       | Tag value constraints:                                                                          |                       |
-   |                       |                                                                                                 |                       |
-   |                       | -  A tag value can contain 0 to 43 characters and must be case sensitive.                       |                       |
-   |                       | -  A tag value cannot contain the following characters: ``,/|<>=*\``                            |                       |
-   +-----------------------+-------------------------------------------------------------------------------------------------+-----------------------+
+   +-----------------------+------------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | Header                | Description                                                                                                            | Mandatory             |
+   +=======================+========================================================================================================================+=======================+
+   | Tagging               | Root element for TagSet and Tag                                                                                        | Yes                   |
+   |                       |                                                                                                                        |                       |
+   |                       | Type: container                                                                                                        |                       |
+   |                       |                                                                                                                        |                       |
+   |                       | Parent: none                                                                                                           |                       |
+   +-----------------------+------------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | TagSet                | A collection for a set of tags.                                                                                        | Yes                   |
+   |                       |                                                                                                                        |                       |
+   |                       | Type: container                                                                                                        |                       |
+   |                       |                                                                                                                        |                       |
+   |                       | Parent: Tagging                                                                                                        |                       |
+   +-----------------------+------------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | Tag                   | Information element of Tag                                                                                             | Yes                   |
+   |                       |                                                                                                                        |                       |
+   |                       | Type: container                                                                                                        |                       |
+   |                       |                                                                                                                        |                       |
+   |                       | Parent: TagSet                                                                                                         |                       |
+   +-----------------------+------------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | Key                   | Tag name                                                                                                               | Yes                   |
+   |                       |                                                                                                                        |                       |
+   |                       | Type: string                                                                                                           |                       |
+   |                       |                                                                                                                        |                       |
+   |                       | Parent: Tag                                                                                                            |                       |
+   |                       |                                                                                                                        |                       |
+   |                       | -  If there are multiple tags specified for an object, each tag key must be unique.                                    |                       |
+   |                       | -  A tag key must contain 1 to 36 characters and be case sensitive.                                                    |                       |
+   |                       | -  A tag key cannot start or end with a space, and can contain only digits, letters, underscores (_), and hyphens (-). |                       |
+   +-----------------------+------------------------------------------------------------------------------------------------------------------------+-----------------------+
+   | Value                 | Tag value                                                                                                              | Yes                   |
+   |                       |                                                                                                                        |                       |
+   |                       | Type: string                                                                                                           |                       |
+   |                       |                                                                                                                        |                       |
+   |                       | Parent: Tag                                                                                                            |                       |
+   |                       |                                                                                                                        |                       |
+   |                       | -  A tag value can contain 0 to 43 characters and must be case sensitive.                                              |                       |
+   |                       | -  A tag value can contain only digits, letters, underscores (_), and hyphens (-).                                     |                       |
+   +-----------------------+------------------------------------------------------------------------------------------------------------------------+-----------------------+
 
 Response Syntax
 ---------------

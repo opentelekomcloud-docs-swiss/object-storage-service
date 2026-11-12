@@ -81,7 +81,7 @@ Response Syntax
 Response Headers
 ----------------
 
-The response to the request uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
+This response uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
 
 In addition to the common response headers, the headers listed in :ref:`Table 2 <obs_04_0090__table1784619142918>` may be used.
 

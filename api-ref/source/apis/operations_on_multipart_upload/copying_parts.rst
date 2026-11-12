@@ -14,12 +14,12 @@ After a multipart upload task is created, you can upload parts for this task usi
 
    You cannot determine whether a request is successful only based on the **status_code** in the returned HTTP header. If **200** is returned for **status_code**, the server has received the request and started to process the request. The copy is successful only when the body in the response contains ETag.
 
-Copy the source object and save it as **part1**. If a **part1** already exists before the copying, the original **part1** will be overwritten by the newly copied **part1**. After the copy is successful, only the latest **part1** is displayed. The old **part1** data will be deleted. Therefore, ensure that the target part does not exist or has no value when using the part copy operation. Otherwise, data may be deleted by mistake. The source object in the copy process does not change.
+Copy the source object and save it as **part1**. If a **part1** already exists before the copying, the original **part1** will be overwritten by the newly copied **part1**. After the copy is successful, only the latest **part1** is displayed. The old **part1** data will be deleted. Therefore, ensure that the target part does not exist or has no value when using the part copy operation. Otherwise, data may be deleted by mistake. The source object remains unchanged during the copy process.
 
 Cold Objects
 ------------
 
-If source objects are in the Cold storage class, ensure that these objects have been restored before you copy them. If the source object is not restored or is being restored, the copy fails and error **403 Forbidden** is returned. The fault is described as follows:
+If source objects are in the Cold storage class, ensure that these objects have been restored before you copy them. If the source object is not restored or is being restored, the copy fails and error **403 Forbidden** is returned. The error is described as follows:
 
 ErrorCode: InvalidObjectState
 

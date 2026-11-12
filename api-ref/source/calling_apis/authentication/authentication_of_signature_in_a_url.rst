@@ -1,6 +1,6 @@
-:original_name: obs_04_0011.html
+:original_name: obs_04_0011s.html
 
-.. _obs_04_0011:
+.. _obs_04_0011s:
 
 Authentication of Signature in a URL
 ====================================
@@ -21,9 +21,9 @@ A download request with a URL that uses a temporary AK/SK pair and security toke
    GET /ObjectKey?AccessKeyId=AccessKeyID&Expires=ExpiresValue&Signature=signature&x-obs-security-token=securitytoken HTTP/1.1
    Host: bucketname.obs.region.example.com
 
-:ref:`Table 1 <obs_04_0011__table5447121714296>` describes the parameters.
+:ref:`Table 1 <obs_04_0011s__table5447121714296>` describes the parameters.
 
-.. _obs_04_0011__table5447121714296:
+.. _obs_04_0011s__table5447121714296:
 
 .. table:: **Table 1** Request parameters
 
@@ -47,25 +47,25 @@ A download request with a URL that uses a temporary AK/SK pair and security toke
 
 A signature is calculated as follows:
 
-#. .. _obs_04_0011__li587641544619:
+#. .. _obs_04_0011s__li587641544619:
 
    Construct the StringToSign.
 
-#. .. _obs_04_0011__li4876101544611:
+#. .. _obs_04_0011s__li4876101544611:
 
-   Encode the result of :ref:`1 <obs_04_0011__li587641544619>` in UTF-8.
+   Encode the result of :ref:`1 <obs_04_0011s__li587641544619>` in UTF-8.
 
-#. .. _obs_04_0011__li187621516463:
+#. .. _obs_04_0011s__li187621516463:
 
-   Use the SK to calculate HMAC-SHA1 based on the result of :ref:`2 <obs_04_0011__li4876101544611>`.
+   Use the SK to calculate HMAC-SHA1 based on the result of :ref:`2 <obs_04_0011s__li4876101544611>`.
 
-#. .. _obs_04_0011__li208761159468:
+#. .. _obs_04_0011s__li208761159468:
 
-   Encode the result of :ref:`3 <obs_04_0011__li187621516463>` in Base64.
+   Encode the result of :ref:`3 <obs_04_0011s__li187621516463>` in Base64.
 
-#. Encode the result of :ref:`4 <obs_04_0011__li208761159468>` in URL to obtain the signature.
+#. Encode the result of :ref:`4 <obs_04_0011s__li208761159468>` in URL to obtain the signature.
 
-The format of StringToSign is shown below. :ref:`Table 2 <obs_04_0011__table34479832212511>` describes the parameters.
+The format of StringToSign is shown below. :ref:`Table 2 <obs_04_0011s__table34479832212511>` describes the parameters.
 
 .. code-block::
 
@@ -76,7 +76,7 @@ The format of StringToSign is shown below. :ref:`Table 2 <obs_04_0011__table3447
         Expires + "\n" +
         CanonicalizedHeaders + CanonicalizedResource
 
-.. _obs_04_0011__table34479832212511:
+.. _obs_04_0011s__table34479832212511:
 
 .. table:: **Table 2** Parameters for StringToSign
 
@@ -95,7 +95,7 @@ The format of StringToSign is shown below. :ref:`Table 2 <obs_04_0011__table3447
    +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | CanonicalizedHeaders              | HTTP request headers that start with **x-obs-**, such as **x-obs-date**, **x-obs-acl**, and **x-obs-meta-\***.                                                                                                                                                                                                                                                                                                                                                                                                                               |
    |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-   |                                   | #. All characters in a header name must be lower-case. Multiple header names are sorted in alphabetical order.                                                                                                                                                                                                                                                                                                                                                                                                                               |
+   |                                   | #. All characters in a header name must be lower-case. Multiple header names are sorted in lexicographical order.                                                                                                                                                                                                                                                                                                                                                                                                                            |
    |                                   | #. If a header has more than one value, combine them using commas (,). For example, **x-obs-meta-name:name1** and **x-obs-meta-name:name2** need to be written as **x-obs-meta-name:name1,name2**.                                                                                                                                                                                                                                                                                                                                           |
    |                                   | #. Non-ASCII or unrecognizable characters are not allowed for header names and also not recommended for header values. If such characters are required, encode or decode them on the client using URL or Base64. The server does not perform decoding.                                                                                                                                                                                                                                                                                       |
    |                                   | #. Delete meaningless spaces or tabs in a header. For example, **x-obs-meta-name: name** (there is a meaningless space before the second **name**) must be changed to **x-obs-meta-name:name**.                                                                                                                                                                                                                                                                                                                                              |
@@ -111,7 +111,7 @@ The format of StringToSign is shown below. :ref:`Table 2 <obs_04_0011__table3447
    |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
    |                                   |    OBS sub-resources: acl, attname, cors, delete, deletebucket, inventory, length, lifecycle, location, logging, metadata, modify, name, notification, partNumber, policy, position, quota, replication, response-cache-control, response-content-disposition, response-content-encoding, response-content-language, response-content-type, response-expires, restore, storageClass, storagePolicy, storageinfo, tagging, torrent, uploadId, uploads, versionId, versioning, versions, website, x-obs-security-token, object-lock, retention |
    |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-   |                                   | #. Sort multiple sub-resources in alphabetical order by name and use ampersands (&) to separate them.                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+   |                                   | #. Sort multiple sub-resources in lexicographical order by name and use ampersands (&) to separate them.                                                                                                                                                                                                                                                                                                                                                                                                                                     |
    |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
    |                                   | .. note::                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
    |                                   |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |

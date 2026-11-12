@@ -2,8 +2,8 @@
 
 .. _obs_04_0081:
 
-Uploading an Object - POST
-==========================
+Uploading an Object with POST
+=============================
 
 Functions
 ---------
@@ -18,7 +18,7 @@ If a bucket has versioning disabled, and you upload an object that has the same 
 
 You can also upload an object using the POST method.
 
-A single upload allows at most 5 GB of objects. To upload more than 5 GB of objects, see :ref:`Operations on Multipart Upload <obs_04_0096>`.
+The object size in a single upload is up to 5 GB. To upload a file larger than 5 GB, use the :ref:`multipart upload <obs_04_0096>`.
 
 Differences Between PUT and POST Methods
 ----------------------------------------
@@ -35,7 +35,7 @@ In the URL, PUT requests require object names be specified; POST requests only r
 
    POST / HTTP/1.1
 
-For details about PUT upload, see :ref:`Uploading an Object - PUT <obs_04_0080>`.
+For details about PUT upload, see :ref:`Uploading an Object with PUT <obs_04_0080>`.
 
 Versioning
 ----------
@@ -235,7 +235,7 @@ This request uses form elements. :ref:`Table 2 <obs_04_0081__table165118491000>`
    |                                     |                 |                                                                           |                                                                                                                                                                                                                                            |
    |                                     |                 |                                                                           | **Range**:                                                                                                                                                                                                                                 |
    |                                     |                 |                                                                           |                                                                                                                                                                                                                                            |
-   |                                     |                 |                                                                           | For the policy format, see :ref:`Authenticating the Signature Carried in a Form Uploaded Through a Browser <obs_04_0012>`.                                                                                                                 |
+   |                                     |                 |                                                                           | For the policy format, see :ref:`Authenticating the Signature Carried in a Form Uploaded Through a Browser <obs_04_0012ss>`.                                                                                                               |
    |                                     |                 |                                                                           |                                                                                                                                                                                                                                            |
    |                                     |                 |                                                                           | **Default value**:                                                                                                                                                                                                                         |
    |                                     |                 |                                                                           |                                                                                                                                                                                                                                            |
@@ -283,7 +283,7 @@ This request uses form elements. :ref:`Table 2 <obs_04_0081__table165118491000>`
    +-------------------------------------+-----------------+---------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | x-obs-acl                           | String          | No                                                                        | **Definition**:                                                                                                                                                                                                                            |
    |                                     |                 |                                                                           |                                                                                                                                                                                                                                            |
-   |                                     |                 |                                                                           | Used to set a pre-defined ACL when creating an object                                                                                                                                                                                      |
+   |                                     |                 |                                                                           | Used to set a predefined ACL when creating an object                                                                                                                                                                                       |
    |                                     |                 |                                                                           |                                                                                                                                                                                                                                            |
    |                                     |                 |                                                                           | Examples:                                                                                                                                                                                                                                  |
    |                                     |                 |                                                                           |                                                                                                                                                                                                                                            |
@@ -604,7 +604,7 @@ This request uses form elements. :ref:`Table 2 <obs_04_0081__table165118491000>`
    |                                     |                 |                                                                           |                                                                                                                                                                                                                                            |
    |                                     |                 |                                                                           | **Constraints**:                                                                                                                                                                                                                           |
    |                                     |                 |                                                                           |                                                                                                                                                                                                                                            |
-   |                                     |                 |                                                                           | -  If this parameter is set to **200** or **204**, the response body is left blank.                                                                                                                                                        |
+   |                                     |                 |                                                                           | -  If this parameter is set to **200** or **204**, the body in the OBS response message is empty.                                                                                                                                          |
    |                                     |                 |                                                                           | -  If this parameter is set to **201**, the response message contains an XML document that describes the response.                                                                                                                         |
    |                                     |                 |                                                                           | -  If this parameter is not specified or is invalid, the status code is **204**.                                                                                                                                                           |
    |                                     |                 |                                                                           |                                                                                                                                                                                                                                            |
@@ -678,11 +678,11 @@ This request uses form elements. :ref:`Table 2 <obs_04_0081__table165118491000>`
    |                                     |                 |                                                                           |                                                                                                                                                                                                                                            |
    |                                     |                 |                                                                           | When the WORM policy of the object expires.                                                                                                                                                                                                |
    |                                     |                 |                                                                           |                                                                                                                                                                                                                                            |
-   |                                     |                 |                                                                           | Example: **x-obs-object-lock-retain-until-date:2015-07-01T04:11:15Z**                                                                                                                                                                      |
+   |                                     |                 |                                                                           | Example: **x-obs-object-lock-retain-until-date:2015-07-01T04:11:15.297Z**                                                                                                                                                                  |
    |                                     |                 |                                                                           |                                                                                                                                                                                                                                            |
    |                                     |                 |                                                                           | **Constraints**:                                                                                                                                                                                                                           |
    |                                     |                 |                                                                           |                                                                                                                                                                                                                                            |
-   |                                     |                 |                                                                           | The value must be a UTC time that complies with the ISO 8601 standard. Example: **2015-07-01T04:11:15Z**                                                                                                                                   |
+   |                                     |                 |                                                                           | The value must be a UTC time that complies with the ISO 8601 standard. Example: **2015-07-01T04:11:15.297Z**                                                                                                                               |
    |                                     |                 |                                                                           |                                                                                                                                                                                                                                            |
    |                                     |                 |                                                                           | This parameter must be used with **x-obs-object-lock-mode**.                                                                                                                                                                               |
    |                                     |                 |                                                                           |                                                                                                                                                                                                                                            |
@@ -709,7 +709,7 @@ Response Syntax
 Response Headers
 ----------------
 
-The response to the request uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
+This response uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
 
 In addition to the common response headers, the headers listed in :ref:`Table 3 <obs_04_0081__table6575145423>` may be used.
 
@@ -1051,7 +1051,7 @@ Sample Request: Using a Token for Authentication
 
    --9431149156168
    Content-Disposition: form-data; name="token"
-   UDSIAMSTUBTEST002538:XsVcTzR2/A284oE4VH9qPndGcuE=:eyJjb25kaXRpb25zIjogW3siYnVja2V0IjogInRlc3QzMDAzMDU4NzE2NjI2ODkzNjcuMTIifSwgeyJDb250ZW50LVR5cGUiOiAiYXBwbGljYXRpb24veG1sIn0sIFsiZXEiLCAiJGtleSIsICJvYmoudHh0Il1dLCAiZXhwaXJhdGlvbiI6ICIyMDIyLTA5LTA5VDEyOjA5OjI3WiJ9
+   UDSIAMSTUBTEST002538:XsVcTzR2/A284oE4VH9qPndGcuE=:eyJjb25kaXRpb25zIjogW3siYnVja2V0IjogInRlc3QzMDAzMDU4NzE2NjI2ODkzNjcuMTIifSwgeyJDb250ZW50LVR5cGUiOiAiYXBwbGljYXRpb24veG1sIn0sIFsiZXEiLCAiJGtleSIsICJvYmoudRh0Il1dLCAiZXhwaXGhdGlvbiI6ICIyMDIyLTA5LTA5VDEyOjA5OjI3WiJ9
 
    --9431149156168
    Content-Disposition: form-data; name="file"; filename="myfile"
@@ -1213,7 +1213,7 @@ Sample Request: Uploading an Object (with a WORM Retention Policy Configured)
    User-Agent: PostmanRuntime/7.26.8
    Accept: */*
    Postman-Token: 4c2f4c7e-2e0b-46c0-b1a7-4a5da560b6a1
-   Host: obs.region.example.com
+   Host: obs.regionexample.com
    Accept-Encoding: gzip, deflate, br
    Connection: keep-alive
    Content-Type: multipart/form-data; boundary=--------------------------940435396775653808840608
@@ -1243,6 +1243,7 @@ Sample Request: Uploading an Object (with a WORM Retention Policy Configured)
    Content-Disposition: form-data; name="x-obs-object-lock-retain-until-date"
 
    Thu, 20 Jun 2023 13:12:51 GMT
+
    ----------------------------940435396775653808840608
    Content-Disposition: form-data; name="file"; filename="test.txt"
    Content-Type: text/plain

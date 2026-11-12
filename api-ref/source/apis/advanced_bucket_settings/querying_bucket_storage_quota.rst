@@ -71,7 +71,7 @@ This response contains elements of information about the bucket quota. :ref:`Tab
    |                                   |                                                                       |
    |                                   | Type: XML                                                             |
    +-----------------------------------+-----------------------------------------------------------------------+
-   | StorageQuota                      | Bucket storage quota quantity. The unit is byte.                      |
+   | StorageQuota                      | Bucket storage quota quantity. The unit is bytes.                     |
    |                                   |                                                                       |
    |                                   | Type: string                                                          |
    +-----------------------------------+-----------------------------------------------------------------------+

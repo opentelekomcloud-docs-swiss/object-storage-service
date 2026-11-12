@@ -2,13 +2,13 @@
 
 .. _obs_04_0080:
 
-Uploading an Object - PUT
-=========================
+Uploading an Object with PUT
+============================
 
 Functions
 ---------
 
-After creating a bucket in OBS, you can use this operation to upload an object to the bucket. This operation uploads an object to a bucket. To use this operation, you must have the write permission for the bucket.
+After creating a bucket in OBS, you can call this API to upload an object to the bucket. This operation uploads an object to a bucket. To use this operation, you must have the write permission for the bucket.
 
 .. note::
 
@@ -16,9 +16,9 @@ After creating a bucket in OBS, you can use this operation to upload an object t
 
 With versioning not enabled, if an object to be uploaded has the same name as an existing object in the bucket, the newly uploaded object will overwrite the existing one. To protect data from being corrupted during transmission, you can add the **Content-MD5** header in the request. After receiving the uploaded object, OBS compares the provided MD5 value to the MD5 value it calculates. If the two values do not match, OBS reports an error.
 
-You can also specify the value of the **x-obs-acl** parameter to configure an access control policy for the object. If the **x-obs-acl** parameter is not specified when an anonymous user uploads an object, the object can be accessed by all OBS users by default.
+You can also specify the **x-obs-acl** parameter to configure an access control policy for the object. If **x-obs-acl** is not specified when an anonymous user uploads an object, all users can access the object anonymously.
 
-For a single upload, the size of the object to be uploaded ranges [0, 5 GB]. To upload a file greater than 5 GB, see :ref:`Operations on Multipart Upload <obs_04_0096>`.
+The object size in a single upload is up to 5 GB. To upload a file larger than 5 GB, use the :ref:`multipart upload <obs_04_0096>`.
 
 OBS does not have real folders. To facilitate data management, OBS provides a method to simulate a folder by adding a slash (/) to the object name, for example, **test/123.jpg**. You can simulate **test** as a folder and **123.jpg** as the name of a file under the **test** folder. However, the object key remains **test/123.jpg**. Objects named in this format appear as folders on the console. When you upload an object larger than 0 in size using this format, an empty folder will be displayed on the console, but the occupied storage capacity is the actual object size.
 
@@ -41,12 +41,12 @@ With the PUT method, you need to specify the object name in the URL, but object 
 
    In a PUT request, if you write the message body in POST format, the object uploaded to OBS will be displayed in a form.
 
-For details about POST upload, see :ref:`Uploading an Object - POST <obs_04_0081>`.
+For details about POST upload, see :ref:`Uploading an Object with POST <obs_04_0081>`.
 
 Versioning
 ----------
 
-If versioning is enabled for a bucket, the system automatically generates a unique version ID for the requested object in this bucket and returns the version ID in response header **x-obs-version-id**. If versioning is suspended for the bucket, the object version ID is **null**. For details about the versioning statuses of a bucket, see :ref:`Configuring Versioning for a Bucket <obs_04_0037>`.
+If versioning is enabled for a bucket, the system automatically generates a unique version ID for the requested object in this bucket and returns the version ID in response header **x-obs-version-id**. If versioning is suspended for the bucket, the object version ID is **null**. For details about the versioning status of a bucket, see :ref:`Configuring Versioning for a Bucket <obs_04_0037>`.
 
 WORM
 ----
@@ -112,11 +112,11 @@ This request uses common headers. For details, see :ref:`Table 3 <obs_04_0007__t
    +-------------------------------------+-----------------+--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | x-obs-acl                           | String          | No                                                                       | **Definition**:                                                                                                                                                                                                                       |
    |                                     |                 |                                                                          |                                                                                                                                                                                                                                       |
-   |                                     |                 |                                                                          | When creating an object, you can use this parameter to set a pre-defined ACL.                                                                                                                                                         |
+   |                                     |                 |                                                                          | When creating an object, you can use this parameter to set a predefined ACL.                                                                                                                                                          |
    |                                     |                 |                                                                          |                                                                                                                                                                                                                                       |
    |                                     |                 |                                                                          | **Constraints**:                                                                                                                                                                                                                      |
    |                                     |                 |                                                                          |                                                                                                                                                                                                                                       |
-   |                                     |                 |                                                                          | Pre-defined policies must be displayed in character strings.                                                                                                                                                                          |
+   |                                     |                 |                                                                          | Predefined policies must be displayed in character strings.                                                                                                                                                                           |
    |                                     |                 |                                                                          |                                                                                                                                                                                                                                       |
    |                                     |                 |                                                                          | **Range**:                                                                                                                                                                                                                            |
    |                                     |                 |                                                                          |                                                                                                                                                                                                                                       |
@@ -343,11 +343,11 @@ This request uses common headers. For details, see :ref:`Table 3 <obs_04_0007__t
    |                                     |                 |                                                                          |                                                                                                                                                                                                                                       |
    |                                     |                 |                                                                          | When the WORM policy of the object expires.                                                                                                                                                                                           |
    |                                     |                 |                                                                          |                                                                                                                                                                                                                                       |
-   |                                     |                 |                                                                          | Example: **x-obs-object-lock-retain-until-date:2015-07-01T04:11:15Z**                                                                                                                                                                 |
+   |                                     |                 |                                                                          | Example: **x-obs-object-lock-retain-until-date:2015-07-01T04:11:15.297Z**                                                                                                                                                             |
    |                                     |                 |                                                                          |                                                                                                                                                                                                                                       |
    |                                     |                 |                                                                          | **Constraints**:                                                                                                                                                                                                                      |
    |                                     |                 |                                                                          |                                                                                                                                                                                                                                       |
-   |                                     |                 |                                                                          | -  The value must be a UTC time that complies with the ISO 8601 standard. Example: **2015-07-01T04:11:15Z**                                                                                                                           |
+   |                                     |                 |                                                                          | -  The value must be a UTC time that complies with the ISO 8601 standard. Example: **2015-07-01T04:11:15.297Z**                                                                                                                       |
    |                                     |                 |                                                                          | -  This parameter must be used together with **x-obs-object-lock-mode**.                                                                                                                                                              |
    |                                     |                 |                                                                          |                                                                                                                                                                                                                                       |
    |                                     |                 |                                                                          | **Range**:                                                                                                                                                                                                                            |
@@ -376,7 +376,7 @@ Response Syntax
 Response Headers
 ----------------
 
-The response to the request uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
+This response uses common headers. For details, see :ref:`Table 1 <obs_04_0013__d0e686>`.
 
 In addition to the common response headers, the headers listed in :ref:`Table 2 <obs_04_0080__table8930193215584>` might also be needed.
 
@@ -662,7 +662,7 @@ Sample Request: Uploading an Object (with a WORM Retention Policy Configured)
    Authorization: OBS H4IPJX0TQTHTHEBQQCEC:gYqplLq30dEX7GMi2qFWyjdFsyw=
    Content-Length: 10240
    x-obs-object-lock-mode:COMPLIANCE
-   x-obs-object-lock-retain-until-date:2022-09-24T16:10:25Z
+   x-obs-object-lock-retain-until-date:2022-09-24T16:10:25.297Z
    Expect: 100-continue
 
    [1024 Byte data content]

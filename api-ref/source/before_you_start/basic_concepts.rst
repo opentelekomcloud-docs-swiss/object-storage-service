@@ -26,7 +26,7 @@ Basic Concepts Related to OBS APIs
 
 -  Object
 
-   An object is a basic data unit on OBS. A bucket can store multiple objects, and OBS does not distinguish between object file types. Objects are serialized in OBS. An object may be a text, a video, or any other types of files. In OBS, the size of a file can range from 0 bytes to 48.8 TB. However, when an object is uploaded through the **PutObject** operation, it cannot exceed the maximum size of 5 GB. Use the multipart upload method, if the object size is larger than 5 GB.
+   An object is a basic data unit on OBS. A bucket can store multiple objects, and OBS does not distinguish between object file types. Objects are serialized in OBS. An object may be a text, a video, or any other types of files. In OBS, the size of a file can range from 0 bytes to 48.8 TB. However, when an object is uploaded through the **PutObject** operation, it cannot exceed the maximum size of 5 GB. To upload an object larger than 5 GB, use the multipart upload method.
 
 -  Region
 
