@@ -14,7 +14,7 @@ Which Access Control Policies Apply When They Conflict?
    For example, if a bucket has multiple bucket policies with allow statements, the adding of a new bucket policy with an allow statement will simply add the allowed permissions to the bucket, but the adding of a new bucket policy with a deny statement will result in a re-arrangement of the permissions. The deny statement will take precedence over allowed statements, even the denied permissions are allowed in other bucket policies.
 
 
-.. figure:: /_static/images/en-us_image_0168203499.png
+.. figure:: /_static/images/en-us_image_0000002541124050.png
    :alt: **Figure 1** Authorization process
 
    **Figure 1** Authorization process
@@ -23,7 +23,7 @@ Which Access Control Policies Apply When They Conflict?
 
 .. _obs_03_0114__fig1251114133010:
 
-.. figure:: /_static/images/en-us_image_0168203521.png
+.. figure:: /_static/images/en-us_image_0000002571724341.png
    :alt: **Figure 2** Matrix of the IAM policies, bucket policies, and ACLs (allow and deny effects)
 
    **Figure 2** Matrix of the IAM policies, bucket policies, and ACLs (allow and deny effects)

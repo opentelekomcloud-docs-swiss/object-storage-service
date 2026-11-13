@@ -8,7 +8,7 @@ Configuring a Bucket Inventory
 Procedure
 ---------
 
-#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
+#. In the bucket list of OBS Console, click the required bucket to go to the **Objects** page.
 
 #. In the navigation pane, choose **Inventories**. The inventory list is displayed.
 
@@ -45,7 +45,7 @@ Procedure
 #. Click **Next** to go to the **Configure Report** page.
 
 
-   .. figure:: /_static/images/en-us_image_0000001225983381.png
+   .. figure:: /_static/images/en-us_image_0000002571724301.png
       :alt: **Figure 1** Configuring the report
 
       **Figure 1** Configuring the report

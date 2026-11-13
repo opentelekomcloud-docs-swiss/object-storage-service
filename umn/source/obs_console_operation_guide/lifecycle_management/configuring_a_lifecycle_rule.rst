@@ -20,7 +20,7 @@ Lifecycle rules do not transition Cold objects to other storage classes.
 Procedure
 ---------
 
-#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
+#. In the bucket list of OBS Console, click the required bucket to go to the **Objects** page.
 
 #. In the navigation pane, choose **Overview**.
 
@@ -29,7 +29,7 @@ Procedure
 #. Click **Create**.
 
 
-   .. figure:: /_static/images/en-us_image_0000001180821716.png
+   .. figure:: /_static/images/en-us_image_0000002540964400.png
       :alt: **Figure 1** Creating a lifecycle rule
 
       **Figure 1** Creating a lifecycle rule

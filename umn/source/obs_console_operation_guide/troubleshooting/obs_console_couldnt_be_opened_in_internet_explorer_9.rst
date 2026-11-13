@@ -21,7 +21,7 @@ Confirm whether **Use SSL** and **Use TLS** are selected in **Internet Options**
 
    .. _obs_03_0344__fig3632690019428:
 
-   .. figure:: /_static/images/en-us_image_0129288861.png
+   .. figure:: /_static/images/en-us_image_0000002541124402.png
       :alt: **Figure 1** Internet Options
 
       **Figure 1** Internet Options

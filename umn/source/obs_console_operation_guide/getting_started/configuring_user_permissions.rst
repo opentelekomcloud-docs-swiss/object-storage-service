@@ -13,7 +13,7 @@ Process
 -------
 
 
-.. figure:: /_static/images/en-us_image_0170301902.png
+.. figure:: /_static/images/en-us_image_0000002540964028.png
    :alt: **Figure 1** Process of granting an IAM user the OBS permissions
 
    **Figure 1** Process of granting an IAM user the OBS permissions
@@ -47,7 +47,7 @@ Procedure
 
          In the policy content area, you can view the authorization details.
 
-         Due to data caching, an RBAC policy or a fine-grained policy involving OBS actions will take effect 10 to 15 minutes after it is attached to a user or a user group.
+         Due to data caching, an RBAC policy or a fine-grained policy involving OBS actions becomes effective 10 to 15 minutes after being attached to a user or user group.
 
 #. Create an IAM user. For details, see section "Creating an IAM User" in the *Identity and Access Management User Guide*.
 

@@ -21,7 +21,7 @@ OBS adopts the REST architectural style, and is based on HTTP and HTTPS. You can
 
 .. _obs_03_0207__fig5658599310445:
 
-.. figure:: /_static/images/en-us_image_0129289279.png
+.. figure:: /_static/images/en-us_image_0000002541123814.png
    :alt: **Figure 1** Relationship between objects and buckets
 
    **Figure 1** Relationship between objects and buckets

@@ -17,7 +17,7 @@ You have enabled WORM for the bucket when you create it.
 Configuring WORM for a Bucket
 -----------------------------
 
-#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
+#. In the bucket list of OBS Console, click the desired bucket to go to the **Objects** page.
 
 #. In the navigation pane, choose **Overview**.
 
@@ -32,7 +32,7 @@ Configuring WORM for a Bucket
       -  When you upload an object to a WORM-protected bucket, the object inherits the WORM retention from the bucket by default. You can also configure a different WORM retention for the object under advanced settings. If both a bucket-level and object-level WORM retention policy are applied to an object, the object-level retention policy will be used.
 
 
-   .. figure:: /_static/images/en-us_image_0000001953176333.png
+   .. figure:: /_static/images/en-us_image_0000002541123982.png
       :alt: **Figure 1** Configuring a WORM retention policy
 
       **Figure 1** Configuring a WORM retention policy
@@ -42,7 +42,7 @@ Configuring WORM for a Bucket
 Skipping the WORM Retention Configuration
 -----------------------------------------
 
-#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
+#. In the bucket list of OBS Console, click the desired bucket to go to the **Objects** page.
 
 #. In the navigation pane, choose **Overview**.
 
@@ -51,7 +51,7 @@ Skipping the WORM Retention Configuration
 #. Choose **Skip**.
 
 
-   .. figure:: /_static/images/en-us_image_0000001953342509.png
+   .. figure:: /_static/images/en-us_image_0000002540964350.png
       :alt: **Figure 2** Skipping the WORM retention configuration
 
       **Figure 2** Skipping the WORM retention configuration
@@ -63,12 +63,12 @@ Extending the Retention Period
 
 After WORM is configured for an object, you can extend the retention period of an object version. Before the specified date, OBS prevents protected object versions from being deleted.
 
-#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
+#. In the bucket list of OBS Console, click the desired bucket to go to the **Objects** page.
 
 #. Locate the object version for which you want to extend the retention period, choose **More** > **Extend Retention Period**, and select a date.
 
 
-   .. figure:: /_static/images/en-us_image_0000001953346977.png
+   .. figure:: /_static/images/en-us_image_0000002571724273.png
       :alt: **Figure 3** Extending the retention period
 
       **Figure 3** Extending the retention period
@@ -84,7 +84,7 @@ Manually and Permanently Deleting Objects from a WORM-Enabled Bucket
 
 In the **Deleted Objects** list, objects cannot be permanently deleted from a WORM-enabled bucket. In a WORM-enabled bucket, if an object has no retention policy configured or its retention policy has expired, you can manually delete a desired object version. If the object version is within the retention period, it cannot be deleted.
 
-#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
+#. In the bucket list of OBS Console, click the desired bucket to go to the **Objects** page.
 #. Enable **Historical Versions**.
 #. Select the object version to be permanently deleted and click **Permanently Delete** above the search bar.
 #. Click **OK**.
@@ -98,7 +98,7 @@ You can configure a lifecycle rule to let OBS automatically expire and delete ob
 
    In a WORM-enabled bucket, folders cannot be permanently deleted from the **Deleted Objects** list. To permanently delete a folder, you can only configure a lifecycle rule.
 
-#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
+#. In the bucket list of OBS Console, click the desired bucket to go to the **Objects** page.
 
 #. In the navigation pane, choose **Data Management** > **Lifecycle Rules**.
 
@@ -117,7 +117,7 @@ You can configure a lifecycle rule to let OBS automatically expire and delete ob
 
    Configure parameters under **Current Version** or **Historical Version**:
 
-   **Delete Objects After (Days)**: After this number of days since the last update, OBS will expire and then delete the objects meeting the specified conditions. The days set here must be larger than any of the days configured for the transition actions.
+   **Delete Objects After (Days)**: After the specified number of days since the last update, OBS will expire and then delete the objects meeting the specified conditions. The days set here must be larger than any of the days configured for the transition actions.
 
    Suppose that you last updated the following files in OBS on November 7, 2023:
 
@@ -125,7 +125,7 @@ You can configure a lifecycle rule to let OBS automatically expire and delete ob
    -  **log/expired-1.log** (The WORM retention policy configured for this file has expired.)
    -  **doc/withinRetention-1.doc** (The WORM retention policy configured for this file expires on November 30, 2023.)
 
-   Then on November 10, 2023, you last updated the following files:
+   Then on November 10, 2023, you last updated the following files in OBS:
 
    -  **log/notConfigured-2.log** (This file has no WORM retention policy configured.)
    -  **log/expired-2.log** (The WORM retention policy configured for this file has expired.)

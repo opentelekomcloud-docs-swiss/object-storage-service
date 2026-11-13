@@ -33,7 +33,7 @@ When versioning is enabled for a bucket, OBS works slightly different when delet
 Procedure
 ---------
 
-#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
+#. In the bucket list of OBS Console, click the required bucket to go to the **Objects** page.
 
 #. Select the file or folder you want to delete and choose **More** > **Delete** on the right.
 

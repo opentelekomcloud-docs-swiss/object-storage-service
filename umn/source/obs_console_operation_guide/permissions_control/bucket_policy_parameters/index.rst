@@ -10,6 +10,7 @@ Bucket Policy Parameters
 -  :ref:`Resources <obs_03_0118>`
 -  :ref:`Actions <obs_03_0051>`
 -  :ref:`Conditions <obs_03_0120>`
+-  :ref:`Configuring IAM Policies <obs_03_0144>`
 
 .. toctree::
    :maxdepth: 1
@@ -20,3 +21,4 @@ Bucket Policy Parameters
    resources
    actions
    conditions
+   configuring_iam_policies/index
