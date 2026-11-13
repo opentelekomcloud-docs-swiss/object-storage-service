@@ -23,7 +23,7 @@ In the region where OBS is deployed, the **KMS Administrator** permission has be
 Procedure
 ---------
 
-#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
+#. In the bucket list of OBS Console, click the required bucket to go to the **Objects** page.
 
 #. Click **Upload Object**. The **Upload Object** dialog box is displayed.
 

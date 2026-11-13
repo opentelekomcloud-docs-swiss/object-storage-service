@@ -21,7 +21,7 @@ Static web page files in the Cold storage class have been restored. For more inf
 Procedure
 ---------
 
-#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
+#. In the bucket list of OBS Console, click the required bucket to go to the **Objects** page.
 
 #. (**Optional**) If the static website files in the bucket are not accessible to everyone, perform this step. If they are already accessible to everyone, skip this step.
 
@@ -65,7 +65,7 @@ Procedure
 
    .. _en-us_topic_0045853755__fig1131112528711:
 
-   .. figure:: /_static/images/en-us_image_0145846197.png
+   .. figure:: /_static/images/en-us_image_0000002541124120.png
       :alt: **Figure 1** Configuring static website hosting
 
       **Figure 1** Configuring static website hosting

@@ -19,7 +19,7 @@ Anonymous users have the read permission for the object. For details about permi
 Procedure
 ---------
 
-#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
+#. In the bucket list of OBS Console, click the required bucket to go to the **Objects** page.
 
 #. Click the object to be shared. On the top part of the page, you can find the object's sharing link in the **Link** area, as shown in :ref:`Figure 1 <obs_03_0319__fig36534596192426>`.
 
@@ -27,7 +27,7 @@ Procedure
 
    .. _obs_03_0319__fig36534596192426:
 
-   .. figure:: /_static/images/en-us_image_0129482329.png
+   .. figure:: /_static/images/en-us_image_0000002571604289.png
       :alt: **Figure 1** Object link
 
       **Figure 1** Object link

@@ -10,7 +10,7 @@ You can configure a bucket policy to restrict access to a bucket for specific ad
 Procedure
 ---------
 
-#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
+#. In the bucket list of OBS Console, click the required bucket to go to the **Objects** page.
 #. In the navigation pane, choose **Permissions** > **Bucket Policies**.
 #. Click **Create**.
 #. Configure the following parameters in the **Create Bucket Policy** dialog box.

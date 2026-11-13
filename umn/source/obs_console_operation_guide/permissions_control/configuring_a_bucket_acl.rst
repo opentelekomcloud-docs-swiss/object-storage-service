@@ -13,7 +13,7 @@ You are the bucket owner or you have the permission to write the bucket ACL.
 Procedure
 ---------
 
-#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
+#. In the bucket list of OBS Console, click the required bucket to go to the **Objects** page.
 
 #. In the navigation pane, choose **Permissions** > **Bucket ACLs**.
 

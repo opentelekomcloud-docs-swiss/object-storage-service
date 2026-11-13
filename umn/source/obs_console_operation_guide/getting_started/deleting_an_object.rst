@@ -14,7 +14,7 @@ You can delete unnecessary files one by one or in a batch on OBS Console to save
 Procedure
 ---------
 
-#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
+#. In the bucket list of OBS Console, click the required bucket to go to the **Objects** page.
 
 #. Select the file you want to delete, and choose **More** > **Delete** on the right.
 
