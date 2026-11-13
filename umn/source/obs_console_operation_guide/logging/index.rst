@@ -6,11 +6,11 @@ Logging
 =======
 
 -  :ref:`Logging Overview <en-us_topic_0045853553>`
--  :ref:`Configuring Access Logging for a Bucket <obs_03_0329>`
+-  :ref:`Configuring Logging for a Bucket <obs_03_0329>`
 
 .. toctree::
    :maxdepth: 1
    :hidden: 
 
    logging_overview
-   configuring_access_logging_for_a_bucket
+   configuring_logging_for_a_bucket

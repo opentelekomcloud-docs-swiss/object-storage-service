@@ -19,19 +19,17 @@ Procedure
    For example, if you want to search for bucket **test**, click the search box, select **Bucket Name** and then **test**. Alternatively, after selecting **Bucket Name**, enter **test** in the search box, and all buckets whose names contain **test** are displayed in the level-2 drop-down list. Then, select **test** and click **OK**.
 
 
-   .. figure:: /_static/images/en-us_image_0000002136379984.png
+   .. figure:: /_static/images/en-us_image_0000002540964258.png
       :alt: **Figure 1** Searching for buckets
 
       **Figure 1** Searching for buckets
 
    .. note::
 
-      -  You can search for buckets based on combinations of different filter criteria.
+      You can search for buckets based on combinations of different filter criteria.
 
-         -  If the filter criteria are of different types, they are in intersection logic.
-         -  If the filter criteria are of the same type, they are in union logic.
-
-      -  After a keyword is entered in the search box, all buckets whose name, storage class, or region contains the specified keyword are displayed in the drop-down list. Click the option you want. Then, all the buckets meeting the search criteria are displayed in the bucket list.
+      -  If the filter criteria are of different types, they are in intersection logic.
+      -  If the filter criteria are of the same type, they are in union logic.
 
 #. Enter a keyword in the search box and press **Enter**.
 
@@ -40,7 +38,7 @@ Procedure
    For example, if you enter **test** in the search box and press **Enter**, all buckets whose name, storage class, or region contains keyword **test** are displayed in the bucket list.
 
 
-   .. figure:: /_static/images/en-us_image_0000002112749382.png
+   .. figure:: /_static/images/en-us_image_0000002540964254.png
       :alt: **Figure 2** Searching for buckets
 
       **Figure 2** Searching for buckets
@@ -50,4 +48,4 @@ Related Operations
 
 In the bucket list, click |image1| next to the bucket name, storage class, region, used capacity, number of objects, or creation time to sort buckets.
 
-.. |image1| image:: /_static/images/en-us_image_0000002112750646.png
+.. |image1| image:: /_static/images/en-us_image_0000002571604243.png
