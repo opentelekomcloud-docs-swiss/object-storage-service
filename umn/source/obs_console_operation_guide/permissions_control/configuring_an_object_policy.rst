@@ -5,12 +5,12 @@
 Configuring an Object Policy
 ============================
 
-Object policies are applied to the objects in a bucket. With an object policy, you can configure conditions and actions for objects in a bucket.
+Object policies apply to objects in a bucket. You can configure a policy for a specific object. The conditions and actions you can use in an object policy are those available for objects in a bucket policy.
 
 Procedure
 ---------
 
-#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
+#. In the bucket list of OBS Console, click the required bucket to go to the **Objects** page.
 
 #. On the right of the object to be operated, choose **More** > **Configure Object Policy**. The **Configure Object Policy** dialog box is displayed.
 

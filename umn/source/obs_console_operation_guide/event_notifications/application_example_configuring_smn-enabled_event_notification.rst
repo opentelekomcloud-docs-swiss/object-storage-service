@@ -22,7 +22,7 @@ Procedure
    Click **Create Bucket** in the upper right corner of the page. On the page, select a region and storage class, and specify a bucket name and other parameters. Then, click **Create Now**.
 
 
-   .. figure:: /_static/images/en-us_image_0000001226220995.png
+   .. figure:: /_static/images/en-us_image_0000002541124132.png
       :alt: **Figure 1** Creating a bucket
 
       **Figure 1** Creating a bucket
@@ -34,7 +34,7 @@ Procedure
    Click the name of the bucket created in :ref:`2 <obs_03_0333__li29947515>` to go to the **Overview** page. Then, choose **Objects** and click **Create Folder**. In the displayed dialog box, enter a folder name and click **OK**. In the following example, **SMN** is the folder name.
 
 
-   .. figure:: /_static/images/en-us_image_0000001180502786.png
+   .. figure:: /_static/images/en-us_image_0000002541124150.png
       :alt: **Figure 2** Creating a folder
 
       **Figure 2** Creating a folder
@@ -70,7 +70,7 @@ Procedure
 
       .. _obs_03_0333__fig377201314360:
 
-      .. figure:: /_static/images/en-us_image_0000001226261025.png
+      .. figure:: /_static/images/en-us_image_0000002540964488.png
          :alt: **Figure 3** Adding an event notification rule
 
          **Figure 3** Adding an event notification rule
@@ -90,4 +90,4 @@ Verification
 
    After the file is successfully deleted, an employee will receive an email. Keyword **ObjectRemoved:Delete** in the email indicates that the object is successfully deleted.
 
-.. |image1| image:: /_static/images/en-us_image_0000001196392484.png
+.. |image1| image:: /_static/images/en-us_image_0000002571604479.png

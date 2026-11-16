@@ -15,4 +15,4 @@ For security purposes, OBS verifies the time offset between the client and serve
 
 **Solution**
 
-To resolve this problem, adjust your local time (UTC) and try again.
+Adjust your local time (UTC) and try again.

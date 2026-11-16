@@ -8,7 +8,7 @@ Configuring Versioning
 Procedure
 ---------
 
-#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
+#. In the bucket list of OBS Console, click the required bucket to go to the **Objects** page.
 
 #. In the navigation pane, choose **Overview**.
 
@@ -17,7 +17,7 @@ Procedure
 #. Select **Enable**.
 
 
-   .. figure:: /_static/images/en-us_image_0000001225982167.png
+   .. figure:: /_static/images/en-us_image_0000002571724071.png
       :alt: **Figure 1** Configuring versioning
 
       **Figure 1** Configuring versioning
@@ -35,7 +35,7 @@ Related Operations
 
 After versioning is enabled for a bucket, you can extend the retention period of a WORM-protected object version, as well as delete and download object versions.
 
-#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
+#. In the bucket list of OBS Console, click the required bucket to go to the **Objects** page.
 #. In the object list, view all versions of the object.
 #. Perform the following operations on object versions:
 

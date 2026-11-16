@@ -17,7 +17,7 @@ A region and availability zone (AZ) identify the location of a data center. You 
 
 .. _obs_03_0148__fig8747114281212:
 
-.. figure:: /_static/images/en-us_image_0185449745.png
+.. figure:: /_static/images/en-us_image_0000002540964796.png
    :alt: **Figure 1** Regions and AZs
 
    **Figure 1** Regions and AZs

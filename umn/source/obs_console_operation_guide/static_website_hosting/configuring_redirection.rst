@@ -19,7 +19,7 @@ Static web page files in the Cold storage class have been restored. For more inf
 Procedure
 ---------
 
-#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
+#. In the bucket list of OBS Console, click the required bucket to go to the **Objects** page.
 
 #. In the navigation pane, choose **Basic Configurations** > **Static Website Hosting**.
 
@@ -30,7 +30,7 @@ Procedure
 #. Set **Hosting By** to **Redirection**, and enter the access domain name or URL of the bucket to which requests are redirected.
 
 
-   .. figure:: /_static/images/en-us_image_0000002134970296.png
+   .. figure:: /_static/images/en-us_image_0000002571604017.png
       :alt: **Figure 1** Configuring redirection
 
       **Figure 1** Configuring redirection

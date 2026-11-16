@@ -14,7 +14,7 @@ You can configure the event notification rule to filter objects by the object na
 For details about events supported by SMN and how to configure an SMN-enabled event notification rule, see :ref:`Configuring SMN-Enabled Event Notification <en-us_topic_0066088963>`.
 
 
-.. figure:: /_static/images/en-us_image_0136295107.png
+.. figure:: /_static/images/en-us_image_0000002541124408.png
    :alt: **Figure 1** SMN-enabled event notification
 
    **Figure 1** SMN-enabled event notification

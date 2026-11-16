@@ -16,7 +16,7 @@ Enabling Versioning
 
    .. _en-us_topic_0045853504__fig2477115284615:
 
-   .. figure:: /_static/images/en-us_image_0135709734.png
+   .. figure:: /_static/images/en-us_image_0000002571604307.png
       :alt: **Figure 1** Versioning (with existing objects)
 
       **Figure 1** Versioning (with existing objects)
@@ -24,7 +24,7 @@ Enabling Versioning
 -  OBS automatically allocates a unique version ID to a newly uploaded object. Objects with the same name are stored in OBS with different version IDs.
 
 
-   .. figure:: /_static/images/en-us_image_0135263079.png
+   .. figure:: /_static/images/en-us_image_0000002571604305.png
       :alt: **Figure 2** Versioning (for new objects)
 
       **Figure 2** Versioning (for new objects)
@@ -46,7 +46,7 @@ Enabling Versioning
 -  You can select an object and click **Delete** on the right to delete the object. After the object is deleted, OBS inserts a delete marker. The deleted object appears in the **Deleted Objects** list. For details, see :ref:`Deleting an Object or Folder <en-us_topic_0045853756>`. If attempts are then made to access this deleted object, error 404 will be returned.
 
 
-   .. figure:: /_static/images/en-us_image_0135698309.png
+   .. figure:: /_static/images/en-us_image_0000002541123960.png
       :alt: **Figure 3** Object with a delete marker
 
       **Figure 3** Object with a delete marker
@@ -61,7 +61,7 @@ Enabling Versioning
 
    .. _en-us_topic_0045853504__fig1469714544377:
 
-   .. figure:: /_static/images/en-us_image_0135706002.png
+   .. figure:: /_static/images/en-us_image_0000002571724255.png
       :alt: **Figure 4** Uploading a namesake object after the original one is deleted
 
       **Figure 4** Uploading a namesake object after the original one is deleted
@@ -72,7 +72,7 @@ Suspending Versioning
 Once versioning is enabled for a bucket, it cannot be disabled, but it can be suspended. When versioning is suspended, a null, not a specific version ID, will be allocated to a newly uploaded object. If the newly uploaded object has the same name as an existing object with a null version ID, the new object will overwrite the existing object.
 
 
-.. figure:: /_static/images/en-us_image_0135715557.png
+.. figure:: /_static/images/en-us_image_0000002540964330.png
    :alt: **Figure 5** Object versions in the scenario when versioning is suspended
 
    **Figure 5** Object versions in the scenario when versioning is suspended

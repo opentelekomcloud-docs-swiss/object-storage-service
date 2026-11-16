@@ -10,14 +10,14 @@ When creating a bucket, you can add tags to it. For details, see :ref:`Creating 
 Procedure
 ---------
 
-#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
+#. In the bucket list of OBS Console, click the desired bucket to go to the **Objects** page.
 
 #. In the navigation pane, choose **Basic Configurations** > **Tagging**.
 
 #. Click **Add Tag**. The **Add Tag** dialog box is displayed.
 
 
-   .. figure:: /_static/images/en-us_image_0000001226220863.png
+   .. figure:: /_static/images/en-us_image_0000002541124228.png
       :alt: **Figure 1** Add Tag
 
       **Figure 1** Add Tag
@@ -28,24 +28,24 @@ Procedure
 
    .. table:: **Table 1** Parameter description
 
-      +-----------------------------------+------------------------------------------------------------------------------------------------+
-      | Parameter                         | Description                                                                                    |
-      +===================================+================================================================================================+
-      | Key                               | Specifies the key of the tag. The value of the key can be self-defined or predefined by TMS.   |
-      |                                   |                                                                                                |
-      |                                   | Tag key constraints:                                                                           |
-      |                                   |                                                                                                |
-      |                                   | -  If there are multiple tags specified for an object, each tag key must be unique.            |
-      |                                   | -  A tag key must contain 1 to 36 characters and be case sensitive.                            |
-      |                                   | -  A tag key can't start or end with a space or contain the following characters: ``,/|<>=*\`` |
-      +-----------------------------------+------------------------------------------------------------------------------------------------+
-      | Value                             | Specifies the value of the tag. Tags of a bucket can have repetitive or blank values.          |
-      |                                   |                                                                                                |
-      |                                   | Tag value constraints:                                                                         |
-      |                                   |                                                                                                |
-      |                                   | -  A tag value can contain 0 to 43 characters and must be case sensitive.                      |
-      |                                   | -  A tag value can't contain the following characters: ``,/|<>=*\``                            |
-      +-----------------------------------+------------------------------------------------------------------------------------------------+
+      +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+      | Parameter                         | Description                                                                                                           |
+      +===================================+=======================================================================================================================+
+      | Key                               | Specifies the key of the tag. The value of the key can be self-defined or predefined by TMS.                          |
+      |                                   |                                                                                                                       |
+      |                                   | Tag key constraints:                                                                                                  |
+      |                                   |                                                                                                                       |
+      |                                   | -  If there are multiple tags specified for an object, each tag key must be unique.                                   |
+      |                                   | -  A tag key must contain 1 to 36 characters and be case sensitive.                                                   |
+      |                                   | -  A tag key can't start or end with a space, and can contain only digits, letters, underscores (_), and hyphens (-). |
+      +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+      | Value                             | Specifies the value of the tag. Tags of a bucket can have repetitive or blank values.                                 |
+      |                                   |                                                                                                                       |
+      |                                   | Tag value constraints:                                                                                                |
+      |                                   |                                                                                                                       |
+      |                                   | -  A tag value can contain 0 to 43 characters and must be case sensitive.                                             |
+      |                                   | -  A tag value can contain only digits, letters, underscores (_), and hyphens (-).                                    |
+      +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 
 #. Click **OK**.
 

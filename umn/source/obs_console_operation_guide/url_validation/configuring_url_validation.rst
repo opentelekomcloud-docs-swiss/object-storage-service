@@ -15,7 +15,7 @@ Static website hosting has been enabled.
 Procedure
 ---------
 
-#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
+#. In the bucket list of OBS Console, click the required bucket to go to the **Objects** page.
 
 #. In the **Basic Configurations** area, click **URL Validation**. The **URL Validation** page is displayed.
 
@@ -42,5 +42,5 @@ Procedure
 
 #. Click |image2| to save the settings.
 
-.. |image1| image:: /_static/images/en-us_image_0148639849.png
-.. |image2| image:: /_static/images/en-us_image_0148639851.png
+.. |image1| image:: /_static/images/en-us_image_0000002540964804.png
+.. |image2| image:: /_static/images/en-us_image_0000002541124444.png

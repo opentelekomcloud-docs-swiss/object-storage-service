@@ -21,7 +21,7 @@ The following is an example about how to grant other accounts bucket access and 
 Procedure
 ---------
 
-#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
+#. In the bucket list of OBS Console, click the required bucket to go to the **Objects** page.
 #. In the navigation pane, choose **Permissions** > **Bucket Policies**.
 #. Click **Create**.
 #. Configure parameters listed in the table below to grant other accounts the permissions to access the bucket (to list objects in the bucket) and to upload objects.

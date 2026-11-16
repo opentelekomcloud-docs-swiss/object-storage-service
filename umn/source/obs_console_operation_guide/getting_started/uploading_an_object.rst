@@ -24,7 +24,7 @@ Prerequisites
 Procedure
 ---------
 
-#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
+#. In the bucket list of OBS Console, click the required bucket to go to the **Objects** page.
 
 #. Go to the folder where you want to upload files and click **Upload Object**. The **Upload Object** dialog box is displayed.
 
@@ -55,7 +55,7 @@ Procedure
    Configuring WORM retention: Choose **Inherit from bucket**, or choose **Configure** and then specify a retention period, to automatically protect new objects uploaded to the bucket from being deleted.
 
 
-   .. figure:: /_static/images/en-us_image_0000001925837700.png
+   .. figure:: /_static/images/en-us_image_0000002540964278.png
       :alt: **Figure 1** Configuring metadata or WORM retention
 
       **Figure 1** Configuring metadata or WORM retention

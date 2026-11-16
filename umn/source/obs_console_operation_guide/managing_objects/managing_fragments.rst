@@ -24,7 +24,7 @@ On OBS Console, storage used by fragments is charged. Clear fragments when they 
 Procedure
 ---------
 
-#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
+#. In the bucket list of OBS Console, click the required bucket to go to the **Objects** page.
 
 #. Click **Fragments**, select the fragment that you want to delete, and click **Delete** on the right.
 

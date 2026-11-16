@@ -12,7 +12,7 @@ Static websites contain static web pages and some scripts that can run on client
 It can take up to two minutes for the configuration of static website hosting to take effect. After the static website hosting is effective in OBS, you can access the static website by using the URL provided by OBS.
 
 
-.. figure:: /_static/images/en-us_image_0136405078.png
+.. figure:: /_static/images/en-us_image_0000002540964104.png
    :alt: **Figure 1** Static website hosting
 
    **Figure 1** Static website hosting

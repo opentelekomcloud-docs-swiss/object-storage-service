@@ -29,7 +29,7 @@ Policy Structure and Syntax
 A policy consists of a version and statements. Each policy can have multiple statements.
 
 
-.. figure:: /_static/images/en-us_image_0209418410.png
+.. figure:: /_static/images/en-us_image_0000002571724243.png
    :alt: **Figure 1** Policy structure
 
    **Figure 1** Policy structure
@@ -118,7 +118,7 @@ Authentication of IAM policies
 The authentication of IAM policies starts from the Deny statements. The following figure shows the authentication logic for resource access.
 
 
-.. figure:: /_static/images/en-us_image_0170555653.png
+.. figure:: /_static/images/en-us_image_0000002571604295.png
    :alt: **Figure 2** Authentication logic
 
    **Figure 2** Authentication logic

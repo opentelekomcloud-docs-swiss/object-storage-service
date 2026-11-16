@@ -13,7 +13,7 @@ A bucket policy can either allow or deny requests.
 When a bucket policy contains both the allow and deny effects, the deny effect prevails. The following figure shows the judgment process.
 
 
-.. figure:: /_static/images/en-us_image_0168267011.png
+.. figure:: /_static/images/en-us_image_0000002571724445.png
    :alt: **Figure 1** Determining a bucket policy when the allow and deny statements conflict
 
    **Figure 1** Determining a bucket policy when the allow and deny statements conflict

@@ -15,7 +15,7 @@ Objects in the Cold storage class can be downloaded only when they are in the **
 Procedure
 ---------
 
-#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
+#. In the bucket list of OBS Console, click the required bucket to go to the **Objects** page.
 #. Select the file you want to download. Then, click **Download** or **More** > **Download As** on the right.
 
    .. note::

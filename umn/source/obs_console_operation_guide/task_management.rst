@@ -14,7 +14,8 @@ When you delete or change the storage class of an object, the **Task Management*
 Procedure
 ---------
 
-#. Click **Running**, **Completed**, or **Failed** in the **Task Management** area. Respective dialog boxes will be displayed.
-#. For a running tasks, you can click **Cancel All** to stop the tasks. You can click **Run All** to run all tasks. Also you can click **Delete All** to delete all tasks.
-#. After a task is complete, the task is displayed in the list of **Completed** tasks. You can click **Delete** to delete the task record. You can also click **Delete All** to delete all completed task records.
-#. If a task fails to be executed, it is displayed in the list of **Failed**. You can click **Delete** to delete the task or **Retry** to run the task again. You can also click **Delete All** to delete all failed tasks. Also you can click **Retry All** to run all failed tasks again.
+#. In the object list of your bucket, click **Task Center** in the upper right corner.
+#. View the records of uploading objects, restoring objects in batches, changing storage classes in batches, or deleting folders.
+
+   -  Click **Clear Records** to clear all task records.
+   -  On the **Upload** tab page, you can click **Pause All** or **Start All** to manage upload tasks in batches.

@@ -15,6 +15,7 @@ FAQ
 -  :ref:`Event Notifications <obs_faq_0900>`
 -  :ref:`How Do I Use Lifecycle Management? <obs_faq_0400>`
 -  :ref:`How Do I Use Static Website Hosting? <obs_faq_0500>`
+-  :ref:`Server-Side Encryption <obs_faq_1008>`
 -  :ref:`Third-Party Tools <obs_faq_third_party_index>`
 
 .. toctree::
@@ -31,4 +32,5 @@ FAQ
    event_notifications/index
    how_do_i_use_lifecycle_management/index
    how_do_i_use_static_website_hosting/index
+   server-side_encryption/index
    third_party_tools/index

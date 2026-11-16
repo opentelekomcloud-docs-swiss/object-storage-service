@@ -5,7 +5,7 @@
 Creating a Folder
 =================
 
-You can create folders in a bucket on OBS Console to help organize and manage your data more efficiently.
+You can create folders in a bucket on OBS Console to help efficiently organize and manage your data.
 
 Background Information
 ----------------------
@@ -16,7 +16,7 @@ Background Information
 Procedure
 ---------
 
-#. In the bucket list, click the bucket you want to operate to go to the **Objects** page.
+#. In the bucket list of OBS Console, click the required bucket to go to the **Objects** page.
 #. Click **Create Folder**, or click a folder in the object list to open it and click **Create Folder**.
 #. In the **Folder Name** text box, enter a name for the folder.
 

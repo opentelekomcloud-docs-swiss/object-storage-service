@@ -9,3 +9,4 @@ Object Storage Service - User Guide
    obs_console_operation_guide/index
    faq/index
    change_history
+   glossary

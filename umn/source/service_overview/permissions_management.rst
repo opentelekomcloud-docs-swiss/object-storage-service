@@ -5,12 +5,6 @@
 Permissions Management
 ======================
 
-You can use Identity and Access Management (IAM) to manage OBS permissions and control access to your resources. IAM provides identity authentication, permissions management, and access control.
-
-You can create IAM users for your employees, and assign permissions to these users on a principle of least privilege (PoLP) basis to control their access to specific resource types. For example, you can create IAM users for software developers and assign specific permissions to allow them to use OBS resources but prevent them from being able to delete resources or perform any high-risk operations.
-
-If your account does not require individual IAM users for permissions management, skip this section.
-
 OBS Permissions
 ---------------
 
@@ -22,10 +16,6 @@ Policy Types
 
 -  RBAC policy: An RBAC policy consists of permissions for an entire service. Users in a group with such a policy assigned are granted all the required permissions, including permissions for accessing and managing that service. RBAC policies do not support operation-specific permission control.
 -  Fine-grained policy: A fine-grained policy consists of API-based permissions for operations on specific resource types. Fine-grained policies, as the name suggests, allow for more fine-grained control than RBAC policies. Users with such fine-grained permissions can only perform specific operations on services.
-
-.. note::
-
-   Due to data caching, an RBAC policy or a fine-grained policy involving OBS actions will take effect 10 to 15 minutes after it is attached to a user or a user group.
 
 :ref:`Table 1 <obs_03_0045__table358116162418>` lists all system policies of OBS.
 
@@ -51,7 +41,7 @@ Policy Types
 
 The following table lists operations that can be performed under each set of OBS permission.
 
-.. table:: **Table 2** Permissions and the allowed operations on OBS resources
+.. table:: **Table 2** Relationship between OBS operations and permissions
 
    +----------------------------------------------------------+---------------------------------+-------------------------+-----------------------------------------------------------------------------------+
    | Operation                                                | Tenant Administrator Permission | Tenant Guest Permission | OBS Buckets Viewer                                                                |
@@ -144,6 +134,6 @@ The following table lists operations that can be performed under each set of OBS
 OBS Resource Permissions Management
 -----------------------------------
 
-Access to OBS buckets and objects can be controlled by IAM user permissions, bucket policies, and ACLs.
+Access to OBS buckets and objects can be controlled by user permissions, bucket policies, and ACLs.
 
 For more information, see :ref:`Overview <obs_03_0047>`.

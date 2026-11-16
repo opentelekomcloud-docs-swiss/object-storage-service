@@ -8,7 +8,7 @@ Lifecycle Management Overview
 Lifecycle management means periodically deleting objects in a bucket or transitioning between object storage classes by configuring rules.
 
 
-.. figure:: /_static/images/en-us_image_0138955590.png
+.. figure:: /_static/images/en-us_image_0000002571604181.png
    :alt: **Figure 1** Lifecycle management
 
    **Figure 1** Lifecycle management
